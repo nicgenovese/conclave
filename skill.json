@@ -1,0 +1,7 @@
+{
+  "name": "conclave",
+  "version": "2.0.0",
+  "description": "Moria Capital's AI investment research committee",
+  "triggers": ["conclave", "analyze", "deep dive", "research memo", "evaluate", "daily brief"],
+  "author": "Moria Capital"
+}

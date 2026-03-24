@@ -1,0 +1,243 @@
+# Conclave Investment Committee - Dependency Graph Configuration
+# This file defines the inter-agent dependencies and orchestration rules.
+# The orchestrator reads this to validate prerequisites before spawning agents.
+
+version: "1.0"
+name: "investment-committee"
+description: "Full 5-phase committee review workflow"
+
+settings:
+  artifact_directory: "output"
+  archive_directory: "archive"
+  date_format: "YYYY-MM-DD"
+
+# Agent definitions with inputs/outputs
+agents:
+  knowledge-agent:
+    phase: 1
+    persona: "agents/knowledge-agent.md"
+    model: "sonnet"
+    mcp_tools:
+      - "research_search_memos"
+      - "research_get_decisions"
+      - "research_get_learnings"
+      - "research_get_red_flags"
+    requires: []
+    produces:
+      historical_context:
+        type: "markdown"
+        description: "Prior decisions, sector learnings, red flags"
+        required: true
+
+  tokenomics-analyst:
+    phase: 2
+    persona: "agents/tokenomics-analyst.md"
+    model: "sonnet"
+    mcp_tools:
+      - "defi_get_token_metrics"
+      - "defi_get_emissions_schedule"
+      - "defi_get_staking_yields"
+      - "defi_get_liquidity_depth"
+      - "defi_get_protocol_revenue"
+    requires: []
+    produces:
+      analysis:
+        type: "markdown"
+        description: "Tokenomics analysis with score"
+        required: true
+        score_field: "tokenomics_score"
+
+  governance-analyst:
+    phase: 2
+    persona: "agents/governance-analyst.md"
+    model: "sonnet"
+    mcp_tools:
+      - "governance_get_proposals"
+      - "governance_get_delegates"
+      - "governance_get_voter_concentration"
+      - "governance_get_admin_keys"
+      - "governance_detect_flash_loan_risk"
+    requires: []
+    produces:
+      analysis:
+        type: "markdown"
+        description: "Governance analysis with score"
+        required: true
+        score_field: "governance_score"
+
+  onchain-analyst:
+    phase: 2
+    persona: "agents/onchain-analyst.md"
+    model: "sonnet"
+    mcp_tools:
+      - "onchain_get_wallet_profile"
+      - "onchain_get_exchange_flows"
+      - "onchain_get_whale_transactions"
+      - "onchain_get_tvl_history"
+    requires: []
+    produces:
+      analysis:
+        type: "markdown"
+        description: "On-chain analysis with score"
+        required: true
+        score_field: "onchain_score"
+
+  maturation-scorer:
+    phase: 2
+    persona: "agents/maturation-scorer.md"
+    model: "sonnet"
+    mcp_tools:
+      - "research_get_audit_reports"
+      - "defi_get_protocol_metrics"
+      - "governance_get_admin_keys"
+    requires: []
+    produces:
+      analysis:
+        type: "markdown"
+        description: "Maturity scorecard"
+        required: true
+        score_field: "maturity_score"
+
+  commodity-analyst:
+    phase: 2
+    persona: "agents/commodity-analyst.md"
+    model: "sonnet"
+    mcp_tools:
+      - "commodity_get_spot_price"
+      - "commodity_get_futures_curve"
+      - "commodity_get_price_history"
+      - "commodity_get_volatility"
+      - "commodity_get_oracle_health"
+      - "commodity_compare_oracles"
+      - "commodity_get_reserve_attestation"
+      - "commodity_get_collateral_health"
+      - "commodity_get_token_premium"
+      - "commodity_validate_lc"
+    requires: []
+    conditional: "asset_type in ['commodity-backed', 'trade-finance', 'RWA']"
+    produces:
+      analysis:
+        type: "markdown"
+        description: "Commodity/trade finance analysis with score"
+        required: false
+        score_field: "commodity_score"
+
+  risk-officer:
+    phase: 3
+    persona: "agents/risk-officer.md"
+    model: "sonnet"
+    mcp_tools:
+      - "research_get_incident_history"
+      - "research_get_audit_reports"
+    requires:
+      - "tokenomics-analyst:analysis"
+      - "governance-analyst:analysis"
+      - "onchain-analyst:analysis"
+      - "maturation-scorer:analysis"
+      - "commodity-analyst:analysis"  # Optional - only present for commodity assets
+    requires_policy: "minimum"
+    requires_minimum: 3
+    produces:
+      risk_assessment:
+        type: "markdown"
+        description: "Five-dimensional risk assessment"
+        required: true
+        score_field: "composite_risk_score"
+
+  memo-writer:
+    phase: 4
+    persona: "agents/memo-writer.md"
+    model: "sonnet"
+    mcp_tools:
+      - "research_get_historical_memos"
+      - "research_get_comparables"
+    requires:
+      - "knowledge-agent:historical_context"
+      - "tokenomics-analyst:analysis"
+      - "governance-analyst:analysis"
+      - "onchain-analyst:analysis"
+      - "maturation-scorer:analysis"
+      - "commodity-analyst:analysis"  # Optional - only present for commodity assets
+      - "risk-officer:risk_assessment"
+    requires_policy: "all"
+    produces:
+      investment_memo:
+        type: "markdown"
+        description: "Structured investment memo"
+        required: true
+        artifact_path: "{protocol}-{date}-investment-memo.md"
+        archive_path: "memos/{protocol}-{date}-memo.md"
+
+  committee-chair:
+    phase: 5
+    persona: "agents/committee-chair.md"
+    model: "opus"
+    mcp_tools: []
+    requires:
+      - "knowledge-agent:historical_context"
+      - "risk-officer:risk_assessment"
+      - "memo-writer:investment_memo"
+    requires_policy: "all"
+    produces:
+      committee_decision:
+        type: "markdown"
+        description: "Final GO/NO-GO decision with conviction score"
+        required: true
+        artifact_path: "{protocol}-{date}-committee-decision.md"
+        archive_path: "decisions/{protocol}-{date}-decision.md"
+
+# Phase-level orchestration
+phases:
+  1:
+    name: "Intake & Scoping"
+    agents:
+      - "knowledge-agent"
+    execution: "sequential"
+    failure_policy: "require_all"
+
+  2:
+    name: "Parallel Analysis"
+    agents:
+      - "tokenomics-analyst"
+      - "governance-analyst"
+      - "onchain-analyst"
+      - "maturation-scorer"
+      - "commodity-analyst"  # Conditional - only for commodity-backed/trade finance assets
+    execution: "parallel"
+    failure_policy: "partial_success"
+    minimum_success: 3  # Remains 3 since commodity-analyst is optional
+    gate:
+      artifact: "{protocol}-{date}-analyst-reports.md"
+      description: "Combined analyst reports"
+
+  3:
+    name: "Risk Synthesis"
+    agents:
+      - "risk-officer"
+    execution: "sequential"
+    failure_policy: "require_all"
+    gate:
+      artifact: "{protocol}-{date}-risk-assessment.md"
+      description: "Risk assessment document"
+
+  4:
+    name: "Memo Generation"
+    agents:
+      - "memo-writer"
+    execution: "sequential"
+    failure_policy: "require_all"
+    gate:
+      artifact: "{protocol}-{date}-investment-memo.md"
+      description: "Investment memo"
+      archive: "memos/{protocol}-{date}-memo.md"
+
+  5:
+    name: "Committee Adjudication"
+    agents:
+      - "committee-chair"
+    execution: "sequential"
+    failure_policy: "require_all"
+    gate:
+      artifact: "{protocol}-{date}-committee-decision.md"
+      description: "Committee decision"
+      archive: "decisions/{protocol}-{date}-decision.md"

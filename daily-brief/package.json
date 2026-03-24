@@ -1,0 +1,15 @@
+{
+  "name": "conclave-daily-brief",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "brief": "npx tsx run.ts",
+    "fetch:portfolio": "npx tsx fetch-portfolio.ts",
+    "fetch:macro": "npx tsx fetch-macro.ts",
+    "analyze": "npx tsx analyze.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.7.0"
+  }
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "ticker": "ETH",
+    "name": "ETH Core Long",
+    "overall": 2,
+    "status": "green",
+    "factors": { "smart_contract": 1, "liquidity": 1, "concentration": 3, "market": 3, "governance": 1 },
+    "notes": "Base layer asset. Highest liquidity in DeFi. War macro risk only."
+  },
+  {
+    "ticker": "AAVE",
+    "name": "AAVE",
+    "overall": 3,
+    "status": "green",
+    "factors": { "smart_contract": 2, "liquidity": 2, "concentration": 3, "market": 3, "governance": 2 },
+    "notes": "Multiple audits, $500M+ TVL, 60% lending market share. V4 catalyst."
+  },
+  {
+    "ticker": "UNI",
+    "name": "UNI LP (V4)",
+    "overall": 3,
+    "status": "green",
+    "factors": { "smart_contract": 2, "liquidity": 2, "concentration": 2, "market": 3, "governance": 3 },
+    "notes": "Proven protocol. LP range risk managed. Fee switch pending."
+  },
+  {
+    "ticker": "PENDLE",
+    "name": "PENDLE",
+    "overall": 4,
+    "status": "amber",
+    "factors": { "smart_contract": 3, "liquidity": 4, "concentration": 3, "market": 4, "governance": 3 },
+    "notes": "Monopoly in yield trading. -84% ATH creates margin of safety. Liquidity thinner."
+  },
+  {
+    "ticker": "COW",
+    "name": "COW Protocol",
+    "overall": 4,
+    "status": "amber",
+    "factors": { "smart_contract": 3, "liquidity": 5, "concentration": 3, "market": 3, "governance": 4 },
+    "notes": "MEV protection moat. Lower liquidity on COW token itself."
+  },
+  {
+    "ticker": "HYPE",
+    "name": "HYPE (spot)",
+    "overall": 5,
+    "status": "amber",
+    "factors": { "smart_contract": 4, "liquidity": 3, "concentration": 4, "market": 5, "governance": 6 },
+    "notes": "$843M revenue strong. Newer chain, less battle-tested. Centralization risk."
+  },
+  {
+    "ticker": "wstETH",
+    "name": "wstETH",
+    "overall": 2,
+    "status": "green",
+    "factors": { "smart_contract": 2, "liquidity": 1, "concentration": 2, "market": 3, "governance": 2 },
+    "notes": "Lido dominant liquid staking. Deep liquidity. Proven over 2+ years."
+  },
+  {
+    "ticker": "PT-sUSDe",
+    "name": "Pendle PT-sUSDe",
+    "overall": 5,
+    "status": "amber",
+    "factors": { "smart_contract": 4, "liquidity": 5, "concentration": 4, "market": 4, "governance": 5 },
+    "notes": "Fixed yield exposure. Ethena depeg risk. Pendle PT mechanism complexity."
+  },
+  {
+    "ticker": "MORPHO",
+    "name": "MORPHO",
+    "overall": 5,
+    "status": "amber",
+    "factors": { "smart_contract": 3, "liquidity": 5, "concentration": 4, "market": 5, "governance": 5 },
+    "notes": "No fee capture yet. Apollo $90M + ETH Foundation backing. V2 fixed-rate potential."
+  },
+  {
+    "ticker": "HYPE-PERP",
+    "name": "HYPE Perp 3x",
+    "overall": 7,
+    "status": "red",
+    "factors": { "smart_contract": 5, "liquidity": 6, "concentration": 7, "market": 8, "governance": 6 },
+    "notes": "3x leverage on newer chain. Stop at $29. Max loss ~33% of perp capital."
+  },
+  {
+    "ticker": "ETH-PERP",
+    "name": "ETH Perp 3x",
+    "overall": 5,
+    "status": "amber",
+    "factors": { "smart_contract": 4, "liquidity": 3, "concentration": 5, "market": 6, "governance": 4 },
+    "notes": "3x leverage on base asset. Stop at $1,830. Well-defined risk."
+  },
+  {
+    "ticker": "SOL-PERP",
+    "name": "SOL Perp 2x",
+    "overall": 6,
+    "status": "amber",
+    "factors": { "smart_contract": 4, "liquidity": 4, "concentration": 5, "market": 7, "governance": 5 },
+    "notes": "2x leverage. Stop at $71. SOL more volatile than ETH."
+  },
+  {
+    "ticker": "AAVE-PERP",
+    "name": "AAVE Perp 2x",
+    "overall": 5,
+    "status": "amber",
+    "factors": { "smart_contract": 4, "liquidity": 4, "concentration": 5, "market": 6, "governance": 4 },
+    "notes": "2x leverage. Stop at $92. Aligns with spot thesis."
+  }
+]

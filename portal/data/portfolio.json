@@ -1,0 +1,104 @@
+{
+  "nav": 7203,
+  "updated_at": "2026-03-22",
+  "wallet": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
+  "positions": [
+    {
+      "name": "ETH Core Long",
+      "ticker": "ETH",
+      "allocation_usd": 2000,
+      "allocation_pct": 27.8,
+      "bucket": "Core",
+      "notes": "Base layer. Only L1 bet. No BTC/SOL spot."
+    },
+    {
+      "name": "UNI LP (V4)",
+      "ticker": "UNI",
+      "allocation_usd": 406,
+      "allocation_pct": 5.6,
+      "bucket": "Core",
+      "notes": "ETH/UNI 0.3% pool, in range, earning fees"
+    },
+    {
+      "name": "AAVE",
+      "ticker": "AAVE",
+      "allocation_usd": 900,
+      "allocation_pct": 12.5,
+      "bucket": "DeFi Value",
+      "notes": "3.2x P/F, $537M fees/yr, V4 catalyst, $1M/wk buyback"
+    },
+    {
+      "name": "HYPE (spot)",
+      "ticker": "HYPE",
+      "allocation_usd": 300,
+      "allocation_pct": 4.2,
+      "bucket": "DeFi Value",
+      "notes": "$843M rev, 97% buyback, HIP-3 RWA. On Hyperliquid."
+    },
+    {
+      "name": "PENDLE",
+      "ticker": "PENDLE",
+      "allocation_usd": 350,
+      "allocation_pct": 4.9,
+      "bucket": "DeFi Value",
+      "notes": "$5B TVL, zero competition, 80% buyback, -84% ATH"
+    },
+    {
+      "name": "COW",
+      "ticker": "COW",
+      "allocation_usd": 280,
+      "allocation_pct": 3.9,
+      "bucket": "DeFi Value",
+      "notes": "6.7x P/F, $188M+ surplus, MEV protection moat"
+    },
+    {
+      "name": "wstETH",
+      "ticker": "wstETH",
+      "allocation_usd": 600,
+      "allocation_pct": 8.3,
+      "bucket": "Yield",
+      "notes": "Lido staking ~3.5% APY"
+    },
+    {
+      "name": "Pendle PT-sUSDe",
+      "ticker": "PT-sUSDe",
+      "allocation_usd": 500,
+      "allocation_pct": 6.9,
+      "bucket": "Yield",
+      "notes": "8-14% fixed yield, replaces Aave USDC lending"
+    },
+    {
+      "name": "MORPHO",
+      "ticker": "MORPHO",
+      "allocation_usd": 400,
+      "allocation_pct": 5.6,
+      "bucket": "Emerging",
+      "notes": "Apollo $90M, ETH Foundation $19M, V2 fixed-rate"
+    },
+    {
+      "name": "Gas Reserve",
+      "ticker": "ETH",
+      "allocation_usd": 67,
+      "allocation_pct": 0.9,
+      "bucket": "Gas",
+      "notes": "~0.03 ETH for transactions"
+    }
+  ],
+  "perps": [
+    { "pair": "HYPE-PERP", "leverage": 3, "capital_usd": 450, "entry_1": 38.0, "entry_2": 33.0, "stop": 29.0 },
+    { "pair": "ETH-PERP", "leverage": 3, "capital_usd": 400, "entry_1": 2070, "entry_2": 1950, "stop": 1830 },
+    { "pair": "SOL-PERP", "leverage": 2, "capital_usd": 300, "entry_1": 88.0, "entry_2": 78.0, "stop": 71.0 },
+    { "pair": "AAVE-PERP", "leverage": 2, "capital_usd": 250, "entry_1": 112.0, "entry_2": 100.0, "stop": 92.0 }
+  ],
+  "total_perp_exposure": 3650,
+  "avg_leverage": 2.6,
+  "max_perp_loss": 465,
+  "allocation_buckets": [
+    { "name": "Core", "total_usd": 2406, "pct": 33.4, "color": "#3b82f6" },
+    { "name": "DeFi Value", "total_usd": 1830, "pct": 25.4, "color": "#8b5cf6" },
+    { "name": "Yield", "total_usd": 1100, "pct": 15.3, "color": "#10b981" },
+    { "name": "Emerging", "total_usd": 400, "pct": 5.6, "color": "#f59e0b" },
+    { "name": "Perps", "total_usd": 1400, "pct": 19.4, "color": "#ef4444" },
+    { "name": "Gas", "total_usd": 67, "pct": 0.9, "color": "#6b7280" }
+  ]
+}

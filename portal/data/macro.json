@@ -1,0 +1,119 @@
+{
+  "updated_at": "2026-03-22T12:00:00Z",
+  "polymarket": [
+    {
+      "id": "pm-1",
+      "question": "Will BTC reach $100K by June 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.42 },
+        { "name": "No", "probability": 0.58 }
+      ],
+      "volume_usd": 12500000,
+      "end_date": "2026-06-30",
+      "category": "Crypto",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-2",
+      "question": "Fed rate cut before July 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.65 },
+        { "name": "No", "probability": 0.35 }
+      ],
+      "volume_usd": 8700000,
+      "end_date": "2026-07-01",
+      "category": "Rates",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-3",
+      "question": "ETH ETF net inflows > $1B in Q2 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.38 },
+        { "name": "No", "probability": 0.62 }
+      ],
+      "volume_usd": 4200000,
+      "end_date": "2026-06-30",
+      "category": "Crypto",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-4",
+      "question": "US crypto regulation bill passes in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.51 },
+        { "name": "No", "probability": 0.49 }
+      ],
+      "volume_usd": 6300000,
+      "end_date": "2026-12-31",
+      "category": "Regulation",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-5",
+      "question": "Oil price above $90/barrel by Q3 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.33 },
+        { "name": "No", "probability": 0.67 }
+      ],
+      "volume_usd": 3100000,
+      "end_date": "2026-09-30",
+      "category": "Macro",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-6",
+      "question": "DeFi total TVL exceeds $200B in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.29 },
+        { "name": "No", "probability": 0.71 }
+      ],
+      "volume_usd": 2800000,
+      "end_date": "2026-12-31",
+      "category": "DeFi",
+      "url": "https://polymarket.com"
+    }
+  ],
+  "signals": [
+    {
+      "account": "Aave",
+      "handle": "@aaboronkov_Aave",
+      "text": "AAVE V4 deployment timeline confirmed for Q2 2026. Unified liquidity layer across 12 chains.",
+      "timestamp": "2026-03-21T14:30:00Z",
+      "category": "protocol",
+      "url": "https://x.com"
+    },
+    {
+      "account": "DefiLlama",
+      "handle": "@DefiLlama",
+      "text": "DeFi TVL hits $143B — highest since Nov 2021. Lending protocols leading the charge.",
+      "timestamp": "2026-03-20T09:15:00Z",
+      "category": "on-chain",
+      "url": "https://x.com"
+    },
+    {
+      "account": "Pentoshi",
+      "handle": "@Pentosh1",
+      "text": "ETH/BTC ratio forming a clear bottom. Last time this pattern played out, altseason followed within 6 weeks.",
+      "timestamp": "2026-03-19T22:45:00Z",
+      "category": "analyst",
+      "url": "https://x.com"
+    },
+    {
+      "account": "Morpho Labs",
+      "handle": "@MorphoLabs",
+      "text": "Morpho V2 live on mainnet. Fixed-rate lending now available. $2.1B in deposits migrated from V1.",
+      "timestamp": "2026-03-18T16:00:00Z",
+      "category": "protocol",
+      "url": "https://x.com"
+    },
+    {
+      "account": "The Block",
+      "handle": "@TheBlock__",
+      "text": "BlackRock BUIDL fund now $2.3B AUM. Tokenized treasuries becoming the base layer for DeFi yield.",
+      "timestamp": "2026-03-17T11:30:00Z",
+      "category": "macro",
+      "url": "https://x.com"
+    }
+  ]
+}

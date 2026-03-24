@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__perplexity__perplexity_research",
+      "Bash(npx tsc --noEmit)",
+      "Bash(node -e \"const yaml = require\\(''yaml''\\); const fs = require\\(''fs''\\); const content = fs.readFileSync\\(''/dev/stdin'', ''utf8''\\); const yamlContent = content.split\\(''---''\\)[1]; console.log\\(JSON.stringify\\(yaml.parse\\(yamlContent\\), null, 2\\)\\);\")",
+      "Bash(node -e \":*)",
+      "Bash(find servers/*/tests -name \"*.test.ts\" -not -path \"*/node_modules/*\")",
+      "Read(//Users/jupyter/Documents/coding/conclave/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://api.etherscan.io/api?module=account&action=balance&address=0x0000000000000000000000000000000000000000&tag=latest&apikey=1T9IADEC3EW5CJK7AVBXJQGZRM86WMF333\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" \"https://api.dune.com/api/v1/query/1/results\")",
+      "Bash(curl -s -X POST \"https://eth-mainnet.g.alchemy.com/v2/phNngFA12FPYlKIm6DLnn\" -H \"Content-Type: application/json\" -d '{\"\"jsonrpc\"\":\"\"2.0\"\",\"\"method\"\":\"\"eth_blockNumber\"\",\"\"params\"\":[],\"\"id\"\":1}')",
+      "Bash(curl -s \"https://api.perplexity.ai/chat/completions\" -H \"Authorization: Bearer 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\" -H \"Content-Type: application/json\" -d '{\"\"model\"\":\"\"sonar\"\",\"\"messages\"\":[{\"\"role\"\":\"\"user\"\",\"\"content\"\":\"\"hi\"\"}]}')",
+      "Bash(curl -s -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" \"https://api.dune.com/api/v1/query/3297025/results?limit=1\")",
+      "Bash(curl -s -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" \"https://api.dune.com/api/v1/table/dune/ethereum.blocks/preview\")",
+      "Bash(curl -s -w \"\\\\nHTTP: %{http_code}\" -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" \"https://api.dune.com/api/v1/auth/session\")",
+      "Bash(curl -s -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" \"https://api.dune.com/api/v1/query/2030584/results?limit=1\")",
+      "Bash(curl -s -X POST -H \"X-Dune-API-Key: kNNZ4qzyy85h49yFBLixGtHAUPXeUOdv\" -H \"Content-Type: application/json\" \"https://api.dune.com/api/v1/query/2030584/execute\")"
+    ],
+    "additionalDirectories": [
+      "/Users/jupiter/Documents/coding/conclave/.vscode"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-03T00:00:00Z",
+  "documentCount": 4,
+  "documents": [
+    {
+      "id": "learning-defi-patterns",
+      "type": "learning",
+      "path": "learnings/defi-patterns.md",
+      "title": "DeFi Investment Patterns",
+      "tags": ["DeFi", "patterns", "success-factors", "warnings"],
+      "sector": "DeFi"
+    },
+    {
+      "id": "learning-red-flags",
+      "type": "learning",
+      "path": "learnings/red-flags.md",
+      "title": "Historical Red Flags Catalog",
+      "tags": ["red-flags", "risk", "security", "governance"],
+      "sector": "all"
+    },
+    {
+      "id": "decision-aave-2026-03-03",
+      "type": "decision",
+      "protocol": "Aave",
+      "date": "2026-03-03",
+      "path": "decisions/aave-decision.md",
+      "title": "Aave - Conditional GO",
+      "tags": ["DeFi", "Lending", "conditional"],
+      "sector": "DeFi",
+      "keywords": ["lending", "tvl", "bgd-labs", "governance", "security", "buyback"]
+    },
+    {
+      "id": "decision-uniswap-2026-03-03",
+      "type": "decision",
+      "protocol": "Uniswap",
+      "date": "2026-03-03",
+      "path": "decisions/uniswap-2026-03-03-decision.md",
+      "title": "Uniswap - Conditional GO",
+      "tags": ["DeFi", "DEX", "AMM", "conditional"],
+      "sector": "DeFi",
+      "keywords": ["dex", "amm", "fee-switch", "governance", "wells-notice", "liquidity"]
+    }
+  ]
+}
