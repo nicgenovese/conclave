@@ -1,6 +1,7 @@
 import {
   LayoutDashboard,
   FileText,
+  Newspaper,
   Globe,
   Shield,
   Settings,
@@ -9,6 +10,7 @@ import {
 export const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/research", label: "Research", icon: FileText },
+  { href: "/briefs", label: "Briefs", icon: Newspaper },
   { href: "/macro", label: "Macro", icon: Globe },
   { href: "/risk", label: "Risk", icon: Shield },
 ] as const;

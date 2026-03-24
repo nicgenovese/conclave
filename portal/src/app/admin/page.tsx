@@ -55,6 +55,13 @@ export default function AdminPage() {
 
   const isAdmin = (session?.user as { role?: string } | undefined)?.role === "admin";
 
+  // Hard redirect non-admins to dashboard
+  useEffect(() => {
+    if (session && !isAdmin) {
+      window.location.href = "/";
+    }
+  }, [session, isAdmin]);
+
   const fetchWhitelist = useCallback(async () => {
     try {
       const res = await fetch("/api/admin/whitelist");

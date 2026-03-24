@@ -5,11 +5,14 @@ import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 import { NAV_ITEMS, ADMIN_NAV } from "@/lib/constants";
+import { isAdmin } from "@/lib/roles";
 import { cn } from "@/lib/utils";
 
 export function Sidebar() {
   const pathname = usePathname();
   const { data: session } = useSession();
+
+  const userRole = (session?.user as { role?: string } | undefined)?.role;
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -57,7 +60,7 @@ export function Sidebar() {
         })}
 
         {/* Admin nav - only for admin users */}
-        {session?.user?.role === "admin" && (
+        {isAdmin(userRole) && (
           <>
             <div className="my-3 border-t border-border" />
             {(() => {

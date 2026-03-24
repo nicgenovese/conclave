@@ -152,6 +152,44 @@ export function getMemo(
 }
 
 // ============================================
+// Briefs — daily market briefs
+// ============================================
+export function getBriefs(): { date: string; preview: string }[] {
+  const briefsDir = path.join(DATA_DIR, "briefs");
+  try {
+    if (!fs.existsSync(briefsDir)) return [];
+
+    const files = fs.readdirSync(briefsDir).filter((f) => f.endsWith(".md"));
+
+    return files
+      .map((file) => {
+        const date = file.replace(/\.md$/, "");
+        const { content } = safeReadFile(path.join(briefsDir, file));
+        // Strip leading markdown headings for the preview
+        const lines = content.split("\n").filter((l) => l.trim());
+        const preview = lines
+          .map((l) => l.replace(/^#+\s*/, ""))
+          .join(" ")
+          .slice(0, 200);
+        return { date, preview };
+      })
+      .sort((a, b) => b.date.localeCompare(a.date));
+  } catch (err) {
+    console.error("[data] Error reading briefs directory:", err);
+    return [];
+  }
+}
+
+export function getBrief(date: string): string | null {
+  // Sanitize to prevent path traversal
+  const safe = date.replace(/[^a-zA-Z0-9_-]/g, "");
+  const briefPath = path.join(DATA_DIR, "briefs", `${safe}.md`);
+  const { content, error } = safeReadFile(briefPath);
+  if (error || !content) return null;
+  return content;
+}
+
+// ============================================
 // Health check — reports data layer status
 // ============================================
 export interface DataHealth {
