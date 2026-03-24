@@ -30,3 +30,9 @@ dist/
 portal/.next/
 portal/out/
 portal/node_modules/
+
+# === SENSITIVE — never commit ===
+portal/data/whitelist.json
+portal/.env.local
+portal/.vercel/
+secrets/

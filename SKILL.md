@@ -95,13 +95,19 @@ The meta.json should contain:
 }
 ```
 
-### 2. Daily Brief (Cheap Mode)
-Triggered by: "daily brief", "brief", "morning update"
-Cost: $0 (no AI, just data + computation)
+### 2. Daily Brief (Curated Intelligence)
+Triggered by: "daily brief", "brief", "morning update", "market update"
+Cost: ~$0.12 per run (data fetch $0, web search + Sonnet ~$0.12)
 
-Runs: `cd ~/conclave/daily-brief && npx tsx run.ts`
+**This is a separate skill.** Read the full instructions at `~/conclave/daily-brief/SKILL.md`.
 
-Updates portal data files and generates a markdown brief at `portal/data/briefs/YYYY-MM-DD.md`.
+The daily brief:
+1. Fetches live data (CoinGecko, DeFi Llama, Polymarket — all free)
+2. Searches for today's top news
+3. Curates Polymarket across 4 categories: Crypto, Macro/Rates, Commodities, Equity
+4. Generates a 1-2 page actionable brief
+5. Runs computational alerts (stop distances, concentration, price moves)
+6. Saves to `portal/data/briefs/YYYY-MM-DD.md`
 
 ## Fund Context
 Read portfolio context from: `~/conclave/portal/data/portfolio.json`
