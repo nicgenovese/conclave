@@ -4,9 +4,17 @@ import { authOptions } from "@/lib/auth";
 import { getRiskScores } from "@/lib/data";
 
 export async function GET() {
-  const session = await getServerSession(authOptions);
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const riskScores = await getRiskScores();
-  return NextResponse.json(riskScores);
+    const riskScores = getRiskScores();
+    return NextResponse.json(riskScores);
+  } catch (err) {
+    console.error("[api/risk] Error:", err);
+    return NextResponse.json(
+      { error: "Internal server error", details: err instanceof Error ? err.message : "Unknown" },
+      { status: 500 }
+    );
+  }
 }

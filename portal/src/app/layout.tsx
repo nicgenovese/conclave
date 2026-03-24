@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/components/layout/providers";
 import { Sidebar } from "@/components/layout/sidebar";
+import { MobileHeader } from "@/components/layout/mobile-header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,9 +34,12 @@ export default function RootLayout({
         <Providers>
           <div className="flex min-h-screen">
             <Sidebar />
-            <main className="flex-1 ml-60 overflow-y-auto p-8">
-              {children}
-            </main>
+            <div className="flex-1 md:ml-60 flex flex-col min-h-screen">
+              <MobileHeader />
+              <main className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8">
+                {children}
+              </main>
+            </div>
           </div>
         </Providers>
       </body>

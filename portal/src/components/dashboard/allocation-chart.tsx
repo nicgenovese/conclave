@@ -30,13 +30,13 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
   });
 
   return (
-    <div className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-6">
-      <h2 className="text-sm text-[hsl(215,20%,55%)] uppercase tracking-wider mb-4">
+    <div className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4 sm:p-6">
+      <h2 className="text-xs sm:text-sm text-[hsl(215,20%,55%)] uppercase tracking-wider mb-4">
         Allocation
       </h2>
 
       <div className="flex justify-center">
-        <svg viewBox="0 0 200 200" width="200" height="200">
+        <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-[200px] sm:h-[200px]">
           {slices.map((slice) => (
             <circle
               key={slice.name}
@@ -74,13 +74,13 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
 
       <div className="grid grid-cols-2 gap-2 mt-4">
         {buckets.map((bucket) => (
-          <div key={bucket.name} className="flex items-center gap-2 text-sm">
+          <div key={bucket.name} className="flex items-center gap-2 text-xs sm:text-sm">
             <span
               className="inline-block w-3 h-3 rounded-full flex-shrink-0"
               style={{ backgroundColor: bucket.color }}
             />
-            <span className="text-[hsl(215,20%,55%)]">{bucket.name}</span>
-            <span className="font-mono text-white ml-auto">
+            <span className="text-[hsl(215,20%,55%)] truncate">{bucket.name}</span>
+            <span className="font-mono text-white ml-auto flex-shrink-0">
               {bucket.pct.toFixed(1)}%
             </span>
           </div>

@@ -2,6 +2,26 @@ import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { isWhitelisted, getUserRole } from "./db";
 
+// ============================================
+// Validate required env vars at module load
+// ============================================
+const REQUIRED_AUTH_VARS = [
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET",
+  "NEXTAUTH_SECRET",
+] as const;
+
+for (const varName of REQUIRED_AUTH_VARS) {
+  if (!process.env[varName]) {
+    console.warn(
+      `[AUTH] WARNING: ${varName} is not set. Auth will not work.`
+    );
+  }
+}
+
+// ============================================
+// Type augmentation
+// ============================================
 declare module "next-auth" {
   interface Session {
     user: {
@@ -19,6 +39,9 @@ declare module "next-auth/jwt" {
   }
 }
 
+// ============================================
+// Auth config
+// ============================================
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({

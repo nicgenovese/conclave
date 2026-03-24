@@ -4,9 +4,17 @@ import { authOptions } from "@/lib/auth";
 import { getMemos } from "@/lib/data";
 
 export async function GET() {
-  const session = await getServerSession(authOptions);
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const memos = await getMemos();
-  return NextResponse.json(memos);
+    const memos = getMemos();
+    return NextResponse.json(memos);
+  } catch (err) {
+    console.error("[api/memos] Error:", err);
+    return NextResponse.json(
+      { error: "Internal server error", details: err instanceof Error ? err.message : "Unknown" },
+      { status: 500 }
+    );
+  }
 }

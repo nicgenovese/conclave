@@ -25,7 +25,7 @@ export function Sidebar() {
     : session?.user?.email?.[0]?.toUpperCase() ?? "?";
 
   return (
-    <aside className="fixed left-0 top-0 z-40 flex h-screen w-60 flex-col bg-card border-r border-border">
+    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-60 flex-col bg-card border-r border-border md:flex">
       {/* Logo */}
       <div className="px-6 py-6">
         <h1 className="text-lg font-bold tracking-widest text-primary">
@@ -85,17 +85,9 @@ export function Sidebar() {
       {/* User section */}
       <div className="border-t border-border px-4 py-4">
         <div className="flex items-center gap-3">
-          {session?.user?.image ? (
-            <img
-              src={session.user.image}
-              alt="Avatar"
-              className="h-8 w-8 rounded-full"
-            />
-          ) : (
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-medium text-foreground">
-              {userInitials}
-            </div>
-          )}
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-medium text-foreground flex-shrink-0">
+            {userInitials}
+          </div>
           <div className="flex-1 min-w-0">
             <p className="truncate text-sm font-medium text-foreground">
               {session?.user?.name ?? "User"}

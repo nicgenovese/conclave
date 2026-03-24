@@ -4,70 +4,227 @@ import { Portfolio, RiskScore, MacroData, MemoMeta } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
+// ============================================
+// Safe JSON reader — never crashes, always logs
+// ============================================
+function safeReadJSON<T>(filePath: string, fallback: T): { data: T; error: string | null } {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return { data: fallback, error: `File not found: ${filePath}` };
+    }
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(raw) as T;
+    return { data: parsed, error: null };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`[data] Failed to read ${filePath}: ${msg}`);
+    return { data: fallback, error: msg };
+  }
+}
+
+function safeReadFile(filePath: string): { content: string; error: string | null } {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return { content: "", error: `File not found: ${filePath}` };
+    }
+    const content = fs.readFileSync(filePath, "utf-8");
+    return { content, error: null };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`[data] Failed to read ${filePath}: ${msg}`);
+    return { content: "", error: msg };
+  }
+}
+
+// ============================================
+// Default fallbacks — app renders even with no data
+// ============================================
+const EMPTY_PORTFOLIO: Portfolio = {
+  nav: 0,
+  updated_at: "N/A",
+  wallet: "",
+  positions: [],
+  perps: [],
+  total_perp_exposure: 0,
+  avg_leverage: 0,
+  max_perp_loss: 0,
+  allocation_buckets: [],
+};
+
+const EMPTY_MACRO: MacroData = {
+  updated_at: "N/A",
+  polymarket: [],
+  signals: [],
+};
+
+// ============================================
+// Data access functions — always return valid data
+// ============================================
 export function getPortfolio(): Portfolio {
-  const raw = fs.readFileSync(path.join(DATA_DIR, "portfolio.json"), "utf-8");
-  return JSON.parse(raw);
+  const { data } = safeReadJSON<Portfolio>(
+    path.join(DATA_DIR, "portfolio.json"),
+    EMPTY_PORTFOLIO
+  );
+  return data;
 }
 
 export function getRiskScores(): RiskScore[] {
-  const raw = fs.readFileSync(path.join(DATA_DIR, "risk.json"), "utf-8");
-  return JSON.parse(raw);
+  const { data } = safeReadJSON<RiskScore[]>(
+    path.join(DATA_DIR, "risk.json"),
+    []
+  );
+  return data;
 }
 
 export function getMacroData(): MacroData {
-  const raw = fs.readFileSync(path.join(DATA_DIR, "macro.json"), "utf-8");
-  return JSON.parse(raw);
+  const { data } = safeReadJSON<MacroData>(
+    path.join(DATA_DIR, "macro.json"),
+    EMPTY_MACRO
+  );
+  return data;
 }
 
 export function getMemos(): MemoMeta[] {
   const memosDir = path.join(DATA_DIR, "memos");
-  if (!fs.existsSync(memosDir)) return [];
+  try {
+    if (!fs.existsSync(memosDir)) return [];
 
-  const dirs = fs.readdirSync(memosDir).filter((d) => {
-    const memoPath = path.join(memosDir, d, "memo.md");
-    return fs.existsSync(memoPath);
-  });
+    const dirs = fs.readdirSync(memosDir).filter((d) => {
+      try {
+        return fs.existsSync(path.join(memosDir, d, "memo.md"));
+      } catch {
+        return false;
+      }
+    });
 
-  return dirs.map((slug) => {
-    const metaPath = path.join(memosDir, slug, "meta.json");
-    if (fs.existsSync(metaPath)) {
-      const meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"));
-      return { slug, ...meta };
-    }
+    return dirs
+      .map((slug) => {
+        try {
+          const metaPath = path.join(memosDir, slug, "meta.json");
+          if (fs.existsSync(metaPath)) {
+            const { data } = safeReadJSON<Record<string, unknown>>(metaPath, {});
+            return { slug, ...data } as MemoMeta;
+          }
 
-    // Fallback: extract from directory name
-    const ticker = slug.replace(/^demo_/, "").toUpperCase();
-    const memoContent = fs.readFileSync(
-      path.join(memosDir, slug, "memo.md"),
-      "utf-8"
-    );
-    const firstLine = memoContent.split("\n").find((l) => l.trim()) || "";
+          // Fallback: extract from directory name
+          const ticker = slug.replace(/^demo_/, "").toUpperCase();
+          const { content } = safeReadFile(path.join(memosDir, slug, "memo.md"));
+          const firstLine = content.split("\n").find((l) => l.trim()) || "";
 
-    return {
-      slug,
-      ticker,
-      date: "2026-03-22",
-      decision: "MONITOR" as const,
-      conviction: 0,
-      summary: firstLine.replace(/^#+\s*/, "").slice(0, 120),
-    };
-  });
+          return {
+            slug,
+            ticker,
+            date: "Unknown",
+            decision: "MONITOR" as const,
+            conviction: 0,
+            summary: firstLine.replace(/^#+\s*/, "").slice(0, 120),
+          };
+        } catch (err) {
+          console.error(`[data] Error reading memo ${slug}:`, err);
+          return null;
+        }
+      })
+      .filter((m): m is MemoMeta => m !== null);
+  } catch (err) {
+    console.error("[data] Error reading memos directory:", err);
+    return [];
+  }
 }
 
-export function getMemo(slug: string): { content: string; meta: MemoMeta } | null {
+export function getMemo(
+  slug: string
+): { content: string; meta: MemoMeta } | null {
   const memoPath = path.join(DATA_DIR, "memos", slug, "memo.md");
-  if (!fs.existsSync(memoPath)) return null;
+  const { content, error } = safeReadFile(memoPath);
+  if (error || !content) return null;
 
-  const content = fs.readFileSync(memoPath, "utf-8");
   const metas = getMemos();
   const meta = metas.find((m) => m.slug === slug) || {
     slug,
     ticker: slug.replace(/^demo_/, "").toUpperCase(),
-    date: "2026-03-22",
+    date: "Unknown",
     decision: "MONITOR" as const,
     conviction: 0,
     summary: "",
   };
 
   return { content, meta };
+}
+
+// ============================================
+// Health check — reports data layer status
+// ============================================
+export interface DataHealth {
+  portfolio: { ok: boolean; error: string | null; updatedAt: string };
+  risk: { ok: boolean; error: string | null; count: number };
+  macro: { ok: boolean; error: string | null; updatedAt: string; eventCount: number };
+  memos: { ok: boolean; error: string | null; count: number };
+  briefs: { ok: boolean; error: string | null; latest: string | null };
+}
+
+export function getDataHealth(): DataHealth {
+  const portfolioResult = safeReadJSON<Portfolio>(
+    path.join(DATA_DIR, "portfolio.json"),
+    EMPTY_PORTFOLIO
+  );
+  const riskResult = safeReadJSON<RiskScore[]>(
+    path.join(DATA_DIR, "risk.json"),
+    []
+  );
+  const macroResult = safeReadJSON<MacroData>(
+    path.join(DATA_DIR, "macro.json"),
+    EMPTY_MACRO
+  );
+
+  let memoCount = 0;
+  let memoError: string | null = null;
+  try {
+    memoCount = getMemos().length;
+  } catch (err) {
+    memoError = err instanceof Error ? err.message : String(err);
+  }
+
+  let latestBrief: string | null = null;
+  let briefError: string | null = null;
+  try {
+    const briefsDir = path.join(DATA_DIR, "briefs");
+    if (fs.existsSync(briefsDir)) {
+      const files = fs.readdirSync(briefsDir)
+        .filter((f) => f.endsWith(".md"))
+        .sort()
+        .reverse();
+      latestBrief = files[0] || null;
+    }
+  } catch (err) {
+    briefError = err instanceof Error ? err.message : String(err);
+  }
+
+  return {
+    portfolio: {
+      ok: !portfolioResult.error,
+      error: portfolioResult.error,
+      updatedAt: portfolioResult.data.updated_at,
+    },
+    risk: {
+      ok: !riskResult.error,
+      error: riskResult.error,
+      count: riskResult.data.length,
+    },
+    macro: {
+      ok: !macroResult.error,
+      error: macroResult.error,
+      updatedAt: macroResult.data.updated_at,
+      eventCount: macroResult.data.polymarket.length,
+    },
+    memos: {
+      ok: !memoError,
+      error: memoError,
+      count: memoCount,
+    },
+    briefs: {
+      ok: !briefError,
+      error: briefError,
+      latest: latestBrief,
+    },
+  };
 }
