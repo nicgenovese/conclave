@@ -1,182 +1,164 @@
 # Conclave
 
-AI investment research committee for Moria Capital. Conclave orchestrates specialized subagents inside Claude Code to produce institutional-grade investment memos for crypto assets.
+**Moria Capital's AI investment research committee.** Institutional-grade DeFi due diligence powered by adversarial AI agents. Every number from APIs — zero hallucination.
 
-All investment decisions remain with the human investment officer. Conclave is advisory only.
+> *"The fund is the product. The infrastructure is the moat."*
 
-## Two Modes
+---
 
-| Mode | Trigger | Cost | What it does |
-|---|---|---|---|
-| **Research Memo Run** | `analyze AAVE`, `deep dive UNI` | ~$2-5 | Full 4-phase deep dive producing a signed investment memo |
-| **Daily Brief** | `daily brief` | $0 | Data refresh, portfolio snapshot, market alerts |
+## What It Does
 
-## Quick Start
+| Mode | When | Cost | Output |
+|------|------|------|--------|
+| **Research Memo** | Weekly / on-demand | ~$2-5 | 10-15 page deep dive with BUY/HOLD/PASS/SELL verdict |
+| **Daily Brief** | Every 12h (automated) | $0 | Portfolio snapshot, alerts, Polymarket intelligence, risk flags |
+| **Investor Portal** | Always on | Free | LP dashboard — what investors see |
 
-### Research Memo Run
+## Research Memo Run
 
-From Claude Code:
+A 4-phase adversarial pipeline. Every agent challenges the previous one.
 
 ```
-Research: analyze AAVE
-Conclave: deep dive UNISWAP
-Evaluate COMP for a $200K position
+  Data Collection (free APIs)
+        │
+        ▼
+  Research Analyst → builds the bull case
+        │
+        ├──► Risk Officer → 6-dimension risk scorecard (can REJECT)
+        │
+        └──► Devil's Advocate → must find 3+ structural flaws (can KILL)
+                │
+                ▼
+        Committee Chair → final verdict + conviction score
 ```
 
-Or via the shell helper:
-
+**Usage:**
 ```bash
-cd ~/conclave
+# From Claude Code
+Conclave: analyze AAVE
+Research: deep dive PENDLE
+
+# Or via shell
 ./scripts/run-memo.sh AAVE
 ```
 
-The shell script runs Phase 1 (data collection) and then prompts you to launch Claude Code for Phases 2-4 (analysis, risk, decision).
+**Output:** Investment memo → `archive/memos/` → `portal/data/memos/` → visible to LPs.
 
-### Daily Brief
+## Daily Brief
 
-From Claude Code:
+Smart portfolio monitoring — zero AI cost. Fetches live data from free APIs, then runs computational analysis:
 
-```
-daily brief
-morning update
-```
-
-Or directly:
+- **Portfolio prices** from CoinGecko (free, no key)
+- **Protocol TVL** from DeFi Llama (free, no key)
+- **Prediction markets** from Polymarket Gamma API (free, no key)
+- **Smart alerts**: price moves >5%, concentration warnings, perps near stops, risk flags
+- **Macro intelligence**: Fed rate odds, crypto regulation, DeFi-relevant events
+- **Insights**: auto-generated commentary on how macro events affect the portfolio
 
 ```bash
-cd ~/conclave/daily-brief && npx tsx run.ts
+cd daily-brief && npm install && npm run brief
 ```
 
-## Architecture
+**Output:** `portal/data/briefs/YYYY-MM-DD.md` + updated JSON data files.
 
-```
-User prompt ("analyze AAVE")
-        |
-        v
-  [SKILL.md orchestrator]
-        |
-        v
-  Phase 1: Data Collection
-  - fetch_protocol_data.py  (DeFi Llama + CoinGecko)
-  - fetch_wallet_data.py    (on-chain flows)
-  - portfolio.json          (current positions)
-  - risk.json               (existing risk scores)
-  - archive/memos/          (prior decisions)
-        |
-        v
-  Phase 2: Research Analyst
-  - Persona: tokenomics-analyst.md
-  - Produces: investment thesis, valuation, supply/demand
-        |
-        v
-  Phase 3: Risk + Adversarial (parallel)
-  +--------------------------+---------------------------+
-  | Risk Officer             | Devil's Advocate          |
-  | - 6-dim risk scorecard   | - 3+ structural flaws    |
-  | - Composite score 0-100  | - Bear case narrative     |
-  | - Can REJECT if >70      | - Can KILL fatal flaws   |
-  +--------------------------+---------------------------+
-        |
-        v
-  Phase 4: Committee Chair (Opus)
-  - Final verdict: BUY / HOLD / PASS / SELL
-  - Conviction score 1-10
-  - Position sizing, entry strategy, monitoring triggers
-        |
-        v
-  Output: memo.md + meta.json
-  -> output/          (working copy)
-  -> archive/memos/   (permanent)
-  -> portal/data/memos/{ticker}/  (portal display)
-```
+## Investor Portal
+
+Next.js app deployed on Vercel. LP-facing, read-only, institutional quality.
+
+| Page | What LPs See |
+|------|-------------|
+| **Dashboard** | NAV, positions, allocation chart, perps monitor |
+| **Research** | Investment memos from committee runs |
+| **Macro** | Polymarket predictions, signal feed, macro intelligence |
+| **Risk** | Traffic light risk matrix per position (green/amber/red) |
+| **Admin** | Whitelist management, system health, API key status |
+
+**Access control:** Google OAuth + email whitelist. Only approved emails can sign in.
+**Health monitoring:** `/api/health` endpoint shows status of every data source and env var.
 
 ## Project Structure
 
 ```
 conclave/
-├── SKILL.md                 # Claude Code skill definition (orchestrator)
-├── skill.json               # Skill metadata
-├── workflow.yaml             # Legacy 5-phase dependency graph
-├── agents/                   # Subagent personas
-│   ├── tokenomics-analyst.md
-│   ├── risk-officer.md
-│   ├── committee-chair.md
-│   ├── governance-analyst.md
-│   ├── onchain-analyst.md
-│   ├── commodity-analyst.md
-│   ├── maturation-scorer.md
-│   ├── memo-writer.md
-│   └── knowledge-agent.md
-├── templates/                # Output templates
-│   ├── investment-memo.md
-│   ├── risk-assessment.md
-│   ├── risk-scorecard.md
-│   ├── analyst-reports.md
-│   └── decision-record.md
-├── scripts/
-│   ├── run-memo.sh           # Shell helper for memo runs
-│   └── sync-memos.sh         # Sync memos to portal
-├── archive/                  # Permanent records
-│   ├── memos/
-│   ├── decisions/
-│   ├── learnings/
-│   └── metadata/
-├── output/                   # Current run working files
-├── portal/                   # Next.js portal (Vercel)
-│   └── data/
-│       ├── memos/{ticker}/   # Per-ticker memo + meta.json
-│       ├── briefs/           # Daily briefs
-│       ├── portfolio.json
-│       └── risk.json
-├── daily-brief/              # Daily brief runner
-├── servers/                  # MCP server implementations
-│   ├── defi-data/
-│   ├── governance/
-│   ├── onchain/
-│   └── research/
-└── docs/
+├── SKILL.md              # Claude Code skill — orchestrates everything
+├── agents/               # 9 AI agent personas
+│   ├── tokenomics-analyst.md    # Bull case builder
+│   ├── risk-officer.md          # 6-dim risk scoring, can REJECT
+│   ├── committee-chair.md       # Final verdict (Opus-level)
+│   ├── governance-analyst.md    # Voting, delegation, centralization
+│   ├── onchain-analyst.md       # Wallet flows, whale tracking
+│   ├── commodity-analyst.md     # RWA / trade finance
+│   ├── maturation-scorer.md     # Protocol maturity
+│   ├── memo-writer.md           # Narrative synthesis
+│   └── knowledge-agent.md       # Historical context
+│
+├── daily-brief/          # $0 daily data refresh
+│   ├── run.ts                   # Orchestrator (fetch → analyze → brief)
+│   ├── fetch-portfolio.ts       # CoinGecko + DeFi Llama
+│   ├── fetch-macro.ts           # Polymarket Gamma API
+│   └── analyze.ts               # Smart alerts + insights engine
+│
+├── portal/               # Next.js investor portal
+│   ├── src/app/                 # 6 pages + 8 API routes
+│   ├── src/lib/                 # Auth, data layer, types
+│   └── data/                    # JSON files (updated by daily-brief)
+│
+├── servers/              # MCP servers for deep analysis
+│   ├── defi-data/               # 14 tools (DeFi Llama, CoinGecko, TheGraph)
+│   ├── governance/              # 12 tools (Snapshot, Tally, Karma)
+│   ├── onchain/                 # 4 tools (Dune, Etherscan)
+│   ├── research/                # 6 tools (Archive, memo search)
+│   └── commodity-oracle/        # 10 tools (Pyth, Chainlink, Metals)
+│
+├── archive/              # Permanent records
+│   ├── memos/                   # Investment memos
+│   ├── decisions/               # Committee decisions
+│   └── learnings/               # Sector patterns + red flags
+│
+├── templates/            # Output templates
+├── scripts/              # Helpers (sync-memos.sh, run-memo.sh)
+└── workflow.yaml         # Agent dependency graph
 ```
 
-## Agents
+## API Keys
 
-| Agent | Role | Used In |
-|---|---|---|
-| **Tokenomics Analyst** | Token supply, emissions, vesting, staking, liquidity analysis | Phase 2 |
-| **Risk Officer** | 6-dimension risk scorecard, composite score, rejection authority | Phase 3 |
-| **Devil's Advocate** | Adversarial review, bear case, fatal flaw detection | Phase 3 |
-| **Committee Chair** | Final verdict, conviction scoring, position sizing (Opus) | Phase 4 |
-| Governance Analyst | Proposals, voter concentration, governance attack surface | Extended runs |
-| On-Chain Analyst | Wallet flows, whale movements, TVL migration | Extended runs |
-| Commodity Analyst | Reserve verification, custodian diligence, oracle reliability | Commodity assets |
-| Maturation Scorer | Protocol maturity across security, decentralization, adoption | Extended runs |
-| Knowledge Agent | Historical context retrieval from archive | Phase 1 |
+The portal runs without any API keys. All data comes from JSON files updated by the daily brief.
 
-Bolded agents are used in every standard memo run. The others are available for extended or specialized analyses.
+| Key | Required For | Where to Get |
+|-----|-------------|-------------|
+| `GOOGLE_CLIENT_ID` | Portal login | [Google Cloud Console](https://console.cloud.google.com/apis/credentials) |
+| `GOOGLE_CLIENT_SECRET` | Portal login | Same as above |
+| `NEXTAUTH_SECRET` | Session encryption | `openssl rand -base64 32` |
+| `ETHERSCAN_API_KEY` | On-chain data (memo runs) | [etherscan.io/myapikey](https://etherscan.io/myapikey) |
+| `COINGECKO_API_KEY` | Higher rate limits | [coingecko.com/api](https://www.coingecko.com/en/api) |
+| `X_BEARER_TOKEN` | Social signal feed | [developer.twitter.com](https://developer.twitter.com) |
+| `DUNE_API_KEY` | Wallet profiling (memo runs) | [dune.com/settings/api](https://dune.com/settings/api) |
+
+Only the first 3 are needed for the portal. The rest enhance memo runs.
 
 ## Valuation Framework
 
-The committee chair applies these rules (from `agents/committee-chair.md`):
+Hard-coded rules the committee chair enforces:
 
-- **P/F < 10x** = Strong buy territory
-- **P/F 10-20x** = Fair value, need catalysts
-- **P/F > 20x** = Overvalued unless exceptional growth
+- **P/F < 10x** → Strong buy territory for proven protocols
+- **P/F 10-20x** → Fair value, need catalysts
+- **P/F > 20x** → Overvalued unless exceptional growth
+- **Revenue margin > 50%** → Strong fee capture
 - **No single position > 30% of NAV**
 - **Max 40% in one category**
-- **Conviction < 6 = PASS** (do not buy)
+- **Conviction < 6 → PASS** (do not buy)
 
-## Output Format
+## Zero Hallucination Policy
 
-Each memo run produces:
+Every data point in a Conclave memo comes from a deterministic API call:
+- Prices → CoinGecko API
+- TVL, fees, revenue → DeFi Llama API
+- Wallet balances → Etherscan API
+- Prediction markets → Polymarket Gamma API
+- On-chain analytics → Dune Analytics API
 
-- `{ticker}-{date}-memo.md` -- Full investment memo
-- `{ticker}-{date}-analysis.md` -- Phase 2 analyst report
-- `{ticker}-{date}-risk.md` -- Phase 3 risk scorecard
-- `{ticker}-{date}-bear.md` -- Phase 3 bear case
-- `meta.json` -- Machine-readable summary for the portal
+Agents are instructed: *"If you don't have the data, say so. Never invent a number."*
 
-The portal at `portal/` reads from `portal/data/memos/{ticker}/` to display memos in the web UI.
+---
 
-## Documentation
-
-- [Product Requirements (PRD)](Conclave_PRD_v1.md) - Full specification
-- [Agent Prompts](agents/) - Individual agent system prompts
+Built by [Moria Capital](https://github.com/nicgenovese/conclave). All investment decisions are advisory only.
