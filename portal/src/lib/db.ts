@@ -1,33 +1,53 @@
-import fs from "fs";
-import path from "path";
-import { WhitelistData, WhitelistUser } from "./types";
+import { WhitelistUser } from "./types";
 
-const WHITELIST_PATH = path.join(process.cwd(), "data", "whitelist.json");
+// ===========================================================
+// Whitelist — managed via WHITELIST env var on Vercel
+// Format: "email:role:name,email:role:name,..."
+// Example: "niclas@gmail.com:admin:Niclas,lp@fund.com:investor:LP Name"
+//
+// If no env var, falls back to hardcoded defaults (you two)
+// ===========================================================
 
-function readWhitelist(): WhitelistData {
+const DEFAULT_USERS: WhitelistUser[] = [
+  { email: "niclas.nfstudio@gmail.com", role: "admin", name: "Niclas", addedAt: "2026-03-25" },
+];
+
+function parseWhitelistEnv(): WhitelistUser[] {
+  const raw = process.env.WHITELIST;
+  if (!raw) return DEFAULT_USERS;
+
   try {
-    const raw = fs.readFileSync(WHITELIST_PATH, "utf-8");
-    const data = JSON.parse(raw);
-    console.log(`[DB] Whitelist loaded: ${data.users?.length || 0} users from ${WHITELIST_PATH}`);
-    return data;
-  } catch (err) {
-    console.error(`[DB] Failed to read whitelist at ${WHITELIST_PATH}:`, err);
-    return { users: [] };
+    return raw.split(",").map((entry) => {
+      const [email, role, name] = entry.trim().split(":");
+      return {
+        email: email.toLowerCase(),
+        role: (role as "admin" | "investor") || "investor",
+        name: name || email.split("@")[0],
+        addedAt: "2026-03-25",
+      };
+    });
+  } catch {
+    console.error("[DB] Failed to parse WHITELIST env var");
+    return DEFAULT_USERS;
   }
 }
 
-function writeWhitelist(data: WhitelistData): void {
-  fs.writeFileSync(WHITELIST_PATH, JSON.stringify(data, null, 2), "utf-8");
+let cachedUsers: WhitelistUser[] | null = null;
+
+function getUsers(): WhitelistUser[] {
+  if (!cachedUsers) {
+    cachedUsers = parseWhitelistEnv();
+    console.log(`[DB] Whitelist: ${cachedUsers.length} users loaded`);
+  }
+  return cachedUsers;
 }
 
 export function getWhitelist(): WhitelistUser[] {
-  return readWhitelist().users;
+  return getUsers();
 }
 
 export function getUserByEmail(email: string): WhitelistUser | undefined {
-  return readWhitelist().users.find(
-    (u) => u.email.toLowerCase() === email.toLowerCase()
-  );
+  return getUsers().find((u) => u.email.toLowerCase() === email.toLowerCase());
 }
 
 export function getUserRole(email: string): string | null {
@@ -37,41 +57,4 @@ export function getUserRole(email: string): string | null {
 
 export function isWhitelisted(email: string): boolean {
   return getUserByEmail(email) !== undefined;
-}
-
-export function addUser(
-  email: string,
-  role: "admin" | "investor",
-  name?: string
-): WhitelistUser {
-  const data = readWhitelist();
-  const existing = data.users.find(
-    (u) => u.email.toLowerCase() === email.toLowerCase()
-  );
-  if (existing) {
-    existing.role = role;
-    if (name) existing.name = name;
-    writeWhitelist(data);
-    return existing;
-  }
-  const newUser: WhitelistUser = {
-    email: email.toLowerCase(),
-    role,
-    addedAt: new Date().toISOString().split("T")[0],
-    ...(name ? { name } : {}),
-  };
-  data.users.push(newUser);
-  writeWhitelist(data);
-  return newUser;
-}
-
-export function removeUser(email: string): boolean {
-  const data = readWhitelist();
-  const idx = data.users.findIndex(
-    (u) => u.email.toLowerCase() === email.toLowerCase()
-  );
-  if (idx === -1) return false;
-  data.users.splice(idx, 1);
-  writeWhitelist(data);
-  return true;
 }
