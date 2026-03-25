@@ -4,61 +4,71 @@
 
 @layer base {
   :root {
-    --background: 230 15% 8%;
-    --foreground: 0 0% 93%;
-    --card: 230 15% 11%;
-    --card-foreground: 0 0% 93%;
-    --popover: 230 15% 11%;
-    --popover-foreground: 0 0% 93%;
-    --primary: 142 60% 45%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 230 12% 15%;
-    --secondary-foreground: 0 0% 93%;
-    --muted: 230 12% 15%;
-    --muted-foreground: 230 10% 50%;
-    --accent: 230 12% 15%;
-    --accent-foreground: 0 0% 93%;
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --warning: 38 80% 55%;
-    --border: 230 10% 18%;
-    --input: 230 10% 18%;
-    --ring: 142 60% 45%;
-    --radius: 0.75rem;
-  }
-}
+    --black: #0A0A0A;
+    --body: #222222;
+    --dim: #505050;
+    --light: #909090;
+    --rule: #CCCAC6;
+    --faint: #EEECEA;
+    --white: #FFFFFF;
+    --copper: #6B3620;
+    --pos: #1A5C38;
+    --neg: #7A2828;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    /* Tailwind semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    --primary: 16 52% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 8% 93%;
+    --secondary-foreground: 0 0% 13%;
+    --muted: 30 8% 93%;
+    --muted-foreground: 0 0% 31%;
+    --accent: 30 8% 93%;
+    --accent-foreground: 0 0% 13%;
+    --destructive: 0 49% 32%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 5% 79%;
+    --input: 30 5% 79%;
+    --ring: 16 52% 27%;
+    --radius: 0px;
   }
 
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background: var(--white);
+    color: var(--body);
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1;
   }
 
-  /* Selection */
   ::selection {
-    background: hsl(142 60% 45% / 0.2);
-    color: hsl(0 0% 93%);
+    background: rgba(107, 54, 32, 0.12);
+    color: var(--black);
   }
 
-  /* Focus rings — subtle and clean */
   :focus-visible {
-    outline: 1.5px solid hsl(142 60% 45% / 0.5);
+    outline: 1px solid var(--copper);
     outline-offset: 2px;
-    border-radius: 4px;
   }
 
-  /* Scrollbar — ultra thin, almost invisible */
+  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -69,35 +79,138 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(230 10% 22%);
-    border-radius: 100px;
+    background: var(--rule);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(230 10% 30%);
+    background: var(--light);
   }
 
-  /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(230 10% 22%) transparent;
+    scrollbar-color: var(--rule) transparent;
   }
 
-  /* Monospace numbers for financial data */
+  /* Monospace numbers */
   .font-mono,
   [data-mono] {
     font-variant-numeric: tabular-nums;
   }
 
-  /* Smooth transitions on interactive elements */
+  /* Smooth transitions */
   a, button, input, select, textarea {
     transition: color 0.15s ease, background-color 0.15s ease,
-      border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+      border-color 0.15s ease, opacity 0.15s ease;
   }
 
-  /* Placeholder styling */
   ::placeholder {
-    color: hsl(230 10% 35%);
+    color: var(--light);
     opacity: 1;
   }
+}
+
+/* === Moria Brand Utilities === */
+
+.copper-stripe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--copper);
+  z-index: 100;
+}
+
+.hairline {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 0;
+}
+
+.thick-rule {
+  border: none;
+  border-top: 1.5px solid var(--black);
+  margin: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--rule);
+  margin-bottom: 2rem;
+}
+
+.section-header .section-number {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--copper);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.section-header .section-title {
+  font-family: 'Times New Roman', Georgia, serif;
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.serif {
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+/* Moria table */
+.moria-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.moria-table thead tr {
+  border-top: 2px solid var(--copper);
+  background: var(--black);
+}
+
+.moria-table thead th {
+  color: var(--white);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.moria-table thead th.text-right {
+  text-align: right;
+}
+
+.moria-table tbody tr {
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.moria-table tbody tr:nth-child(odd) {
+  background: var(--white);
+}
+
+.moria-table tbody tr:nth-child(even) {
+  background: var(--faint);
+}
+
+.moria-table tbody td {
+  padding: 12px 16px;
+  font-family: 'Times New Roman', Georgia, serif;
+  color: var(--body);
+}
+
+.moria-table tbody td.mono-cell {
+  font-family: 'Courier New', Courier, monospace;
 }

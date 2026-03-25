@@ -16,7 +16,7 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
   const totalUsd = buckets.reduce((sum, b) => sum + b.total_usd, 0);
 
   let cumulativePct = 0;
-  const slices = buckets.map((bucket) => {
+  const slices = buckets.map((bucket, i) => {
     const dashLength = (bucket.pct / 100) * circumference;
     const dashGap = circumference - dashLength;
     const offset = circumference - (cumulativePct / 100) * circumference;
@@ -25,12 +25,14 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
       ...bucket,
       dashArray: `${dashLength} ${dashGap}`,
       dashOffset: offset,
+      // First slice gets copper accent
+      displayColor: i === 0 ? "#6B3620" : bucket.color,
     };
   });
 
   return (
-    <div className="rounded-xl border border-border bg-card p-5 sm:p-6">
-      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-6">
+    <div>
+      <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style={{ color: "var(--copper)" }}>
         Allocation
       </p>
 
@@ -43,11 +45,10 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
               cy={100}
               r={80}
               fill="none"
-              stroke={slice.color}
-              strokeWidth={20}
+              stroke={slice.displayColor}
+              strokeWidth={14}
               strokeDasharray={slice.dashArray}
               strokeDashoffset={slice.dashOffset}
-              strokeLinecap="round"
               transform="rotate(-90 100 100)"
             />
           ))}
@@ -55,8 +56,10 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
             x={100}
             y={96}
             textAnchor="middle"
-            className="fill-foreground font-mono text-lg font-semibold"
-            fontSize="17"
+            fill="#0A0A0A"
+            fontFamily="'Courier New', Courier, monospace"
+            fontSize="16"
+            fontWeight="400"
           >
             {formatUSD(totalUsd)}
           </text>
@@ -64,7 +67,8 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
             x={100}
             y={114}
             textAnchor="middle"
-            className="fill-muted-foreground"
+            fill="#909090"
+            fontFamily="'Times New Roman', Georgia, serif"
             fontSize="11"
           >
             Total NAV
@@ -72,15 +76,17 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
         </svg>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-6">
-        {buckets.map((bucket) => (
-          <div key={bucket.name} className="flex items-center gap-1.5 text-xs">
+      {/* Horizontal legend with hairline separator */}
+      <hr className="hairline mt-6 mb-4" />
+      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        {slices.map((bucket) => (
+          <div key={bucket.name} className="flex items-center gap-2 text-[12px]">
             <span
-              className="inline-block h-2 w-2 rounded-full flex-shrink-0"
-              style={{ backgroundColor: bucket.color }}
+              className="inline-block h-[8px] w-[8px] flex-shrink-0"
+              style={{ backgroundColor: bucket.displayColor }}
             />
-            <span className="text-muted-foreground">{bucket.name}</span>
-            <span className="font-mono tabular-nums text-foreground">
+            <span className="font-serif" style={{ color: "var(--dim)" }}>{bucket.name}</span>
+            <span className="font-mono" style={{ color: "var(--black)" }}>
               {bucket.pct.toFixed(1)}%
             </span>
           </div>

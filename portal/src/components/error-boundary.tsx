@@ -31,19 +31,27 @@ export class ErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) return this.props.fallback;
 
       return (
-        <div className="rounded-xl border border-border bg-card p-5 sm:p-6 my-6">
+        <div className="py-6 my-6" style={{ borderTop: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
           <div className="flex items-start gap-3">
-            <div className="h-2 w-2 rounded-full bg-red-500 mt-2 flex-shrink-0" />
+            <span
+              className="inline-block h-2 w-2 rounded-full mt-1.5 flex-shrink-0"
+              style={{ background: "var(--copper)" }}
+            />
             <div className="flex-1 min-w-0">
-              <h3 className="text-sm font-semibold text-foreground">
+              <h3 className="font-serif text-[15px] font-semibold" style={{ color: "var(--black)" }}>
                 Something went wrong
               </h3>
-              <p className="text-sm text-muted-foreground mt-1 break-words font-mono">
+              <p className="font-mono text-[13px] mt-1 break-words" style={{ color: "var(--dim)" }}>
                 {this.state.error?.message || "An unexpected error occurred."}
               </p>
               <button
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="mt-4 px-3 py-1.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+                className="mt-4 px-3 py-1.5 font-serif text-[13px]"
+                style={{
+                  background: "var(--black)",
+                  color: "var(--white)",
+                  border: "none",
+                }}
               >
                 Try again
               </button>

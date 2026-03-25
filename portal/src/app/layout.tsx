@@ -15,14 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="font-serif">
+      <body>
+        <div className="copper-stripe" />
         <Providers>
-          <div className="flex min-h-screen">
+          <div className="flex min-h-screen pt-[3px]">
             <Sidebar />
             <div className="flex-1 md:ml-60 flex flex-col min-h-screen">
               <MobileHeader />
-              <main className="flex-1 overflow-y-auto p-5 sm:p-8 md:p-10">
+              <main className="flex-1 overflow-y-auto px-5 sm:px-8 md:px-[72px] py-8 md:py-12">
                 <div className="mx-auto max-w-6xl">{children}</div>
               </main>
             </div>

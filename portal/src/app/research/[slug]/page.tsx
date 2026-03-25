@@ -27,14 +27,17 @@ export default function MemoPage({ params }: { params: { slug: string } }) {
 
   if (loadError) {
     return (
-      <div className="space-y-4">
+      <div>
         <Link
           href="/research"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="font-serif text-[13px] hover:underline"
+          style={{ color: "var(--copper)" }}
         >
           &larr; Back to Research
         </Link>
-        <DataError title="Error loading memo" message={loadError} />
+        <div className="mt-4">
+          <DataError title="Error loading memo" message={loadError} />
+        </div>
       </div>
     );
   }
@@ -45,91 +48,88 @@ export default function MemoPage({ params }: { params: { slug: string } }) {
 
   return (
     <ErrorBoundary>
-      <div className="space-y-6">
+      <div>
         <Link
           href="/research"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="font-serif text-[13px] hover:underline"
+          style={{ color: "var(--copper)" }}
         >
           &larr; Back to Research
         </Link>
 
-        <div className="max-w-3xl">
+        <div className="max-w-[680px] mt-6">
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-baseline gap-3 mb-2">
-              <h1 className="text-2xl sm:text-3xl font-semibold font-mono tracking-tight">
+              <h1 className="font-serif text-[28px] font-bold tracking-tight" style={{ color: "var(--black)" }}>
                 {meta.ticker}
               </h1>
-              <span className="text-sm text-muted-foreground">
+              <span className="font-serif text-[14px]" style={{ color: "var(--dim)" }}>
                 {decisionLabel[meta.decision]}
               </span>
             </div>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span className="font-mono tabular-nums">{meta.conviction}/10 conviction</span>
-              <span>{meta.date}</span>
+            <div className="flex items-center gap-4 text-[13px]">
+              <span className="font-mono tabular-nums" style={{ color: "var(--light)" }}>{meta.conviction}/10 conviction</span>
+              <span className="font-mono" style={{ color: "var(--light)" }}>{meta.date}</span>
             </div>
           </div>
 
-          <div className="border-t border-border mb-8" />
+          <hr className="thick-rule mb-8" />
 
           {/* Markdown content */}
-          <div className="prose prose-invert max-w-none text-sm sm:text-base leading-[1.8]">
+          <div className="prose max-w-none text-[15px] leading-[1.8]">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({ children }) => (
-                  <h1 className="text-xl sm:text-2xl font-semibold tracking-tight mt-10 mb-4 pb-3 border-b border-border">
+                  <h1 className="font-serif text-[22px] font-bold tracking-tight mt-10 mb-4 pb-3" style={{ color: "var(--black)", borderBottom: "0.5px solid var(--rule)" }}>
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className="text-lg sm:text-xl font-semibold tracking-tight mt-8 mb-3 pb-2 border-b border-border/50">
+                  <h2 className="font-serif text-[18px] font-bold tracking-tight mt-8 mb-3 pb-2" style={{ color: "var(--black)", borderBottom: "0.5px solid var(--rule)" }}>
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className="text-base sm:text-lg font-semibold mt-6 mb-2">
+                  <h3 className="font-serif text-[16px] font-bold mt-6 mb-2" style={{ color: "var(--black)" }}>
                     {children}
                   </h3>
                 ),
                 p: ({ children }) => (
-                  <p className="mb-4 leading-[1.8] text-muted-foreground">{children}</p>
+                  <p className="font-serif mb-4 leading-[1.8]" style={{ color: "var(--body)" }}>{children}</p>
                 ),
                 strong: ({ children }) => (
-                  <strong className="text-foreground font-semibold">{children}</strong>
+                  <strong className="font-bold" style={{ color: "var(--black)" }}>{children}</strong>
                 ),
                 table: ({ children }) => (
-                  <div className="overflow-x-auto my-6 -mx-4 px-4 sm:mx-0 sm:px-0">
-                    <table className="w-full text-sm">{children}</table>
+                  <div className="overflow-x-auto my-6">
+                    <table className="moria-table">{children}</table>
                   </div>
                 ),
                 th: ({ children }) => (
-                  <th className="text-left py-2 px-3 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border whitespace-nowrap">
-                    {children}
-                  </th>
+                  <th className="text-left">{children}</th>
                 ),
                 td: ({ children }) => (
-                  <td className="py-3 px-3 border-b border-border/50 text-muted-foreground">
-                    {children}
-                  </td>
+                  <td>{children}</td>
                 ),
                 ul: ({ children }) => (
-                  <ul className="list-disc pl-5 sm:pl-6 mb-4 space-y-1.5 text-muted-foreground">
+                  <ul className="list-disc pl-6 mb-4 space-y-1.5 font-serif" style={{ color: "var(--body)" }}>
                     {children}
                   </ul>
                 ),
                 ol: ({ children }) => (
-                  <ol className="list-decimal pl-5 sm:pl-6 mb-4 space-y-1.5 text-muted-foreground">
+                  <ol className="list-decimal pl-6 mb-4 space-y-1.5 font-serif" style={{ color: "var(--body)" }}>
                     {children}
                   </ol>
                 ),
                 blockquote: ({ children }) => (
-                  <blockquote className="border-l-2 border-border pl-4 text-muted-foreground my-4">
+                  <blockquote className="pl-4 my-4 font-serif italic" style={{ borderLeft: "2px solid var(--copper)", color: "var(--dim)" }}>
                     {children}
                   </blockquote>
                 ),
                 code: ({ children }) => (
-                  <code className="bg-secondary px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono break-all">
+                  <code className="font-mono text-[13px] px-1 py-0.5" style={{ background: "var(--faint)" }}>
                     {children}
                   </code>
                 ),

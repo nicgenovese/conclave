@@ -15,96 +15,89 @@ export default function PerpsTable({
   maxLoss,
 }: PerpsTableProps) {
   return (
-    <div className="rounded-xl border border-border bg-card p-5 sm:p-6">
-      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-5">
+    <div>
+      <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style={{ color: "var(--copper)" }}>
         Perpetuals
       </p>
 
-      {/* Summary stats */}
-      <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6">
-        <div className="rounded-lg bg-secondary/50 p-3 sm:p-4">
-          <p className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground">
+      {/* Summary stats row */}
+      <div className="grid grid-cols-3 mb-6" style={{ borderTop: "0.5px solid var(--rule)" }}>
+        <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
             Total Exposure
           </p>
-          <p className="font-mono text-base sm:text-lg font-semibold tabular-nums mt-1">
+          <p className="font-mono text-[18px] tabular-nums mt-1" style={{ color: "var(--black)" }}>
             {formatUSD(totalExposure)}
           </p>
         </div>
-        <div className="rounded-lg bg-secondary/50 p-3 sm:p-4">
-          <p className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground">
+        <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
             Avg Leverage
           </p>
-          <p className="font-mono text-base sm:text-lg font-semibold tabular-nums mt-1">
+          <p className="font-mono text-[18px] tabular-nums mt-1" style={{ color: "var(--black)" }}>
             {avgLeverage.toFixed(1)}x
           </p>
         </div>
-        <div className="rounded-lg bg-secondary/50 p-3 sm:p-4">
-          <p className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground">
+        <div className="py-4 px-4" style={{ borderBottom: "0.5px solid var(--rule)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
             Max Loss
           </p>
-          <p className="font-mono text-base sm:text-lg font-semibold tabular-nums text-red-400/80 mt-1">
+          <p className="font-mono text-[18px] tabular-nums mt-1" style={{ color: "var(--neg)" }}>
             {formatUSD(maxLoss)}
           </p>
         </div>
       </div>
 
       {/* Table */}
-      <div className="-mx-5 sm:-mx-6 overflow-x-auto">
-        <div className="min-w-[550px] px-5 sm:px-6">
-          <table className="w-full text-sm">
-            <thead>
-              <tr>
-                <th className="text-left pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Pair
-                </th>
-                <th className="text-right pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Leverage
-                </th>
-                <th className="text-right pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Capital
-                </th>
-                <th className="text-right pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Entry 1
-                </th>
-                <th className="text-right pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Entry 2
-                </th>
-                <th className="text-right pb-3 text-xs uppercase tracking-wider text-muted-foreground font-medium">
-                  Stop Loss
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {perps.map((perp) => (
-                <tr
-                  key={perp.pair}
-                  className="border-b border-border/50"
-                >
-                  <td className="py-4 font-mono font-medium text-foreground whitespace-nowrap">
+      <div className="overflow-x-auto">
+        <table className="moria-table">
+          <thead>
+            <tr>
+              <th>Pair</th>
+              <th className="text-right">Leverage</th>
+              <th className="text-right">Capital</th>
+              <th className="text-right">Entry 1</th>
+              <th className="text-right">Entry 2</th>
+              <th className="text-right">Stop Loss</th>
+            </tr>
+          </thead>
+          <tbody>
+            {perps.map((perp) => (
+              <tr key={perp.pair}>
+                <td>
+                  <span className="font-mono font-medium" style={{ color: "var(--black)" }}>
                     {perp.pair}
-                  </td>
-                  <td className="py-4 text-right whitespace-nowrap">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-secondary text-muted-foreground tabular-nums">
-                      {perp.leverage}x
-                    </span>
-                  </td>
-                  <td className="py-4 text-right font-mono tabular-nums text-foreground whitespace-nowrap">
+                  </span>
+                </td>
+                <td className="text-right">
+                  <span className="font-mono" style={{ color: "var(--body)" }}>
+                    {perp.leverage}x
+                  </span>
+                </td>
+                <td className="text-right">
+                  <span className="font-mono" style={{ color: "var(--black)" }}>
                     {formatUSD(perp.capital_usd)}
-                  </td>
-                  <td className="py-4 text-right font-mono tabular-nums text-foreground whitespace-nowrap">
+                  </span>
+                </td>
+                <td className="text-right">
+                  <span className="font-mono" style={{ color: "var(--black)" }}>
                     {formatUSD(perp.entry_1)}
-                  </td>
-                  <td className="py-4 text-right font-mono tabular-nums text-foreground whitespace-nowrap">
+                  </span>
+                </td>
+                <td className="text-right">
+                  <span className="font-mono" style={{ color: "var(--black)" }}>
                     {formatUSD(perp.entry_2)}
-                  </td>
-                  <td className="py-4 text-right font-mono tabular-nums text-red-400/70 whitespace-nowrap">
+                  </span>
+                </td>
+                <td className="text-right">
+                  <span className="font-mono" style={{ color: "var(--neg)" }}>
                     {formatUSD(perp.stop)}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

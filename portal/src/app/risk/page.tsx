@@ -4,30 +4,24 @@ import { ErrorBoundary } from "@/components/error-boundary";
 import type { RiskFactor } from "@/lib/types";
 
 function factorBarColor(score: number): string {
-  if (score <= 3) return "bg-emerald-500";
-  if (score <= 6) return "bg-amber-500";
-  return "bg-red-500";
-}
-
-function statusDotColor(status: "green" | "amber" | "red"): string {
-  switch (status) {
-    case "green":
-      return "bg-emerald-500";
-    case "amber":
-      return "bg-amber-500";
-    case "red":
-      return "bg-red-500";
-  }
+  if (score <= 3) return "var(--pos)";
+  if (score <= 6) return "var(--copper)";
+  return "var(--neg)";
 }
 
 function statusText(status: "green" | "amber" | "red"): string {
   switch (status) {
-    case "green":
-      return "Low";
-    case "amber":
-      return "Medium";
-    case "red":
-      return "High";
+    case "green": return "Low";
+    case "amber": return "Medium";
+    case "red": return "High";
+  }
+}
+
+function statusDotColor(status: "green" | "amber" | "red"): string {
+  switch (status) {
+    case "green": return "var(--pos)";
+    case "amber": return "var(--copper)";
+    case "red": return "var(--neg)";
   }
 }
 
@@ -37,15 +31,14 @@ export default function RiskPage() {
   if (scores.length === 0) {
     return (
       <ErrorBoundary>
-        <div className="space-y-8">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              Risk
-            </h1>
-            <p className="text-sm text-muted-foreground mt-1">
-              Position-level risk scoring across five factors
-            </p>
+        <div>
+          <div className="section-header">
+            <span className="section-number">05.</span>
+            <h1 className="section-title">Risk</h1>
           </div>
+          <p className="font-serif text-[14px] mb-8" style={{ color: "var(--dim)" }}>
+            Position-level risk scoring across five factors
+          </p>
           <DataError
             title="No risk scores available"
             message="Run the daily brief to generate risk assessments for your positions."
@@ -61,107 +54,146 @@ export default function RiskPage() {
 
   return (
     <ErrorBoundary>
-      <div className="space-y-8">
-        {/* Header */}
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Risk
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Position-level risk scoring across five factors
-          </p>
+      <div>
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-number">05.</span>
+          <h1 className="section-title">Risk</h1>
         </div>
 
-        {/* Summary cards */}
-        <div className="grid grid-cols-3 gap-4">
-          <div className="rounded-xl border border-border bg-card p-5 sm:p-6 flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 flex-shrink-0" />
-            <div>
-              <span className="text-xl sm:text-2xl font-semibold font-mono tabular-nums">
+        <p className="font-serif text-[14px] mb-8" style={{ color: "var(--dim)" }}>
+          Position-level risk scoring across five factors
+        </p>
+
+        {/* Summary: three labeled values */}
+        <div className="grid grid-cols-3 mb-10" style={{ borderTop: "0.5px solid var(--rule)" }}>
+          <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+              Low Risk
+            </p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--pos)" }} />
+              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
                 {greenCount}
               </span>
-              <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">
-                Low Risk
-              </span>
             </div>
           </div>
-          <div className="rounded-xl border border-border bg-card p-5 sm:p-6 flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-amber-500 flex-shrink-0" />
-            <div>
-              <span className="text-xl sm:text-2xl font-semibold font-mono tabular-nums">
+          <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+              Medium Risk
+            </p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--copper)" }} />
+              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
                 {amberCount}
               </span>
-              <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">
-                Medium Risk
-              </span>
             </div>
           </div>
-          <div className="rounded-xl border border-border bg-card p-5 sm:p-6 flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-red-500 flex-shrink-0" />
-            <div>
-              <span className="text-xl sm:text-2xl font-semibold font-mono tabular-nums">
+          <div className="py-4 px-4" style={{ borderBottom: "0.5px solid var(--rule)" }}>
+            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+              High Risk
+            </p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--neg)" }} />
+              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
                 {redCount}
-              </span>
-              <span className="text-xs text-muted-foreground ml-2 hidden sm:inline">
-                High Risk
               </span>
             </div>
           </div>
         </div>
 
-        {/* Risk table */}
-        <div className="space-y-3">
+        {/* Factor table per position */}
+        <div className="overflow-x-auto mb-10">
+          <table className="moria-table">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th className="text-right">Overall</th>
+                <th>Status</th>
+                <th className="text-right">Smart Contract</th>
+                <th className="text-right">Market</th>
+                <th className="text-right">Liquidity</th>
+                <th className="text-right">Governance</th>
+                <th className="text-right">Counterparty</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scores.map((pos) => (
+                <tr key={pos.ticker}>
+                  <td>
+                    <span className="font-mono font-medium" style={{ color: "var(--black)" }}>
+                      {pos.ticker}
+                    </span>
+                    <span className="block text-[12px] font-serif" style={{ color: "var(--dim)" }}>
+                      {pos.name}
+                    </span>
+                  </td>
+                  <td className="text-right">
+                    <span className="font-mono text-[18px] tabular-nums" style={{ color: "var(--black)" }}>
+                      {pos.overall}
+                    </span>
+                    <span className="font-mono text-[12px]" style={{ color: "var(--light)" }}>/10</span>
+                  </td>
+                  <td>
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: statusDotColor(pos.status) }} />
+                      <span className="font-serif text-[13px]" style={{ color: "var(--dim)" }}>
+                        {statusText(pos.status)}
+                      </span>
+                    </div>
+                  </td>
+                  {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
+                    ([factor, score]) => (
+                      <td key={factor} className="text-right">
+                        <span className="font-mono tabular-nums text-[13px]" style={{ color: "var(--body)" }}>
+                          {score}
+                        </span>
+                      </td>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Risk bars per position */}
+        <div className="space-y-6">
           {scores.map((pos) => (
-            <div
-              key={pos.ticker}
-              className="rounded-xl border border-border bg-card p-5 sm:p-6"
-            >
-              <div className="flex items-center justify-between gap-3 mb-5">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span
-                    className={`h-2 w-2 rounded-full flex-shrink-0 ${statusDotColor(pos.status)}`}
-                  />
-                  <span className="font-mono font-medium text-base sm:text-lg tracking-tight">
-                    {pos.ticker}
-                  </span>
-                  <span className="text-sm text-muted-foreground truncate">
-                    {pos.name}
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-1 flex-shrink-0">
-                  <span className="text-2xl font-mono font-semibold tabular-nums">
-                    {pos.overall}
-                  </span>
-                  <span className="text-sm text-muted-foreground">/10</span>
-                  <span className="text-xs text-muted-foreground ml-2">
-                    {statusText(pos.status)}
-                  </span>
-                </div>
+            <div key={pos.ticker + "-bars"}>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-block h-2 w-2 rounded-full" style={{ background: statusDotColor(pos.status) }} />
+                <span className="font-mono text-[13px] font-medium" style={{ color: "var(--black)" }}>
+                  {pos.ticker}
+                </span>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                {(
-                  Object.entries(pos.factors) as [keyof RiskFactor, number][]
-                ).map(([factor, score]) => (
-                  <div key={factor}>
-                    <div className="text-xs text-muted-foreground capitalize mb-1.5">
-                      {factor.replace(/_/g, " ")}
+                {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
+                  ([factor, score]) => (
+                    <div key={factor}>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.06em] mb-1.5" style={{ color: "var(--light)" }}>
+                        {String(factor).replace(/_/g, " ")}
+                      </div>
+                      <div className="h-[2px] w-full" style={{ background: "var(--faint)" }}>
+                        <div
+                          className="h-[2px]"
+                          style={{
+                            width: `${(score / 10) * 100}%`,
+                            background: factorBarColor(score),
+                          }}
+                        />
+                      </div>
+                      <div className="font-mono text-[11px] tabular-nums mt-1" style={{ color: "var(--dim)" }}>
+                        {score}/10
+                      </div>
                     </div>
-                    <div className="h-1 rounded-full bg-secondary">
-                      <div
-                        className={`h-1 rounded-full ${factorBarColor(score)}`}
-                        style={{ width: `${(score / 10) * 100}%` }}
-                      />
-                    </div>
-                    <div className="text-xs font-mono tabular-nums text-muted-foreground mt-1">
-                      {score}/10
-                    </div>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
 
               {pos.notes && (
-                <p className="text-sm text-muted-foreground mt-4 pt-3 border-t border-border/50">
+                <p className="font-serif text-[13px] mt-3 pt-3" style={{ color: "var(--dim)", borderTop: "0.5px solid var(--rule)" }}>
                   {pos.notes}
                 </p>
               )}
@@ -170,23 +202,19 @@ export default function RiskPage() {
         </div>
 
         {/* Legend */}
-        <div className="rounded-xl border border-border bg-card p-5 sm:p-6">
-          <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
-            Risk Score Legend
-          </p>
-          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-1 rounded-full bg-emerald-500" />
-              <span>1-3 Low</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-1 rounded-full bg-amber-500" />
-              <span>4-6 Medium</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-1 rounded-full bg-red-500" />
-              <span>7-10 High</span>
-            </div>
+        <hr className="hairline mt-10 mb-4" />
+        <div className="flex flex-wrap gap-6 text-[12px]">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-[2px]" style={{ background: "var(--pos)" }} />
+            <span className="font-serif" style={{ color: "var(--dim)" }}>1-3 Low</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-[2px]" style={{ background: "var(--copper)" }} />
+            <span className="font-serif" style={{ color: "var(--dim)" }}>4-6 Medium</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-[2px]" style={{ background: "var(--neg)" }} />
+            <span className="font-serif" style={{ color: "var(--dim)" }}>7-10 High</span>
           </div>
         </div>
       </div>

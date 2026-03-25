@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { AlertCircle } from "lucide-react";
 
 const ERROR_MESSAGES: Record<string, { title: string; description: string }> = {
   AccessDenied: {
@@ -28,23 +27,29 @@ export default function AuthErrorPage() {
   const { title, description } = ERROR_MESSAGES[errorType] || DEFAULT_ERROR;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-5">
+    <div className="flex min-h-screen items-center justify-center bg-white px-5">
       <div className="w-full max-w-sm animate-fade-in">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-12">
-          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-          <span className="text-sm font-light uppercase tracking-[0.3em] text-foreground">
-            Moria
-          </span>
+        <div className="flex flex-col items-center mb-10">
+          <svg width="48" height="42" viewBox="0 0 48 42" fill="none" className="mb-5">
+            <polygon points="24,2 46,40 2,40" fill="none" stroke="#6B3620" strokeWidth="1.4"/>
+            <polygon points="24,12 37,40 11,40" fill="none" stroke="#6B3620" strokeWidth="0.6" opacity="0.38"/>
+          </svg>
+          <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em]" style={{ color: "var(--black)" }}>
+            Moria Capital
+          </h1>
+          <p className="font-serif text-[13px] mt-1" style={{ color: "var(--dim)" }}>
+            Conclave Portal
+          </p>
         </div>
 
-        {/* Card */}
-        <div className="rounded-2xl border border-border/60 bg-card p-8 text-center">
-          <div className="mx-auto mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-destructive/10">
-            <AlertCircle className="h-5 w-5 text-destructive" />
-          </div>
-          <h2 className="text-lg font-semibold text-foreground">{title}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+        <hr className="thick-rule mb-8" />
+
+        <div className="text-center">
+          <h2 className="font-serif text-[18px]" style={{ color: "var(--neg)" }}>
+            {title}
+          </h2>
+          <p className="font-serif text-[14px] mt-3 leading-relaxed" style={{ color: "var(--dim)" }}>
             {description}
           </p>
         </div>
@@ -52,11 +57,16 @@ export default function AuthErrorPage() {
         <div className="mt-8 text-center">
           <Link
             href="/auth/signin"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="font-serif text-[14px] hover:underline"
+            style={{ color: "var(--copper)" }}
           >
-            Back to sign in
+            Back to Sign In
           </Link>
         </div>
+
+        <p className="mt-8 text-center font-serif text-[12px] italic" style={{ color: "var(--light)" }}>
+          Commodities AG &middot; Zug, Switzerland
+        </p>
       </div>
     </div>
   );

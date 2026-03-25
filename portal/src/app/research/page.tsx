@@ -4,6 +4,14 @@ import { DataError } from "@/components/data-error";
 import { ErrorBoundary } from "@/components/error-boundary";
 import type { MemoMeta } from "@/lib/types";
 
+const decisionColor: Record<MemoMeta["decision"], string> = {
+  BUY: "var(--pos)",
+  HOLD: "var(--dim)",
+  PASS: "var(--light)",
+  SELL: "var(--neg)",
+  MONITOR: "var(--copper)",
+};
+
 const decisionLabel: Record<MemoMeta["decision"], string> = {
   BUY: "Buy",
   HOLD: "Hold",
@@ -17,16 +25,16 @@ export default function ResearchPage() {
 
   return (
     <ErrorBoundary>
-      <div className="space-y-8">
-        {/* Header */}
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Research
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Investment committee deep dives
-          </p>
+      <div>
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-number">02.</span>
+          <h1 className="section-title">Research</h1>
         </div>
+
+        <p className="font-serif text-[14px] mb-8" style={{ color: "var(--dim)" }}>
+          Investment committee deep dives
+        </p>
 
         {memos.length === 0 ? (
           <DataError
@@ -34,32 +42,36 @@ export default function ResearchPage() {
             message="Run 'Conclave: analyze [TICKER]' to generate one."
           />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
             {memos.map((memo) => (
               <Link
                 key={memo.slug}
                 href={`/research/${memo.slug}`}
-                className="rounded-xl border border-border bg-card p-5 sm:p-6 hover:border-foreground/20 transition-colors group"
+                className="block p-5 sm:p-6 group transition-colors hover:bg-[var(--faint)]"
+                style={{ border: "0.5px solid var(--rule)" }}
               >
                 <div className="flex items-baseline justify-between mb-3">
-                  <span className="text-xl font-semibold font-mono tracking-tight">
+                  <span className="font-serif text-[20px] font-bold tracking-tight" style={{ color: "var(--black)" }}>
                     {memo.ticker}
                   </span>
-                  <span className="text-xs text-muted-foreground">
+                  <span
+                    className="font-serif text-[13px]"
+                    style={{ color: decisionColor[memo.decision] }}
+                  >
                     {decisionLabel[memo.decision]}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                <div className="flex items-center gap-4 text-[12px]" style={{ color: "var(--light)" }}>
                   <span className="font-mono tabular-nums">{memo.conviction}/10</span>
-                  <span>{memo.date}</span>
+                  <span className="font-mono">{memo.date}</span>
                 </div>
 
-                <p className="text-sm text-muted-foreground mt-3 line-clamp-2 leading-relaxed">
+                <p className="font-serif text-[13px] mt-3 line-clamp-2 leading-relaxed" style={{ color: "var(--dim)" }}>
                   {memo.summary}
                 </p>
 
-                <p className="text-sm text-muted-foreground mt-4 group-hover:text-foreground transition-colors">
+                <p className="font-serif text-[13px] mt-4 transition-colors" style={{ color: "var(--light)" }}>
                   Read memo &rarr;
                 </p>
               </Link>

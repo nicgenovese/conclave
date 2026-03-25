@@ -25,23 +25,23 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
-      <div className="space-y-8">
-        {/* Header */}
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Overview
-          </h1>
-          <div className="flex items-center gap-2 mt-1">
-            <p className="text-sm text-muted-foreground">
-              Portfolio as of {portfolio.updated_at}
-            </p>
-            {stale && (
-              <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-amber-500" />
-                Stale
-              </span>
-            )}
-          </div>
+      <div>
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-number">01.</span>
+          <h1 className="section-title">Overview</h1>
+        </div>
+
+        <div className="flex items-center gap-3 mb-8">
+          <p className="font-mono text-[12px]" style={{ color: "var(--light)" }}>
+            Portfolio as of {portfolio.updated_at}
+          </p>
+          {stale && (
+            <span className="inline-flex items-center gap-1.5 font-mono text-[11px]" style={{ color: "var(--copper)" }}>
+              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "var(--copper)" }} />
+              Stale
+            </span>
+          )}
         </div>
 
         {isEmpty ? (
@@ -51,8 +51,8 @@ export default function Home() {
           />
         ) : (
           <>
-            {/* Top stat cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Stats row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4" style={{ borderTop: "0.5px solid var(--rule)" }}>
               <NavCard
                 label="NAV"
                 value={formatUSD(portfolio.nav)}
@@ -75,18 +75,24 @@ export default function Home() {
             </div>
 
             {/* Allocation chart */}
-            <AllocationChart buckets={portfolio.allocation_buckets} />
+            <div className="mt-12">
+              <AllocationChart buckets={portfolio.allocation_buckets} />
+            </div>
 
             {/* Positions */}
-            <PositionsTable positions={portfolio.positions} />
+            <div className="mt-12">
+              <PositionsTable positions={portfolio.positions} />
+            </div>
 
             {/* Perps */}
-            <PerpsTable
-              perps={portfolio.perps}
-              totalExposure={portfolio.total_perp_exposure}
-              avgLeverage={portfolio.avg_leverage}
-              maxLoss={portfolio.max_perp_loss}
-            />
+            <div className="mt-12">
+              <PerpsTable
+                perps={portfolio.perps}
+                totalExposure={portfolio.total_perp_exposure}
+                avgLeverage={portfolio.avg_leverage}
+                maxLoss={portfolio.max_perp_loss}
+              />
+            </div>
           </>
         )}
       </div>

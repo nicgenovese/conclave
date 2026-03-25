@@ -180,7 +180,7 @@ export default function AdminPage() {
   if (!isAdmin) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <p className="text-sm text-muted-foreground">Access denied</p>
+        <p className="font-serif text-[14px]" style={{ color: "var(--dim)" }}>Access denied</p>
       </div>
     );
   }
@@ -188,41 +188,32 @@ export default function AdminPage() {
   if (initialLoading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <p className="text-sm text-muted-foreground">Loading...</p>
+        <p className="font-serif text-[14px]" style={{ color: "var(--light)" }}>Loading...</p>
       </div>
     );
   }
 
-  const healthStatusDot = health
-    ? health.status === "ok"
-      ? "bg-emerald-500"
-      : health.status === "degraded"
-      ? "bg-amber-500"
-      : "bg-red-500"
-    : "";
-
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div>
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+    <div>
+      {/* Header — no number for admin */}
+      <div className="pb-3 mb-8" style={{ borderBottom: "0.5px solid var(--rule)" }}>
+        <h1 className="font-serif text-[24px] font-bold" style={{ color: "var(--black)" }}>
           Settings
         </h1>
-        <p className="text-sm text-muted-foreground mt-1">
+        <p className="font-serif text-[14px] mt-1" style={{ color: "var(--dim)" }}>
           Access control and system health
         </p>
       </div>
 
       {/* Error Banner */}
       {error && (
-        <div className="flex items-start gap-3 rounded-xl border border-red-500/20 bg-red-500/5 p-4">
-          <span className="h-2 w-2 rounded-full bg-red-500 mt-1.5 flex-shrink-0" />
-          <div className="flex-1 min-w-0">
-            <p className="text-sm text-red-400">{error}</p>
-          </div>
+        <div className="flex items-start gap-3 p-4 mb-8" style={{ border: "0.5px solid var(--neg)", background: "#7A28280A" }}>
+          <span className="inline-block h-2 w-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "var(--neg)" }} />
+          <p className="flex-1 font-serif text-[13px]" style={{ color: "var(--neg)" }}>{error}</p>
           <button
             onClick={() => setError(null)}
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="font-serif text-[12px] hover:underline"
+            style={{ color: "var(--light)" }}
           >
             Dismiss
           </button>
@@ -230,46 +221,45 @@ export default function AdminPage() {
       )}
 
       {/* Whitelist */}
-      <div>
-        <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-4">
+      <div className="mb-12">
+        <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style={{ color: "var(--copper)" }}>
           Whitelist
-        </h2>
+        </p>
 
-        <div className="rounded-xl border border-border bg-card overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+          <table className="moria-table">
             <thead>
               <tr>
-                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
-                  Email
-                </th>
-                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
-                  Role
-                </th>
-                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
-                  Added
-                </th>
-                <th className="text-right py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
-                  Actions
-                </th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Added</th>
+                <th className="text-right">Actions</th>
               </tr>
             </thead>
             <tbody>
               {whitelist.map((entry) => (
-                <tr key={entry.email} className="border-b border-border/50">
-                  <td className="py-4 px-5 font-mono text-sm">{entry.email}</td>
-                  <td className="py-4 px-5">
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-secondary text-muted-foreground">
+                <tr key={entry.email}>
+                  <td>
+                    <span className="font-mono text-[13px]" style={{ color: "var(--black)" }}>
+                      {entry.email}
+                    </span>
+                  </td>
+                  <td>
+                    <span className="font-mono text-[12px] uppercase" style={{ color: "var(--dim)" }}>
                       {entry.role}
                     </span>
                   </td>
-                  <td className="py-4 px-5 text-muted-foreground text-sm">
-                    {entry.addedAt}
+                  <td>
+                    <span className="font-mono text-[12px]" style={{ color: "var(--light)" }}>
+                      {entry.addedAt}
+                    </span>
                   </td>
-                  <td className="py-4 px-5 text-right">
+                  <td className="text-right">
                     <button
                       onClick={() => handleRemove(entry.email)}
                       disabled={loading}
-                      className="text-sm text-muted-foreground hover:text-red-400 transition-colors disabled:opacity-50"
+                      className="font-serif text-[13px] hover:underline disabled:opacity-50"
+                      style={{ color: "var(--neg)" }}
                     >
                       Remove
                     </button>
@@ -278,75 +268,102 @@ export default function AdminPage() {
               ))}
               {whitelist.length === 0 && (
                 <tr>
-                  <td colSpan={4} className="py-8 text-center text-sm text-muted-foreground">
-                    No users in whitelist
+                  <td colSpan={4} className="py-8 text-center">
+                    <span className="font-serif text-[13px]" style={{ color: "var(--light)" }}>
+                      No users in whitelist
+                    </span>
                   </td>
                 </tr>
               )}
             </tbody>
           </table>
+        </div>
 
-          {/* Inline add form */}
-          <div className="border-t border-border p-4 sm:px-5">
-            <form onSubmit={handleAdd} className="flex items-start gap-3">
-              <div className="flex-1">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    setEmailError(null);
-                  }}
-                  placeholder="user@example.com"
-                  className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-foreground/20"
-                  required
-                />
-                {emailError && (
-                  <p className="mt-1 text-xs text-red-400">{emailError}</p>
-                )}
-              </div>
-              <select
-                value={role}
-                onChange={(e) => setRole(e.target.value as "admin" | "investor")}
-                className="bg-secondary border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-foreground/20"
-              >
-                <option value="investor">Investor</option>
-                <option value="admin">Admin</option>
-              </select>
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-foreground text-background rounded-lg px-4 py-2 text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-50"
-              >
-                Add
-              </button>
-            </form>
-          </div>
+        {/* Add form */}
+        <div className="mt-4 p-4" style={{ borderTop: "0.5px solid var(--rule)" }}>
+          <form onSubmit={handleAdd} className="flex items-start gap-3">
+            <div className="flex-1">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError(null);
+                }}
+                placeholder="user@example.com"
+                className="w-full px-3 py-2 font-serif text-[14px]"
+                style={{
+                  border: "0.5px solid var(--rule)",
+                  background: "var(--white)",
+                  color: "var(--body)",
+                  outline: "none",
+                }}
+                required
+              />
+              {emailError && (
+                <p className="mt-1 font-serif text-[12px]" style={{ color: "var(--neg)" }}>{emailError}</p>
+              )}
+            </div>
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value as "admin" | "investor")}
+              className="px-3 py-2 font-serif text-[14px]"
+              style={{
+                border: "0.5px solid var(--rule)",
+                background: "var(--white)",
+                color: "var(--body)",
+                outline: "none",
+              }}
+            >
+              <option value="investor">Investor</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-4 py-2 font-serif text-[14px] disabled:opacity-50"
+              style={{
+                background: "var(--black)",
+                color: "var(--white)",
+                border: "none",
+              }}
+            >
+              Add
+            </button>
+          </form>
         </div>
       </div>
 
       {/* System Health */}
-      <div>
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+      <div className="mb-12">
+        <div className="flex items-center gap-3 mb-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
             System Health
-          </h2>
+          </p>
           {health && (
-            <span className={`h-2 w-2 rounded-full ${healthStatusDot}`} />
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{
+                background: health.status === "ok" ? "var(--pos)" : health.status === "degraded" ? "var(--copper)" : "var(--neg)",
+              }}
+            />
           )}
           <button
             onClick={fetchHealth}
             disabled={healthLoading}
-            className="ml-auto text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
+            className="ml-auto font-serif text-[12px] hover:underline disabled:opacity-50"
+            style={{ color: "var(--light)" }}
           >
             {healthLoading ? "Checking..." : "Refresh"}
           </button>
         </div>
 
         {healthError && (
-          <div className="flex items-center gap-2 text-sm text-red-400 mb-4">
-            <span className="h-2 w-2 rounded-full bg-red-500 flex-shrink-0" />
-            Health check failed: {healthError}
+          <div className="flex items-center gap-2 mb-4">
+            <span className="inline-block h-2 w-2 rounded-full flex-shrink-0" style={{ background: "var(--neg)" }} />
+            <span className="font-serif text-[13px]" style={{ color: "var(--neg)" }}>
+              Health check failed: {healthError}
+            </span>
           </div>
         )}
 
@@ -354,28 +371,33 @@ export default function AdminPage() {
           <div className="space-y-6">
             {/* Data Sources */}
             <div>
-              <p className="text-xs text-muted-foreground mb-3">Data Sources</p>
-              <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
-                {Object.entries(health.data).map(([name, source]) => (
-                  <div key={name} className="flex items-center gap-3 px-5 py-3">
+              <p className="font-mono text-[11px] mb-3" style={{ color: "var(--light)" }}>Data Sources</p>
+              <div style={{ border: "0.5px solid var(--rule)" }}>
+                {Object.entries(health.data).map(([name, source], i, arr) => (
+                  <div
+                    key={name}
+                    className="flex items-center gap-3 px-5 py-3"
+                    style={{ borderBottom: i < arr.length - 1 ? "0.5px solid var(--rule)" : "none" }}
+                  >
                     <span
-                      className={`h-2 w-2 rounded-full flex-shrink-0 ${
-                        source.ok ? "bg-emerald-500" : "bg-red-500"
-                      }`}
+                      className="inline-block h-2 w-2 rounded-full flex-shrink-0"
+                      style={{ background: source.ok ? "var(--pos)" : "var(--neg)" }}
                     />
-                    <span className="text-sm font-medium capitalize flex-1">{name}</span>
+                    <span className="font-serif text-[14px] capitalize flex-1" style={{ color: "var(--black)" }}>
+                      {name}
+                    </span>
                     {source.error && (
-                      <span className="text-xs text-red-400 truncate max-w-[200px]">
+                      <span className="font-mono text-[11px] truncate max-w-[200px]" style={{ color: "var(--neg)" }}>
                         {source.error}
                       </span>
                     )}
                     {source.updatedAt && (
-                      <span className="text-xs text-muted-foreground">
+                      <span className="font-mono text-[11px]" style={{ color: "var(--light)" }}>
                         {source.updatedAt}
                       </span>
                     )}
                     {typeof source.count === "number" && (
-                      <span className="text-xs text-muted-foreground font-mono tabular-nums">
+                      <span className="font-mono text-[11px] tabular-nums" style={{ color: "var(--dim)" }}>
                         {source.count}
                       </span>
                     )}
@@ -384,19 +406,24 @@ export default function AdminPage() {
               </div>
             </div>
 
-            {/* Environment Variables */}
+            {/* Environment */}
             <div>
-              <p className="text-xs text-muted-foreground mb-3">Environment</p>
-              <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
-                {Object.entries(health.env).map(([name, configured]) => (
-                  <div key={name} className="flex items-center gap-3 px-5 py-3">
+              <p className="font-mono text-[11px] mb-3" style={{ color: "var(--light)" }}>Environment</p>
+              <div style={{ border: "0.5px solid var(--rule)" }}>
+                {Object.entries(health.env).map(([name, configured], i, arr) => (
+                  <div
+                    key={name}
+                    className="flex items-center gap-3 px-5 py-3"
+                    style={{ borderBottom: i < arr.length - 1 ? "0.5px solid var(--rule)" : "none" }}
+                  >
                     <span
-                      className={`h-2 w-2 rounded-full flex-shrink-0 ${
-                        configured ? "bg-emerald-500" : "bg-red-500"
-                      }`}
+                      className="inline-block h-2 w-2 rounded-full flex-shrink-0"
+                      style={{ background: configured ? "var(--pos)" : "var(--neg)" }}
                     />
-                    <span className="text-sm font-mono flex-1">{name}</span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="font-mono text-[13px] flex-1" style={{ color: "var(--black)" }}>
+                      {name}
+                    </span>
+                    <span className="font-mono text-[11px]" style={{ color: "var(--light)" }}>
                       {configured ? "Configured" : "Missing"}
                     </span>
                   </div>
@@ -410,19 +437,24 @@ export default function AdminPage() {
       {/* API Key Status */}
       {Object.keys(keys).length > 0 && (
         <div>
-          <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style={{ color: "var(--copper)" }}>
             API Keys
-          </h2>
-          <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
-            {Object.entries(keys).map(([name, configured]) => (
-              <div key={name} className="flex items-center gap-3 px-5 py-3">
+          </p>
+          <div style={{ border: "0.5px solid var(--rule)" }}>
+            {Object.entries(keys).map(([name, configured], i, arr) => (
+              <div
+                key={name}
+                className="flex items-center gap-3 px-5 py-3"
+                style={{ borderBottom: i < arr.length - 1 ? "0.5px solid var(--rule)" : "none" }}
+              >
                 <span
-                  className={`h-2 w-2 rounded-full flex-shrink-0 ${
-                    configured ? "bg-emerald-500" : "bg-red-500"
-                  }`}
+                  className="inline-block h-2 w-2 rounded-full flex-shrink-0"
+                  style={{ background: configured ? "var(--pos)" : "var(--neg)" }}
                 />
-                <span className="text-sm font-mono flex-1">{name}</span>
-                <span className="text-xs text-muted-foreground">
+                <span className="font-mono text-[13px] flex-1" style={{ color: "var(--black)" }}>
+                  {name}
+                </span>
+                <span className="font-mono text-[11px]" style={{ color: "var(--light)" }}>
                   {configured ? "Configured" : "Missing"}
                 </span>
               </div>
