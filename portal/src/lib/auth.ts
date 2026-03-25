@@ -58,11 +58,11 @@ export const authOptions: NextAuthOptions = {
         if (!passMatch) return null;
         if (!whitelisted) return null;
 
-        const user = getUserByEmail(credentials.email);
+        const user = getUserByEmail(email);
         return {
-          id: credentials.email,
-          email: credentials.email,
-          name: user?.name || credentials.email.split("@")[0],
+          id: email,
+          email: email,
+          name: user?.name || email.split("@")[0],
         };
       },
     }),
