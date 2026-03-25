@@ -4,12 +4,12 @@ import { DataError } from "@/components/data-error";
 import { ErrorBoundary } from "@/components/error-boundary";
 import type { MemoMeta } from "@/lib/types";
 
-const decisionColor: Record<MemoMeta["decision"], string> = {
-  BUY: "bg-emerald-500/20 text-emerald-400",
-  HOLD: "bg-amber-500/20 text-amber-400",
-  PASS: "bg-gray-500/20 text-gray-400",
-  SELL: "bg-red-500/20 text-red-400",
-  MONITOR: "bg-blue-500/20 text-blue-400",
+const decisionLabel: Record<MemoMeta["decision"], string> = {
+  BUY: "Buy",
+  HOLD: "Hold",
+  PASS: "Pass",
+  SELL: "Sell",
+  MONITOR: "Monitor",
 };
 
 export default function ResearchPage() {
@@ -17,11 +17,16 @@ export default function ResearchPage() {
 
   return (
     <ErrorBoundary>
-      <div>
-        <h1 className="text-xl sm:text-2xl font-bold mb-2">Research Memos</h1>
-        <p className="text-sm text-[hsl(215,20%,55%)] mb-6 sm:mb-8">
-          Investment committee deep dives
-        </p>
+      <div className="space-y-8">
+        {/* Header */}
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            Research
+          </h1>
+          <p className="text-sm text-muted-foreground mt-1">
+            Investment committee deep dives
+          </p>
+        </div>
 
         {memos.length === 0 ? (
           <DataError
@@ -29,32 +34,32 @@ export default function ResearchPage() {
             message="Run 'Conclave: analyze [TICKER]' to generate one."
           />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {memos.map((memo) => (
               <Link
                 key={memo.slug}
                 href={`/research/${memo.slug}`}
-                className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4 sm:p-6 hover:border-[hsl(215,20%,30%)] transition-colors"
+                className="rounded-xl border border-border bg-card p-5 sm:p-6 hover:border-foreground/20 transition-colors group"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xl sm:text-2xl font-bold font-mono">
+                <div className="flex items-baseline justify-between mb-3">
+                  <span className="text-xl font-semibold font-mono tracking-tight">
                     {memo.ticker}
                   </span>
-                  <span
-                    className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${decisionColor[memo.decision]}`}
-                  >
-                    {memo.decision}
+                  <span className="text-xs text-muted-foreground">
+                    {decisionLabel[memo.decision]}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-[hsl(215,20%,55%)]">
-                  <span>Conviction: {memo.conviction}/10</span>
+                <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                  <span className="font-mono tabular-nums">{memo.conviction}/10</span>
                   <span>{memo.date}</span>
                 </div>
 
-                <p className="text-sm mt-3 line-clamp-2">{memo.summary}</p>
+                <p className="text-sm text-muted-foreground mt-3 line-clamp-2 leading-relaxed">
+                  {memo.summary}
+                </p>
 
-                <p className="text-sm text-emerald-400 mt-4">
+                <p className="text-sm text-muted-foreground mt-4 group-hover:text-foreground transition-colors">
                   Read memo &rarr;
                 </p>
               </Link>

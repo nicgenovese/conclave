@@ -12,10 +12,9 @@ interface AllocationChartProps {
 }
 
 export default function AllocationChart({ buckets }: AllocationChartProps) {
-  const circumference = 2 * Math.PI * 80; // 502.65
+  const circumference = 2 * Math.PI * 80;
   const totalUsd = buckets.reduce((sum, b) => sum + b.total_usd, 0);
 
-  // Build cumulative offsets for each slice
   let cumulativePct = 0;
   const slices = buckets.map((bucket) => {
     const dashLength = (bucket.pct / 100) * circumference;
@@ -30,13 +29,13 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
   });
 
   return (
-    <div className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4 sm:p-6">
-      <h2 className="text-xs sm:text-sm text-[hsl(215,20%,55%)] uppercase tracking-wider mb-4">
+    <div className="rounded-xl border border-border bg-card p-5 sm:p-6">
+      <p className="text-xs uppercase tracking-wider text-muted-foreground mb-6">
         Allocation
-      </h2>
+      </p>
 
       <div className="flex justify-center">
-        <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-[200px] sm:h-[200px]">
+        <svg viewBox="0 0 200 200" className="w-40 h-40 sm:w-48 sm:h-48">
           {slices.map((slice) => (
             <circle
               key={slice.name}
@@ -45,26 +44,27 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
               r={80}
               fill="none"
               stroke={slice.color}
-              strokeWidth={30}
+              strokeWidth={20}
               strokeDasharray={slice.dashArray}
               strokeDashoffset={slice.dashOffset}
+              strokeLinecap="round"
               transform="rotate(-90 100 100)"
             />
           ))}
           <text
             x={100}
-            y={95}
+            y={96}
             textAnchor="middle"
-            className="fill-white font-mono text-lg font-bold"
-            fontSize="18"
+            className="fill-foreground font-mono text-lg font-semibold"
+            fontSize="17"
           >
             {formatUSD(totalUsd)}
           </text>
           <text
             x={100}
-            y={115}
+            y={114}
             textAnchor="middle"
-            className="fill-[hsl(215,20%,55%)]"
+            className="fill-muted-foreground"
             fontSize="11"
           >
             Total NAV
@@ -72,15 +72,15 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
         </svg>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mt-4">
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-6">
         {buckets.map((bucket) => (
-          <div key={bucket.name} className="flex items-center gap-2 text-xs sm:text-sm">
+          <div key={bucket.name} className="flex items-center gap-1.5 text-xs">
             <span
-              className="inline-block w-3 h-3 rounded-full flex-shrink-0"
+              className="inline-block h-2 w-2 rounded-full flex-shrink-0"
               style={{ backgroundColor: bucket.color }}
             />
-            <span className="text-[hsl(215,20%,55%)] truncate">{bucket.name}</span>
-            <span className="font-mono text-white ml-auto flex-shrink-0">
+            <span className="text-muted-foreground">{bucket.name}</span>
+            <span className="font-mono tabular-nums text-foreground">
               {bucket.pct.toFixed(1)}%
             </span>
           </div>

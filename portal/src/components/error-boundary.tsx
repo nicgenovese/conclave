@@ -31,33 +31,21 @@ export class ErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) return this.props.fallback;
 
       return (
-        <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-6 my-4">
+        <div className="rounded-xl border border-border bg-card p-5 sm:p-6 my-6">
           <div className="flex items-start gap-3">
-            <svg
-              className="h-6 w-6 text-red-400 flex-shrink-0 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-              />
-            </svg>
+            <div className="h-2 w-2 rounded-full bg-red-500 mt-2 flex-shrink-0" />
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-red-400">
+              <h3 className="text-sm font-semibold text-foreground">
                 Something went wrong
               </h3>
-              <p className="text-sm text-red-300/80 mt-1 break-words font-mono">
+              <p className="text-sm text-muted-foreground mt-1 break-words font-mono">
                 {this.state.error?.message || "An unexpected error occurred."}
               </p>
               <button
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="mt-4 px-4 py-2 rounded-md bg-red-500/20 border border-red-500/30 text-red-300 text-sm font-medium hover:bg-red-500/30 transition-colors"
+                className="mt-4 px-3 py-1.5 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
               >
-                Try Again
+                Try again
               </button>
             </div>
           </div>

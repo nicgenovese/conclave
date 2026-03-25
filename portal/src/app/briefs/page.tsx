@@ -5,34 +5,39 @@ export default function BriefsPage() {
   const briefs = getBriefs();
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-2">Daily Briefs</h1>
-      <p className="text-sm text-[hsl(215,20%,55%)] mb-8">
-        Market intelligence and portfolio updates
-      </p>
+    <div className="space-y-8">
+      {/* Header */}
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          Daily Briefs
+        </h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Market intelligence and portfolio updates
+        </p>
+      </div>
 
       {briefs.length === 0 ? (
-        <div className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-8 text-center">
-          <p className="text-[hsl(215,20%,55%)]">
+        <div className="py-12 text-center">
+          <p className="text-sm text-muted-foreground">
             No daily briefs yet. Run the daily brief skill to generate one.
           </p>
         </div>
       ) : (
-        <div className="space-y-4">
-          {briefs.map((brief) => (
+        <div>
+          {briefs.map((brief, i) => (
             <Link
               key={brief.date}
               href={`/briefs/${brief.date}`}
-              className="block bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-5 hover:border-[hsl(215,20%,30%)] transition-colors"
+              className="block group"
             >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-sm font-semibold text-white">
+              <div className={`py-5 ${i < briefs.length - 1 ? "border-b border-border/50" : ""}`}>
+                <p className="text-sm font-medium text-foreground group-hover:text-foreground/80 transition-colors">
                   {brief.date}
-                </span>
+                </p>
+                <p className="text-sm text-muted-foreground mt-1 line-clamp-2 leading-relaxed">
+                  {brief.preview}
+                </p>
               </div>
-              <p className="text-sm text-[hsl(215,20%,55%)] line-clamp-3">
-                {brief.preview}
-              </p>
             </Link>
           ))}
         </div>

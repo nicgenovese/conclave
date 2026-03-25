@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { Mail } from "lucide-react";
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
@@ -40,40 +41,33 @@ export default function SignInPage() {
 
   if (submitted) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
-        <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 text-center">
-          <h1 className="text-2xl font-bold tracking-widest text-primary">
-            MORIA CAPITAL
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">Investor Portal</p>
+      <div className="flex min-h-screen items-center justify-center bg-background px-5">
+        <div className="w-full max-w-sm animate-fade-in">
+          {/* Logo */}
+          <div className="flex items-center justify-center gap-2 mb-12">
+            <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+            <span className="text-sm font-light uppercase tracking-[0.3em] text-foreground">
+              Moria
+            </span>
+          </div>
 
-          <div className="mt-8">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10">
-              <svg
-                className="h-6 w-6 text-green-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+          {/* Card */}
+          <div className="rounded-2xl border border-border/60 bg-card p-8 text-center">
+            <div className="mx-auto mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-primary/10">
+              <Mail className="h-5 w-5 text-primary" />
             </div>
             <h2 className="text-lg font-semibold text-foreground">
               Check your email
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               We sent a login link to{" "}
-              <span className="font-medium text-foreground">{email}</span>.
+              <span className="text-foreground">{email}</span>.
+              <br />
               Click the link to sign in.
             </p>
           </div>
 
-          <p className="mt-6 text-xs text-muted-foreground">
+          <p className="mt-6 text-center text-xs text-muted-foreground">
             Didn&apos;t receive it? Check your spam folder.
           </p>
         </div>
@@ -82,37 +76,50 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 text-center">
-        <h1 className="text-2xl font-bold tracking-widest text-primary">
-          MORIA CAPITAL
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">Investor Portal</p>
+    <div className="flex min-h-screen items-center justify-center bg-background px-5">
+      <div className="w-full max-w-sm animate-fade-in">
+        {/* Logo */}
+        <div className="flex items-center justify-center gap-2 mb-12">
+          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <span className="text-sm font-light uppercase tracking-[0.3em] text-foreground">
+            Moria
+          </span>
+        </div>
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            className="w-full rounded-md border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-          />
+        {/* Card */}
+        <div className="rounded-2xl border border-border/60 bg-card p-8">
+          <h2 className="text-center text-lg font-semibold text-foreground">
+            Sign in
+          </h2>
+          <p className="mt-1 text-center text-sm text-muted-foreground">
+            Enter your email to continue
+          </p>
 
-          {error && (
-            <p className="text-sm text-destructive">{error}</p>
-          )}
+          <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/30"
+            />
 
-          <button
-            type="submit"
-            disabled={loading || !email}
-            className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? "Sending..." : "Send Login Link"}
-          </button>
-        </form>
+            {error && (
+              <p className="text-sm text-destructive">{error}</p>
+            )}
 
-        <p className="mt-6 text-xs text-muted-foreground">
+            <button
+              type="submit"
+              disabled={loading || !email}
+              className="w-full rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-all hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {loading ? "Sending..." : "Continue"}
+            </button>
+          </form>
+        </div>
+
+        <p className="mt-6 text-center text-xs text-muted-foreground">
           Access restricted to whitelisted investors
         </p>
       </div>

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-import { LogOut } from "lucide-react";
 import { NAV_ITEMS, ADMIN_NAV } from "@/lib/constants";
 import { isAdmin } from "@/lib/roles";
 import { cn } from "@/lib/utils";
@@ -28,17 +27,19 @@ export function Sidebar() {
     : session?.user?.email?.[0]?.toUpperCase() ?? "?";
 
   return (
-    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-60 flex-col bg-card border-r border-border md:flex">
+    <aside className="fixed left-0 top-0 z-40 hidden h-screen w-60 flex-col border-r border-border/50 bg-background md:flex">
       {/* Logo */}
-      <div className="px-6 py-6">
-        <h1 className="text-lg font-bold tracking-widest text-primary">
-          MORIA CAPITAL
-        </h1>
-        <p className="text-xs text-muted-foreground mt-1">Conclave Portal</p>
+      <div className="px-6 py-8">
+        <div className="flex items-center gap-2">
+          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+          <h1 className="text-sm font-light uppercase tracking-[0.3em] text-foreground">
+            Moria
+          </h1>
+        </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 space-y-1">
+      <nav className="flex-1 px-3 space-y-0.5">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const active = isActive(item.href);
@@ -47,22 +48,25 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                "group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-medium transition-colors",
                 active
-                  ? "bg-secondary text-primary"
-                  : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Icon className="h-4 w-4" />
+              {active && (
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] rounded-full bg-primary" />
+              )}
+              <Icon className="h-4 w-4 flex-shrink-0" />
               {item.label}
             </Link>
           );
         })}
 
-        {/* Admin nav - only for admin users */}
+        {/* Admin nav */}
         {isAdmin(userRole) && (
           <>
-            <div className="my-3 border-t border-border" />
+            <div className="my-4 mx-3 border-t border-border/50" />
             {(() => {
               const Icon = ADMIN_NAV.icon;
               const active = isActive(ADMIN_NAV.href);
@@ -70,13 +74,16 @@ export function Sidebar() {
                 <Link
                   href={ADMIN_NAV.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                    "group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-medium transition-colors",
                     active
-                      ? "bg-secondary text-primary"
-                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  <Icon className="h-4 w-4" />
+                  {active && (
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] rounded-full bg-primary" />
+                  )}
+                  <Icon className="h-4 w-4 flex-shrink-0" />
                   {ADMIN_NAV.label}
                 </Link>
               );
@@ -86,26 +93,22 @@ export function Sidebar() {
       </nav>
 
       {/* User section */}
-      <div className="border-t border-border px-4 py-4">
+      <div className="border-t border-border/50 px-4 py-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-xs font-medium text-foreground flex-shrink-0">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-2xs font-medium text-muted-foreground flex-shrink-0">
             {userInitials}
           </div>
           <div className="flex-1 min-w-0">
-            <p className="truncate text-sm font-medium text-foreground">
+            <p className="truncate text-[13px] font-medium text-foreground">
               {session?.user?.name ?? "User"}
             </p>
-            <p className="truncate text-xs text-muted-foreground">
-              {session?.user?.email}
-            </p>
+            <button
+              onClick={() => signOut()}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Sign out
+            </button>
           </div>
-          <button
-            onClick={() => signOut()}
-            className="rounded-md p-1.5 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
-            title="Sign out"
-          >
-            <LogOut className="h-4 w-4" />
-          </button>
         </div>
       </div>
     </aside>

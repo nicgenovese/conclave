@@ -55,7 +55,6 @@ export default function AdminPage() {
 
   const isAdmin = (session?.user as { role?: string } | undefined)?.role === "admin";
 
-  // Hard redirect non-admins to dashboard
   useEffect(() => {
     if (session && !isAdmin) {
       window.location.href = "/";
@@ -181,7 +180,7 @@ export default function AdminPage() {
   if (!isAdmin) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <p className="text-lg text-[hsl(215,20%,55%)]">Access Denied</p>
+        <p className="text-sm text-muted-foreground">Access denied</p>
       </div>
     );
   }
@@ -189,224 +188,248 @@ export default function AdminPage() {
   if (initialLoading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <p className="text-lg text-[hsl(215,20%,55%)]">Loading...</p>
+        <p className="text-sm text-muted-foreground">Loading...</p>
       </div>
     );
   }
 
+  const healthStatusDot = health
+    ? health.status === "ok"
+      ? "bg-emerald-500"
+      : health.status === "degraded"
+      ? "bg-amber-500"
+      : "bg-red-500"
+    : "";
+
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-8">Admin Panel</h1>
+    <div className="space-y-8">
+      {/* Header */}
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          Settings
+        </h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Access control and system health
+        </p>
+      </div>
 
       {/* Error Banner */}
       {error && (
-        <div className="mb-6 bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 text-sm">
-          <span className="font-semibold">Error:</span> {error}
+        <div className="flex items-start gap-3 rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+          <span className="h-2 w-2 rounded-full bg-red-500 mt-1.5 flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-red-400">{error}</p>
+          </div>
           <button
             onClick={() => setError(null)}
-            className="ml-3 text-red-300 hover:text-red-200 underline"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             Dismiss
           </button>
         </div>
       )}
 
-      {/* Whitelist Management */}
-      <h2 className="text-lg font-semibold mb-4">Whitelist Management</h2>
+      {/* Whitelist */}
+      <div>
+        <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-4">
+          Whitelist
+        </h2>
 
-      <div className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg overflow-hidden">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-[hsl(215,20%,18%)]">
-              <th className="text-left p-3 font-semibold text-[hsl(215,20%,55%)]">Email</th>
-              <th className="text-left p-3 font-semibold text-[hsl(215,20%,55%)]">Role</th>
-              <th className="text-left p-3 font-semibold text-[hsl(215,20%,55%)]">Added</th>
-              <th className="text-left p-3 font-semibold text-[hsl(215,20%,55%)]">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {whitelist.map((entry) => (
-              <tr key={entry.email} className="border-b border-[hsl(215,20%,18%)]/50">
-                <td className="p-3">{entry.email}</td>
-                <td className="p-3">
-                  <span
-                    className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
-                      entry.role === "admin"
-                        ? "bg-purple-500/20 text-purple-400"
-                        : "bg-blue-500/20 text-blue-400"
-                    }`}
-                  >
-                    {entry.role}
-                  </span>
-                </td>
-                <td className="p-3 text-[hsl(215,20%,55%)]">{entry.addedAt}</td>
-                <td className="p-3">
-                  <button
-                    onClick={() => handleRemove(entry.email)}
-                    disabled={loading}
-                    className="text-red-400 hover:text-red-300 text-sm transition-colors disabled:opacity-50"
-                  >
-                    Remove
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {whitelist.length === 0 && (
+        <div className="rounded-xl border border-border bg-card overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
               <tr>
-                <td colSpan={4} className="p-3 text-center text-[hsl(215,20%,55%)]">
-                  No users in whitelist
-                </td>
+                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
+                  Email
+                </th>
+                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
+                  Role
+                </th>
+                <th className="text-left py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
+                  Added
+                </th>
+                <th className="text-right py-3 px-5 text-xs uppercase tracking-wider text-muted-foreground font-medium border-b border-border">
+                  Actions
+                </th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {whitelist.map((entry) => (
+                <tr key={entry.email} className="border-b border-border/50">
+                  <td className="py-4 px-5 font-mono text-sm">{entry.email}</td>
+                  <td className="py-4 px-5">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-secondary text-muted-foreground">
+                      {entry.role}
+                    </span>
+                  </td>
+                  <td className="py-4 px-5 text-muted-foreground text-sm">
+                    {entry.addedAt}
+                  </td>
+                  <td className="py-4 px-5 text-right">
+                    <button
+                      onClick={() => handleRemove(entry.email)}
+                      disabled={loading}
+                      className="text-sm text-muted-foreground hover:text-red-400 transition-colors disabled:opacity-50"
+                    >
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              ))}
+              {whitelist.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="py-8 text-center text-sm text-muted-foreground">
+                    No users in whitelist
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+
+          {/* Inline add form */}
+          <div className="border-t border-border p-4 sm:px-5">
+            <form onSubmit={handleAdd} className="flex items-start gap-3">
+              <div className="flex-1">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError(null);
+                  }}
+                  placeholder="user@example.com"
+                  className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-foreground/20"
+                  required
+                />
+                {emailError && (
+                  <p className="mt-1 text-xs text-red-400">{emailError}</p>
+                )}
+              </div>
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value as "admin" | "investor")}
+                className="bg-secondary border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-foreground/20"
+              >
+                <option value="investor">Investor</option>
+                <option value="admin">Admin</option>
+              </select>
+              <button
+                type="submit"
+                disabled={loading}
+                className="bg-foreground text-background rounded-lg px-4 py-2 text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-50"
+              >
+                Add
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
 
-      {/* Add Form */}
-      <form onSubmit={handleAdd} className="mt-4 flex items-start gap-3">
-        <div className="flex-1">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setEmailError(null);
-            }}
-            placeholder="user@example.com"
-            className="w-full bg-[hsl(215,20%,16%)] border border-[hsl(215,20%,18%)] rounded px-3 py-2 text-sm"
-            required
-          />
-          {emailError && (
-            <p className="mt-1 text-xs text-red-400">{emailError}</p>
-          )}
-        </div>
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value as "admin" | "investor")}
-          className="bg-[hsl(215,20%,16%)] border border-[hsl(215,20%,18%)] rounded px-3 py-2 text-sm"
-        >
-          <option value="investor">investor</option>
-          <option value="admin">admin</option>
-        </select>
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-emerald-600 hover:bg-emerald-500 text-white rounded px-4 py-2 text-sm font-medium transition-colors disabled:opacity-50"
-        >
-          Add
-        </button>
-      </form>
-
       {/* System Health */}
-      <div className="mt-10">
-        <div className="flex items-center gap-4 mb-4">
-          <h2 className="text-lg font-semibold">System Health</h2>
+      <div>
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+            System Health
+          </h2>
           {health && (
-            <span
-              className={`inline-block px-2.5 py-0.5 rounded text-xs font-semibold uppercase ${
-                health.status === "ok"
-                  ? "bg-emerald-500/20 text-emerald-400"
-                  : health.status === "degraded"
-                  ? "bg-yellow-500/20 text-yellow-400"
-                  : "bg-red-500/20 text-red-400"
-              }`}
-            >
-              {health.status}
-            </span>
+            <span className={`h-2 w-2 rounded-full ${healthStatusDot}`} />
           )}
           <button
             onClick={fetchHealth}
             disabled={healthLoading}
-            className="ml-auto text-sm text-blue-400 hover:text-blue-300 transition-colors disabled:opacity-50"
+            className="ml-auto text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50"
           >
             {healthLoading ? "Checking..." : "Refresh"}
           </button>
         </div>
 
         {healthError && (
-          <div className="mb-4 bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-400 text-sm">
+          <div className="flex items-center gap-2 text-sm text-red-400 mb-4">
+            <span className="h-2 w-2 rounded-full bg-red-500 flex-shrink-0" />
             Health check failed: {healthError}
           </div>
         )}
 
         {health && (
-          <>
+          <div className="space-y-6">
             {/* Data Sources */}
-            <h3 className="text-sm font-semibold text-[hsl(215,20%,55%)] mb-2">Data Sources</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-              {Object.entries(health.data).map(([name, source]) => (
-                <div
-                  key={name}
-                  className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4"
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div
-                      className={`w-2.5 h-2.5 rounded-full ${
+            <div>
+              <p className="text-xs text-muted-foreground mb-3">Data Sources</p>
+              <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
+                {Object.entries(health.data).map(([name, source]) => (
+                  <div key={name} className="flex items-center gap-3 px-5 py-3">
+                    <span
+                      className={`h-2 w-2 rounded-full flex-shrink-0 ${
                         source.ok ? "bg-emerald-500" : "bg-red-500"
                       }`}
                     />
-                    <span className="text-sm font-semibold capitalize">{name}</span>
+                    <span className="text-sm font-medium capitalize flex-1">{name}</span>
+                    {source.error && (
+                      <span className="text-xs text-red-400 truncate max-w-[200px]">
+                        {source.error}
+                      </span>
+                    )}
+                    {source.updatedAt && (
+                      <span className="text-xs text-muted-foreground">
+                        {source.updatedAt}
+                      </span>
+                    )}
+                    {typeof source.count === "number" && (
+                      <span className="text-xs text-muted-foreground font-mono tabular-nums">
+                        {source.count}
+                      </span>
+                    )}
                   </div>
-                  {source.error && (
-                    <p className="text-xs text-red-400 mt-1 break-all">{source.error}</p>
-                  )}
-                  {source.updatedAt && (
-                    <p className="text-xs text-[hsl(215,20%,55%)] mt-1">Updated: {source.updatedAt}</p>
-                  )}
-                  {typeof source.count === "number" && (
-                    <p className="text-xs text-[hsl(215,20%,55%)] mt-1">Count: {source.count}</p>
-                  )}
-                  {source.latest && (
-                    <p className="text-xs text-[hsl(215,20%,55%)] mt-1">Latest: {source.latest}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Environment Variables */}
-            <h3 className="text-sm font-semibold text-[hsl(215,20%,55%)] mb-2">Environment Variables</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {Object.entries(health.env).map(([name, configured]) => (
-                <div
-                  key={name}
-                  className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4 flex items-center gap-3"
-                >
-                  <div
-                    className={`w-2.5 h-2.5 rounded-full ${
-                      configured ? "bg-emerald-500" : "bg-red-500"
-                    }`}
-                  />
-                  <span className="text-sm font-mono">{name}</span>
-                  <span className="text-xs text-[hsl(215,20%,55%)] ml-auto">
-                    {configured ? "Configured" : "Missing"}
-                  </span>
-                </div>
-              ))}
+            <div>
+              <p className="text-xs text-muted-foreground mb-3">Environment</p>
+              <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
+                {Object.entries(health.env).map(([name, configured]) => (
+                  <div key={name} className="flex items-center gap-3 px-5 py-3">
+                    <span
+                      className={`h-2 w-2 rounded-full flex-shrink-0 ${
+                        configured ? "bg-emerald-500" : "bg-red-500"
+                      }`}
+                    />
+                    <span className="text-sm font-mono flex-1">{name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {configured ? "Configured" : "Missing"}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </>
+          </div>
         )}
       </div>
 
-      {/* API Key Status (legacy) */}
-      <h2 className="text-lg font-semibold mt-8 mb-4">API Key Status</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {Object.entries(keys).map(([name, configured]) => (
-          <div
-            key={name}
-            className="bg-[hsl(222,47%,9%)] border border-[hsl(215,20%,18%)] rounded-lg p-4 flex items-center gap-3"
-          >
-            <div
-              className={`w-2.5 h-2.5 rounded-full ${
-                configured ? "bg-emerald-500" : "bg-red-500"
-              }`}
-            />
-            <span className="text-sm font-mono">{name}</span>
-            <span className="text-xs text-[hsl(215,20%,55%)] ml-auto">
-              {configured ? "Configured" : "Missing"}
-            </span>
+      {/* API Key Status */}
+      {Object.keys(keys).length > 0 && (
+        <div>
+          <h2 className="text-sm uppercase tracking-wider text-muted-foreground font-medium mb-4">
+            API Keys
+          </h2>
+          <div className="rounded-xl border border-border bg-card divide-y divide-border/50">
+            {Object.entries(keys).map(([name, configured]) => (
+              <div key={name} className="flex items-center gap-3 px-5 py-3">
+                <span
+                  className={`h-2 w-2 rounded-full flex-shrink-0 ${
+                    configured ? "bg-emerald-500" : "bg-red-500"
+                  }`}
+                />
+                <span className="text-sm font-mono flex-1">{name}</span>
+                <span className="text-xs text-muted-foreground">
+                  {configured ? "Configured" : "Missing"}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

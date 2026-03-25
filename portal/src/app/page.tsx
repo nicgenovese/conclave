@@ -1,4 +1,5 @@
 import { getPortfolio } from "@/lib/data";
+import { formatUSD } from "@/lib/utils";
 import NavCard from "@/components/dashboard/nav-card";
 import AllocationChart from "@/components/dashboard/allocation-chart";
 import PositionsTable from "@/components/dashboard/positions-table";
@@ -24,22 +25,23 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
-      <div>
-        <h1 className="text-xl sm:text-2xl font-bold text-white">Dashboard</h1>
-
-        {/* Data freshness indicator */}
-        <div className="flex flex-wrap items-center gap-2 mt-1">
-          <p className="text-[hsl(215,20%,55%)] text-sm">
-            Last updated: {portfolio.updated_at}
-          </p>
-          {stale && (
-            <span className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Stale (&gt;24h)
-            </span>
-          )}
+      <div className="space-y-8">
+        {/* Header */}
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            Overview
+          </h1>
+          <div className="flex items-center gap-2 mt-1">
+            <p className="text-sm text-muted-foreground">
+              Portfolio as of {portfolio.updated_at}
+            </p>
+            {stale && (
+              <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                <span className="h-2 w-2 rounded-full bg-amber-500" />
+                Stale
+              </span>
+            )}
+          </div>
         </div>
 
         {isEmpty ? (
@@ -49,23 +51,42 @@ export default function Home() {
           />
         ) : (
           <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-6">
-              <NavCard nav={portfolio.nav} updatedAt={portfolio.updated_at} />
-              <AllocationChart buckets={portfolio.allocation_buckets} />
-            </div>
-
-            <div className="mt-4 sm:mt-6">
-              <PositionsTable positions={portfolio.positions} />
-            </div>
-
-            <div className="mt-4 sm:mt-6">
-              <PerpsTable
-                perps={portfolio.perps}
-                totalExposure={portfolio.total_perp_exposure}
-                avgLeverage={portfolio.avg_leverage}
-                maxLoss={portfolio.max_perp_loss}
+            {/* Top stat cards */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <NavCard
+                label="NAV"
+                value={formatUSD(portfolio.nav)}
+              />
+              <NavCard
+                label="Positions"
+                value={String(portfolio.positions.length)}
+                subtitle={`${portfolio.allocation_buckets.length} buckets`}
+              />
+              <NavCard
+                label="Perp Exposure"
+                value={formatUSD(portfolio.total_perp_exposure)}
+                subtitle={`${portfolio.avg_leverage.toFixed(1)}x avg leverage`}
+              />
+              <NavCard
+                label="Max Perp Loss"
+                value={formatUSD(portfolio.max_perp_loss)}
+                trend="down"
               />
             </div>
+
+            {/* Allocation chart */}
+            <AllocationChart buckets={portfolio.allocation_buckets} />
+
+            {/* Positions */}
+            <PositionsTable positions={portfolio.positions} />
+
+            {/* Perps */}
+            <PerpsTable
+              perps={portfolio.perps}
+              totalExposure={portfolio.total_perp_exposure}
+              avgLeverage={portfolio.avg_leverage}
+              maxLoss={portfolio.max_perp_loss}
+            />
           </>
         )}
       </div>
