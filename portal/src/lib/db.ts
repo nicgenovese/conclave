@@ -7,8 +7,11 @@ const WHITELIST_PATH = path.join(process.cwd(), "data", "whitelist.json");
 function readWhitelist(): WhitelistData {
   try {
     const raw = fs.readFileSync(WHITELIST_PATH, "utf-8");
-    return JSON.parse(raw);
-  } catch {
+    const data = JSON.parse(raw);
+    console.log(`[DB] Whitelist loaded: ${data.users?.length || 0} users from ${WHITELIST_PATH}`);
+    return data;
+  } catch (err) {
+    console.error(`[DB] Failed to read whitelist at ${WHITELIST_PATH}:`, err);
     return { users: [] };
   }
 }
