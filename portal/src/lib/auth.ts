@@ -40,25 +40,23 @@ export const authOptions: NextAuthOptions = {
         passphrase: { label: "Passphrase", type: "password" },
       },
       async authorize(credentials) {
-        console.log("[AUTH] Login attempt:", credentials?.email);
+        const email = credentials?.email || "";
+        const pass = credentials?.passphrase || "";
+        const expectedPass = PORTAL_PASSPHRASE;
+        const passMatch = pass === expectedPass;
+        let whitelisted = false;
 
-        if (!credentials?.email || !credentials?.passphrase) {
-          console.log("[AUTH] Missing email or passphrase");
-          return null;
+        try {
+          whitelisted = isWhitelisted(email);
+        } catch (err) {
+          console.log(`[AUTH] WHITELIST_ERROR email=${email} err=${err}`);
         }
 
-        // Check passphrase
-        if (credentials.passphrase !== PORTAL_PASSPHRASE) {
-          console.log("[AUTH] Wrong passphrase");
-          return null;
-        }
+        console.log(`[AUTH] email=${email} passMatch=${passMatch} whitelisted=${whitelisted} expectedLen=${expectedPass.length} gotLen=${pass.length}`);
 
-        // Check whitelist
-        const whitelisted = isWhitelisted(credentials.email);
-        console.log("[AUTH] Whitelist check for", credentials.email, ":", whitelisted);
-        if (!whitelisted) {
-          return null;
-        }
+        if (!email || !pass) return null;
+        if (!passMatch) return null;
+        if (!whitelisted) return null;
 
         const user = getUserByEmail(credentials.email);
         return {
