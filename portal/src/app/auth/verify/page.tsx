@@ -49,7 +49,7 @@ export default function VerifyRequestPage() {
         </div>
 
         <p className="mt-8 text-center font-serif text-[12px] italic" style={{ color: "var(--light)" }}>
-          Commodities AG &middot; Zug, Switzerland
+          Moria Capital AG &middot; Zug, Switzerland
         </p>
       </div>
     </div>

@@ -2,14 +2,15 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [passphrase, setPassphrase] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
+  const router = useRouter();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
 
   async function handleSubmit(e: React.FormEvent) {
@@ -18,19 +19,21 @@ export default function SignInPage() {
     setLoading(true);
 
     try {
-      const res = await signIn("email", {
+      const res = await signIn("credentials", {
         email,
-        callbackUrl,
+        passphrase,
         redirect: false,
       });
 
       if (res?.error) {
-        setError("Email not on the investor whitelist.");
+        setError("Invalid credentials. Check your email and passphrase.");
         setLoading(false);
         return;
       }
 
-      setSubmitted(true);
+      if (res?.ok) {
+        router.push(callbackUrl);
+      }
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
@@ -38,105 +41,89 @@ export default function SignInPage() {
     }
   }
 
-  if (submitted) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-white px-5">
-        <div className="w-full max-w-sm animate-fade-in">
-          {/* Logo */}
-          <div className="flex flex-col items-center mb-10">
-            <svg width="48" height="42" viewBox="0 0 48 42" fill="none" className="mb-5">
-              <polygon points="24,2 46,40 2,40" fill="none" stroke="#6B3620" strokeWidth="1.4"/>
-              <polygon points="24,12 37,40 11,40" fill="none" stroke="#6B3620" strokeWidth="0.6" opacity="0.38"/>
-            </svg>
-            <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em]" style={{ color: "var(--black)" }}>
-              Moria Capital
-            </h1>
-            <p className="font-serif text-[13px] mt-1" style={{ color: "var(--dim)" }}>
-              Conclave Portal
-            </p>
-          </div>
-
-          <hr className="thick-rule mb-8" />
-
-          <div className="text-center">
-            <h2 className="font-serif text-[18px]" style={{ color: "var(--black)" }}>
-              Check your email
-            </h2>
-            <p className="font-serif text-[14px] mt-3 leading-relaxed" style={{ color: "var(--dim)" }}>
-              We sent a login link to{" "}
-              <span style={{ color: "var(--black)" }}>{email}</span>.
-              <br />
-              Click the link to sign in.
-            </p>
-          </div>
-
-          <p className="mt-8 text-center font-serif text-[12px] italic" style={{ color: "var(--light)" }}>
-            Commodities AG &middot; Zug, Switzerland
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-white px-5">
-      <div className="w-full max-w-sm animate-fade-in">
+      <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex flex-col items-center mb-10">
           <svg width="48" height="42" viewBox="0 0 48 42" fill="none" className="mb-5">
             <polygon points="24,2 46,40 2,40" fill="none" stroke="#6B3620" strokeWidth="1.4"/>
             <polygon points="24,12 37,40 11,40" fill="none" stroke="#6B3620" strokeWidth="0.6" opacity="0.38"/>
           </svg>
-          <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em]" style={{ color: "var(--black)" }}>
+          <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em]" style={{ color: "#0A0A0A" }}>
             Moria Capital
           </h1>
-          <p className="font-serif text-[13px] mt-1" style={{ color: "var(--dim)" }}>
+          <p className="font-serif text-[13px] mt-1" style={{ color: "#505050" }}>
             Conclave Portal
           </p>
         </div>
 
-        <hr className="thick-rule mb-8" />
-
-        <h2 className="text-center font-serif text-[18px] mb-6" style={{ color: "var(--black)" }}>
-          Sign In
-        </h2>
+        <hr style={{ border: "none", borderTop: "1.5px solid #0A0A0A", marginBottom: "32px" }} />
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            className="w-full px-4 py-3 font-serif text-[14px]"
-            style={{
-              border: "0.5px solid var(--rule)",
-              background: "var(--white)",
-              color: "var(--body)",
-              outline: "none",
-            }}
-          />
+          <div>
+            <label className="block font-mono text-[9px] uppercase tracking-[0.16em] mb-2" style={{ color: "#6B3620" }}>
+              Email
+            </label>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              autoComplete="email"
+              className="w-full px-4 py-3 font-serif text-[14px]"
+              style={{
+                border: "0.5px solid #CCCAC6",
+                background: "#FFFFFF",
+                color: "#222222",
+                outline: "none",
+              }}
+            />
+          </div>
+
+          <div>
+            <label className="block font-mono text-[9px] uppercase tracking-[0.16em] mb-2" style={{ color: "#6B3620" }}>
+              Passphrase
+            </label>
+            <input
+              type="password"
+              required
+              value={passphrase}
+              onChange={(e) => setPassphrase(e.target.value)}
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+              autoComplete="current-password"
+              className="w-full px-4 py-3 font-serif text-[14px]"
+              style={{
+                border: "0.5px solid #CCCAC6",
+                background: "#FFFFFF",
+                color: "#222222",
+                outline: "none",
+              }}
+            />
+          </div>
 
           {error && (
-            <p className="font-serif text-[13px]" style={{ color: "var(--neg)" }}>{error}</p>
+            <p className="font-serif text-[13px]" style={{ color: "#7A2828" }}>{error}</p>
           )}
 
           <button
             type="submit"
-            disabled={loading || !email}
-            className="w-full px-4 py-3 font-serif text-[14px] disabled:opacity-40 disabled:cursor-not-allowed"
+            disabled={loading || !email || !passphrase}
+            className="w-full px-4 py-3 font-serif text-[14px] mt-2 disabled:opacity-40 disabled:cursor-not-allowed"
             style={{
-              background: "var(--black)",
-              color: "var(--white)",
+              background: "#0A0A0A",
+              color: "#FFFFFF",
               border: "none",
+              cursor: loading ? "wait" : "pointer",
             }}
           >
-            {loading ? "Sending..." : "Continue"}
+            {loading ? "Signing in..." : "Enter"}
           </button>
         </form>
 
-        <p className="mt-8 text-center font-serif text-[12px] italic" style={{ color: "var(--light)" }}>
-          Commodities AG &middot; Zug, Switzerland
+        <p className="mt-10 text-center font-serif text-[12px] italic" style={{ color: "#909090" }}>
+          Moria Capital AG &middot; Zug, Switzerland
         </p>
       </div>
     </div>
