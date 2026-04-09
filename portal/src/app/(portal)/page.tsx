@@ -59,26 +59,25 @@ export default function Home() {
     <ErrorBoundary>
       <div className="space-y-8">
         {/* ── HEADER BAR ─────────────────────────── */}
-        <div className="flex items-end justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1">
           <div>
             <p className="text-copper text-[10px] font-mono uppercase tracking-widest mb-1">
               Conclave
             </p>
-            <h1 className="text-[28px] font-semibold tracking-tight text-moria-black leading-none">
+            <h1 className="text-[22px] sm:text-[28px] font-semibold tracking-tight text-moria-black leading-none">
               Morning Brief
             </h1>
           </div>
-          <div className="text-right">
-            <p className="text-[13px] text-moria-dim">
+          <div className="sm:text-right">
+            <p className="text-[12px] sm:text-[13px] text-moria-dim">
               {new Date().toLocaleDateString("en-US", {
                 weekday: "short",
                 month: "short",
                 day: "numeric",
-                year: "numeric",
               })}
             </p>
             {stale && (
-              <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center justify-end gap-1.5">
+              <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center sm:justify-end gap-1.5">
                 <span className="h-1.5 w-1.5 bg-copper rounded-full inline-block" />
                 Data stale
               </p>
@@ -86,43 +85,43 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── NAV + KEY METRICS ROW ──────────────── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <div className="card p-5">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+        {/* ── KEY METRICS ROW ──────────────────────── */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+          <div className="card p-3 sm:p-5">
+            <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
               NAV
             </p>
-            <p className="font-mono text-[28px] font-normal tabular-nums text-moria-black leading-tight">
+            <p className="font-mono text-[20px] sm:text-[28px] font-normal tabular-nums text-moria-black leading-tight">
               {formatUSD(portfolio.nav)}
             </p>
           </div>
-          <div className="card p-5">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+          <div className="card p-3 sm:p-5">
+            <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
               Positions
             </p>
-            <p className="font-mono text-[28px] font-normal tabular-nums text-moria-black leading-tight">
+            <p className="font-mono text-[20px] sm:text-[28px] font-normal tabular-nums text-moria-black leading-tight">
               {portfolio.positions.length}
             </p>
-            <p className="text-moria-dim text-xs mt-1">
+            <p className="text-moria-dim text-[10px] sm:text-xs mt-0.5 sm:mt-1">
               {portfolio.allocation_buckets.length} buckets
             </p>
           </div>
-          <div className="card p-5">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-              Perp Exposure
+          <div className="card p-3 sm:p-5">
+            <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+              Perps
             </p>
-            <p className="font-mono text-[28px] font-normal tabular-nums text-moria-black leading-tight">
+            <p className="font-mono text-[20px] sm:text-[28px] font-normal tabular-nums text-moria-black leading-tight">
               {formatUSD(portfolio.total_perp_exposure)}
             </p>
-            <p className="text-moria-dim text-xs mt-1">
-              {portfolio.avg_leverage.toFixed(1)}x avg leverage
+            <p className="text-moria-dim text-[10px] sm:text-xs mt-0.5 sm:mt-1">
+              {portfolio.avg_leverage.toFixed(1)}x avg
             </p>
           </div>
-          <div className="card p-5">
-            <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-              Max Drawdown
+          <div className="card p-3 sm:p-5">
+            <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+              Max Loss
             </p>
-            <p className="font-mono text-[28px] font-normal tabular-nums text-moria-neg leading-tight">
+            <p className="font-mono text-[20px] sm:text-[28px] font-normal tabular-nums text-moria-neg leading-tight">
               {formatUSD(portfolio.max_perp_loss)}
             </p>
           </div>
@@ -144,67 +143,75 @@ export default function Home() {
                   View all →
                 </Link>
               </div>
-              <table className="w-full text-[13px]">
-                <thead>
-                  <tr className="border-t-2 border-copper bg-[#F5F4F2]">
-                    <th className="text-left px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                      Asset
-                    </th>
-                    <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                      Value
-                    </th>
-                    <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                      Alloc
-                    </th>
-                    <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                      P&L
-                    </th>
-                    <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
-                      Bucket
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {topPositions.map((pos) => (
-                    <tr
-                      key={pos.ticker}
-                      className="border-b border-moria-rule/30 hover:bg-[#F8F7F5] transition-colors"
-                    >
-                      <td className="px-5 py-3">
-                        <span className="font-mono font-medium text-moria-black">
-                          {pos.ticker}
-                        </span>
-                      </td>
-                      <td className="px-5 py-3 text-right font-mono tabular-nums text-moria-black">
-                        {formatUSD(pos.allocation_usd)}
-                      </td>
-                      <td className="px-5 py-3 text-right">
-                        <div className="flex items-center justify-end gap-2">
-                          <div className="w-12 h-1 bg-moria-faint rounded-full overflow-hidden hidden sm:block">
-                            <div
-                              className="h-full bg-copper rounded-full"
-                              style={{
-                                width: `${Math.min(pos.allocation_pct, 100)}%`,
-                              }}
-                            />
-                          </div>
-                          <span className="font-mono text-xs tabular-nums text-moria-dim">
-                            {pos.allocation_pct.toFixed(1)}%
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-5 py-3 text-right hidden sm:table-cell">
-                        <PctChange value={pos.pnl_pct ?? 0} />
-                      </td>
-                      <td className="px-5 py-3 text-right hidden md:table-cell">
-                        <span className="text-[11px] text-moria-light">
-                          {pos.bucket}
-                        </span>
-                      </td>
+              <div className="overflow-x-auto -mx-0">
+                <table className="w-full text-[12px] sm:text-[13px]">
+                  <thead>
+                    <tr className="border-t-2 border-copper bg-[#F5F4F2]">
+                      <th className="text-left px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                        Asset
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                        Value
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
+                        Alloc
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
+                        P&L
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
+                        Bucket
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {topPositions.map((pos) => (
+                      <tr
+                        key={pos.ticker}
+                        className="border-b border-moria-rule/30 hover:bg-[#F8F7F5] transition-colors"
+                      >
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono font-medium text-moria-black">
+                              {pos.ticker}
+                            </span>
+                            {/* Show P&L inline on mobile */}
+                            <span className="sm:hidden">
+                              <PctChange value={pos.pnl_pct ?? 0} />
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-black">
+                          {formatUSD(pos.allocation_usd)}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden sm:table-cell">
+                          <div className="flex items-center justify-end gap-2">
+                            <div className="w-12 h-1 bg-moria-faint rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-copper rounded-full"
+                                style={{
+                                  width: `${Math.min(pos.allocation_pct, 100)}%`,
+                                }}
+                              />
+                            </div>
+                            <span className="font-mono text-xs tabular-nums text-moria-dim">
+                              {pos.allocation_pct.toFixed(1)}%
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden sm:table-cell">
+                          <PctChange value={pos.pnl_pct ?? 0} />
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
+                          <span className="text-[11px] text-moria-light">
+                            {pos.bucket}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
