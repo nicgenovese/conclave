@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -187,6 +187,28 @@ export function getBrief(date: string): string | null {
   const { content, error } = safeReadFile(briefPath);
   if (error || !content) return null;
   return content;
+}
+
+// ============================================
+// Headlines — morning brief data
+// ============================================
+export function getHeadlines(): { headlines: Headline[]; polymarket: PolymarketEvent[]; updated_at: string } | null {
+  try {
+    const filePath = path.join(DATA_DIR, "headlines.json");
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(raw) as HeadlinesData;
+    return {
+      headlines: parsed.headlines || [],
+      polymarket: parsed.polymarket || [],
+      updated_at: parsed.updated_at || "N/A",
+    };
+  } catch (err) {
+    console.error("[data] Failed to read headlines.json:", err);
+    return null;
+  }
 }
 
 // ============================================

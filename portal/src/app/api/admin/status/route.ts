@@ -9,12 +9,12 @@ export async function GET() {
     if (session.user?.role !== "admin") return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
     const keys = {
-      GOOGLE_CLIENT_ID: !!process.env.GOOGLE_CLIENT_ID,
-      GOOGLE_CLIENT_SECRET: !!process.env.GOOGLE_CLIENT_SECRET,
       NEXTAUTH_SECRET: !!process.env.NEXTAUTH_SECRET,
+      PORTAL_PASSPHRASE: !!process.env.PORTAL_PASSPHRASE,
       ETHERSCAN_API_KEY: !!process.env.ETHERSCAN_API_KEY,
       COINGECKO_API_KEY: !!process.env.COINGECKO_API_KEY,
       X_BEARER_TOKEN: !!process.env.X_BEARER_TOKEN,
+      DUNE_API_KEY: !!process.env.DUNE_API_KEY,
     };
 
     return NextResponse.json({ keys });

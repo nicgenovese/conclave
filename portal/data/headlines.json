@@ -1,0 +1,151 @@
+{
+  "updated_at": "2026-04-09T07:30:00Z",
+  "headlines": [
+    {
+      "title": "AAVE V4 Unified Liquidity Layer Goes Live on Mainnet, TVL Surges to $28B",
+      "source": "The Block",
+      "url": "https://theblock.co",
+      "date": "2026-04-09",
+      "category": "DeFi",
+      "relevance": "Core holding — V4 catalyst materializing"
+    },
+    {
+      "title": "Hyperliquid Annualized Fee Revenue Hits $1.2B as Perp Volume Doubles",
+      "source": "DeFi Llama",
+      "url": "https://defillama.com",
+      "date": "2026-04-09",
+      "category": "DeFi",
+      "relevance": "HYPE position — revenue growth validates thesis"
+    },
+    {
+      "title": "Pendle Crosses $8B TVL as Fixed-Rate Demand Surges Ahead of Rate Cuts",
+      "source": "Messari",
+      "url": "https://messari.io",
+      "date": "2026-04-08",
+      "category": "DeFi",
+      "relevance": "PENDLE position — TVL expansion continues"
+    },
+    {
+      "title": "Fed Signals Two Rate Cuts Before Year-End, Markets Price 65% Probability",
+      "source": "Reuters",
+      "url": "https://reuters.com",
+      "date": "2026-04-08",
+      "category": "Rates & Macro",
+      "relevance": "Macro tailwind for risk assets and yield positioning"
+    },
+    {
+      "title": "Senate Banking Committee Advances Stablecoin Framework Bill 14-9",
+      "source": "CoinDesk",
+      "url": "https://coindesk.com",
+      "date": "2026-04-07",
+      "category": "Regulation",
+      "relevance": "Regulatory clarity for DeFi lending protocols"
+    },
+    {
+      "title": "BlackRock Tokenized Treasury Fund BUIDL Surpasses $3B AUM",
+      "source": "Bloomberg",
+      "url": "https://bloomberg.com",
+      "date": "2026-04-07",
+      "category": "Commodities",
+      "relevance": "RWA tokenization thesis accelerating"
+    }
+  ],
+  "polymarket": [
+    {
+      "id": "pm-h1",
+      "question": "Will the Fed cut rates before July 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.65 },
+        { "name": "No", "probability": 0.35 }
+      ],
+      "volume_usd": 14200000,
+      "end_date": "2026-07-01",
+      "category": "Rates",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h2",
+      "question": "US stablecoin legislation signed into law in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.43 },
+        { "name": "No", "probability": 0.57 }
+      ],
+      "volume_usd": 8900000,
+      "end_date": "2026-12-31",
+      "category": "Regulation",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h3",
+      "question": "ETH above $4,000 by June 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.38 },
+        { "name": "No", "probability": 0.62 }
+      ],
+      "volume_usd": 22100000,
+      "end_date": "2026-06-30",
+      "category": "Crypto",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h4",
+      "question": "DeFi TVL exceeds $200B in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.31 },
+        { "name": "No", "probability": 0.69 }
+      ],
+      "volume_usd": 5600000,
+      "end_date": "2026-12-31",
+      "category": "Crypto",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h5",
+      "question": "China-Taiwan military escalation in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.08 },
+        { "name": "No", "probability": 0.92 }
+      ],
+      "volume_usd": 11300000,
+      "end_date": "2026-12-31",
+      "category": "Geopolitics",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h6",
+      "question": "Brent crude above $95/barrel in Q3 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.28 },
+        { "name": "No", "probability": 0.72 }
+      ],
+      "volume_usd": 4800000,
+      "end_date": "2026-09-30",
+      "category": "Commodities",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h7",
+      "question": "SEC approves spot SOL ETF in 2026?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.22 },
+        { "name": "No", "probability": 0.78 }
+      ],
+      "volume_usd": 9400000,
+      "end_date": "2026-12-31",
+      "category": "Regulation",
+      "url": "https://polymarket.com"
+    },
+    {
+      "id": "pm-h8",
+      "question": "US 10Y Treasury yield below 3.5% by year-end?",
+      "outcomes": [
+        { "name": "Yes", "probability": 0.41 },
+        { "name": "No", "probability": 0.59 }
+      ],
+      "volume_usd": 7200000,
+      "end_date": "2026-12-31",
+      "category": "Rates",
+      "url": "https://polymarket.com"
+    }
+  ]
+}

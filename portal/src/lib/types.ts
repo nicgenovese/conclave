@@ -99,3 +99,18 @@ export interface WhitelistUser {
 export interface WhitelistData {
   users: WhitelistUser[];
 }
+
+export interface Headline {
+  title: string;
+  source: string;
+  url?: string;
+  date: string;
+  category: "DeFi" | "Regulation" | "Rates & Macro" | "Geopolitics" | "Commodities" | "Crypto";
+  relevance?: string;
+}
+
+export interface HeadlinesData {
+  updated_at: string;
+  headlines: Headline[];
+  polymarket: PolymarketEvent[];
+}

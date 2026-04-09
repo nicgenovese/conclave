@@ -1,10 +1,16 @@
-import { getMacroData } from "@/lib/data";
+import { getMacroData, getHeadlines } from "@/lib/data";
 import { formatNumber } from "@/lib/utils";
 import { DataError } from "@/components/data-error";
 import { ErrorBoundary } from "@/components/error-boundary";
+import type { PolymarketEvent } from "@/lib/types";
 
 export default function MacroPage() {
   const data = getMacroData();
+  const headlinesData = getHeadlines();
+
+  // Prefer headlines.json polymarket data; fall back to macro.json
+  const polymarket: PolymarketEvent[] = headlinesData?.polymarket ?? data.polymarket;
+  const polymarketUpdated = headlinesData?.updated_at ?? data.updated_at;
 
   return (
     <ErrorBoundary>
@@ -21,11 +27,14 @@ export default function MacroPage() {
 
         {/* Prediction Markets */}
         <div className="mb-12">
-          <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style={{ color: "var(--copper)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style={{ color: "var(--copper)" }}>
             Prediction Markets
           </p>
+          <p className="font-mono text-[10px] mb-5" style={{ color: "var(--light)" }}>
+            via headlines.json &middot; {polymarketUpdated}
+          </p>
 
-          {data.polymarket.length === 0 ? (
+          {polymarket.length === 0 ? (
             <DataError
               title="No prediction market data"
               message="Run the daily brief to populate this section."
@@ -43,13 +52,13 @@ export default function MacroPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.polymarket.map((event) => (
-                    <tr key={event.id}>
+                  {polymarket.map((event, idx) => (
+                    <tr key={event.id || idx}>
                       <td>
                         <span className="font-serif" style={{ color: "var(--black)" }}>
                           {event.question}
                         </span>
-                        {event.outcomes.length > 1 && (
+                        {event.outcomes && event.outcomes.length > 1 && (
                           <div className="mt-2 space-y-1">
                             {event.outcomes.map((outcome) => (
                               <div key={outcome.name} className="flex items-center justify-between text-[12px]">
@@ -71,7 +80,7 @@ export default function MacroPage() {
                       </td>
                       <td className="text-right">
                         <span className="font-mono tabular-nums" style={{ color: "var(--black)" }}>
-                          {event.outcomes.length === 1
+                          {event.outcomes && event.outcomes.length === 1
                             ? `${(event.outcomes[0].probability * 100).toFixed(0)}%`
                             : "\u2014"}
                         </span>
