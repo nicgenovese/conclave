@@ -18,15 +18,13 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-[3px] z-40 hidden h-[calc(100vh-3px)] w-60 flex-col bg-white md:flex"
-      style={{ borderRight: "0.5px solid var(--rule)" }}
-    >
+    <aside className="fixed left-0 top-[3px] z-40 hidden h-[calc(100vh-3px)] w-60 flex-col bg-white shadow-[1px_0_0_0_rgba(0,0,0,0.06)] md:flex">
       {/* Brand */}
       <div className="px-6 py-8">
-        <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em]" style={{ color: "var(--black)" }}>
+        <h1 className="font-serif text-[15px] font-bold uppercase tracking-[0.25em] text-moria-black">
           Moria Capital
         </h1>
-        <p className="font-serif text-[12px] mt-0.5" style={{ color: "var(--dim)" }}>
+        <p className="text-[12px] mt-0.5 text-moria-dim">
           Conclave Portal
         </p>
       </div>
@@ -39,12 +37,11 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative block px-4 py-2.5 font-serif text-[14px] transition-colors"
-              style={{
-                color: active ? "var(--copper)" : "var(--dim)",
-                borderLeft: active ? "3px solid var(--copper)" : "3px solid transparent",
-                fontWeight: active ? 600 : 400,
-              }}
+              className={`block px-4 py-2.5 text-[14px] rounded-lg transition-colors ${
+                active
+                  ? "bg-[#F5F4F2] text-copper font-medium"
+                  : "text-moria-dim hover:bg-[#F8F7F5]"
+              }`}
             >
               {item.label}
             </Link>
@@ -54,18 +51,17 @@ export function Sidebar() {
         {/* Admin nav */}
         {isAdmin(userRole) && (
           <>
-            <hr className="hairline my-4 mx-3" />
+            <div className="my-4" />
             {(() => {
               const active = isActive(ADMIN_NAV.href);
               return (
                 <Link
                   href={ADMIN_NAV.href}
-                  className="relative block px-4 py-2.5 font-serif text-[14px] transition-colors"
-                  style={{
-                    color: active ? "var(--copper)" : "var(--dim)",
-                    borderLeft: active ? "3px solid var(--copper)" : "3px solid transparent",
-                    fontWeight: active ? 600 : 400,
-                  }}
+                  className={`block px-4 py-2.5 text-[14px] rounded-lg transition-colors ${
+                    active
+                      ? "bg-[#F5F4F2] text-copper font-medium"
+                      : "text-moria-dim hover:bg-[#F8F7F5]"
+                  }`}
                 >
                   {ADMIN_NAV.label}
                 </Link>
@@ -76,14 +72,13 @@ export function Sidebar() {
       </nav>
 
       {/* User section */}
-      <div className="px-6 py-5" style={{ borderTop: "0.5px solid var(--rule)" }}>
-        <p className="font-mono text-[11px] truncate" style={{ color: "var(--dim)" }}>
+      <div className="px-6 py-5 border-t border-moria-rule/30">
+        <p className="font-mono text-[11px] truncate text-moria-dim">
           {session?.user?.email ?? "user@example.com"}
         </p>
         <button
           onClick={() => signOut()}
-          className="font-serif text-[12px] mt-1 hover:underline"
-          style={{ color: "var(--light)" }}
+          className="text-[12px] mt-1 text-moria-light hover:text-copper"
         >
           Sign out
         </button>

@@ -25,14 +25,13 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
       ...bucket,
       dashArray: `${dashLength} ${dashGap}`,
       dashOffset: offset,
-      // First slice gets copper accent
       displayColor: i === 0 ? "#6B3620" : bucket.color,
     };
   });
 
   return (
-    <div>
-      <p className="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style={{ color: "var(--copper)" }}>
+    <div className="card p-6">
+      <p className="text-copper text-[11px] font-medium uppercase tracking-wide mb-6">
         Allocation
       </p>
 
@@ -68,7 +67,6 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
             y={114}
             textAnchor="middle"
             fill="#909090"
-            fontFamily="'Times New Roman', Georgia, serif"
             fontSize="11"
           >
             Total NAV
@@ -76,17 +74,16 @@ export default function AllocationChart({ buckets }: AllocationChartProps) {
         </svg>
       </div>
 
-      {/* Horizontal legend with hairline separator */}
-      <hr className="hairline mt-6 mb-4" />
-      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+      {/* Horizontal legend */}
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
         {slices.map((bucket) => (
           <div key={bucket.name} className="flex items-center gap-2 text-[12px]">
             <span
-              className="inline-block h-[8px] w-[8px] flex-shrink-0"
+              className="inline-block h-[8px] w-[8px] rounded-full flex-shrink-0"
               style={{ backgroundColor: bucket.displayColor }}
             />
-            <span className="font-serif" style={{ color: "var(--dim)" }}>{bucket.name}</span>
-            <span className="font-mono" style={{ color: "var(--black)" }}>
+            <span className="text-moria-dim">{bucket.name}</span>
+            <span className="font-mono text-moria-black">
               {bucket.pct.toFixed(1)}%
             </span>
           </div>

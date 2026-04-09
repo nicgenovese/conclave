@@ -32,11 +32,8 @@ export default function RiskPage() {
     return (
       <ErrorBoundary>
         <div>
-          <div className="section-header">
-            <span className="section-number">05.</span>
-            <h1 className="section-title">Risk</h1>
-          </div>
-          <p className="font-serif text-[14px] mb-8" style={{ color: "var(--dim)" }}>
+          <h2 className="text-[20px] font-semibold text-moria-black mb-2">Risk</h2>
+          <p className="text-[14px] mb-8 text-moria-dim">
             Position-level risk scoring across five factors
           </p>
           <DataError
@@ -56,46 +53,43 @@ export default function RiskPage() {
     <ErrorBoundary>
       <div>
         {/* Section Header */}
-        <div className="section-header">
-          <span className="section-number">05.</span>
-          <h1 className="section-title">Risk</h1>
-        </div>
+        <h2 className="text-[20px] font-semibold text-moria-black mb-2">Risk</h2>
 
-        <p className="font-serif text-[14px] mb-8" style={{ color: "var(--dim)" }}>
+        <p className="text-[14px] mb-8 text-moria-dim">
           Position-level risk scoring across five factors
         </p>
 
-        {/* Summary: three labeled values */}
-        <div className="grid grid-cols-3 mb-10" style={{ borderTop: "0.5px solid var(--rule)" }}>
-          <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+        {/* Summary stats */}
+        <div className="grid grid-cols-3 gap-4 mb-10">
+          <div className="stat-card">
+            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
               Low Risk
             </p>
             <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--pos)" }} />
-              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-moria-pos" />
+              <span className="font-mono text-[24px] tabular-nums text-moria-black">
                 {greenCount}
               </span>
             </div>
           </div>
-          <div className="py-4 px-4" style={{ borderRight: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+          <div className="stat-card">
+            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
               Medium Risk
             </p>
             <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--copper)" }} />
-              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-copper" />
+              <span className="font-mono text-[24px] tabular-nums text-moria-black">
                 {amberCount}
               </span>
             </div>
           </div>
-          <div className="py-4 px-4" style={{ borderBottom: "0.5px solid var(--rule)" }}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.1em]" style={{ color: "var(--copper)" }}>
+          <div className="stat-card">
+            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
               High Risk
             </p>
             <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2 w-2 rounded-full" style={{ background: "var(--neg)" }} />
-              <span className="font-mono text-[24px] tabular-nums" style={{ color: "var(--black)" }}>
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-moria-neg" />
+              <span className="font-mono text-[24px] tabular-nums text-moria-black">
                 {redCount}
               </span>
             </div>
@@ -103,67 +97,75 @@ export default function RiskPage() {
         </div>
 
         {/* Factor table per position */}
-        <div className="overflow-x-auto mb-10">
-          <table className="moria-table">
-            <thead>
-              <tr>
-                <th>Position</th>
-                <th className="text-right">Overall</th>
-                <th>Status</th>
-                <th className="text-right">Smart Contract</th>
-                <th className="text-right">Market</th>
-                <th className="text-right">Liquidity</th>
-                <th className="text-right">Governance</th>
-                <th className="text-right">Counterparty</th>
-              </tr>
-            </thead>
-            <tbody>
-              {scores.map((pos) => (
-                <tr key={pos.ticker}>
-                  <td>
-                    <span className="font-mono font-medium" style={{ color: "var(--black)" }}>
-                      {pos.ticker}
-                    </span>
-                    <span className="block text-[12px] font-serif" style={{ color: "var(--dim)" }}>
-                      {pos.name}
-                    </span>
-                  </td>
-                  <td className="text-right">
-                    <span className="font-mono text-[18px] tabular-nums" style={{ color: "var(--black)" }}>
-                      {pos.overall}
-                    </span>
-                    <span className="font-mono text-[12px]" style={{ color: "var(--light)" }}>/10</span>
-                  </td>
-                  <td>
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: statusDotColor(pos.status) }} />
-                      <span className="font-serif text-[13px]" style={{ color: "var(--dim)" }}>
-                        {statusText(pos.status)}
-                      </span>
-                    </div>
-                  </td>
-                  {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
-                    ([factor, score]) => (
-                      <td key={factor} className="text-right">
-                        <span className="font-mono tabular-nums text-[13px]" style={{ color: "var(--body)" }}>
-                          {score}
-                        </span>
-                      </td>
-                    )
-                  )}
+        <div className="card overflow-hidden mb-10">
+          <div className="overflow-x-auto">
+            <table className="moria-table">
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th className="text-right">Overall</th>
+                  <th>Status</th>
+                  <th className="text-right">Smart Contract</th>
+                  <th className="text-right">Market</th>
+                  <th className="text-right">Liquidity</th>
+                  <th className="text-right">Governance</th>
+                  <th className="text-right">Counterparty</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {scores.map((pos) => (
+                  <tr key={pos.ticker}>
+                    <td>
+                      <span className="font-mono font-medium text-moria-black">
+                        {pos.ticker}
+                      </span>
+                      <span className="block text-[12px] text-moria-dim">
+                        {pos.name}
+                      </span>
+                    </td>
+                    <td className="text-right">
+                      <span className="font-mono text-[18px] tabular-nums text-moria-black">
+                        {pos.overall}
+                      </span>
+                      <span className="font-mono text-[12px] text-moria-light">/10</span>
+                    </td>
+                    <td>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="inline-block h-2.5 w-2.5 rounded-full"
+                          style={{ background: statusDotColor(pos.status) }}
+                        />
+                        <span className="text-[13px] text-moria-dim">
+                          {statusText(pos.status)}
+                        </span>
+                      </div>
+                    </td>
+                    {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
+                      ([factor, score]) => (
+                        <td key={factor} className="text-right">
+                          <span className="font-mono tabular-nums text-[13px] text-moria-dim">
+                            {score}
+                          </span>
+                        </td>
+                      )
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Risk bars per position */}
         <div className="space-y-6">
           {scores.map((pos) => (
-            <div key={pos.ticker + "-bars"}>
+            <div key={pos.ticker + "-bars"} className="card p-5">
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block h-2 w-2 rounded-full" style={{ background: statusDotColor(pos.status) }} />
-                <span className="font-mono text-[13px] font-medium" style={{ color: "var(--black)" }}>
+                <span
+                  className="inline-block h-2.5 w-2.5 rounded-full"
+                  style={{ background: statusDotColor(pos.status) }}
+                />
+                <span className="font-mono text-[13px] font-medium text-moria-black">
                   {pos.ticker}
                 </span>
               </div>
@@ -172,19 +174,19 @@ export default function RiskPage() {
                 {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
                   ([factor, score]) => (
                     <div key={factor}>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.06em] mb-1.5" style={{ color: "var(--light)" }}>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.06em] mb-1.5 text-moria-light">
                         {String(factor).replace(/_/g, " ")}
                       </div>
-                      <div className="h-[2px] w-full" style={{ background: "var(--faint)" }}>
+                      <div className="h-1 w-full rounded-full bg-moria-faint">
                         <div
-                          className="h-[2px]"
+                          className="h-1 rounded-full"
                           style={{
                             width: `${(score / 10) * 100}%`,
                             background: factorBarColor(score),
                           }}
                         />
                       </div>
-                      <div className="font-mono text-[11px] tabular-nums mt-1" style={{ color: "var(--dim)" }}>
+                      <div className="font-mono text-[11px] tabular-nums mt-1 text-moria-dim">
                         {score}/10
                       </div>
                     </div>
@@ -193,7 +195,7 @@ export default function RiskPage() {
               </div>
 
               {pos.notes && (
-                <p className="font-serif text-[13px] mt-3 pt-3" style={{ color: "var(--dim)", borderTop: "0.5px solid var(--rule)" }}>
+                <p className="font-serif text-[13px] mt-3 pt-3 border-t border-moria-rule text-moria-dim">
                   {pos.notes}
                 </p>
               )}
@@ -202,19 +204,18 @@ export default function RiskPage() {
         </div>
 
         {/* Legend */}
-        <hr className="hairline mt-10 mb-4" />
-        <div className="flex flex-wrap gap-6 text-[12px]">
+        <div className="mt-10 flex flex-wrap gap-6 text-[12px]">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-[2px]" style={{ background: "var(--pos)" }} />
-            <span className="font-serif" style={{ color: "var(--dim)" }}>1-3 Low</span>
+            <div className="w-6 h-1 rounded-full bg-moria-pos" />
+            <span className="text-moria-dim">1-3 Low</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-6 h-[2px]" style={{ background: "var(--copper)" }} />
-            <span className="font-serif" style={{ color: "var(--dim)" }}>4-6 Medium</span>
+            <div className="w-6 h-1 rounded-full bg-copper" />
+            <span className="text-moria-dim">4-6 Medium</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-6 h-[2px]" style={{ background: "var(--neg)" }} />
-            <span className="font-serif" style={{ color: "var(--dim)" }}>7-10 High</span>
+            <div className="w-6 h-1 rounded-full bg-moria-neg" />
+            <span className="text-moria-dim">7-10 High</span>
           </div>
         </div>
       </div>

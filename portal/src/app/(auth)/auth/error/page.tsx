@@ -25,33 +25,32 @@ export default function AuthErrorPage() {
   const { title, desc } = ERRORS[errorType] || DEFAULT;
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#FFFFFF",
-        padding: "24px",
-        fontFamily: "'Times New Roman', Georgia, serif",
-      }}
-    >
-      <div style={{ width: "100%", maxWidth: "380px", textAlign: "center" }}>
-        <svg width="56" height="49" viewBox="0 0 48 42" fill="none" style={{ marginBottom: "20px" }}>
+    <div className="min-h-screen flex items-center justify-center bg-[#FAFAF8] p-6">
+      <div className="card p-8 sm:p-10 max-w-[400px] w-full text-center">
+        <svg width="56" height="49" viewBox="0 0 48 42" fill="none" className="mx-auto mb-5">
           <polygon points="24,2 46,40 2,40" fill="none" stroke="#6B3620" strokeWidth="1.4" />
           <polygon points="24,12 37,40 11,40" fill="none" stroke="#6B3620" strokeWidth="0.6" opacity="0.38" />
         </svg>
-        <div style={{ fontSize: "14px", fontWeight: 700, letterSpacing: "0.28em", color: "#0A0A0A", textTransform: "uppercase" as const, marginBottom: "6px" }}>
+        <div className="font-serif text-[14px] font-bold uppercase tracking-[0.28em] text-moria-black mb-1.5">
           Moria Capital
         </div>
-        <div style={{ borderTop: "1.5px solid #0A0A0A", margin: "32px 0" }} />
-        <h2 style={{ fontSize: "20px", fontWeight: 700, color: "#7A2828", marginBottom: "12px" }}>{title}</h2>
-        <p style={{ fontSize: "14px", color: "#505050", lineHeight: "1.7", marginBottom: "32px" }}>{desc}</p>
-        <Link href="/auth/signin" style={{ fontSize: "14px", color: "#6B3620", textDecoration: "none", borderBottom: "0.5px solid #6B3620", paddingBottom: "2px" }}>
+
+        <div className="border-t-[1.5px] border-moria-black my-8" />
+
+        <h2 className="font-serif text-[20px] font-bold text-moria-neg mb-3">{title}</h2>
+        <p className="text-[14px] text-moria-dim leading-relaxed mb-8">{desc}</p>
+
+        <Link
+          href="/auth/signin"
+          className="text-copper text-[14px] hover:underline border-b border-copper pb-0.5"
+        >
           Back to Sign In
         </Link>
-        <div style={{ borderTop: "0.5px solid #CCCAC6", margin: "40px 0 20px" }} />
-        <div style={{ fontSize: "11px", color: "#909090", fontStyle: "italic" }}>Moria Capital AG &middot; Zug, Switzerland</div>
+
+        <div className="border-t border-moria-rule mt-10 mb-5" />
+        <div className="text-[11px] text-moria-light italic">
+          Moria Capital AG &middot; Zug, Switzerland
+        </div>
       </div>
     </div>
   );

@@ -5,17 +5,14 @@ interface DataErrorProps {
 
 export function DataError({ title, message }: DataErrorProps) {
   return (
-    <div className="flex items-start gap-3 py-6">
-      <span
-        className="inline-block h-1.5 w-1.5 rounded-full mt-2 flex-shrink-0"
-        style={{ background: "var(--copper)" }}
-      />
+    <div className="card border-l-4 border-copper flex items-start gap-3 p-4">
+      <span className="inline-block h-2.5 w-2.5 rounded-full mt-1 flex-shrink-0 bg-copper" />
       <div>
-        <p className="font-serif text-[14px] font-semibold" style={{ color: "var(--black)" }}>
+        <p className="text-[14px] font-semibold text-moria-black">
           {title}
         </p>
         {message && (
-          <p className="font-serif text-[13px] mt-0.5" style={{ color: "var(--dim)" }}>
+          <p className="text-[13px] mt-0.5 text-moria-dim">
             {message}
           </p>
         )}

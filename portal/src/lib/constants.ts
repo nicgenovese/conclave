@@ -5,6 +5,7 @@ import {
   Globe,
   Shield,
   Settings,
+  Bot,
 } from "lucide-react";
 
 export const NAV_ITEMS = [
@@ -13,6 +14,7 @@ export const NAV_ITEMS = [
   { href: "/briefs", label: "Briefs", icon: Newspaper },
   { href: "/macro", label: "Macro", icon: Globe },
   { href: "/risk", label: "Risk", icon: Shield },
+  { href: "/agents", label: "Agents", icon: Bot },
 ] as const;
 
 export const ADMIN_NAV = {

@@ -46,21 +46,73 @@ export default function Home() {
 
   const categoryOrder = ["Rates", "Regulation", "Crypto", "Geopolitics", "Commodities"];
 
+  const renderPolymarketCategory = (category: string) => {
+    const events = polymarketByCategory[category];
+    if (!events) return null;
+
+    return (
+      <div key={category} className="card p-5">
+        <p className="text-copper text-[11px] font-medium uppercase tracking-wide mb-4">
+          {category}
+        </p>
+        <div className="space-y-4">
+          {events.map((event) => {
+            const yesOutcome = event.outcomes?.find((o) => o.name === "Yes");
+            const noOutcome = event.outcomes?.find((o) => o.name === "No");
+            const yesPct = yesOutcome ? yesOutcome.probability * 100 : 0;
+            const noPct = noOutcome ? noOutcome.probability * 100 : 0;
+
+            return (
+              <div key={event.id} className="py-3">
+                <p className="font-serif text-[14px] text-moria-black">
+                  {event.question}
+                </p>
+                {/* Probability bar */}
+                <div className="flex items-center gap-3 mt-2">
+                  <div className="flex-1 h-1.5 relative bg-moria-faint rounded-full overflow-hidden">
+                    <div
+                      className="absolute top-0 left-0 h-1.5 rounded-full"
+                      style={{
+                        width: `${yesPct}%`,
+                        background: yesPct >= 50 ? "var(--pos)" : "var(--copper)",
+                      }}
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <span className="font-mono text-[12px] tabular-nums text-moria-pos">
+                      Yes {yesPct.toFixed(0)}%
+                    </span>
+                    <span className="font-mono text-[12px] text-moria-rule">/</span>
+                    <span className="font-mono text-[12px] tabular-nums text-moria-neg">
+                      No {noPct.toFixed(0)}%
+                    </span>
+                  </div>
+                </div>
+                <p className="font-mono text-[10px] mt-1 text-moria-light">
+                  Vol {formatNumber(event.volume_usd)} &middot; Ends {event.end_date}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <ErrorBoundary>
       <div>
         {/* Morning Brief Header */}
         <div className="mb-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.15em] mb-2" style={{ color: "var(--copper)" }}>
+          <p className="text-copper text-[11px] font-medium uppercase tracking-wide mb-3">
             Conclave Morning Brief
           </p>
-          <hr className="hairline" />
-          <div className="flex items-baseline justify-between mt-3">
-            <p className="font-serif text-[13px]" style={{ color: "var(--dim)" }}>
+          <div className="flex items-baseline justify-between">
+            <p className="text-[13px] text-moria-dim">
               {new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
             </p>
             {headlinesData && (
-              <p className="font-mono text-[11px]" style={{ color: "var(--light)" }}>
+              <p className="font-mono text-[11px] text-moria-light">
                 Updated {headlinesData.updated_at.replace("T", " ").slice(0, 16)} UTC
               </p>
             )}
@@ -68,12 +120,9 @@ export default function Home() {
         </div>
 
         {/* ========================================= */}
-        {/* Section 01: Headlines */}
+        {/* Headlines */}
         {/* ========================================= */}
-        <div className="section-header">
-          <span className="section-number">01.</span>
-          <h1 className="section-title">Headlines</h1>
-        </div>
+        <h2 className="text-[20px] font-semibold text-moria-black mb-6">Headlines</h2>
 
         {!headlinesData ? (
           <DataError
@@ -86,22 +135,15 @@ export default function Home() {
             message="Headlines data is empty. Run Durin to populate."
           />
         ) : (
-          <div className="mb-12">
+          <div className="mb-12 space-y-4">
             {headlinesData.headlines.map((headline, i) => (
-              <div
-                key={i}
-                className="py-4"
-                style={{ borderBottom: i < headlinesData.headlines.length - 1 ? "0.5px solid var(--rule)" : "none" }}
-              >
+              <div key={i} className="card p-5">
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span
-                    className="font-mono text-[10px] uppercase tracking-[0.08em] flex-shrink-0"
-                    style={{ color: "var(--copper)" }}
-                  >
+                  <span className="text-copper text-[11px] font-medium uppercase tracking-wide flex-shrink-0">
                     {headline.category}
                   </span>
                 </div>
-                <p className="font-serif text-[16px] font-bold leading-snug" style={{ color: "var(--black)" }}>
+                <p className="font-serif text-[16px] font-bold leading-snug text-moria-black">
                   {headline.url ? (
                     <a href={headline.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
                       {headline.title}
@@ -111,16 +153,16 @@ export default function Home() {
                   )}
                 </p>
                 <div className="flex items-center gap-3 mt-1.5">
-                  <span className="font-mono text-[11px]" style={{ color: "var(--dim)" }}>
+                  <span className="font-mono text-[11px] text-moria-dim">
                     {headline.source}
                   </span>
-                  <span className="font-mono text-[11px]" style={{ color: "var(--light)" }}>
+                  <span className="font-mono text-[11px] text-moria-light">
                     {formatDate(headline.date)}
                   </span>
                   {headline.relevance && (
                     <>
-                      <span style={{ color: "var(--rule)" }}>|</span>
-                      <span className="font-serif text-[12px] italic" style={{ color: "var(--dim)" }}>
+                      <span className="text-moria-rule">|</span>
+                      <span className="text-[12px] italic text-moria-dim">
                         {headline.relevance}
                       </span>
                     </>
@@ -132,12 +174,9 @@ export default function Home() {
         )}
 
         {/* ========================================= */}
-        {/* Section 02: Markets (Polymarket) */}
+        {/* Markets (Polymarket) */}
         {/* ========================================= */}
-        <div className="section-header mt-12">
-          <span className="section-number">02.</span>
-          <h1 className="section-title">Markets</h1>
-        </div>
+        <h2 className="text-[20px] font-semibold text-moria-black mb-6 mt-12">Markets</h2>
 
         {!headlinesData || headlinesData.polymarket.length === 0 ? (
           <DataError
@@ -145,137 +184,26 @@ export default function Home() {
             message="Run Durin to populate Polymarket events."
           />
         ) : (
-          <div className="mb-12 space-y-8">
-            {categoryOrder
-              .filter((cat) => polymarketByCategory[cat])
-              .map((category) => (
-                <div key={category}>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-[0.1em] mb-4"
-                    style={{ color: "var(--copper)" }}
-                  >
-                    {category}
-                  </p>
-                  <div className="space-y-4">
-                    {polymarketByCategory[category].map((event) => {
-                      const yesOutcome = event.outcomes?.find((o) => o.name === "Yes");
-                      const noOutcome = event.outcomes?.find((o) => o.name === "No");
-                      const yesPct = yesOutcome ? yesOutcome.probability * 100 : 0;
-                      const noPct = noOutcome ? noOutcome.probability * 100 : 0;
-
-                      return (
-                        <div
-                          key={event.id}
-                          className="py-3"
-                          style={{ borderBottom: "0.5px solid var(--rule)" }}
-                        >
-                          <p className="font-serif text-[14px]" style={{ color: "var(--black)" }}>
-                            {event.question}
-                          </p>
-                          {/* Probability bar */}
-                          <div className="flex items-center gap-3 mt-2">
-                            <div className="flex-1 h-1 relative" style={{ background: "var(--faint)" }}>
-                              <div
-                                className="absolute top-0 left-0 h-1"
-                                style={{
-                                  width: `${yesPct}%`,
-                                  background: yesPct >= 50 ? "var(--pos)" : "var(--copper)",
-                                }}
-                              />
-                            </div>
-                            <div className="flex items-center gap-2 flex-shrink-0">
-                              <span className="font-mono text-[12px] tabular-nums" style={{ color: "var(--pos)" }}>
-                                Yes {yesPct.toFixed(0)}%
-                              </span>
-                              <span className="font-mono text-[12px]" style={{ color: "var(--rule)" }}>/</span>
-                              <span className="font-mono text-[12px] tabular-nums" style={{ color: "var(--neg)" }}>
-                                No {noPct.toFixed(0)}%
-                              </span>
-                            </div>
-                          </div>
-                          <p className="font-mono text-[10px] mt-1" style={{ color: "var(--light)" }}>
-                            Vol {formatNumber(event.volume_usd)} &middot; Ends {event.end_date}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            {/* Render any categories not in the order */}
+          <div className="mb-12 space-y-5">
+            {categoryOrder.map((cat) => renderPolymarketCategory(cat))}
             {Object.keys(polymarketByCategory)
               .filter((cat) => !categoryOrder.includes(cat))
-              .map((category) => (
-                <div key={category}>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-[0.1em] mb-4"
-                    style={{ color: "var(--copper)" }}
-                  >
-                    {category}
-                  </p>
-                  <div className="space-y-4">
-                    {polymarketByCategory[category].map((event) => {
-                      const yesOutcome = event.outcomes?.find((o) => o.name === "Yes");
-                      const noOutcome = event.outcomes?.find((o) => o.name === "No");
-                      const yesPct = yesOutcome ? yesOutcome.probability * 100 : 0;
-                      const noPct = noOutcome ? noOutcome.probability * 100 : 0;
-
-                      return (
-                        <div
-                          key={event.id}
-                          className="py-3"
-                          style={{ borderBottom: "0.5px solid var(--rule)" }}
-                        >
-                          <p className="font-serif text-[14px]" style={{ color: "var(--black)" }}>
-                            {event.question}
-                          </p>
-                          <div className="flex items-center gap-3 mt-2">
-                            <div className="flex-1 h-1 relative" style={{ background: "var(--faint)" }}>
-                              <div
-                                className="absolute top-0 left-0 h-1"
-                                style={{
-                                  width: `${yesPct}%`,
-                                  background: yesPct >= 50 ? "var(--pos)" : "var(--copper)",
-                                }}
-                              />
-                            </div>
-                            <div className="flex items-center gap-2 flex-shrink-0">
-                              <span className="font-mono text-[12px] tabular-nums" style={{ color: "var(--pos)" }}>
-                                Yes {yesPct.toFixed(0)}%
-                              </span>
-                              <span className="font-mono text-[12px]" style={{ color: "var(--rule)" }}>/</span>
-                              <span className="font-mono text-[12px] tabular-nums" style={{ color: "var(--neg)" }}>
-                                No {noPct.toFixed(0)}%
-                              </span>
-                            </div>
-                          </div>
-                          <p className="font-mono text-[10px] mt-1" style={{ color: "var(--light)" }}>
-                            Vol {formatNumber(event.volume_usd)} &middot; Ends {event.end_date}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
+              .map((cat) => renderPolymarketCategory(cat))}
           </div>
         )}
 
         {/* ========================================= */}
-        {/* Section 03: Portfolio */}
+        {/* Portfolio */}
         {/* ========================================= */}
-        <div className="section-header mt-12">
-          <span className="section-number">03.</span>
-          <h1 className="section-title">Portfolio</h1>
-        </div>
+        <h2 className="text-[20px] font-semibold text-moria-black mb-6 mt-12">Portfolio</h2>
 
         <div className="flex items-center gap-3 mb-6">
-          <p className="font-mono text-[12px]" style={{ color: "var(--light)" }}>
+          <p className="font-mono text-[12px] text-moria-light">
             As of {portfolio.updated_at}
           </p>
           {stale && (
-            <span className="inline-flex items-center gap-1.5 font-mono text-[11px]" style={{ color: "var(--copper)" }}>
-              <span className="inline-block h-1.5 w-1.5" style={{ background: "var(--copper)" }} />
+            <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-copper">
+              <span className="inline-block h-1.5 w-1.5 bg-copper rounded-full" />
               Stale
             </span>
           )}
@@ -289,7 +217,7 @@ export default function Home() {
         ) : (
           <>
             {/* Compact stats row */}
-            <div className="grid grid-cols-3" style={{ borderTop: "0.5px solid var(--rule)" }}>
+            <div className="grid grid-cols-3 gap-4">
               <NavCard label="NAV" value={formatUSD(portfolio.nav)} />
               <NavCard
                 label="24h Change"
@@ -303,7 +231,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Positions — top 6 only */}
+            {/* Positions -- top 6 only */}
             <div className="mt-10">
               <PositionsTable
                 positions={portfolio.positions.slice(0, 6)}
@@ -312,8 +240,7 @@ export default function Home() {
                 <div className="mt-3">
                   <Link
                     href="/risk"
-                    className="font-mono text-[12px] hover:underline"
-                    style={{ color: "var(--copper)" }}
+                    className="text-copper font-mono text-[12px] hover:underline"
                   >
                     View all {portfolio.positions.length} positions &rarr;
                   </Link>
@@ -324,14 +251,11 @@ export default function Home() {
         )}
 
         {/* ========================================= */}
-        {/* Section 04: Perp Monitor */}
+        {/* Perp Monitor */}
         {/* ========================================= */}
         {portfolio.perps.length > 0 && (
           <div className="mt-12">
-            <div className="section-header">
-              <span className="section-number">04.</span>
-              <h1 className="section-title">Perp Monitor</h1>
-            </div>
+            <h2 className="text-[20px] font-semibold text-moria-black mb-6">Perp Monitor</h2>
             <PerpsTable
               perps={portfolio.perps}
               totalExposure={portfolio.total_perp_exposure}

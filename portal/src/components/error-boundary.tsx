@@ -31,27 +31,19 @@ export class ErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) return this.props.fallback;
 
       return (
-        <div className="py-6 my-6" style={{ borderTop: "0.5px solid var(--rule)", borderBottom: "0.5px solid var(--rule)" }}>
-          <div className="flex items-start gap-3">
-            <span
-              className="inline-block h-2 w-2 rounded-full mt-1.5 flex-shrink-0"
-              style={{ background: "var(--copper)" }}
-            />
+        <div className="card py-6 my-6">
+          <div className="flex items-start gap-3 px-6">
+            <span className="inline-block h-2.5 w-2.5 rounded-full mt-1.5 flex-shrink-0 bg-copper" />
             <div className="flex-1 min-w-0">
-              <h3 className="font-serif text-[15px] font-semibold" style={{ color: "var(--black)" }}>
+              <h3 className="text-[15px] font-semibold text-moria-black">
                 Something went wrong
               </h3>
-              <p className="font-mono text-[13px] mt-1 break-words" style={{ color: "var(--dim)" }}>
+              <p className="font-mono text-[13px] mt-1 break-words text-moria-dim">
                 {this.state.error?.message || "An unexpected error occurred."}
               </p>
               <button
                 onClick={() => this.setState({ hasError: false, error: null })}
-                className="mt-4 px-3 py-1.5 font-serif text-[13px]"
-                style={{
-                  background: "var(--black)",
-                  color: "var(--white)",
-                  border: "none",
-                }}
+                className="mt-4 px-4 py-2 rounded-lg bg-moria-black text-white text-[13px] hover:opacity-90 transition-opacity"
               >
                 Try again
               </button>

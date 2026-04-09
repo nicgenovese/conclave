@@ -51,13 +51,27 @@ const config: Config = {
         "moria-faint": "#EEECEA",
         "moria-pos": "#1A5C38",
         "moria-neg": "#7A2828",
+        "off-white": "#FAFAF8",
       },
-      borderRadius: {
-        lg: "0px",
-        md: "0px",
-        sm: "0px",
+      boxShadow: {
+        card: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+        "card-hover":
+          "0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04)",
+        subtle: "0 1px 2px rgba(0,0,0,0.04)",
       },
       fontFamily: {
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"SF Pro Display"',
+          '"SF Pro Text"',
+          "system-ui",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          "sans-serif",
+        ],
         serif: ["'Times New Roman'", "Georgia", "serif"],
         mono: ["'Courier New'", "Courier", "monospace"],
       },

@@ -9,7 +9,6 @@ export default function SignInPage() {
   const [passphrase, setPassphrase] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
   const searchParams = useSearchParams();
   const router = useRouter();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
@@ -42,40 +41,17 @@ export default function SignInPage() {
     }
   }
 
-  const inputStyle = (field: string): React.CSSProperties => ({
-    width: "100%",
-    padding: "14px 16px",
-    fontFamily: "'Times New Roman', Georgia, serif",
-    fontSize: "15px",
-    color: "#222222",
-    background: "#FFFFFF",
-    border: focusedField === field ? "1px solid #6B3620" : "1px solid #CCCAC6",
-    outline: "none",
-    transition: "border-color 0.2s ease",
-    boxSizing: "border-box",
-  });
-
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#FFFFFF",
-        padding: "24px",
-        fontFamily: "'Times New Roman', Georgia, serif",
-      }}
-    >
-      <div style={{ width: "100%", maxWidth: "380px" }}>
+    <div className="min-h-screen flex items-center justify-center bg-[#FAFAF8] p-6">
+      <div className="card p-8 sm:p-10 max-w-[400px] w-full">
         {/* Apex Logo */}
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <div className="text-center mb-12">
           <svg
             width="56"
             height="49"
             viewBox="0 0 48 42"
             fill="none"
-            style={{ marginBottom: "20px" }}
+            className="mx-auto mb-5"
           >
             <polygon
               points="24,2 46,40 2,40"
@@ -91,54 +67,22 @@ export default function SignInPage() {
               opacity="0.38"
             />
           </svg>
-          <div
-            style={{
-              fontFamily: "'Times New Roman', Georgia, serif",
-              fontSize: "14px",
-              fontWeight: 700,
-              letterSpacing: "0.28em",
-              color: "#0A0A0A",
-              textTransform: "uppercase",
-            }}
-          >
+          <div className="font-serif text-[14px] font-bold uppercase tracking-[0.28em] text-moria-black">
             Moria Capital
           </div>
-          <div
-            style={{
-              fontFamily: "'Times New Roman', Georgia, serif",
-              fontSize: "12px",
-              color: "#909090",
-              marginTop: "6px",
-              fontStyle: "italic",
-            }}
-          >
+          <div className="text-[12px] text-moria-light mt-1.5 italic">
             Investor Portal
           </div>
         </div>
 
         {/* Thick Rule */}
-        <div
-          style={{
-            borderTop: "1.5px solid #0A0A0A",
-            marginBottom: "36px",
-          }}
-        />
+        <div className="border-t-[1.5px] border-moria-black mb-9" />
 
         {/* Form */}
         <form onSubmit={handleSubmit}>
           {/* Email */}
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                fontFamily: "'Courier New', Courier, monospace",
-                fontSize: "10px",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#6B3620",
-                marginBottom: "8px",
-              }}
-            >
+          <div className="mb-5">
+            <label className="block text-copper text-[10px] font-mono uppercase tracking-widest mb-2">
               Email
             </label>
             <input
@@ -146,27 +90,15 @@ export default function SignInPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => setFocusedField("email")}
-              onBlur={() => setFocusedField(null)}
               placeholder="you@example.com"
               autoComplete="email"
-              style={inputStyle("email")}
+              className="w-full px-4 py-3.5 rounded-lg border border-moria-rule focus:border-copper outline-none transition-colors text-[15px]"
             />
           </div>
 
           {/* Passphrase */}
-          <div style={{ marginBottom: "24px" }}>
-            <label
-              style={{
-                display: "block",
-                fontFamily: "'Courier New', Courier, monospace",
-                fontSize: "10px",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#6B3620",
-                marginBottom: "8px",
-              }}
-            >
+          <div className="mb-6">
+            <label className="block text-copper text-[10px] font-mono uppercase tracking-widest mb-2">
               Passphrase
             </label>
             <input
@@ -174,72 +106,34 @@ export default function SignInPage() {
               required
               value={passphrase}
               onChange={(e) => setPassphrase(e.target.value)}
-              onFocus={() => setFocusedField("passphrase")}
-              onBlur={() => setFocusedField(null)}
               placeholder="••••••••"
               autoComplete="current-password"
-              style={inputStyle("passphrase")}
+              className="w-full px-4 py-3.5 rounded-lg border border-moria-rule focus:border-copper outline-none transition-colors text-[15px]"
             />
           </div>
 
           {/* Error */}
           {error && (
-            <div
-              style={{
-                fontFamily: "'Times New Roman', Georgia, serif",
-                fontSize: "13px",
-                color: "#7A2828",
-                marginBottom: "16px",
-                paddingLeft: "2px",
-              }}
-            >
+            <p className="text-moria-neg text-[13px] mb-4">
               {error}
-            </div>
+            </p>
           )}
 
           {/* Submit */}
           <button
             type="submit"
             disabled={loading || !email || !passphrase}
-            style={{
-              width: "100%",
-              padding: "14px",
-              fontFamily: "'Times New Roman', Georgia, serif",
-              fontSize: "14px",
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              color: "#FFFFFF",
-              background: loading || !email || !passphrase ? "#CCCAC6" : "#0A0A0A",
-              border: "none",
-              cursor: loading ? "wait" : loading || !email || !passphrase ? "not-allowed" : "pointer",
-              transition: "background 0.2s ease",
-              textTransform: "uppercase",
-            }}
+            className="w-full py-3.5 rounded-lg bg-moria-black text-white font-medium uppercase text-sm tracking-wide hover:bg-moria-body transition-colors disabled:bg-moria-rule disabled:cursor-not-allowed"
           >
             {loading ? "Authenticating..." : "Enter"}
           </button>
         </form>
 
         {/* Hairline */}
-        <div
-          style={{
-            borderTop: "0.5px solid #CCCAC6",
-            marginTop: "40px",
-            marginBottom: "20px",
-          }}
-        />
+        <div className="border-t border-moria-rule mt-10 mb-5" />
 
         {/* Footer */}
-        <div
-          style={{
-            textAlign: "center",
-            fontFamily: "'Times New Roman', Georgia, serif",
-            fontSize: "11px",
-            color: "#909090",
-            fontStyle: "italic",
-            lineHeight: "1.6",
-          }}
-        >
+        <div className="text-center text-[11px] text-moria-light italic leading-relaxed">
           Moria Capital AG &middot; Zug, Switzerland
         </div>
       </div>

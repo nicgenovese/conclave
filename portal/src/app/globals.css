@@ -16,7 +16,7 @@
     --neg: #7A2828;
 
     /* Tailwind semantic tokens */
-    --background: 0 0% 100%;
+    --background: 40 20% 98%;
     --foreground: 0 0% 13%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 13%;
@@ -48,11 +48,11 @@
   }
 
   body {
-    background: var(--white);
+    background: #FAFAF8;
     color: var(--body);
-    font-family: 'Times New Roman', Georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1;
@@ -138,23 +138,15 @@
   align-items: baseline;
   gap: 0.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 0.5px solid var(--rule);
   margin-bottom: 2rem;
 }
 
-.section-header .section-number {
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--copper);
-  font-size: 14px;
-  font-weight: 400;
-}
-
 .section-header .section-title {
-  font-family: 'Times New Roman', Georgia, serif;
+  font-family: inherit;
   color: var(--black);
   font-size: 24px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .mono {
@@ -174,14 +166,14 @@
 
 .moria-table thead tr {
   border-top: 2px solid var(--copper);
-  background: var(--black);
+  background: #F5F4F2;
 }
 
 .moria-table thead th {
-  color: var(--white);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--dim);
+  font-family: inherit;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 10px 16px;
@@ -195,22 +187,53 @@
 
 .moria-table tbody tr {
   border-bottom: 0.5px solid var(--rule);
+  transition: background-color 0.15s ease;
 }
 
 .moria-table tbody tr:nth-child(odd) {
-  background: var(--white);
+  background: transparent;
 }
 
 .moria-table tbody tr:nth-child(even) {
-  background: var(--faint);
+  background: transparent;
+}
+
+.moria-table tbody tr:hover {
+  background: #F8F7F5;
 }
 
 .moria-table tbody td {
   padding: 12px 16px;
-  font-family: 'Times New Roman', Georgia, serif;
+  font-family: inherit;
   color: var(--body);
 }
 
 .moria-table tbody td.mono-cell {
   font-family: 'Courier New', Courier, monospace;
+}
+
+/* Card utilities */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.card-interactive {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-interactive:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+
+.stat-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  padding: 20px;
 }

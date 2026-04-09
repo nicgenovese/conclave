@@ -9,7 +9,7 @@ export default function PortalLayout({
   return (
     <>
       <div className="copper-stripe" />
-      <div className="flex min-h-screen pt-[3px]">
+      <div className="flex min-h-screen pt-[3px] bg-[#FAFAF8]">
         <Sidebar />
         <div className="flex-1 md:ml-60 flex flex-col min-h-screen">
           <MobileHeader />
