@@ -1,15 +1,18 @@
 {
-  "nav": 7203,
-  "updated_at": "2026-03-22",
+  "nav": 7197,
+  "updated_at": "2026-04-10",
   "wallet": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
   "positions": [
     {
       "name": "ETH Core Long",
       "ticker": "ETH",
-      "allocation_usd": 2000,
+      "allocation_usd": 2001,
       "allocation_pct": 27.8,
       "bucket": "Core",
-      "notes": "Base layer. Only L1 bet. No BTC/SOL spot."
+      "notes": "Base layer. Only L1 bet. No BTC/SOL spot.",
+      "coingecko_price": 2245.03,
+      "market_cap": 270893030973.23233,
+      "change_24h": 1.0724734764884658
     },
     {
       "name": "UNI LP (V4)",
@@ -17,31 +20,45 @@
       "allocation_usd": 406,
       "allocation_pct": 5.6,
       "bucket": "Core",
-      "notes": "ETH/UNI 0.3% pool, in range, earning fees"
+      "notes": "ETH/UNI 0.3% pool, in range, earning fees",
+      "coingecko_price": 3.16,
+      "market_cap": 1998598116.974744,
+      "change_24h": 0.28756888552999266
     },
     {
       "name": "AAVE",
       "ticker": "AAVE",
-      "allocation_usd": 900,
+      "allocation_usd": 901,
       "allocation_pct": 12.5,
       "bucket": "DeFi Value",
-      "notes": "3.2x P/F, $537M fees/yr, V4 catalyst, $1M/wk buyback"
+      "notes": "3.2x P/F, $537M fees/yr, V4 catalyst, $1M/wk buyback",
+      "coingecko_price": 92.84,
+      "market_cap": 1404705901.6095529,
+      "change_24h": 1.060488326774817,
+      "tvl": 25430052956
     },
     {
       "name": "HYPE (spot)",
       "ticker": "HYPE",
-      "allocation_usd": 300,
+      "allocation_usd": 301,
       "allocation_pct": 4.2,
       "bucket": "DeFi Value",
-      "notes": "$843M rev, 97% buyback, HIP-3 RWA. On Hyperliquid."
+      "notes": "$843M rev, 97% buyback, HIP-3 RWA. On Hyperliquid.",
+      "coingecko_price": 42.19,
+      "market_cap": 10056767222.155046,
+      "change_24h": 5.463874105839185
     },
     {
       "name": "PENDLE",
       "ticker": "PENDLE",
-      "allocation_usd": 350,
-      "allocation_pct": 4.9,
+      "allocation_usd": 349,
+      "allocation_pct": 4.8,
       "bucket": "DeFi Value",
-      "notes": "$5B TVL, zero competition, 80% buyback, -84% ATH"
+      "notes": "$5B TVL, zero competition, 80% buyback, -84% ATH",
+      "coingecko_price": 1.072,
+      "market_cap": 178747954.4355051,
+      "change_24h": 0.39039245274302664,
+      "tvl": 1776132784
     },
     {
       "name": "COW",
@@ -49,15 +66,21 @@
       "allocation_usd": 280,
       "allocation_pct": 3.9,
       "bucket": "DeFi Value",
-      "notes": "6.7x P/F, $188M+ surplus, MEV protection moat"
+      "notes": "6.7x P/F, $188M+ surplus, MEV protection moat",
+      "coingecko_price": 0.219082,
+      "market_cap": 121085280.46532193,
+      "change_24h": 1.2643231457623734
     },
     {
       "name": "wstETH",
       "ticker": "wstETH",
-      "allocation_usd": 600,
+      "allocation_usd": 596,
       "allocation_pct": 8.3,
       "bucket": "Yield",
-      "notes": "Lido staking ~3.5% APY"
+      "notes": "Lido staking ~3.5% APY",
+      "coingecko_price": 0.332474,
+      "market_cap": 282301602.67343426,
+      "change_24h": 3.6714398362344776
     },
     {
       "name": "Pendle PT-sUSDe",
@@ -70,10 +93,14 @@
     {
       "name": "MORPHO",
       "ticker": "MORPHO",
-      "allocation_usd": 400,
-      "allocation_pct": 5.6,
+      "allocation_usd": 396,
+      "allocation_pct": 5.5,
       "bucket": "Emerging",
-      "notes": "Apollo $90M, ETH Foundation $19M, V2 fixed-rate"
+      "notes": "Apollo $90M, ETH Foundation $19M, V2 fixed-rate",
+      "coingecko_price": 1.85,
+      "market_cap": 1021785524.2080624,
+      "change_24h": 0.47958074271496576,
+      "tvl": 7297810748
     },
     {
       "name": "Gas Reserve",
@@ -81,24 +108,85 @@
       "allocation_usd": 67,
       "allocation_pct": 0.9,
       "bucket": "Gas",
-      "notes": "~0.03 ETH for transactions"
+      "notes": "~0.03 ETH for transactions",
+      "coingecko_price": 2245.03,
+      "market_cap": 270893030973.23233,
+      "change_24h": 1.0724734764884658
     }
   ],
   "perps": [
-    { "pair": "HYPE-PERP", "leverage": 3, "capital_usd": 450, "entry_1": 38.0, "entry_2": 33.0, "stop": 29.0 },
-    { "pair": "ETH-PERP", "leverage": 3, "capital_usd": 400, "entry_1": 2070, "entry_2": 1950, "stop": 1830 },
-    { "pair": "SOL-PERP", "leverage": 2, "capital_usd": 300, "entry_1": 88.0, "entry_2": 78.0, "stop": 71.0 },
-    { "pair": "AAVE-PERP", "leverage": 2, "capital_usd": 250, "entry_1": 112.0, "entry_2": 100.0, "stop": 92.0 }
+    {
+      "pair": "HYPE-PERP",
+      "leverage": 3,
+      "capital_usd": 450,
+      "entry_1": 38,
+      "entry_2": 33,
+      "stop": 29
+    },
+    {
+      "pair": "ETH-PERP",
+      "leverage": 3,
+      "capital_usd": 400,
+      "entry_1": 2070,
+      "entry_2": 1950,
+      "stop": 1830
+    },
+    {
+      "pair": "SOL-PERP",
+      "leverage": 2,
+      "capital_usd": 300,
+      "entry_1": 88,
+      "entry_2": 78,
+      "stop": 71
+    },
+    {
+      "pair": "AAVE-PERP",
+      "leverage": 2,
+      "capital_usd": 250,
+      "entry_1": 112,
+      "entry_2": 100,
+      "stop": 92
+    }
   ],
   "total_perp_exposure": 3650,
   "avg_leverage": 2.6,
   "max_perp_loss": 465,
   "allocation_buckets": [
-    { "name": "Core", "total_usd": 2406, "pct": 33.4, "color": "#3b82f6" },
-    { "name": "DeFi Value", "total_usd": 1830, "pct": 25.4, "color": "#8b5cf6" },
-    { "name": "Yield", "total_usd": 1100, "pct": 15.3, "color": "#10b981" },
-    { "name": "Emerging", "total_usd": 400, "pct": 5.6, "color": "#f59e0b" },
-    { "name": "Perps", "total_usd": 1400, "pct": 19.4, "color": "#ef4444" },
-    { "name": "Gas", "total_usd": 67, "pct": 0.9, "color": "#6b7280" }
+    {
+      "name": "Core",
+      "total_usd": 2407,
+      "pct": 33.4,
+      "color": "#3b82f6"
+    },
+    {
+      "name": "DeFi Value",
+      "total_usd": 1831,
+      "pct": 25.4,
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "Yield",
+      "total_usd": 1096,
+      "pct": 15.2,
+      "color": "#10b981"
+    },
+    {
+      "name": "Emerging",
+      "total_usd": 396,
+      "pct": 5.5,
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Gas",
+      "total_usd": 67,
+      "pct": 0.9,
+      "color": "#6b7280"
+    },
+    {
+      "name": "Perps",
+      "total_usd": 1400,
+      "pct": 19.5,
+      "color": "#ef4444"
+    }
   ]
 }

@@ -2,7 +2,6 @@ import {
   LayoutDashboard,
   FileText,
   Newspaper,
-  Globe,
   Shield,
   Settings,
   Bot,
@@ -12,17 +11,18 @@ import {
   Radio,
 } from "lucide-react";
 
+// Ordered for the morning-brief reading flow:
+// macro → news → specific → portfolio → risk → archives
 export const NAV_ITEMS = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/research", label: "Research", icon: FileText },
-  { href: "/briefs", label: "Briefs", icon: Newspaper },
-  { href: "/intelligence", label: "Intelligence", icon: Radio },
-  { href: "/commodities", label: "Commodities", icon: Gem },
-  { href: "/macro-data", label: "Macro", icon: TrendingUp },
-  { href: "/governance", label: "Governance", icon: Vote },
-  { href: "/macro", label: "Polymarket", icon: Globe },
-  { href: "/risk", label: "Risk", icon: Shield },
-  { href: "/agents", label: "Agents", icon: Bot },
+  { href: "/",            label: "Dashboard",    icon: LayoutDashboard },
+  { href: "/macro",       label: "Macro",        icon: TrendingUp },
+  { href: "/intelligence",label: "News",         icon: Radio },
+  { href: "/commodities", label: "Commodities",  icon: Gem },
+  { href: "/governance",  label: "Governance",   icon: Vote },
+  { href: "/risk",        label: "Risk",         icon: Shield },
+  { href: "/research",    label: "Research",     icon: FileText },
+  { href: "/briefs",      label: "Briefs",       icon: Newspaper },
+  { href: "/agents",      label: "Agents",       icon: Bot },
 ] as const;
 
 export const ADMIN_NAV = {

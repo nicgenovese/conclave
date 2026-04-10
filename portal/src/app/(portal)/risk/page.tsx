@@ -1,223 +1,264 @@
-import { getRiskScores } from "@/lib/data";
+import { getRiskAlerts, getPortfolio } from "@/lib/data";
+import type { RiskAlert } from "@/lib/types";
 import { DataError } from "@/components/data-error";
 import { ErrorBoundary } from "@/components/error-boundary";
-import type { RiskFactor } from "@/lib/types";
+import { formatUSD } from "@/lib/utils";
 
-function factorBarColor(score: number): string {
-  if (score <= 3) return "var(--pos)";
-  if (score <= 6) return "var(--copper)";
-  return "var(--neg)";
-}
+function AlertRow({ alert }: { alert: RiskAlert }) {
+  const dotColor =
+    alert.severity === "critical"
+      ? "bg-moria-neg"
+      : alert.severity === "warning"
+      ? "bg-copper"
+      : "bg-moria-light";
 
-function statusText(status: "green" | "amber" | "red"): string {
-  switch (status) {
-    case "green": return "Low";
-    case "amber": return "Medium";
-    case "red": return "High";
-  }
-}
+  const labelColor =
+    alert.severity === "critical"
+      ? "text-moria-neg"
+      : alert.severity === "warning"
+      ? "text-copper"
+      : "text-moria-light";
 
-function statusDotColor(status: "green" | "amber" | "red"): string {
-  switch (status) {
-    case "green": return "var(--pos)";
-    case "amber": return "var(--copper)";
-    case "red": return "var(--neg)";
-  }
+  return (
+    <div className="flex items-start gap-3 px-5 py-4 border-b border-moria-rule/30 last:border-b-0">
+      <span className={`h-2 w-2 rounded-full mt-2 flex-shrink-0 ${dotColor}`} />
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2 mb-1 flex-wrap">
+          <span
+            className={`text-[9px] font-mono font-semibold uppercase tracking-widest ${labelColor}`}
+          >
+            {alert.severity}
+          </span>
+          <span className="text-moria-rule text-[9px]">·</span>
+          <span className="text-[9px] font-mono uppercase tracking-wider text-moria-dim">
+            {alert.type.replace(/_/g, " ")}
+          </span>
+          {alert.position && (
+            <>
+              <span className="text-moria-rule text-[9px]">·</span>
+              <span className="font-mono text-[11px] text-moria-black">
+                {alert.position}
+              </span>
+            </>
+          )}
+        </div>
+        <p className="text-[13px] font-medium text-moria-black">{alert.title}</p>
+        <p className="text-[12px] text-moria-dim mt-0.5">{alert.message}</p>
+        {alert.metric && (
+          <p className="font-mono text-[10px] text-moria-light mt-1">
+            current {alert.metric.current.toFixed(2)} / threshold{" "}
+            {alert.metric.threshold.toFixed(2)}
+            {alert.metric.distance_pct !== undefined &&
+              ` · ${alert.metric.distance_pct.toFixed(1)}% distance`}
+          </p>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function RiskPage() {
-  const scores = getRiskScores();
-
-  if (scores.length === 0) {
-    return (
-      <ErrorBoundary>
-        <div>
-          <h2 className="text-[20px] font-semibold text-moria-black mb-2">Risk</h2>
-          <p className="text-[14px] mb-8 text-moria-dim">
-            Position-level risk scoring across five factors
-          </p>
-          <DataError
-            title="No risk scores available"
-            message="Run the daily brief to generate risk assessments for your positions."
-          />
-        </div>
-      </ErrorBoundary>
-    );
-  }
-
-  const greenCount = scores.filter((s) => s.status === "green").length;
-  const amberCount = scores.filter((s) => s.status === "amber").length;
-  const redCount = scores.filter((s) => s.status === "red").length;
+  const data = getRiskAlerts();
+  const portfolio = getPortfolio();
 
   return (
     <ErrorBoundary>
-      <div>
-        {/* Section Header */}
-        <h2 className="text-[20px] font-semibold text-moria-black mb-2">Risk</h2>
-
-        <p className="text-[14px] mb-8 text-moria-dim">
-          Position-level risk scoring across five factors
-        </p>
-
-        {/* Summary stats */}
-        <div className="grid grid-cols-3 gap-4 mb-10">
-          <div className="stat-card">
-            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
-              Low Risk
-            </p>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-moria-pos" />
-              <span className="font-mono text-[24px] tabular-nums text-moria-black">
-                {greenCount}
-              </span>
-            </div>
-          </div>
-          <div className="stat-card">
-            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
-              Medium Risk
-            </p>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-copper" />
-              <span className="font-mono text-[24px] tabular-nums text-moria-black">
-                {amberCount}
-              </span>
-            </div>
-          </div>
-          <div className="stat-card">
-            <p className="text-copper text-[11px] font-medium uppercase tracking-wide">
-              High Risk
-            </p>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-moria-neg" />
-              <span className="font-mono text-[24px] tabular-nums text-moria-black">
-                {redCount}
-              </span>
-            </div>
-          </div>
+      <div className="space-y-8">
+        {/* Header */}
+        <div>
+          <p className="text-copper text-[10px] font-mono uppercase tracking-widest mb-1">
+            Balin — Risk Sentinel
+          </p>
+          <h1 className="text-[22px] sm:text-[28px] font-semibold tracking-tight text-moria-black leading-tight">
+            Risk
+          </h1>
+          <p className="text-moria-dim text-sm mt-1">
+            Live alerts from stop-loss monitoring, concentration limits, and wallet activity.
+          </p>
         </div>
 
-        {/* Factor table per position */}
-        <div className="card overflow-hidden mb-10">
-          <div className="overflow-x-auto">
-            <table className="moria-table">
-              <thead>
-                <tr>
-                  <th>Position</th>
-                  <th className="text-right">Overall</th>
-                  <th>Status</th>
-                  <th className="text-right">Smart Contract</th>
-                  <th className="text-right">Market</th>
-                  <th className="text-right">Liquidity</th>
-                  <th className="text-right">Governance</th>
-                  <th className="text-right">Counterparty</th>
-                </tr>
-              </thead>
-              <tbody>
-                {scores.map((pos) => (
-                  <tr key={pos.ticker}>
-                    <td>
-                      <span className="font-mono font-medium text-moria-black">
-                        {pos.ticker}
-                      </span>
-                      <span className="block text-[12px] text-moria-dim">
-                        {pos.name}
-                      </span>
-                    </td>
-                    <td className="text-right">
-                      <span className="font-mono text-[18px] tabular-nums text-moria-black">
-                        {pos.overall}
-                      </span>
-                      <span className="font-mono text-[12px] text-moria-light">/10</span>
-                    </td>
-                    <td>
-                      <div className="flex items-center gap-2">
-                        <span
-                          className="inline-block h-2.5 w-2.5 rounded-full"
-                          style={{ background: statusDotColor(pos.status) }}
-                        />
-                        <span className="text-[13px] text-moria-dim">
-                          {statusText(pos.status)}
-                        </span>
-                      </div>
-                    </td>
-                    {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
-                      ([factor, score]) => (
-                        <td key={factor} className="text-right">
-                          <span className="font-mono tabular-nums text-[13px] text-moria-dim">
-                            {score}
-                          </span>
-                        </td>
-                      )
-                    )}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Risk bars per position */}
-        <div className="space-y-6">
-          {scores.map((pos) => (
-            <div key={pos.ticker + "-bars"} className="card p-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span
-                  className="inline-block h-2.5 w-2.5 rounded-full"
-                  style={{ background: statusDotColor(pos.status) }}
-                />
-                <span className="font-mono text-[13px] font-medium text-moria-black">
-                  {pos.ticker}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                {(Object.entries(pos.factors) as [keyof RiskFactor, number][]).map(
-                  ([factor, score]) => (
-                    <div key={factor}>
-                      <div className="font-mono text-[10px] uppercase tracking-[0.06em] mb-1.5 text-moria-light">
-                        {String(factor).replace(/_/g, " ")}
-                      </div>
-                      <div className="h-1 w-full rounded-full bg-moria-faint">
-                        <div
-                          className="h-1 rounded-full"
-                          style={{
-                            width: `${(score / 10) * 100}%`,
-                            background: factorBarColor(score),
-                          }}
-                        />
-                      </div>
-                      <div className="font-mono text-[11px] tabular-nums mt-1 text-moria-dim">
-                        {score}/10
-                      </div>
-                    </div>
-                  )
-                )}
-              </div>
-
-              {pos.notes && (
-                <p className="font-serif text-[13px] mt-3 pt-3 border-t border-moria-rule text-moria-dim">
-                  {pos.notes}
+        {!data ? (
+          <DataError
+            title="No risk data"
+            message="Run Balin to analyze risk: tsx daily-brief/analyze-risk.ts"
+          />
+        ) : (
+          <>
+            {/* Summary stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="stat-card">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                  Critical
                 </p>
-              )}
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-moria-neg" />
+                  <p className="font-mono text-[24px] sm:text-[28px] tabular-nums leading-tight text-moria-black">
+                    {data.summary.critical}
+                  </p>
+                </div>
+              </div>
+              <div className="stat-card">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                  Warning
+                </p>
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-copper" />
+                  <p className="font-mono text-[24px] sm:text-[28px] tabular-nums leading-tight text-moria-black">
+                    {data.summary.warning}
+                  </p>
+                </div>
+              </div>
+              <div className="stat-card">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                  Info
+                </p>
+                <div className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-moria-light" />
+                  <p className="font-mono text-[24px] sm:text-[28px] tabular-nums leading-tight text-moria-black">
+                    {data.summary.info}
+                  </p>
+                </div>
+              </div>
+              <div className="stat-card">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                  Max Position
+                </p>
+                <p
+                  className={`font-mono text-[24px] sm:text-[28px] tabular-nums leading-tight ${
+                    data.concentration.breach ? "text-moria-neg" : "text-moria-black"
+                  }`}
+                >
+                  {data.concentration.max_position_pct.toFixed(1)}%
+                </p>
+                <p className="text-[10px] text-moria-light mt-0.5">
+                  {data.concentration.max_position} · limit {data.concentration.limit}%
+                </p>
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* Legend */}
-        <div className="mt-10 flex flex-wrap gap-6 text-[12px]">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-1 rounded-full bg-moria-pos" />
-            <span className="text-moria-dim">1-3 Low</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-1 rounded-full bg-copper" />
-            <span className="text-moria-dim">4-6 Medium</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-1 rounded-full bg-moria-neg" />
-            <span className="text-moria-dim">7-10 High</span>
-          </div>
-        </div>
+            {/* Active alerts */}
+            {data.alerts.length > 0 ? (
+              <div>
+                <h2 className="text-[15px] font-semibold text-moria-black mb-4">
+                  Active Alerts
+                </h2>
+                <div className="card overflow-hidden">
+                  {data.alerts.map((alert) => (
+                    <AlertRow key={alert.id} alert={alert} />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="card p-5">
+                <p className="text-[14px] text-moria-dim">
+                  No active alerts. All positions within limits.
+                </p>
+              </div>
+            )}
+
+            {/* Wallet activity */}
+            {data.wallet && (
+              <div>
+                <h2 className="text-[15px] font-semibold text-moria-black mb-4">
+                  Wallet
+                </h2>
+                <div className="card p-5">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                        Balance
+                      </p>
+                      <p className="font-mono text-[18px] tabular-nums text-moria-black">
+                        {data.wallet.eth_balance.toFixed(4)} ETH
+                      </p>
+                      <p className="text-[11px] text-moria-dim font-mono">
+                        {formatUSD(data.wallet.total_usd)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                        24h Inflows
+                      </p>
+                      <p className="font-mono text-[18px] tabular-nums text-moria-pos">
+                        {formatUSD(data.wallet.flow_24h.inflows_usd)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                        24h Outflows
+                      </p>
+                      <p className="font-mono text-[18px] tabular-nums text-moria-neg">
+                        {formatUSD(data.wallet.flow_24h.outflows_usd)}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
+                        Source
+                      </p>
+                      <p className="font-mono text-[13px] text-moria-dim">
+                        {data.wallet.source}
+                      </p>
+                    </div>
+                  </div>
+                  {data.wallet.error && (
+                    <p className="mt-4 pt-4 border-t border-moria-rule/30 text-[12px] text-copper">
+                      {data.wallet.error} — add ETHERSCAN_API_KEY to unlock wallet flow detection
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Perp positions table */}
+            {portfolio.perps.length > 0 && (
+              <div>
+                <h2 className="text-[15px] font-semibold text-moria-black mb-4">
+                  Perp Positions
+                </h2>
+                <div className="card overflow-hidden">
+                  <table className="w-full text-[13px]">
+                    <thead>
+                      <tr className="border-t-2 border-copper bg-[#F5F4F2]">
+                        <th className="text-left px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                          Pair
+                        </th>
+                        <th className="text-right px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                          Leverage
+                        </th>
+                        <th className="text-right px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                          Capital
+                        </th>
+                        <th className="text-right px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
+                          Stop Loss
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {portfolio.perps.map((p) => (
+                        <tr key={p.pair} className="border-b border-moria-rule/30">
+                          <td className="px-4 py-3">
+                            <span className="font-mono font-medium text-moria-black">
+                              {p.pair}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-right font-mono text-moria-dim">
+                            {p.leverage}x
+                          </td>
+                          <td className="px-4 py-3 text-right font-mono tabular-nums text-moria-black">
+                            {formatUSD(p.capital_usd)}
+                          </td>
+                          <td className="px-4 py-3 text-right font-mono tabular-nums text-moria-neg">
+                            ${p.stop.toFixed(2)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </ErrorBoundary>
   );

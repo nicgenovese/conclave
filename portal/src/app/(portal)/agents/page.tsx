@@ -2,20 +2,20 @@ export default function AgentsPage() {
   const agents = [
     {
       name: "Durin",
-      role: "Market Scribe",
+      role: "Portfolio Scribe",
       description:
-        "Produces the morning brief — headlines, Polymarket predictions, portfolio snapshot, and risk flags. Scans news for positions we hold and macro events that move markets.",
+        "Refreshes portfolio prices (NAV, positions, perps) via CoinGecko and DeFi Llama. Fetches Polymarket prediction markets. Aggregates output from all other agents and writes the daily markdown brief.",
       schedule: "Every 12 hours",
-      cost: "~$0.15 / run",
+      cost: "~$0.05 / run",
       status: "active",
       capabilities: [
-        "Headline curation from 50+ sources",
-        "Polymarket intelligence across 6 categories",
         "Portfolio price refresh via CoinGecko + DeFi Llama",
-        "Stop-loss proximity alerts",
-        "Governance vote scanning",
+        "Polymarket top 10 prediction markets",
+        "Orchestrates the full daily-brief pipeline (run.ts)",
+        "Writes unified markdown brief aggregating all agents",
+        "Zero hallucination — all data fetched, never generated",
       ],
-      trigger: '"Durin: brief" or /durin',
+      trigger: "tsx daily-brief/run.ts",
     },
     {
       name: "Thorin",

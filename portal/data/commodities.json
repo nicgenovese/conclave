@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T14:19:07.450Z",
+  "updated_at": "2026-04-10T17:50:11.489Z",
   "spot": {
     "gold_usd_oz": {
       "value": null,
@@ -59,30 +59,30 @@
   },
   "tokenized": {
     "paxg_usd": {
-      "value": 4765.88,
+      "value": 4747.68,
       "source": "coingecko"
     },
     "xaut_usd": {
-      "value": 4754.79,
+      "value": 4734.75,
       "source": "coingecko"
     },
     "paxg_premium_bps": null
   },
   "mining_equities": {
     "freeport_fcx": {
-      "value": 67.96,
+      "value": 67.649,
       "source": "yahoo"
     },
     "bhp": {
-      "value": 78.14,
+      "value": 76.725,
       "source": "yahoo"
     },
     "rio": {
-      "value": 99.18,
+      "value": 98.165,
       "source": "yahoo"
     },
     "newmont_nem": {
-      "value": 121.34,
+      "value": 120.99,
       "source": "yahoo"
     }
   },

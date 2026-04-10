@@ -53,6 +53,12 @@ export default function AdminPage() {
   const [healthLoading, setHealthLoading] = useState(false);
   const [healthError, setHealthError] = useState<string | null>(null);
 
+  // Vercel read-only filesystem warning state
+  const [envWarning, setEnvWarning] = useState<{
+    message: string;
+    envValue: string;
+  } | null>(null);
+
   const isAdmin = (session?.user as { role?: string } | undefined)?.role === "admin";
 
   useEffect(() => {
@@ -124,6 +130,7 @@ export default function AdminPage() {
   async function handleAdd(e: React.FormEvent) {
     e.preventDefault();
     setEmailError(null);
+    setEnvWarning(null);
 
     if (!email) return;
     if (!EMAIL_REGEX.test(email)) {
@@ -139,8 +146,19 @@ export default function AdminPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, role }),
       });
+      const body = await res.json().catch(() => ({}));
+
+      // Handle production read-only filesystem (Vercel)
+      if (res.status === 503 && body.readonly) {
+        setEnvWarning({
+          message: body.error,
+          envValue: body.generated_env_value || "",
+        });
+        setEmail("");
+        return;
+      }
+
       if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
         throw new Error(body.error || `HTTP ${res.status}`);
       }
       setEmail("");
@@ -155,6 +173,7 @@ export default function AdminPage() {
 
   async function handleRemove(targetEmail: string) {
     if (!window.confirm(`Remove ${targetEmail} from the whitelist?`)) return;
+    setEnvWarning(null);
 
     setLoading(true);
     setError(null);
@@ -164,8 +183,17 @@ export default function AdminPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: targetEmail }),
       });
+      const body = await res.json().catch(() => ({}));
+
+      if (res.status === 503 && body.readonly) {
+        setEnvWarning({
+          message: body.error,
+          envValue: body.generated_env_value || "",
+        });
+        return;
+      }
+
       if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
         throw new Error(body.error || `HTTP ${res.status}`);
       }
       await fetchWhitelist();
@@ -174,6 +202,15 @@ export default function AdminPage() {
       setError(msg);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function copyEnvValue() {
+    if (!envWarning?.envValue) return;
+    try {
+      await navigator.clipboard.writeText(envWarning.envValue);
+    } catch {
+      // fallback handled by the UI
     }
   }
 
@@ -216,6 +253,58 @@ export default function AdminPage() {
           >
             Dismiss
           </button>
+        </div>
+      )}
+
+      {/* Read-Only Filesystem Warning (Vercel production) */}
+      {envWarning && (
+        <div className="card border-l-4 border-copper p-5 mb-8">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="inline-block h-2.5 w-2.5 rounded-full mt-1.5 flex-shrink-0 bg-copper" />
+            <div className="flex-1">
+              <p className="text-[14px] font-medium text-moria-black mb-1">
+                Production environment: whitelist is read-only
+              </p>
+              <p className="text-[13px] text-moria-dim">
+                {envWarning.message}
+              </p>
+            </div>
+            <button
+              onClick={() => setEnvWarning(null)}
+              className="text-[12px] hover:underline text-moria-light"
+            >
+              Dismiss
+            </button>
+          </div>
+
+          <div className="mt-4">
+            <p className="text-[11px] font-mono uppercase tracking-wider text-moria-light mb-2">
+              Updated WHITELIST env var value
+            </p>
+            <div className="font-mono text-[12px] bg-moria-faint rounded p-3 break-all mb-3 text-moria-black">
+              {envWarning.envValue}
+            </div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <button
+                onClick={copyEnvValue}
+                className="text-[12px] font-mono uppercase tracking-wider px-3 py-1.5 rounded border border-moria-rule hover:bg-moria-faint transition-colors"
+              >
+                Copy to clipboard
+              </button>
+              <a
+                href="https://vercel.com/niclas-genoveses-projects/conclave.01/settings/environment-variables"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[12px] font-mono uppercase tracking-wider text-copper hover:underline"
+              >
+                Open Vercel settings →
+              </a>
+            </div>
+            <p className="text-[11px] text-moria-dim mt-3 leading-relaxed">
+              1. Paste the value above into the <code className="font-mono text-copper">WHITELIST</code> env var
+              on Vercel → 2. Redeploy from the Deployments tab → 3. The new user can sign in with the passphrase.
+            </p>
+          </div>
         </div>
       )}
 

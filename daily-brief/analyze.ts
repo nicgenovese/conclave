@@ -427,7 +427,9 @@ function generateBrief(date: string, portfolio: Portfolio, risk: RiskEntry[], ma
 
 export async function analyzeAndBrief(): Promise<{ briefPath: string; alertCount: number; insights: string[] }> {
   const portfolioResult = safeReadJSON<Portfolio>(resolve(DATA_DIR, "portfolio.json"), { nav: 0, updated_at: "N/A", wallet: "", positions: [], perps: [], total_perp_exposure: 0, avg_leverage: 0, max_perp_loss: 0, allocation_buckets: [] });
-  const riskResult = safeReadJSON<RiskEntry[]>(resolve(DATA_DIR, "risk.json"), []);
+  // Note: risk.json removed (was dead static data). Brief uses portfolio + macro only.
+  // Live risk alerts come from Balin (risk-alerts.json), shown on /risk page.
+  const riskResult = { ok: true, data: [] as RiskEntry[], error: null };
   const macroResult = safeReadJSON<MacroData>(resolve(DATA_DIR, "macro.json"), { updated_at: "N/A", polymarket: [], signals: [] });
 
   if (!portfolioResult.ok) console.error(`[analyze] Portfolio: ${portfolioResult.error}`);

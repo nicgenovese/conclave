@@ -1,7 +1,55 @@
 {
-  "updated_at": "2026-04-10T16:53:06.980Z",
+  "updated_at": "2026-04-10T17:50:12.986Z",
   "categories": {
     "commodity": [
+      {
+        "id": "Northern Miner-blast from the past when",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Blast from the Past: When Chile nationalized copper",
+        "link": "https://www.northernminer.com/news/blast-from-the-past-when-chile-nationalized-copper/1003889865/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 5.6,
+        "matched_keywords": [
+          "copper",
+          "mining"
+        ],
+        "published": "2026-04-10T11:00:54.000Z",
+        "snippet": "Chile’s 1971 move to nationalize copper reshaped Latin American mining and still reverberates through global supply. The Northern Miner tracked the crisis before and after the takeover. Even before Co"
+      },
+      {
+        "id": "Northern Miner-argentina oks milei glacier mining",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Argentina OKs Milei glacier mining reform amid protests",
+        "link": "https://www.northernminer.com/regulatory-issues/argentina-oks-milei-glacier-mining-reform-amid-protests/1003889841/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 5.6,
+        "matched_keywords": [
+          "approved",
+          "mining"
+        ],
+        "published": "2026-04-09T21:35:00.000Z",
+        "snippet": "Argentina’s Congress approved on Thursday a bill pushed by the country’s right-wing President Javier Milei that opens sensitive high-altitude regions to mining, triggering warnings over water security"
+      },
+      {
+        "id": "Northern Miner-orlas doubledigit gold assays extend",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Orla’s double-digit gold assays extend Musselwhite",
+        "link": "https://www.northernminer.com/news/orlas-double-digit-gold-assays-extend-musselwhite/1003889832/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 5.6,
+        "matched_keywords": [
+          "gold",
+          "mining"
+        ],
+        "published": "2026-04-09T21:30:09.000Z",
+        "snippet": "Orla Mining (TSX: OLA; NYSE: ORLA) says new drilling at its Musselwhite mine in Ontario shows more high-grade gold zones over 2 km beyond workings, boosting the case for longer... The post Orla’s doub"
+      },
       {
         "id": "Mining.com-peru pulls permit for 18b",
         "source": "Mining.com",
@@ -15,7 +63,7 @@
           "copper"
         ],
         "published": "2026-04-10T14:09:00.000Z",
-        "snippet": "Government cites legal and technical gaps, forcing review of a delayed copper project facing years of opposition."
+        "snippet": "Government cites legal and technical gaps, forcing review of a top copper project that has faced over a decade of delays."
       },
       {
         "id": "Mining.com-first quantum taps ifc for",
@@ -108,6 +156,81 @@
         "snippet": "Listing offers investors exposure to deep-sea mining as demand for critical minerals rises and risks remain."
       },
       {
+        "id": "Northern Miner-infographic latin americas top miners",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Infographic: Latin America’s top miners may surprise",
+        "link": "https://www.northernminer.com/news/infographic-latin-americas-top-miners-may-surprise/1003889868/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-10T11:30:44.000Z",
+        "snippet": "Latin America’s most mining-dependent countries are not always its biggest economies. Our latest infographic ranks the region first by mining’s share of total exports and then by the value of... The p"
+      },
+      {
+        "id": "Northern Miner-barrick signals deal push amid",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Barrick signals deal push amid strategic reset",
+        "link": "https://www.northernminer.com/stock-markets-investing/barrick-signals-deal-push-amid-strategic-reset/1003889835/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T21:45:27.000Z",
+        "snippet": "Barrick Mining (TSX: ABX; NYSE: B) is pivoting back to acquisitions and retreating from higher-risk regions, reversing a decade-long strategy that emphasized expansion across Africa and Asia. Chairman"
+      },
+      {
+        "id": "Northern Miner-g mining to buy g2",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "G Mining to buy G2 Goldfields for $3B in Guyana play",
+        "link": "https://www.northernminer.com/news/g-mining-to-buy-g2-goldfields-for-3b-in-guyana-play/1003889827/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T21:40:10.000Z",
+        "snippet": "Canadian miner G Mining Ventures (TSX: GMIN; US-OTC: GMINF) agreed to buy G2 Goldfields (TSX: GTWO; US-OTC: GUYGF) in a $3 billion (US$2.2 billion) all-share deal that would bring two... The post G Mi"
+      },
+      {
+        "id": "Northern Miner-video at pdac metalquest seeks",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Video at PDAC: MetalQuest seeks Lac Otelnuk iron project partner",
+        "link": "https://www.northernminer.com/news/video-at-pdac-metalquest-seeks-lac-otelnuk-iron-ore-partner/1003889857/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T16:15:15.000Z",
+        "snippet": "MetalQuest Mining (TSXV: MQM; US-OTC: MQMIF) plans to update the 2015 feasibility study at its Lac Otelnuk iron ore project in northern Quebec after completing a gap analysis and stepping... The post "
+      },
+      {
+        "id": "Northern Miner-niocorp nears elk creek full",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "NioCorp nears Elk Creek full $1.1B financing",
+        "link": "https://www.northernminer.com/news/niocorp-nears-elk-creek-full-1-1b-financing/1003889850/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "commodity"
+        ],
+        "published": "2026-04-09T16:10:15.000Z",
+        "snippet": "NioCorp Developments (Nasdaq: NB) says it has signed up commodity trader Traxys to buy and market the remaining planned output from Elk Creek, moving closer to full financing for the... The post NioCo"
+      },
+      {
         "id": "Mining.com-neo performance begins producing heavy",
         "source": "Mining.com",
         "source_weight": 8,
@@ -134,6 +257,19 @@
         "snippet": "The deal represents the final step in assembling a broader $633 million project financing package."
       },
       {
+        "id": "Northern Miner-nouveau monde raises 297m as",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Nouveau Monde raises $297M as Italy’s Eni takes stake",
+        "link": "https://www.northernminer.com/news/nouveau-monde-raises-297m-as-italys-eni-takes-stake/1003889879/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T15:02:07.000Z",
+        "snippet": "Nouveau Monde Graphite (NYSE: NMG; TSX: NOU) is raising $297 million (C$413 million) in a transaction that will see Italian energy giant Eni buy a 12% stake to help the Canadian... The post Nouveau Mo"
+      },
+      {
         "id": "Mining.com-paladin targets 2027 uranium decision",
         "source": "Mining.com",
         "source_weight": 8,
@@ -145,6 +281,32 @@
         "matched_keywords": [],
         "published": "2026-04-10T12:36:00.000Z",
         "snippet": "PLS has become Paladin’s clearest shot at adding a second uranium mine and diversify production from the Langer Heinrich uranium mine in Namibia."
+      },
+      {
+        "id": "Northern Miner-paladin targets 2027 uranium decision",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Paladin targets 2027 uranium decision on Patterson Lake South",
+        "link": "https://www.northernminer.com/news/paladin-targets-2027-uranium-decision-on-patterson-lake-south/1003889872/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T12:00:00.000Z",
+        "snippet": "Australia’s Paladin Energy (ASX, TSX: PDN) expects making a final investment decision on its Patterson Lake South (PLS) uranium project in Saskatchewan by the end of 2027 as the company... The post Pa"
+      },
+      {
+        "id": "Northern Miner-eu us near critical minerals",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "EU, US near critical minerals pact to counter China’s grip",
+        "link": "https://www.northernminer.com/news/eu-us-near-critical-minerals-pact-to-counter-chinas-grip/1003889876/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T11:15:13.000Z",
+        "snippet": "The European Union and the U.S. are nearing a deal to coordinate critical minerals production and supply chains, aiming to reduce reliance on China. The proposed agreement, reported by Bloomberg... Th"
       },
       {
         "id": "Mining.com-eu us near critical minerals",
@@ -160,6 +322,19 @@
         "snippet": "EU and US advance a minerals pact to reduce China reliance and stabilize supply chains amid rising geopolitical tensions."
       },
       {
+        "id": "Northern Miner-huge lithium deposit due on",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Huge lithium deposit due on Nasdaq after $571M deal",
+        "link": "https://www.northernminer.com/news/huge-lithium-deposit-due-on-nasdaq-after-571m-deal/1003889846/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T21:25:06.000Z",
+        "snippet": "A company holding one of the largest U.S. lithium development assets that’s already part of the government’s FAST-41 speedy permits stream is set to list on the Nasdaq following a... The post Huge lit"
+      },
+      {
         "id": "Mining.com-us lithium miner to go",
         "source": "Mining.com",
         "source_weight": 8,
@@ -171,6 +346,19 @@
         "matched_keywords": [],
         "published": "2026-04-09T16:43:25.000Z",
         "snippet": "The transaction is expected to close in the second half of 2026."
+      },
+      {
+        "id": "Northern Miner-video at pdac cornish derisks",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Video at PDAC: Cornish de-risks South Crofty for 2028 tin restart",
+        "link": "https://www.northernminer.com/news/video-at-pdac-cornish-de-risks-south-crofty-for-2028-tin-restart/1003889855/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T15:58:16.000Z",
+        "snippet": "UK-based Cornish Metals (AIM: TIN) is shifting work deeper underground at South Crofty and expects to line up senior debt within months as it pushes the Cornwall tin mine toward... The post Video at P"
       },
       {
         "id": "Mining.com-niocorp lines up traxys as",
@@ -197,6 +385,32 @@
         "matched_keywords": [],
         "published": "2026-04-09T13:53:00.000Z",
         "snippet": "Canadian miner cuts exposure to volatile regions as leadership reshapes portfolio after setbacks and output decline."
+      },
+      {
+        "id": "Northern Miner-rock tech lithium attracts 200m",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Rock Tech Lithium attracts $200M investment in Ontario processing plant",
+        "link": "https://www.northernminer.com/news/rock-tech-lithium-attracts-200m-investment-in-ontario-processing-plant/1003889790/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T21:05:21.000Z",
+        "snippet": "Canadian property developer BMI Group agreed to invest $200 million (US$144 million) in Rock Tech Lithium’s (TSX-V: RCK) proposed processing facility in northern Ontario – a key step toward building.."
+      },
+      {
+        "id": "Northern Miner-critical one hits visible antimony",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Critical One hits visible antimony at Howells Lake in Ontario as defence metal gains momentum",
+        "link": "https://www.northernminer.com/news/critical-one-hits-visible-antimony-at-howells-lake-in-ontario-as-defence-metal-gains-momentum/1003889821/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T17:43:46.000Z",
+        "snippet": "Critical One Energy’s (CSE: CRTL; US-OTC: MMTLF) first modern drill hole at the Howells Lake project in northwestern Ontario cut visible stibnite from near surface across about 100 metres of... The po"
       },
       {
         "id": "Mining.com-uranium energy adds second isr",
@@ -531,6 +745,45 @@
         ],
         "published": "2026-04-07T19:40:03.000Z",
         "snippet": "Three suspects reportedly behind a cryptocurrency wrench attack ring that relied on fake Doordash orders have been charged. The post Doordash crypto wrench attack suspects charged, report appeared fir"
+      },
+      {
+        "id": "Decrypt-elon musks spacex is nearing",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Elon Musk's SpaceX Is Nearing Its $1.75 Trillion IPO—Bitget Is Offering Pre-IPO Exposure",
+        "link": "https://decrypt.co/363950/elon-musk-spacex-nearing-1-75-trillion-ipo-bitget-pre-ipo-exposure",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T17:36:35.000Z",
+        "snippet": "Bitget's new IPO Prime platform debuts with a Republic-issued token offering exposure to SpaceX's eventual public market performance."
+      },
+      {
+        "id": "Decrypt-the cia let ai write",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "The CIA Let AI Write Its First Intelligence Report—And AI 'Coworkers' Are Up Next",
+        "link": "https://decrypt.co/363940/cia-autonomous-ai-intelligence-report-coworkers",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T17:14:19.000Z",
+        "snippet": "CIA leadership confirmed the agency used AI to generate its first-ever autonomous intelligence report—and expect to use full AI agent teams."
+      },
+      {
+        "id": "Decrypt-elon musks xai sues colorado",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Elon Musk’s xAI Sues Colorado Over AI Law as Fight Over State Regulation Intensifies",
+        "link": "https://decrypt.co/363951/elon-musk-xai-colorado-ai-law",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T16:57:23.000Z",
+        "snippet": "Elon Musk’s AI company xAI is challenging Colorado’s new high-risk AI law, adding to mounting legal scrutiny around its Grok chatbot."
       },
       {
         "id": "Decrypt-zcash could rise to 420",
@@ -884,45 +1137,6 @@
         "snippet": "Both OpenAI and Anthropic are restricting access to their most powerful cybersecurity capabilities, releasing them only to vetted organizations."
       },
       {
-        "id": "Decrypt-youtube now lets you create",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "YouTube Now Lets You Create Your Own AI Deepfakes",
-        "link": "https://decrypt.co/363852/youtube-now-lets-you-create-ai-deepfakes",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T19:18:34.000Z",
-        "snippet": "The new YouTube Shorts feature lets creators generate short videos using a realistic digital recreation of their own face and voice."
-      },
-      {
-        "id": "Decrypt-openai says enterprise ai is",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "OpenAI Says Enterprise AI Is Already 40% of Its Revenue Amid ‘Agentic Workflow’ Shift",
-        "link": "https://decrypt.co/363844/openai-enterprise-ai-revenue-agentic-workflows",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T18:39:12.000Z",
-        "snippet": "OpenAI CRO Denise Dresser says enterprise now makes up more than 40% of the company's revenue as companies turn to teams of agents."
-      },
-      {
-        "id": "Decrypt-meta coreweave shares rise after",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "Meta, CoreWeave Shares Rise After Expanding $21 Billion AI Cloud Deal",
-        "link": "https://decrypt.co/363838/meta-coreweave-shares-rise-expanding-21-billion-ai-cloud-deal",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T17:57:18.000Z",
-        "snippet": "Both Meta and CoreWeave logged stock gains Thursday after expanding their existing AI deal, now valued at $21 billion."
-      },
-      {
         "id": "Protos-nft game studio boss says",
         "source": "Protos",
         "source_weight": 7,
@@ -1012,7 +1226,7 @@
         "id": "SEC Press-sec clarifies the application of",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
+        "title": "    SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
         "category": "regulatory",
         "priority": "high",
@@ -1058,7 +1272,7 @@
         "id": "SEC Press-sec announces agenda and panelists",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "  SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
+        "title": "    SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-33",
         "category": "regulatory",
         "priority": "medium",
@@ -1103,7 +1317,7 @@
         "id": "SEC Press-sec proposes amendments to exchange",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "  SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
+        "title": "    SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-28-sec-proposes-amendments-exchange-act-rule-15c2-11",
         "category": "regulatory",
         "priority": "medium",
@@ -1259,7 +1473,7 @@
         "id": "Trafigura News-trafigura signs offtake financing deal",
         "source": "Trafigura News",
         "source_weight": 7,
-        "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg",
+        "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg.com",
         "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
         "category": "company",
         "priority": "high",
@@ -1269,7 +1483,7 @@
           "trafigura"
         ],
         "published": "2026-04-09T09:09:25.000Z",
-        "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg"
+        "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg.com"
       },
       {
         "id": "Trafigura News-trafigura enters ghana gold sector",
@@ -1323,7 +1537,7 @@
         "id": "Glencore News-glencore canada near deal to",
         "source": "Glencore News",
         "source_weight": 7,
-        "title": "Glencore, Canada Near Deal to Save Threatened Copper Facility - Bloomberg",
+        "title": "Glencore, Canada Near Deal to Save Threatened Copper Facility - Bloomberg.com",
         "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdHIwdkZ6NWdfU2tQWnNmSElfNzAtQng4UkJweTZ2aUZHdnI3aURFQkM1WDlIQW5tSTI1TklKeUxIcjVXcThrbTdiS29NRVg1eHpHRzJjUW9YemFvZmtTWFpoajNsWFFzZlJXbmdxWWdOZ1d0ZERENTlVQ1FIMFZZaFYyQWJ6TlZYVGN4TUphV0NTZG9HQ05ieThoODJIcnVrWjZ3bTVRTG9DOU1JUVB5cWJaTi05UHJablVNdHZpeFUzN1k?oc=5",
         "category": "company",
         "priority": "high",
@@ -1333,7 +1547,7 @@
           "glencore"
         ],
         "published": "2026-03-29T07:00:00.000Z",
-        "snippet": "Glencore, Canada Near Deal to Save Threatened Copper Facility Bloomberg"
+        "snippet": "Glencore, Canada Near Deal to Save Threatened Copper Facility Bloomberg.com"
       },
       {
         "id": "Circle News-circle clarifies usdc freeze policy",
@@ -1415,7 +1629,7 @@
         "id": "Glencore News-glencore chrome venture provisionally oks",
         "source": "Glencore News",
         "source_weight": 7,
-        "title": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal - Bloomberg",
+        "title": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal - Bloomberg.com",
         "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWkZZZXlyQm1EU1oyNFk4RllPV3F4bFRQUE5aZTNpbE5EX0JCX1FadHhDQUhkNXloWV9hYk8xSHpSN0NnT1lFUUtvMkQyd2xiaGt0S0RzdDlBQUV0V24tV1pGVHc5NVpmOENXM3Jyd2RlY0E1djgwNmEwQU5oOHA4c3VraGlaTDh3VjEtQklydzJzU1FHZTBfQmJpWlB1bVFkVnBHMDRoU1BvZG53Xzc1Rw?oc=5",
         "category": "company",
         "priority": "medium",
@@ -1424,7 +1638,7 @@
           "glencore"
         ],
         "published": "2026-04-10T10:33:30.000Z",
-        "snippet": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal Bloomberg"
+        "snippet": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal Bloomberg.com"
       },
       {
         "id": "Glencore News-core lithium launches multilayered funding",
@@ -1595,7 +1809,7 @@
         "id": "Trafigura News-trafigura fraudster gupta linked to",
         "source": "Trafigura News",
         "source_weight": 7,
-        "title": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse - Bloomberg",
+        "title": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse - Bloomberg.com",
         "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRXEtMFVQNUZwNnN6Nkp3YTlyZm83YnJWRV9KZzI4R0dnMWt1ZkVjSnhYTmQ3ZXBxUlNQMC1wdlE2WUliUnJNTVlpT3dRWFJXaTc3ZnpOMHBINGd3QXBDWVhLQm1LaUllaWdlcEh1VmIzblRJU2pKWV82NjVXYkItVDJTekk2SXRSY1lJRWJGOFhWZkZRZHBwUmV6TVpzRC13bWR1Y2k1c1RodVYxQk9R?oc=5",
         "category": "company",
         "priority": "medium",
@@ -1604,7 +1818,7 @@
           "trafigura"
         ],
         "published": "2026-04-07T10:31:38.000Z",
-        "snippet": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse Bloomberg"
+        "snippet": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse Bloomberg.com"
       },
       {
         "id": "Circle News-crcl news circle faces backlash",
@@ -1742,21 +1956,6 @@
         "snippet": "Trafigura signs battery-grade lithium carbonate offtake agreement with Smackover Lithium Trafigura"
       },
       {
-        "id": "Coinbase News-its time to pass the",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push - The Block",
-        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmtWLXJ4aVVFSjlLUThpWkhVUkZlMzJPS2htaExnZzBIRmd6dkRfWVctTTlCUHBNX2UwOFB2S0c0MGlDRFJWRmlOQzNCZnhrRU1zNThGSFlQT0dmZWtQZ0I0a3lHQVF5YzZYbW5XTUlZU2t5ZzJVYlQ4QVU0WE1iWnFn?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T11:45:21.000Z",
-        "snippet": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push The Block"
-      },
-      {
         "id": "Coinbase News-coinbase stock hit with analyst",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -1772,19 +1971,19 @@
         "snippet": "Coinbase stock hit with analyst downgrade on crypto market's weak start to 2026 Yahoo Finance"
       },
       {
-        "id": "Coinbase News-coinbase slapped with underweight rating",
+        "id": "Coinbase News-coinbase secures australian license plans",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? - 24/7 Wall St.",
-        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNzBDQ1VaT25wcGt5Y3EyTDg2bG5TUGdJcS1hcnUwNGJuRzNTWmY4U1JmM0xFdVVzSEpGUUJaWVVvcTBEOFZXc0Z2X2dJcnZ5RnBMX1ZpNTBYcndMQm1LRVFnRHBoWXBPY3pubXVJOWk3TFZGaTlFRWFlNThVcVBEZjhTb3BlRnZrVnd3OHJmSFl4STlPN2xiM1NWWFE0STMxOHRYUmJNSlNxUHcxNkNYREhlaklWQ0JkTkpkOHBqNXFSQk80LVMtYkVvb3NWSDdQbGxn?oc=5",
+        "title": "Coinbase secures Australian license, plans to offer crypto and equity perpetuals - The Block",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBBM3J1eXJoVGxiOVZ4Z1RxdU16YllLZDBhU0tOZzA4U3ZwSEhWVTRWcWlFc3FPZUNCVVFIeVpwOTRDa3N5ajZncHlOdmVMS0ZpQlNhWTY2TFJvZ3M3SUZPMm1fR2RwRGx1bDZGMGQ4ME5vbGxwZ2xR?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 1.4,
         "matched_keywords": [
           "crypto"
         ],
-        "published": "2026-04-08T14:30:12.000Z",
-        "snippet": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? 24/7 Wall St."
+        "published": "2026-04-08T07:43:19.000Z",
+        "snippet": "Coinbase secures Australian license, plans to offer crypto and equity perpetuals The Block"
       },
       {
         "id": "Circle News-circle mints 1 billion usdc",
@@ -1852,19 +2051,6 @@
         "matched_keywords": [],
         "published": "2026-04-10T10:35:45.000Z",
         "snippet": "Citizens cuts Coinbase stock price target on valuation concerns Investing.com"
-      },
-      {
-        "id": "Coinbase News-chicago at washington prediction markets",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Chicago at Washington | Prediction Markets - Coinbase",
-        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1DeWphbFZXUmtuUGxLczJsOFNSdDZ5dmZGdnpYTGdrck92SUMzXy0xZ3NQQUZDZVRPVDdKdThmRlgwUWt2WXFRMEhaYlFlNVo2R0lIYjREMXoyemdLNzBzTHVtRXNrYnE1NXBiWXo4RFphdS1z?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T23:36:34.000Z",
-        "snippet": "Chicago at Washington | Prediction Markets Coinbase"
       },
       {
         "id": "Coinbase News-coinbases retail traders havent left",
@@ -1971,6 +2157,19 @@
         "snippet": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins The Block"
       },
       {
+        "id": "Coinbase News-barclays downgrades coinbase global stock",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ - TipRanks",
+        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQR0kzc3JOam9zZ2htUm5FbnFsa3VuV1pJLTZzcGN1dHdfUTZGQl9Fa3I2VkhoblpKYU5IVmJZc0NFbW9mUXY1MDR2S1paT0g0Qzg1aTFpT2d4SGVwTHJsb2g3bWtZVUlzQnhFRThnYXhDMk1peUZ1dmw3LTVxcERaRFNNbGkwdEVSaVBrZFFSYTE2OXJGZGVWTEw4bEN5UTUzMnVubHhzSXlXOERMLUtSSnpRdWRCVW5fLUxYOWpybU1WcGdzYzhNV1AwN29zc3F2aGc?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T15:50:54.000Z",
+        "snippet": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ TipRanks"
+      },
+      {
         "id": "Coinbase News-coinbase downgraded deere upgraded wall",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -1987,27 +2186,40 @@
         "id": "Coinbase News-coinbase plans australia expansion after",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Coinbase Plans Australia Expansion After Securing License - Bloomberg",
+        "title": "Coinbase Plans Australia Expansion After Securing License - Bloomberg.com",
         "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSGpfcEJZM0F0MEo5MXVtYmF2YjdENXlUaGxHcUxjZzhWa1dYTDVfZ2VyTW1YR3F5d1ZCb0ZpYkJPd3BXSU9iV3FlZldTUkMzNDdtblY0VVhSRmM4Nzl0YjNOOFV2b2cxZmxNcDhUREpSeUlIVUt1b3lGRF94WnMtQkpTanFoaEJ6OFpJUHItY2R0WHBENmZpVTZJNTcyQWE0WEl3Vm5kYklrTnY1cXptNTh4Zw?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
         "published": "2026-04-07T22:39:27.000Z",
-        "snippet": "Coinbase Plans Australia Expansion After Securing License Bloomberg"
+        "snippet": "Coinbase Plans Australia Expansion After Securing License Bloomberg.com"
       },
       {
-        "id": "Circle News-circles usdc overtook tethers usdt",
-        "source": "Circle News",
+        "id": "Coinbase News-coinbase jumps on schwab news",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Circle’s USDC overtook Tether’s USDT in adjusted YTD volume: Mizuho - MSN",
-        "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxOQllxWjgyVlJPU1hPVUIzd1NNYzc5d09SeWh6ZlhtSFF2NV9SVHlFVnRTX1NDWUdkczJsUUNxby1FbEdMZkZ5elNlMWs0OHdFSHAwNXNLUHZjTGsyZjN3Q2VSLXhDbldqQzk4MDQyM0Z5enpSTzAwRHkwS193cWh3YWlkaXhnMXMxLVNNcWxBRWx4ZGt4bjhTTjc5ZExXN0RwSnhabGc4RU9JUHFSUFpjS3hnMGw4OXlNZGk0ck4wRjFMWHdXSGo5eDJTWFk2ZG5YWkZ1Q2VKZlpodGZjN1liUzNPR3FGTWRPT29BVmhhbk5Fd0wwRFJ0S0Itd19Lc0szVy0xd05HcjdyeC1UYjFUeGZWOGVjbVE0SUFrWnJ4UnYyLW1hdGdnZEdKMW1lcXhkbTZxcEJDOHJZNHo2MUhfNUpFYktsQUZnUVVwNTNHVEk?oc=5",
+        "title": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? - Investor's Business Daily",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5jb1ZXQ1dqdVFiSnRaSGJFeFU0SU1sVHQ3aHpIZFdGWXhGNHkySzFhQ1lsUUVSV1N2NnhhS1Z2ODl6WjIteVpVQkt5TGNuS0RmZmxHRzBtZHl1WjU2b2ZoNEs0N0tmVjVHNm1lUDVrTVZ3OXZEcWNV?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
-        "published": "2026-04-06T04:21:41.000Z",
-        "snippet": "Circle’s USDC overtook Tether’s USDT in adjusted YTD volume: Mizuho MSN"
+        "published": "2026-04-07T21:04:00.000Z",
+        "snippet": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? Investor's Business Daily"
+      },
+      {
+        "id": "Circle News-circle usdc liquidity returns to",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle USDC liquidity returns to market as post-quantum era threats escalate - Cryptopolitan",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORmZrVy1jN0xJVlJJX1FfMTBjMkdtcDBmZEpiUUIxQWk0WnU5R3B2Z2c3WG5zRkJaZFhpMk1RcE5aV0dzSGhrVUcyMFhVNHNrZ1VUZzJFeHNzX2pNeHNjQTA2RDlQa3ZVZEZXMmhZM3NUNEFzZXpMQXZpZTFTTUpMVg?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-06T16:04:00.000Z",
+        "snippet": "Circle USDC liquidity returns to market as post-quantum era threats escalate Cryptopolitan"
       }
     ],
     "exploits": [
@@ -2215,7 +2427,7 @@
       "id": "Trafigura News-trafigura signs offtake financing deal",
       "source": "Trafigura News",
       "source_weight": 7,
-      "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg",
+      "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg.com",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
       "category": "company",
       "priority": "high",
@@ -2225,7 +2437,7 @@
         "trafigura"
       ],
       "published": "2026-04-09T09:09:25.000Z",
-      "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg"
+      "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg.com"
     },
     {
       "id": "Trafigura News-trafigura enters ghana gold sector",
@@ -2277,9 +2489,9 @@
     }
   ],
   "summary": {
-    "total_items": 147,
+    "total_items": 162,
     "by_category": {
-      "commodity": 15,
+      "commodity": 30,
       "defi": 55,
       "regulatory": 15,
       "company": 55,
@@ -2287,13 +2499,12 @@
     },
     "by_priority": {
       "high": 13,
-      "medium": 53,
-      "low": 81
+      "medium": 56,
+      "low": 93
     },
-    "sources_succeeded": 11,
-    "sources_failed": 2,
+    "sources_succeeded": 12,
+    "sources_failed": 1,
     "failed_sources": [
-      "Kitco News: Status code 404",
       "CFTC News: unable to get local issuer certificate"
     ]
   }
