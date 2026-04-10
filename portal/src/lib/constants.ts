@@ -6,12 +6,14 @@ import {
   Shield,
   Settings,
   Bot,
+  Vote,
 } from "lucide-react";
 
 export const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/research", label: "Research", icon: FileText },
   { href: "/briefs", label: "Briefs", icon: Newspaper },
+  { href: "/governance", label: "Governance", icon: Vote },
   { href: "/macro", label: "Macro", icon: Globe },
   { href: "/risk", label: "Risk", icon: Shield },
   { href: "/agents", label: "Agents", icon: Bot },

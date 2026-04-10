@@ -114,3 +114,114 @@ export interface HeadlinesData {
   headlines: Headline[];
   polymarket: PolymarketEvent[];
 }
+
+// ============================================
+// Thorin — Governance Alerts
+// ============================================
+export interface GovernanceAlert {
+  id: string;
+  protocol: string;
+  title: string;
+  body?: string;
+  source: "snapshot" | "tally" | "forum";
+  space: string;
+  space_label: string;
+  status: "active" | "closed" | "pending";
+  created: string;
+  voting_ends: string;
+  author: string;
+  scores_total: number;
+  quorum: number;
+  current_result: {
+    for: number;
+    against: number;
+    abstain?: number;
+    quorum_met: boolean;
+  };
+  relevance: "high" | "medium" | "low";
+  impact: string;
+  url: string;
+}
+
+export interface GovernanceData {
+  updated_at: string;
+  source: "snapshot";
+  active: GovernanceAlert[];
+  recent_closed: GovernanceAlert[];
+  summary: {
+    active_count: number;
+    high_relevance: number;
+    protocols_with_activity: string[];
+  };
+}
+
+// ============================================
+// Balin — Risk Alerts
+// ============================================
+export type AlertSeverity = "critical" | "warning" | "info";
+export type AlertType =
+  | "stop_loss"
+  | "concentration"
+  | "unusual_flow"
+  | "liquidation_risk"
+  | "stale_data"
+  | "chain_concentration";
+
+export interface RiskAlert {
+  id: string;
+  severity: AlertSeverity;
+  type: AlertType;
+  position?: string;
+  title: string;
+  message: string;
+  metric?: {
+    current: number;
+    threshold: number;
+    distance_pct?: number;
+  };
+  created: string;
+}
+
+export interface WalletSnapshot {
+  address: string;
+  eth_balance: number;
+  eth_usd: number;
+  total_usd: number;
+  last_tx: string | null;
+  tx_count_24h: number;
+  flow_24h: {
+    inflows_eth: number;
+    outflows_eth: number;
+    inflows_usd: number;
+    outflows_usd: number;
+  };
+  recent_txs: Array<{
+    hash: string;
+    timestamp: string;
+    direction: "in" | "out";
+    value_eth: number;
+    value_usd: number;
+    to: string;
+    from: string;
+  }>;
+  source: "etherscan" | "public-rpc" | "fallback";
+  error?: string;
+}
+
+export interface RiskAlertsData {
+  updated_at: string;
+  wallet: WalletSnapshot | null;
+  alerts: RiskAlert[];
+  concentration: {
+    max_position_pct: number;
+    max_position: string;
+    limit: number;
+    breach: boolean;
+  };
+  summary: {
+    critical: number;
+    warning: number;
+    info: number;
+    total: number;
+  };
+}

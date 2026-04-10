@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -207,6 +207,59 @@ export function getHeadlines(): { headlines: Headline[]; polymarket: PolymarketE
     };
   } catch (err) {
     console.error("[data] Failed to read headlines.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Thorin — Governance alerts
+// ============================================
+export function getGovernance(): GovernanceData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "governance.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(raw) as GovernanceData;
+    return {
+      updated_at: parsed.updated_at || "N/A",
+      source: parsed.source || "snapshot",
+      active: Array.isArray(parsed.active) ? parsed.active : [],
+      recent_closed: Array.isArray(parsed.recent_closed) ? parsed.recent_closed : [],
+      summary: parsed.summary || {
+        active_count: 0,
+        high_relevance: 0,
+        protocols_with_activity: [],
+      },
+    };
+  } catch (err) {
+    console.error("[data] Failed to read governance.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Balin — Risk alerts
+// ============================================
+export function getRiskAlerts(): RiskAlertsData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "risk-alerts.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(raw) as RiskAlertsData;
+    return {
+      updated_at: parsed.updated_at || "N/A",
+      wallet: parsed.wallet || null,
+      alerts: Array.isArray(parsed.alerts) ? parsed.alerts : [],
+      concentration: parsed.concentration || {
+        max_position_pct: 0,
+        max_position: "",
+        limit: 30,
+        breach: false,
+      },
+      summary: parsed.summary || { critical: 0, warning: 0, info: 0, total: 0 },
+    };
+  } catch (err) {
+    console.error("[data] Failed to read risk-alerts.json:", err);
     return null;
   }
 }

@@ -1,8 +1,8 @@
-import { getPortfolio, getHeadlines } from "@/lib/data";
+import { getPortfolio, getHeadlines, getGovernance, getRiskAlerts } from "@/lib/data";
 import { formatUSD } from "@/lib/utils";
 import PerpsTable from "@/components/dashboard/perps-table";
 import { ErrorBoundary } from "@/components/error-boundary";
-import type { PolymarketEvent } from "@/lib/types";
+import type { PolymarketEvent, RiskAlert, GovernanceAlert } from "@/lib/types";
 import Link from "next/link";
 
 function isStale(dateStr: string): boolean {
@@ -40,6 +40,8 @@ function PctChange({ value }: { value: number }) {
 export default function Home() {
   const portfolio = getPortfolio();
   const headlinesData = getHeadlines();
+  const governance = getGovernance();
+  const riskAlerts = getRiskAlerts();
   const stale = isStale(portfolio.updated_at);
 
   // Group polymarket
@@ -54,6 +56,11 @@ export default function Home() {
 
   const topPositions = portfolio.positions.slice(0, 8);
   const hasPerps = portfolio.perps.length > 0;
+  const hasCriticalAlerts =
+    (riskAlerts?.summary?.critical ?? 0) + (riskAlerts?.summary?.warning ?? 0) > 0;
+  const topGovernance = (governance?.active || [])
+    .filter((a) => a.relevance === "high" || a.relevance === "medium")
+    .slice(0, 4);
 
   return (
     <ErrorBoundary>
@@ -84,6 +91,70 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        {/* ── RISK ALERTS (only if any exist) ───── */}
+        {hasCriticalAlerts && riskAlerts && (
+          <div className="card overflow-hidden">
+            <div className="flex items-center justify-between px-5 pt-5 pb-3">
+              <div className="flex items-center gap-2.5">
+                <h2 className="text-[15px] font-semibold text-moria-black">
+                  Risk Alerts
+                </h2>
+                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+                  Balin
+                </span>
+                {riskAlerts.summary.critical > 0 && (
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-moria-neg text-white text-[10px] font-mono font-medium rounded">
+                    <span className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                    {riskAlerts.summary.critical} CRITICAL
+                  </span>
+                )}
+                {riskAlerts.summary.warning > 0 && (
+                  <span className="px-2 py-0.5 bg-copper/10 text-copper text-[10px] font-mono font-medium rounded">
+                    {riskAlerts.summary.warning} WARNING
+                  </span>
+                )}
+              </div>
+              <Link
+                href="/risk"
+                className="text-copper text-[11px] font-mono hover:underline"
+              >
+                View all →
+              </Link>
+            </div>
+            <div className="divide-y divide-moria-rule/30">
+              {riskAlerts.alerts
+                .filter((a) => a.severity !== "info")
+                .slice(0, 5)
+                .map((alert: RiskAlert) => (
+                  <div key={alert.id} className="px-5 py-3 flex items-start gap-3">
+                    <div
+                      className={`h-2 w-2 mt-1.5 rounded-full flex-shrink-0 ${
+                        alert.severity === "critical"
+                          ? "bg-moria-neg"
+                          : "bg-copper"
+                      }`}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <p className="text-[13px] font-medium text-moria-black">
+                          {alert.title}
+                        </p>
+                        {alert.position && (
+                          <span className="font-mono text-[10px] text-moria-light">
+                            {alert.position}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-[12px] text-moria-dim mt-0.5">
+                        {alert.message}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        )}
 
         {/* ── KEY METRICS ROW ──────────────────────── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
@@ -271,6 +342,79 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* ── GOVERNANCE (Thorin) ────────────────── */}
+        {topGovernance.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2.5">
+                <h2 className="text-[15px] font-semibold text-moria-black">
+                  Governance
+                </h2>
+                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+                  Thorin
+                </span>
+                {governance && governance.summary.high_relevance > 0 && (
+                  <span className="px-2 py-0.5 bg-copper/10 text-copper text-[10px] font-mono font-medium rounded">
+                    {governance.summary.high_relevance} HIGH
+                  </span>
+                )}
+              </div>
+              <Link
+                href="/governance"
+                className="text-copper text-[11px] font-mono hover:underline"
+              >
+                View all →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {topGovernance.map((alert: GovernanceAlert) => (
+                <div key={alert.id} className="card p-4">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="font-mono font-medium text-copper text-[11px]">
+                      {alert.protocol}
+                    </span>
+                    <span className="text-moria-rule text-[10px]">·</span>
+                    <span
+                      className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-medium tracking-wider ${
+                        alert.relevance === "high"
+                          ? "bg-copper text-white"
+                          : "bg-moria-faint text-moria-dim"
+                      }`}
+                    >
+                      {alert.relevance.toUpperCase()}
+                    </span>
+                  </div>
+                  <a
+                    href={alert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-[14px] text-moria-black leading-snug hover:text-copper transition-colors line-clamp-2 block"
+                  >
+                    {alert.title}
+                  </a>
+                  <div className="mt-2 flex items-center gap-3 text-[10px] font-mono">
+                    <span className="text-moria-pos">
+                      For {alert.current_result.for.toFixed(0)}%
+                    </span>
+                    <span className="text-moria-neg">
+                      Against {alert.current_result.against.toFixed(0)}%
+                    </span>
+                    <span className="text-moria-light ml-auto">
+                      {(() => {
+                        const days = Math.round(
+                          (new Date(alert.voting_ends).getTime() - Date.now()) /
+                            (1000 * 60 * 60 * 24),
+                        );
+                        return days < 0 ? "ended" : days === 0 ? "ends today" : `${days}d left`;
+                      })()}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ── PREDICTION MARKETS ─────────────────── */}
         {headlinesData && headlinesData.polymarket.length > 0 && (

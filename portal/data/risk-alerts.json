@@ -1,0 +1,83 @@
+{
+  "updated_at": "2026-04-10T10:51:43.189Z",
+  "wallet": {
+    "address": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
+    "eth_balance": 0,
+    "eth_usd": 0,
+    "total_usd": 0,
+    "last_tx": null,
+    "tx_count_24h": 0,
+    "flow_24h": {
+      "inflows_eth": 0,
+      "outflows_eth": 0,
+      "inflows_usd": 0,
+      "outflows_usd": 0
+    },
+    "recent_txs": [],
+    "source": "fallback",
+    "error": "Etherscan error: NOTOK"
+  },
+  "alerts": [
+    {
+      "id": "stop-AAVE-PERP",
+      "severity": "critical",
+      "type": "stop_loss",
+      "position": "AAVE-PERP",
+      "title": "AAVE-PERP stop loss HIT",
+      "message": "Current price $90.08 is at or below stop loss of $92.00. Position should be closed.",
+      "metric": {
+        "current": 90.08,
+        "threshold": 92,
+        "distance_pct": -2.131438721136769
+      },
+      "created": "2026-04-10T10:51:43.189Z"
+    },
+    {
+      "id": "stop-SOL-PERP",
+      "severity": "warning",
+      "type": "stop_loss",
+      "position": "SOL-PERP",
+      "title": "SOL-PERP approaching stop loss",
+      "message": "Current price $83.19 is 14.7% above stop loss ($71.00).",
+      "metric": {
+        "current": 83.19,
+        "threshold": 71,
+        "distance_pct": 14.65320351003726
+      },
+      "created": "2026-04-10T10:51:43.189Z"
+    },
+    {
+      "id": "concentration-max",
+      "severity": "info",
+      "type": "concentration",
+      "position": "ETH",
+      "title": "ETH approaching concentration limit",
+      "message": "ETH is 27.8% of NAV (limit: 30%).",
+      "metric": {
+        "current": 27.8,
+        "threshold": 30
+      },
+      "created": "2026-04-10T10:51:43.189Z"
+    },
+    {
+      "id": "stale-portfolio",
+      "severity": "info",
+      "type": "stale_data",
+      "title": "Portfolio data is stale",
+      "message": "Last updated 467h ago. Run Durin to refresh prices.",
+      "created": "2026-04-10T10:51:43.189Z"
+    }
+  ],
+  "concentration": {
+    "max_position_pct": 27.8,
+    "max_position": "ETH",
+    "limit": 30,
+    "breach": false
+  },
+  "summary": {
+    "critical": 1,
+    "warning": 1,
+    "info": 2,
+    "total": 4
+  }
+}
