@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T17:50:11.615Z",
+  "updated_at": "2026-04-10T19:55:04.591Z",
   "polymarket": [
     {
       "id": "236840",
@@ -14,7 +14,7 @@
           "probability": 1
         }
       ],
-      "volume_usd": 44109848,
+      "volume_usd": 32927738,
       "end_date": "",
       "category": "General",
       "url": "https://polymarket.com/event/us-x-iran-ceasefire-by"
@@ -25,14 +25,14 @@
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0.1535
+          "probability": 0.154
         },
         {
           "name": "No",
-          "probability": 0.8465
+          "probability": 0.846
         }
       ],
-      "volume_usd": 9193930,
+      "volume_usd": 8306326,
       "end_date": "2026-07-20T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/2026-fifa-world-cup-winner-595"
@@ -50,7 +50,7 @@
           "probability": 0.989
         }
       ],
-      "volume_usd": 7809243,
+      "volume_usd": 7658756,
       "end_date": "2028-11-07T00:00:00Z",
       "category": "Politics",
       "url": "https://polymarket.com/event/democratic-presidential-nominee-2028"
@@ -68,7 +68,7 @@
           "probability": 0.9955
         }
       ],
-      "volume_usd": 6919461,
+      "volume_usd": 6974946,
       "end_date": "2026-04-29T00:00:00Z",
       "category": "Rates",
       "url": "https://polymarket.com/event/fed-decision-in-april"
@@ -79,14 +79,14 @@
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0.092
+          "probability": 0.0635
         },
         {
           "name": "No",
-          "probability": 0.908
+          "probability": 0.9365
         }
       ],
-      "volume_usd": 6496305,
+      "volume_usd": 6414815,
       "end_date": "2026-04-13T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/the-masters-winner-2026"
@@ -104,10 +104,28 @@
           "probability": 1
         }
       ],
-      "volume_usd": 4697651,
+      "volume_usd": 4923387,
       "end_date": "2026-04-30T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/military-action-against-iran-ends-on-127"
+    },
+    {
+      "id": "31552",
+      "question": "Presidential Election Winner 2028",
+      "outcomes": [
+        {
+          "name": "Yes",
+          "probability": 0.0065
+        },
+        {
+          "name": "No",
+          "probability": 0.9935
+        }
+      ],
+      "volume_usd": 3697454,
+      "end_date": "2028-11-07T00:00:00Z",
+      "category": "Politics",
+      "url": "https://polymarket.com/event/presidential-election-winner-2028"
     },
     {
       "id": "34038",
@@ -122,7 +140,7 @@
           "probability": 0
         }
       ],
-      "volume_usd": 4093346,
+      "volume_usd": 3707235,
       "end_date": "2026-04-12T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/next-prime-minister-of-hungary"
@@ -140,46 +158,28 @@
           "probability": 0.9805
         }
       ],
-      "volume_usd": 3978365,
+      "volume_usd": 3594765,
       "end_date": "2028-11-07T00:00:00Z",
       "category": "Politics",
       "url": "https://polymarket.com/event/republican-presidential-nominee-2028"
     },
     {
-      "id": "31552",
-      "question": "Presidential Election Winner 2028",
+      "id": "361796",
+      "question": "Counter-Strike: FUT Esports vs TheMongolz (BO3) - PGL Bucharest Playoffs",
       "outcomes": [
         {
-          "name": "Yes",
-          "probability": 0.0065
-        },
-        {
-          "name": "No",
-          "probability": 0.9935
-        }
-      ],
-      "volume_usd": 3932554,
-      "end_date": "2028-11-07T00:00:00Z",
-      "category": "Politics",
-      "url": "https://polymarket.com/event/presidential-election-winner-2028"
-    },
-    {
-      "id": "340006",
-      "question": "Bitcoin above ___ on April 10?",
-      "outcomes": [
-        {
-          "name": "Yes",
+          "name": "FUT Esports",
           "probability": 0.9995
         },
         {
-          "name": "No",
+          "name": "TheMongolz",
           "probability": 0.0005
         }
       ],
-      "volume_usd": 3547669,
-      "end_date": "2026-04-10T16:00:00Z",
-      "category": "Crypto",
-      "url": "https://polymarket.com/event/bitcoin-above-on-april-10"
+      "volume_usd": 2868988,
+      "end_date": "2026-04-10T22:45:00Z",
+      "category": "General",
+      "url": "https://polymarket.com/event/cs2-fut-mglz-2026-04-10"
     }
   ],
   "signals": [

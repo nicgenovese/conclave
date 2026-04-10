@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-import { NAV_ITEMS, ADMIN_NAV } from "@/lib/constants";
+import { NAV_ITEMS, ADMIN_NAV_ITEMS } from "@/lib/constants";
 import { isAdmin } from "@/lib/roles";
 
 export function MobileHeader() {
@@ -102,12 +102,18 @@ export function MobileHeader() {
 
               {isAdmin(userRole) && (
                 <>
-                  <div className="my-4" />
-                  {(() => {
-                    const active = isActive(ADMIN_NAV.href);
+                  <div className="my-4 border-t border-moria-rule/30" />
+                  <p className="px-4 py-2 text-[9px] font-mono uppercase tracking-widest text-moria-light">
+                    Admin
+                  </p>
+                  {ADMIN_NAV_ITEMS.map((item) => {
+                    const active = item.href === "/admin"
+                      ? pathname === "/admin"
+                      : pathname.startsWith(item.href);
                     return (
                       <Link
-                        href={ADMIN_NAV.href}
+                        key={item.href}
+                        href={item.href}
                         onClick={() => setOpen(false)}
                         className={`block py-3 px-4 text-[18px] rounded-lg transition-colors ${
                           active
@@ -115,10 +121,10 @@ export function MobileHeader() {
                             : "text-moria-dim hover:bg-[#F8F7F5]"
                         }`}
                       >
-                        {ADMIN_NAV.label}
+                        {item.label}
                       </Link>
                     );
-                  })()}
+                  })}
                 </>
               )}
             </nav>

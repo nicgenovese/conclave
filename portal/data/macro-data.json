@@ -1,84 +1,72 @@
 {
-  "updated_at": "2026-04-10T17:50:10.888Z",
+  "updated_at": "2026-04-10T19:55:05.216Z",
   "fed": {
     "funds_rate": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 3.75,
+      "date": "2026-04-10"
     },
     "balance_sheet_usd_bn": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 6693.871,
+      "date": "2026-04-08"
     }
   },
   "yields": {
     "y2": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 3.79,
+      "date": "2026-04-08"
     },
     "y10": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 4.29,
+      "date": "2026-04-08"
     },
     "y30": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 4.89,
+      "date": "2026-04-08"
     },
     "real_10y": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 1.96,
+      "date": "2026-04-08"
     },
-    "curve_2s10s_bps": null,
+    "curve_2s10s_bps": 50,
     "inverted": false
   },
   "inflation": {
     "cpi_yoy_pct": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 3.2859577528652006,
+      "date": "2026-03-01"
     },
     "core_cpi_yoy_pct": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 2.6021677054868197,
+      "date": "2026-03-01"
     },
-    "trend": "unknown"
+    "trend": "stable"
   },
   "employment": {
     "unrate": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 4.3,
+      "date": "2026-03-01"
     },
     "nfp_thousands": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 178,
+      "date": "2026-03-01"
     }
   },
   "dollar": {
     "dxy_proxy": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": 120.6565,
+      "date": "2026-04-03"
     }
   },
   "financial_conditions": {
     "nfci": {
-      "value": null,
-      "date": null,
-      "error": "FRED_API_KEY not set"
+      "value": -0.433,
+      "date": "2026-04-03"
     },
-    "regime": "unknown"
+    "regime": "loose"
   },
-  "regime": "unknown",
-  "regime_summary": "FRED_API_KEY not set — add to enable macro regime detection",
+  "regime": "risk_on",
+  "regime_summary": "loose financial conditions · yield curve steepening",
   "health": {
-    "fred": "no_key"
+    "fred": "ok"
   }
 }

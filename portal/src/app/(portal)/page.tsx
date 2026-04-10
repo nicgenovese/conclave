@@ -6,6 +6,8 @@ import {
   getCommodities,
   getMacroDataFull,
   getIntelligence,
+  getOri,
+  getGimli,
 } from "@/lib/data";
 import { formatUSD } from "@/lib/utils";
 import { ErrorBoundary } from "@/components/error-boundary";
@@ -14,6 +16,7 @@ import type {
   GovernanceAlert,
   IntelligenceItem,
   PolymarketEvent,
+  GimliProtocol,
 } from "@/lib/types";
 import Link from "next/link";
 
@@ -58,7 +61,10 @@ function PctChange({ value }: { value: number }) {
 // Dashboard
 // ─────────────────────────────────────────────
 export default function Home() {
+  // Ori is the source of truth; portfolio is the legacy-shape shim for existing code paths
+  const ori = getOri();
   const portfolio = getPortfolio();
+  const gimli = getGimli();
   const headlines = getHeadlines();
   const governance = getGovernance();
   const riskAlerts = getRiskAlerts();
@@ -77,6 +83,10 @@ export default function Home() {
     .slice(0, 3);
   const topPolymarket: PolymarketEvent[] = (headlines?.polymarket || []).slice(0, 4);
   const topPositions = portfolio.positions.slice(0, 6);
+
+  // Gimli DeFi valuation: top 5 cheapest + top 3 most expensive for the dashboard
+  const topCheap: GimliProtocol[] = (gimli?.cheapest || []).slice(0, 5);
+  const topExpensive: GimliProtocol[] = (gimli?.most_expensive || []).slice(0, 3);
   const hasPerps = portfolio.perps.length > 0;
 
   return (
@@ -103,6 +113,38 @@ export default function Home() {
                 year: "numeric",
               })}
             </p>
+            {ori && (
+              <div className="mt-1 flex items-center sm:justify-end gap-2 text-[10px] font-mono text-moria-light">
+                <span className="inline-flex items-center gap-1">
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full inline-block ${
+                      ori.health.defillama === "ok" ? "bg-moria-pos" : "bg-moria-neg"
+                    }`}
+                  />
+                  DeFi Llama
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full inline-block ${
+                      ori.health.hyperliquid === "ok" ? "bg-moria-pos" : "bg-moria-neg"
+                    }`}
+                  />
+                  Hyperliquid
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full inline-block ${
+                      ori.health.etherscan === "ok"
+                        ? "bg-moria-pos"
+                        : ori.health.etherscan === "stub"
+                          ? "bg-copper"
+                          : "bg-moria-neg"
+                    }`}
+                  />
+                  Etherscan {ori.health.etherscan === "stub" ? "(stub)" : ""}
+                </span>
+              </div>
+            )}
             {stale && (
               <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center sm:justify-end gap-1.5">
                 <span className="h-1.5 w-1.5 bg-copper rounded-full inline-block" />
@@ -252,6 +294,160 @@ export default function Home() {
             </div>
           </Link>
         </section>
+
+        {/* ═══════════════════════════════════════
+            1b. DeFi VALUATION (Gimli) — cheap vs expensive
+            ═══════════════════════════════════════ */}
+        {gimli && gimli.summary.total_analyzed > 0 && (
+          <section>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2.5">
+                <h2 className="text-[15px] font-semibold text-moria-black">DeFi Valuation</h2>
+                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+                  Gimli
+                </span>
+                <span className="px-2 py-0.5 bg-moria-pos/10 text-moria-pos text-[10px] font-mono font-medium rounded">
+                  {gimli.summary.cheap} CHEAP
+                </span>
+                <span className="px-2 py-0.5 bg-moria-neg/10 text-moria-neg text-[10px] font-mono font-medium rounded">
+                  {gimli.summary.expensive} EXPENSIVE
+                </span>
+              </div>
+            </div>
+
+            <div className="card overflow-hidden">
+              {/* FACT block */}
+              <div className="px-5 pt-4 pb-3 bg-moria-faint/30 border-b border-moria-rule/40">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-moria-dim">
+                  FACT &middot; DeFi Llama revenue / market cap / TradFi peer comparison
+                </span>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-[12px] sm:text-[13px]">
+                  <thead>
+                    <tr className="border-b border-copper bg-[#F5F4F2]">
+                      <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
+                        Protocol
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
+                        P/E
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
+                        Peer (TradFi)
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
+                        Upside to Peer
+                      </th>
+                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
+                        Fee Switch
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {topCheap.map((p) => (
+                      <tr key={`cheap-${p.ticker}`} className="border-b border-moria-rule/30">
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
+                          <div className="flex items-center gap-2">
+                            <span className="h-2 w-2 rounded-full bg-moria-pos" />
+                            <span className="font-mono font-medium text-moria-black">
+                              {p.ticker}
+                            </span>
+                            <span className="text-[10px] text-moria-light hidden sm:inline">
+                              {p.theme}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-black">
+                          {p.pe_ratio !== null ? `${p.pe_ratio.toFixed(1)}x` : "—"}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right text-[11px] text-moria-dim hidden sm:table-cell">
+                          {p.peer_pe_range}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-pos hidden md:table-cell">
+                          {p.upside_to_peer_pct !== null
+                            ? `+${p.upside_to_peer_pct.toFixed(0)}%`
+                            : "—"}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
+                          <span
+                            className={`text-[10px] font-mono ${
+                              p.fee_switch.state === "live_full"
+                                ? "text-moria-pos"
+                                : p.fee_switch.state === "not_activated"
+                                ? "text-moria-neg"
+                                : "text-moria-dim"
+                            }`}
+                          >
+                            {p.fee_switch.state.replace(/_/g, " ")}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                    {topExpensive.map((p) => (
+                      <tr key={`exp-${p.ticker}`} className="border-b border-moria-rule/30 bg-moria-faint/20">
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
+                          <div className="flex items-center gap-2">
+                            <span className="h-2 w-2 rounded-full bg-moria-neg" />
+                            <span className="font-mono font-medium text-moria-black">
+                              {p.ticker}
+                            </span>
+                            <span className="text-[10px] text-moria-light hidden sm:inline">
+                              {p.theme}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-neg">
+                          {p.pe_ratio !== null ? `${p.pe_ratio.toFixed(1)}x` : "—"}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right text-[11px] text-moria-dim hidden sm:table-cell">
+                          {p.peer_pe_range}
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-dim hidden md:table-cell">
+                          —
+                        </td>
+                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
+                          <span
+                            className={`text-[10px] font-mono ${
+                              p.fee_switch.state === "live_full"
+                                ? "text-moria-pos"
+                                : p.fee_switch.state === "not_activated"
+                                ? "text-moria-neg"
+                                : "text-moria-dim"
+                            }`}
+                          >
+                            {p.fee_switch.state.replace(/_/g, " ")}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* INFERENCE block — Sonnet narrative (stubbed in Wave 1) */}
+              <div className="px-5 py-4 bg-moria-faint/20 border-t border-moria-rule/40">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-copper">
+                    {gimli.narrative.confidence === "STUB" ? "INFERENCE (stubbed)" : "INFERENCE"}
+                  </span>
+                  <span className="text-[9px] font-mono text-moria-light">
+                    · {gimli.narrative.model}
+                  </span>
+                </div>
+                <p
+                  className={`font-serif text-[13px] leading-relaxed ${
+                    gimli.narrative.confidence === "STUB"
+                      ? "text-moria-light italic"
+                      : "text-moria-body"
+                  }`}
+                >
+                  {gimli.narrative.text}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ═══════════════════════════════════════
             2. NEWS — what's happening in the world

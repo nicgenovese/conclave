@@ -1,7 +1,23 @@
 {
-  "updated_at": "2026-04-10T17:50:12.986Z",
+  "updated_at": "2026-04-10T19:55:05.199Z",
   "categories": {
     "commodity": [
+      {
+        "id": "Northern Miner-gold price wins in iran",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Gold price wins in Iran war, but not copper",
+        "link": "https://www.northernminer.com/news/gold-price-wins-in-iran-war-but-not-copper/1003889896/",
+        "category": "commodity",
+        "priority": "high",
+        "priority_score": 8.399999999999999,
+        "matched_keywords": [
+          "copper",
+          "gold"
+        ],
+        "published": "2026-04-10T18:45:51.000Z",
+        "snippet": "The U.S.-Iran war may shave as much as 0.7% off the global economy and push gold prices higher as investors focus on a swelling U.S. deficit and a weaker dollar,... The post Gold price wins in Iran wa"
+      },
       {
         "id": "Northern Miner-blast from the past when",
         "source": "Northern Miner",
@@ -94,6 +110,36 @@
         ],
         "published": "2026-04-08T15:49:50.000Z",
         "snippet": "Spot gold rose as much as 3% to over $4,850 per ounce."
+      },
+      {
+        "id": "Northern Miner-new woe besets bcs two",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "New woe besets BC’s two biggest gold projects",
+        "link": "https://www.northernminer.com/news/new-woe-besets-bcs-two-biggest-gold-projects/1003889899/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "gold"
+        ],
+        "published": "2026-04-10T19:03:31.000Z",
+        "snippet": "Seabridge Gold’s (TSX: SEA; NYSE: SA) push for permits to dig tunnels at its giant KSM project is being delayed by British Columbia until the miner’s court fight with neighbour... The post New woe bes"
+      },
+      {
+        "id": "Northern Miner-peru pulls permit for 18b",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Peru pulls permit for $1.8B Tia Maria copper mine",
+        "link": "https://www.northernminer.com/news/peru-pulls-permit-for-1-8b-tia-maria-copper-mine/1003889888/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "copper"
+        ],
+        "published": "2026-04-10T18:00:00.000Z",
+        "snippet": "Peru has revoked Southern Copper’s (NYSE, LSE: SCCO) permit for its $1.8-billion Tía María project, forcing a fresh review of one of the country’s most contentious copper developments. The Ministry..."
       },
       {
         "id": "Mining.com-infographic latin americas top miners",
@@ -216,21 +262,6 @@
         "snippet": "MetalQuest Mining (TSXV: MQM; US-OTC: MQMIF) plans to update the 2015 feasibility study at its Lac Otelnuk iron ore project in northern Quebec after completing a gap analysis and stepping... The post "
       },
       {
-        "id": "Northern Miner-niocorp nears elk creek full",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "NioCorp nears Elk Creek full $1.1B financing",
-        "link": "https://www.northernminer.com/news/niocorp-nears-elk-creek-full-1-1b-financing/1003889850/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "commodity"
-        ],
-        "published": "2026-04-09T16:10:15.000Z",
-        "snippet": "NioCorp Developments (Nasdaq: NB) says it has signed up commodity trader Traxys to buy and market the remaining planned output from Elk Creek, moving closer to full financing for the... The post NioCo"
-      },
-      {
         "id": "Mining.com-neo performance begins producing heavy",
         "source": "Mining.com",
         "source_weight": 8,
@@ -242,6 +273,19 @@
         "matched_keywords": [],
         "published": "2026-04-10T15:17:36.000Z",
         "snippet": "The small-scale production line is currently operating at its nameplate capacity, producing separated terbium and dysprosium oxides."
+      },
+      {
+        "id": "Northern Miner-neo performance begins producing heavy",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Neo Performance begins producing heavy rare earths at Estonia plant",
+        "link": "https://www.northernminer.com/news/neo-performance-begins-producing-heavy-rare-earths-at-estonia-plant/1003889890/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T15:17:36.000Z",
+        "snippet": "Neo Performance Materials (TSX: NEO) has produced its first batch of heavy rare earth elements following the successful commissioning of the solvent extraction line at its Silmet plant in Estonia.... "
       },
       {
         "id": "Mining.com-nouveau monde raises 297m as",
@@ -348,19 +392,6 @@
         "snippet": "The transaction is expected to close in the second half of 2026."
       },
       {
-        "id": "Northern Miner-video at pdac cornish derisks",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Video at PDAC: Cornish de-risks South Crofty for 2028 tin restart",
-        "link": "https://www.northernminer.com/news/video-at-pdac-cornish-de-risks-south-crofty-for-2028-tin-restart/1003889855/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T15:58:16.000Z",
-        "snippet": "UK-based Cornish Metals (AIM: TIN) is shifting work deeper underground at South Crofty and expects to line up senior debt within months as it pushes the Cornwall tin mine toward... The post Video at P"
-      },
-      {
         "id": "Mining.com-niocorp lines up traxys as",
         "source": "Mining.com",
         "source_weight": 8,
@@ -387,32 +418,6 @@
         "snippet": "Canadian miner cuts exposure to volatile regions as leadership reshapes portfolio after setbacks and output decline."
       },
       {
-        "id": "Northern Miner-rock tech lithium attracts 200m",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Rock Tech Lithium attracts $200M investment in Ontario processing plant",
-        "link": "https://www.northernminer.com/news/rock-tech-lithium-attracts-200m-investment-in-ontario-processing-plant/1003889790/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T21:05:21.000Z",
-        "snippet": "Canadian property developer BMI Group agreed to invest $200 million (US$144 million) in Rock Tech Lithium’s (TSX-V: RCK) proposed processing facility in northern Ontario – a key step toward building.."
-      },
-      {
-        "id": "Northern Miner-critical one hits visible antimony",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Critical One hits visible antimony at Howells Lake in Ontario as defence metal gains momentum",
-        "link": "https://www.northernminer.com/news/critical-one-hits-visible-antimony-at-howells-lake-in-ontario-as-defence-metal-gains-momentum/1003889821/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T17:43:46.000Z",
-        "snippet": "Critical One Energy’s (CSE: CRTL; US-OTC: MMTLF) first modern drill hole at the Howells Lake project in northwestern Ontario cut visible stibnite from near surface across about 100 metres of... The po"
-      },
-      {
         "id": "Mining.com-uranium energy adds second isr",
         "source": "Mining.com",
         "source_weight": 8,
@@ -428,6 +433,23 @@
     ],
     "defi": [
       {
+        "id": "The Block-ai agents reshaping crypto development",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "AI agents reshaping crypto development, trading and risk, with Cambrian and Ethereum Foundation",
+        "link": "https://www.theblock.co/post/397076/ai-agents-reshaping-crypto-development-trading-and-risk-with-cambrian-and-ethereum-foundation?utm_source=rss&utm_medium=rss",
+        "category": "defi",
+        "priority": "high",
+        "priority_score": 9,
+        "matched_keywords": [
+          "ethereum",
+          "crypto",
+          "trading"
+        ],
+        "published": "2026-04-10T19:26:08.000Z",
+        "snippet": "Builders and researchers discuss how AI agents are transforming crypto, from development and trading to entirely new financial systems."
+      },
+      {
         "id": "Protos-bitcoin depot didnt spot 50",
         "source": "Protos",
         "source_weight": 7,
@@ -442,22 +464,6 @@
         ],
         "published": "2026-04-09T10:49:19.000Z",
         "snippet": "An SEC filing states that Bitcoin Depot was hacked for 50.9 BTC on March 23 but onchain sleuth ZachXBT says it took place three days earlier. The post Bitcoin Depot didn’t spot 50 BTC hack for three d"
-      },
-      {
-        "id": "Decrypt-bitcoin and ethereum open interest",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "Bitcoin and Ethereum Open Interest Rises, Signaling Renewed Risk Appetite: CryptoQuant",
-        "link": "https://decrypt.co/363865/bitcoin-ethereum-open-interest-rises-renewed-risk-appetite",
-        "category": "defi",
-        "priority": "medium",
-        "priority_score": 5.6,
-        "matched_keywords": [
-          "ethereum",
-          "trading"
-        ],
-        "published": "2026-04-09T20:12:48.000Z",
-        "snippet": "Bitcoin and Ethereum are trading higher as open interest rises, providing some optimism about investors' risk-on appetite."
       },
       {
         "id": "The Block-hsbc and anchorpoint financial gain",
@@ -535,20 +541,20 @@
         "snippet": "There's now an application for a Pepe ETF, but Dogecoin funds have generated tepid inflows, according to CoinShares' James Butterfill"
       },
       {
-        "id": "The Block-galaxy stock rallies 11 after",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Galaxy stock rallies 11% after annual report shows core business profitable despite $241 million net loss",
-        "link": "https://www.theblock.co/post/396948/galaxy-stock-rallies-11-after-annual-report-shows-core-business-profitable-despite-241-million-net-loss?utm_source=rss&utm_medium=rss",
+        "id": "Protos-crypto yields are falling below",
+        "source": "Protos",
+        "source_weight": 7,
+        "title": "Crypto yields are falling below TradFi",
+        "link": "https://protos.com/crypto-yields-are-falling-below-tradfi/",
         "category": "defi",
         "priority": "medium",
-        "priority_score": 3.6,
+        "priority_score": 2.8,
         "matched_keywords": [
-          "staking",
-          "trading"
+          "defi",
+          "crypto"
         ],
-        "published": "2026-04-09T20:46:28.000Z",
-        "snippet": "Galaxy's Digital Assets segment, housing its trading, lending, asset management, and staking services, generated a $505 million profit."
+        "published": "2026-04-10T18:50:37.000Z",
+        "snippet": "Crypto investors used to receive compensation for taking outsized risk depositing assets into DeFi, but many yields have fallen below TradFi. The post Crypto yields are falling below TradFi appeared f"
       },
       {
         "id": "Protos-cz vs star xu 1b",
@@ -565,6 +571,21 @@
         ],
         "published": "2026-04-10T14:07:04.000Z",
         "snippet": "More than a decade of Binance-OKCoin rivalry just boiled over with CZ staking $1B on winning an argument with Star Xu. The post CZ vs Star Xu: $1B bet sends crypto rivalry nuclear appeared first on Pr"
+      },
+      {
+        "id": "The Block-how telegram plans to turn",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "How Telegram plans to turn crypto into a global payments network",
+        "link": "https://www.theblock.co/post/397077/how-telegram-plans-to-turn-crypto-into-a-global-payments-network?utm_source=rss&utm_medium=rss",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.8,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T19:14:13.000Z",
+        "snippet": "Nikola Plecas explains how TON is building crypto payments into Telegram and where the biggest opportunities for adoption lie."
       },
       {
         "id": "The Block-its time to pass the",
@@ -595,36 +616,6 @@
         ],
         "published": "2026-04-10T08:39:29.000Z",
         "snippet": "If passed during the current parliamentary session, the legislation would take effect as early as fiscal 2027, Nikkei reported."
-      },
-      {
-        "id": "The Block-cryptoquant says bitcoin ether rally",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "CryptoQuant says bitcoin, ether rally driven by new long positions in perpetual futures",
-        "link": "https://www.theblock.co/post/396943/cryptoquant-bitcoin-ether-price-rally-perpetual-futures?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "perpetual"
-        ],
-        "published": "2026-04-09T20:11:49.000Z",
-        "snippet": "Open interest in BTC and ETH perpetual futures rose by over $2 billion each in 24 hours after the U.S.-Iran ceasefire announcement."
-      },
-      {
-        "id": "The Block-binances changpeng zhao claims us",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Binance’s Changpeng Zhao claims U.S. crypto rivals ‘paid millions’ to block his pardon",
-        "link": "https://www.theblock.co/post/396926/binance-changpeng-zhao-claims-crypto-rivals-paid-millions-block-pardon?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-09T19:54:38.000Z",
-        "snippet": "The Binance founder also says friends told him firms funded \"smear articles\" because they opposed Binance doing business in the U.S."
       },
       {
         "id": "CoinDesk-star xu calls cz a",
@@ -732,19 +723,69 @@
         "snippet": "William Banks' curious story began in 2023, when the \"comedian\" from Brooklyn was charged for stealing yard signs in Westport, Connecticut. The post ‘Crypto Robin Hood’ faked prison for clout, rugged "
       },
       {
-        "id": "Protos-doordash crypto wrench attack suspects",
-        "source": "Protos",
-        "source_weight": 7,
-        "title": "Doordash crypto wrench attack suspects charged, report",
-        "link": "https://protos.com/doordash-crypto-wrench-attack-suspects-charged-report/",
+        "id": "The Block-world decreasing wld token unlock",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "World decreasing WLD token unlock rate by over 40% starting in July",
+        "link": "https://www.theblock.co/post/397069/world-decreasing-wld-token-unlock-rate-by-over-40-starting-in-july?utm_source=rss&utm_medium=rss",
         "category": "defi",
         "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-07T19:40:03.000Z",
-        "snippet": "Three suspects reportedly behind a cryptocurrency wrench attack ring that relied on fake Doordash orders have been charged. The post Doordash crypto wrench attack suspects charged, report appeared fir"
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T19:03:32.000Z",
+        "snippet": "OpenAI CEO Sam Altman is a co-founder of Tools for Humanity, the chief developer behind the World project."
+      },
+      {
+        "id": "The Block-justin suns frozen wlfi takes",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "Justin Sun’s frozen WLFI takes $11 million hit as World Liberty brushes off liquidation fears",
+        "link": "https://www.theblock.co/post/397066/justin-sun-frozen-wlfi-11-million-hit-world-liberty-brushes-off-liquidation-fears?utm_source=rss&utm_medium=rss",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T18:57:01.000Z",
+        "snippet": "Tron founder Justin Sun’s World Liberty token position is down by more than $80 million, according to Bubblemaps data."
+      },
+      {
+        "id": "Decrypt-suspect arrested after molotov cocktail",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Suspect Arrested After Molotov Cocktail Thrown at Sam Altman’s San Francisco Home",
+        "link": "https://decrypt.co/364007/suspect-arrested-molotov-cocktail-sam-altman-san-francisco",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T18:44:54.000Z",
+        "snippet": "Police say a 20-year-old man also threatened to burn down OpenAI’s headquarters shortly after the incident."
+      },
+      {
+        "id": "Protos-mempool space invaders will give",
+        "source": "Protos",
+        "source_weight": 7,
+        "title": "Mempool Space Invaders will give you $7 if you move 10,000 BTC",
+        "link": "https://protos.com/mempool-space-invaders-will-give-you-7-if-you-move-10000-btc/",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T18:25:44.000Z",
+        "snippet": "The quirky BTC-themed Space Invaders clone is offering 10,000 Satoshis (worth $7) to whoever can get 10,000 points. It ain't easy. The post Mempool Space Invaders will give you $7 if you move 10,000 B"
+      },
+      {
+        "id": "Decrypt-gen z thinks ai is",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Gen Z Thinks AI Is Rotting Their Brains, But Can't Stop Using It: Survey",
+        "link": "https://decrypt.co/363976/gen-z-ai-rotting-brains-survey",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T17:57:21.000Z",
+        "snippet": "AI usage among Gen Z is up, but excitement over the technology is way down—so are feelings of “hopefulness.”"
       },
       {
         "id": "Decrypt-elon musks spacex is nearing",
@@ -1098,19 +1139,6 @@
         "snippet": "The level that has capped every rally during the six-week war remains intact, with analysts saying $75,000 needs to break before the market enters a genuine bullish phase."
       },
       {
-        "id": "The Block-it is decentralization theatre covenant",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "‘It is decentralization theatre’: Covenant AI exits Bittensor, TAO drops 15%",
-        "link": "https://www.theblock.co/post/396959/covenant-ai-exits-bittensor-tao?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T02:42:49.000Z",
-        "snippet": "Covenant AI claimed Bittensor's decentralization promise is false, citing 'punitive actions' from the network's co-founder, Jacob Steeves."
-      },
-      {
         "id": "Decrypt-ai should advance mankind not",
         "source": "Decrypt",
         "source_weight": 7,
@@ -1122,19 +1150,6 @@
         "matched_keywords": [],
         "published": "2026-04-09T21:57:09.000Z",
         "snippet": "The Florida attorney general's probe into AI giant OpenAI cites national security and child safety risks tied to ChatGPT."
-      },
-      {
-        "id": "Decrypt-openai plans advanced cybersecurity productwith",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "OpenAI Plans Advanced Cybersecurity Product—With 'Trusted Access' Only",
-        "link": "https://decrypt.co/363858/openai-cyber-model-anthropic-mythos",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T20:27:49.000Z",
-        "snippet": "Both OpenAI and Anthropic are restricting access to their most powerful cybersecurity capabilities, releasing them only to vetted organizations."
       },
       {
         "id": "Protos-nft game studio boss says",
@@ -1174,19 +1189,6 @@
         "matched_keywords": [],
         "published": "2026-04-08T14:46:45.000Z",
         "snippet": "Changpeng Zhao's new book brought up old grudges and allegations that rubbed the OKX CEO, Xu Mingxing, the wrong way. The post CZ called ‘habitual liar’ over Huobi founder claims in new book appeared "
-      },
-      {
-        "id": "Protos-secret claude model better than",
-        "source": "Protos",
-        "source_weight": 7,
-        "title": "Secret Claude model ‘better than all but the most skilled humans’ at hacking",
-        "link": "https://protos.com/secret-claude-model-better-than-all-but-the-most-skilled-humans-at-hacking/",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T12:46:26.000Z",
-        "snippet": "According to Anthropic, owner of AI tool Claude, its new Mythos model is hacking code better than most of today’s software developers. The post Secret Claude model ‘better than all but the most skille"
       }
     ],
     "regulatory": [
@@ -1226,7 +1228,7 @@
         "id": "SEC Press-sec clarifies the application of",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "    SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
+        "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
         "category": "regulatory",
         "priority": "high",
@@ -1272,7 +1274,7 @@
         "id": "SEC Press-sec announces agenda and panelists",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "    SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
+        "title": "  SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-33",
         "category": "regulatory",
         "priority": "medium",
@@ -1317,7 +1319,7 @@
         "id": "SEC Press-sec proposes amendments to exchange",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "    SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
+        "title": "  SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-28-sec-proposes-amendments-exchange-act-rule-15c2-11",
         "category": "regulatory",
         "priority": "medium",
@@ -1534,6 +1536,22 @@
         "snippet": "Polymarket launching stablecoin, Circle slow to act in Drift exploit CoinGeek"
       },
       {
+        "id": "Trafigura News-bolivia halts contracts with vitol",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbGYzLVYzbzk0ZmtBTnhTS3FqeXdaWWF2NVpVZTNWSXdMSThfZVk2TWtZZEVQUnUyelRxZkl2WGtEZHR1OENrMHRZTXBxNmp4N3BUZ2E3TFVDR1lOWDlfbl83bVdObGlEbE44dzZyYk15SXlDZnY0eUxVV3M5RjdqNERFWm9lb1pOVXVLWWwxb0tTcjNaTTNwRGNvMzdLUHJvdzlMZEhzLUdkYl9lb2FiWE5iSzJnVUhXeGExNXpUb1VzdldMLWVfdVJ3?oc=5",
+        "category": "company",
+        "priority": "high",
+        "priority_score": 8.399999999999999,
+        "matched_keywords": [
+          "trafigura",
+          "vitol"
+        ],
+        "published": "2026-03-31T07:00:00.000Z",
+        "snippet": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation Reuters"
+      },
+      {
         "id": "Glencore News-glencore canada near deal to",
         "source": "Glencore News",
         "source_weight": 7,
@@ -1564,6 +1582,36 @@
         ],
         "published": "2026-04-10T16:14:45.000Z",
         "snippet": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts Crypto Briefing"
+      },
+      {
+        "id": "Glencore News-glencore acquires 45 in south",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore acquires 45% in South Caroline recycling and remelting plant - chemengonline.com",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS1RETThxQ1hnNGRvX2kydDd1Ti1SdURQZEx5MlBiV3NDd1RtRS1GSkxwN3RXYUZ1UFNIbkpFR2ZXXzlWbUJ0cTRzclpFSUtpQXRIaDlxOXVSNXBnVmtZYkhucXBubTE4RmFYU19jTEg4T2hCM0U1NUhnbHoyZ3hzZnphRmdSSGM4QlF0RUVSUGlaU3hJcnJDX1hzRFQwQ2dj?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-10T19:06:12.000Z",
+        "snippet": "Glencore acquires 45% in South Caroline recycling and remelting plant chemengonline.com"
+      },
+      {
+        "id": "Circle News-drift hack fallout why circle",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Drift Hack Fallout: Why Circle Didn’t Freeze $275M Stolen USDC - BeInCrypto",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TU0VNelA3TFRzdjNQNGtPblVzN2kzQVpqVnExV1NKdG9fdTRsbVVhUU1ES1J5VWxZS25VdXVwUTREXzRybzRfV0dwN01tTUt2UnZSX2k4Nm5UeFZWeHRzQTlBY29zemRTRUJaOEY3Yw?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "hack"
+        ],
+        "published": "2026-04-10T17:39:00.000Z",
+        "snippet": "Drift Hack Fallout: Why Circle Didn’t Freeze $275M Stolen USDC BeInCrypto"
       },
       {
         "id": "Circle News-circle defends usdc freeze policy",
@@ -1669,6 +1717,21 @@
         ],
         "published": "2026-04-09T22:51:06.000Z",
         "snippet": "EQT, Glencore agree to buy more LNG from Commonwealth - Reuters (EQT:NYSE) Seeking Alpha"
+      },
+      {
+        "id": "Glencore News-eqt glencore commit to buy",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "EQT, Glencore commit to buy more LNG from Commonwealth, filing shows - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcWVoSFh4NnI2YUd3aHNEeEhkRVlPX0NVUGxRSTdEVHJQN3piZVI3NHE3LWtKSVNCWlN2T3B3X1g3cTJLTmNfMHFhcEF5NHZvQ1JQbDhDNTBHWU5uZUNQbk5mSUtsQjBqM1B1ZTBKaXVEU21LZkM5eElRLXpzVTZhMnBHWnBscWU5ejgxdHRmTnI2ZXJJcFB2T3hfYlU3aWtHRW5VM2ZpRU9ycUpJYWljX2pndEc?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-09T20:44:00.000Z",
+        "snippet": "EQT, Glencore commit to buy more LNG from Commonwealth, filing shows Reuters"
       },
       {
         "id": "Glencore News-lynas glencore rio tinto top",
@@ -1911,21 +1974,6 @@
         "snippet": "Glencore could walk away from South Africa smelter rescue talks over conditions Reuters"
       },
       {
-        "id": "Trafigura News-nth cycle signs 11 billion",
-        "source": "Trafigura News",
-        "source_weight": 7,
-        "title": "Nth Cycle signs $1.1 billion lithium offtake deal with Trafigura - Reuters",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSk9SeXlmaFBMbnV0NzN2MndaTU9xaWRqTlR6S0ZQbUt3alhreTJTN2xPTG1PLXVWVmZRUGZxV1hFTUVSQW1PVWhFUFpSa3cwX21INzlkZG85dVhjaUdXX01VQU5DX2c3cHpwQy1kMHdFek91X0VwRVFueWhmX1JxZFctQ3doZVVwcE93UHhZUU1LOGZ6cENTRHQwVHQ3dTZGQnhRU0JzN285bkdKQlc5TXZRZUc?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "trafigura"
-        ],
-        "published": "2026-03-16T07:00:00.000Z",
-        "snippet": "Nth Cycle signs $1.1 billion lithium offtake deal with Trafigura Reuters"
-      },
-      {
         "id": "Glencore News-exclusive glencore raises hope of",
         "source": "Glencore News",
         "source_weight": 7,
@@ -1956,34 +2004,64 @@
         "snippet": "Trafigura signs battery-grade lithium carbonate offtake agreement with Smackover Lithium Trafigura"
       },
       {
-        "id": "Coinbase News-coinbase stock hit with analyst",
+        "id": "Coinbase News-coinbase backs trump administrations crypto",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Coinbase stock hit with analyst downgrade on crypto market's weak start to 2026 - Yahoo Finance",
-        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSkdzNjh1SmZ4NUJxOElxTElJWWc0TnR0WmllenVLakJ0TEVOQWZ0R1hxNVZhSmhCdUNTdU5zOHpUb2Q0d0RjUjY2YlotS3dEOFp5dmQ5VjNOTWtNX0tnUGlkeHdzT3JLQ0NMUXNnU1RpRHNBeGFCUjZGc01nVl8tdlMwZmN5bVRER1E2aE9BNlliUzJJa2V6bzVVQWNvSXpXSndQcXFOUFhpTEFEaXAzbHcycXpNTHpfM0haWWU4YV8xRjZFcUNlSFVrcExXUE02VzVKLTNuX1Jpdw?oc=5",
+        "title": "Coinbase Backs Trump Administration's Crypto CLARITY Push - Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZHIwU2dQRDBHb2E0QndZeVd4Q1IzbmZxQ3p4Um11eFVhX0EwSjRkVHp3a1lsRnZLUF96OHBnYkg2LTVOOGVJVS02X0l1MkUxMUZSXzltbm9hOGNvZWpUT1ZXdk92UlFNY3RCeUR5SUNSeXFpLXpLeWYtUjc4YmF5c2hwM19jQklXT2xteXB5b3ZYTlNJZEFPcWlQRHhkbzI4RG1ubHllZkpHckN0?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 1.4,
         "matched_keywords": [
           "crypto"
         ],
-        "published": "2026-04-08T14:31:01.000Z",
-        "snippet": "Coinbase stock hit with analyst downgrade on crypto market's weak start to 2026 Yahoo Finance"
+        "published": "2026-04-10T18:56:15.000Z",
+        "snippet": "Coinbase Backs Trump Administration's Crypto CLARITY Push Yahoo Finance"
       },
       {
-        "id": "Coinbase News-coinbase secures australian license plans",
+        "id": "Coinbase News-its time to pass the",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Coinbase secures Australian license, plans to offer crypto and equity perpetuals - The Block",
-        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBBM3J1eXJoVGxiOVZ4Z1RxdU16YllLZDBhU0tOZzA4U3ZwSEhWVTRWcWlFc3FPZUNCVVFIeVpwOTRDa3N5ajZncHlOdmVMS0ZpQlNhWTY2TFJvZ3M3SUZPMm1fR2RwRGx1bDZGMGQ4ME5vbGxwZ2xR?oc=5",
+        "title": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push - The Block",
+        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmtWLXJ4aVVFSjlLUThpWkhVUkZlMzJPS2htaExnZzBIRmd6dkRfWVctTTlCUHBNX2UwOFB2S0c0MGlDRFJWRmlOQzNCZnhrRU1zNThGSFlQT0dmZWtQZ0I0a3lHQVF5YzZYbW5XTUlZU2t5ZzJVYlQ4QVU0WE1iWnFn?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 1.4,
         "matched_keywords": [
           "crypto"
         ],
-        "published": "2026-04-08T07:43:19.000Z",
-        "snippet": "Coinbase secures Australian license, plans to offer crypto and equity perpetuals The Block"
+        "published": "2026-04-10T11:45:21.000Z",
+        "snippet": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push The Block"
+      },
+      {
+        "id": "Coinbase News-coinbase slapped with underweight rating",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? - 24/7 Wall St.",
+        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNzBDQ1VaT25wcGt5Y3EyTDg2bG5TUGdJcS1hcnUwNGJuRzNTWmY4U1JmM0xFdVVzSEpGUUJaWVVvcTBEOFZXc0Z2X2dJcnZ5RnBMX1ZpNTBYcndMQm1LRVFnRHBoWXBPY3pubXVJOWk3TFZGaTlFRWFlNThVcVBEZjhTb3BlRnZrVnd3OHJmSFl4STlPN2xiM1NWWFE0STMxOHRYUmJNSlNxUHcxNkNYREhlaklWQ0JkTkpkOHBqNXFSQk80LVMtYkVvb3NWSDdQbGxn?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-08T14:30:12.000Z",
+        "snippet": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? 24/7 Wall St."
+      },
+      {
+        "id": "Coinbase News-coinbase australia receives afsl licence",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Australia Receives AFSL Licence: A New Chapter for Crypto in Australia - Coinbase",
+        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE90bWpMRlhfbkJQYWhMVzZZSzY5MTBFLTVfWDdlQ29TZFBzaVdIZV9sLUNQWFYyN1h2SVZVdy1FTFczRlBqZ3o3eUdyeGkwZnpoSHJ2WG11OTBSWjA4MFZDMWtPWGZ0X0dkazlMMzJabmFNcEVwdzVoRndn?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-07T21:00:00.000Z",
+        "snippet": "Coinbase Australia Receives AFSL Licence: A New Chapter for Crypto in Australia Coinbase"
       },
       {
         "id": "Circle News-circle mints 1 billion usdc",
@@ -2014,17 +2092,17 @@
         "snippet": "Treasury Secretary gains support as Coinbase backs key U.S. bill thestreet.com"
       },
       {
-        "id": "Coinbase News-bitcoin hits 73000 amid ceasefire",
+        "id": "Coinbase News-coinbase gains afsl strengthens australia",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Bitcoin Hits $73,000 Amid Ceasefire Rally, But Coinbase Chief Gives Caution - Yahoo Finance",
-        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ2dhY0hNaDVFVXNfMXJwRHJzY2xPVmoxTDBqV09SaXpub1F4d2NjbDNPYlZieDNiT1lhS3RuYVdsVVNwQTQ4UUJfY1JwTnFQai0wVlR2UnNTY2lSbHBIVjBmOS1XcFhUbmVNdFFFQVkyRUVyaHNJSHhwMWhfSWEycGFpeE4xU0VMcTY5NHZJZDZUVFU?oc=5",
+        "title": "Coinbase Gains AFSL, Strengthens Australia Expansion Push - Zacks Investment Research",
+        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPY2RDUm03eW14cDRqaC1TZV9yc3VMMXkySzlkbXdGekFMNG80eUFETHVjT3lZSWFITy14Rl8zdmwzdjFjTklBLWllVlVwLXlHZ3p5ck9mSGVyRzJhdlNqNUNBVU01UVVOWFVKS0o0XzdSbV9zaExmMkdjanBQRzdKb0NnSlJ6WTRZQm9QclR5dTBZeTh6UENsMWJ6ZDZyQQ?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
-        "published": "2026-04-10T15:52:03.000Z",
-        "snippet": "Bitcoin Hits $73,000 Amid Ceasefire Rally, But Coinbase Chief Gives Caution Yahoo Finance"
+        "published": "2026-04-10T15:29:48.000Z",
+        "snippet": "Coinbase Gains AFSL, Strengthens Australia Expansion Push Zacks Investment Research"
       },
       {
         "id": "Coinbase News-coinbase ceo calls for passage",
@@ -2038,19 +2116,6 @@
         "matched_keywords": [],
         "published": "2026-04-10T13:10:00.000Z",
         "snippet": "Coinbase CEO Calls For Passage Of U.S. Clarity Act Yahoo Finance"
-      },
-      {
-        "id": "Coinbase News-citizens cuts coinbase stock price",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Citizens cuts Coinbase stock price target on valuation concerns - Investing.com",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOWhsNTR0ZEN0dXNuS0xOVnJWX2xnZmpTazJ1RlBicExJUWZHUWs0aW1vc01JMWp4QWNhbzJTVTBrdGU5X04xSmIzcGZiTDd6Mjh4aVRxWU5NVVcyMGdQVUFlMFFmTmwyU3ByMXpzdy1vOGgwYVpEREJHNHRhN3l2U3g1aFNkQ09HYzF2bXRNVUFyXy1CVDBzRHdrUGJiQkNiR1ZVOGdiLVBMbUxaUS02NmFoZkJTX0ttaE1hUS1QYUU?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T10:35:45.000Z",
-        "snippet": "Citizens cuts Coinbase stock price target on valuation concerns Investing.com"
       },
       {
         "id": "Coinbase News-coinbases retail traders havent left",
@@ -2131,19 +2196,6 @@
         "snippet": "Coinbase Wins OCC Nod For $376 Billion Institutional Custody Empire Forbes"
       },
       {
-        "id": "Coinbase News-coin stock quote price and",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "COIN Stock Quote Price and Forecast - CNN",
-        "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBjZzc1UzB3dFNkX3N4T0tBSFRYWmFFR2dCMEV1V1hTekhsdHpVaVBJS3pKUUFmMlZaMWxKamZYd180LU91UkZsWlREOEwyQmlM?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T20:15:23.000Z",
-        "snippet": "COIN Stock Quote Price and Forecast CNN"
-      },
-      {
         "id": "Circle News-circle rolls out usdc payments",
         "source": "Circle News",
         "source_weight": 7,
@@ -2155,19 +2207,6 @@
         "matched_keywords": [],
         "published": "2026-04-08T15:52:29.000Z",
         "snippet": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins The Block"
-      },
-      {
-        "id": "Coinbase News-barclays downgrades coinbase global stock",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ - TipRanks",
-        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQR0kzc3JOam9zZ2htUm5FbnFsa3VuV1pJLTZzcGN1dHdfUTZGQl9Fa3I2VkhoblpKYU5IVmJZc0NFbW9mUXY1MDR2S1paT0g0Qzg1aTFpT2d4SGVwTHJsb2g3bWtZVUlzQnhFRThnYXhDMk1peUZ1dmw3LTVxcERaRFNNbGkwdEVSaVBrZFFSYTE2OXJGZGVWTEw4bEN5UTUzMnVubHhzSXlXOERMLUtSSnpRdWRCVW5fLUxYOWpybU1WcGdzYzhNV1AwN29zc3F2aGc?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T15:50:54.000Z",
-        "snippet": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ TipRanks"
       },
       {
         "id": "Coinbase News-coinbase downgraded deere upgraded wall",
@@ -2209,17 +2248,17 @@
         "snippet": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? Investor's Business Daily"
       },
       {
-        "id": "Circle News-circle usdc liquidity returns to",
-        "source": "Circle News",
+        "id": "Coinbase News-coinbases trust company draws criticism",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Circle USDC liquidity returns to market as post-quantum era threats escalate - Cryptopolitan",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORmZrVy1jN0xJVlJJX1FfMTBjMkdtcDBmZEpiUUIxQWk0WnU5R3B2Z2c3WG5zRkJaZFhpMk1RcE5aV0dzSGhrVUcyMFhVNHNrZ1VUZzJFeHNzX2pNeHNjQTA2RDlQa3ZVZEZXMmhZM3NUNEFzZXpMQXZpZTFTTUpMVg?oc=5",
+        "title": "Coinbase’s Trust Company Draws Criticism From Banking Sector - PYMNTS.com",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNEV2YWlhLU5wd2lxUDBFQ1AxeW9HbmhzV21OYW5rblNDNEVXaGlrTl9YZnduYUxHX0czWk1UYXBPaWxxaTIwMmJ3UVp1TjlpaDVTVU5JYkJGNTF0VE03OFRQc18ycjdsUFFuMEgzdlNQV2dBT0t4NXdLdzJzMVZDTnhkOThua1BIV3psYk9vOXliVEw0cm9XUkM0NDI5M2draHJYbVBfOA?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
-        "published": "2026-04-06T16:04:00.000Z",
-        "snippet": "Circle USDC liquidity returns to market as post-quantum era threats escalate Cryptopolitan"
+        "published": "2026-04-06T10:56:51.000Z",
+        "snippet": "Coinbase’s Trust Company Draws Criticism From Banking Sector PYMNTS.com"
       }
     ],
     "exploits": [
@@ -2376,6 +2415,39 @@
       "snippet": "Trafigura signs deal with Heath Goldfields for gold doré Mining Technology"
     },
     {
+      "id": "The Block-ai agents reshaping crypto development",
+      "source": "The Block",
+      "source_weight": 9,
+      "title": "AI agents reshaping crypto development, trading and risk, with Cambrian and Ethereum Foundation",
+      "link": "https://www.theblock.co/post/397076/ai-agents-reshaping-crypto-development-trading-and-risk-with-cambrian-and-ethereum-foundation?utm_source=rss&utm_medium=rss",
+      "category": "defi",
+      "priority": "high",
+      "priority_score": 9,
+      "matched_keywords": [
+        "ethereum",
+        "crypto",
+        "trading"
+      ],
+      "published": "2026-04-10T19:26:08.000Z",
+      "snippet": "Builders and researchers discuss how AI agents are transforming crypto, from development and trading to entirely new financial systems."
+    },
+    {
+      "id": "Northern Miner-gold price wins in iran",
+      "source": "Northern Miner",
+      "source_weight": 7,
+      "title": "Gold price wins in Iran war, but not copper",
+      "link": "https://www.northernminer.com/news/gold-price-wins-in-iran-war-but-not-copper/1003889896/",
+      "category": "commodity",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "copper",
+        "gold"
+      ],
+      "published": "2026-04-10T18:45:51.000Z",
+      "snippet": "The U.S.-Iran war may shave as much as 0.7% off the global economy and push gold prices higher as investors focus on a swelling U.S. deficit and a weaker dollar,... The post Gold price wins in Iran wa"
+    },
+    {
       "id": "Trafigura News-trafiguras ghana gold mine deal",
       "source": "Trafigura News",
       "source_weight": 7,
@@ -2454,53 +2526,21 @@
       ],
       "published": "2026-04-09T06:11:00.000Z",
       "snippet": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal Reuters"
-    },
-    {
-      "id": "Trafigura News-trafigura signs gold offtake agreement",
-      "source": "Trafigura News",
-      "source_weight": 7,
-      "title": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana - Trafigura",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQelFfX3JVYmEzM0RKR3ZLcVFDcEhJOU00YlJJcHNTOENXejhieDQySXdFZVVkNEJhREVHcTlyUGxDRUtLQjdNYkR4VkZ6TjlfUUF4LXlFYTZEMDZDcFd0UlV2MXBvUkVpa0xVMnFrUThKN3gyLV9QYWROLUk4OW10TFZHdzIzMUh1WS1hZnkwZkVSRmt2VXhHcHVwSVdQVk5QVi1jQ2k2UFZkRWp2aXhhOV83c05TSGVNNFprZDZNTERaNHhvMVVhUUlGeGlwN3pJVWotRkxkNm1xVDBuMHYwUFlXaDFONTUxWThyYm14aFBlanBqS2xj?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "gold",
-        "trafigura"
-      ],
-      "published": "2026-04-09T06:00:25.000Z",
-      "snippet": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana Trafigura"
-    },
-    {
-      "id": "Circle News-polymarket launching stablecoin circle slow",
-      "source": "Circle News",
-      "source_weight": 7,
-      "title": "Polymarket launching stablecoin, Circle slow to act in Drift exploit - CoinGeek",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaUZPaG1ORjVER2djaEtqTWcwckRhZjZxRUdzT3c1X3dRMmhuVHRTRDhRakhHdUUzWGFhMC1qSzRzZ2FCSUEyd3hUb0xPYmFSTmhId2J4aWRBVl9rZXlBOU9uS0ExcG5FLUk0VlBWczB2WkI5YTFGZnRWeEpYcFJIR1Q2NG13amppZHVlay0zZEY5bUk?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "stablecoin",
-        "exploit"
-      ],
-      "published": "2026-04-08T07:03:37.000Z",
-      "snippet": "Polymarket launching stablecoin, Circle slow to act in Drift exploit CoinGeek"
     }
   ],
   "summary": {
-    "total_items": 162,
+    "total_items": 164,
     "by_category": {
       "commodity": 30,
       "defi": 55,
       "regulatory": 15,
-      "company": 55,
+      "company": 57,
       "exploits": 7
     },
     "by_priority": {
-      "high": 13,
-      "medium": 56,
-      "low": 93
+      "high": 16,
+      "medium": 59,
+      "low": 89
     },
     "sources_succeeded": 12,
     "sources_failed": 1,

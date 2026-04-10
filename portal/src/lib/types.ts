@@ -363,3 +363,151 @@ export interface IntelligenceData {
     failed_sources: string[];
   };
 }
+
+// ============================================
+// Ori — The Truth Agent (Tier 1, deterministic)
+// ============================================
+export interface OriPosition {
+  ticker: string;
+  name: string;
+  theme: string;
+  bucket: string;
+  chain: string;
+  balance: number | null;
+  price_usd: number | null;
+  value_usd: number | null;
+  allocation_pct: number | null;
+  pnl_pct?: number;
+  source: "etherscan" | "hyperliquid" | "manual" | "none";
+}
+
+export interface OriPerp {
+  pair: string;
+  side: "long" | "short" | "none";
+  leverage: number;
+  size_usd: number;
+  entry_price: number | null;
+  mark_price: number | null;
+  liquidation_price: number | null;
+  unrealized_pnl_usd: number | null;
+  stop_loss: number | null;
+  distance_to_stop_pct: number | null;
+  source: "hyperliquid" | "manual" | "none";
+}
+
+export interface OriCommodityPoint {
+  value: number | null;
+  change_pct_24h: number | null;
+  source: "yahoo" | "defillama" | "none";
+}
+
+export interface OriAlert {
+  id: string;
+  severity: "critical" | "warning" | "info";
+  type: "stop_loss" | "concentration" | "stale_data" | "missing_data";
+  position?: string;
+  title: string;
+  message: string;
+  created: string;
+}
+
+export interface OriData {
+  updated_at: string;
+  wallet_address: string;
+  nav_usd: number;
+  positions: OriPosition[];
+  perps: OriPerp[];
+  commodities: {
+    gold_usd_oz: OriCommodityPoint;
+    silver_usd_oz: OriCommodityPoint;
+    copper_usd_lb: OriCommodityPoint;
+    wti_usd_bbl: OriCommodityPoint;
+    brent_usd_bbl: OriCommodityPoint;
+    paxg_usd: OriCommodityPoint;
+    xaut_usd: OriCommodityPoint;
+    mining_equities: {
+      fcx: OriCommodityPoint;
+      bhp: OriCommodityPoint;
+      rio: OriCommodityPoint;
+      nem: OriCommodityPoint;
+    };
+  };
+  alerts: OriAlert[];
+  concentration: {
+    max_position_pct: number;
+    max_position_ticker: string;
+    limit: number;
+    breach: boolean;
+  };
+  health: {
+    etherscan: "ok" | "no_key" | "error" | "stub";
+    defillama: "ok" | "error";
+    hyperliquid: "ok" | "error";
+    yahoo: "ok" | "error";
+    stale: boolean;
+  };
+  // The legacy_shape field is consumed by legacy dashboard code
+  legacy_shape: Portfolio;
+}
+
+// ============================================
+// Gimli — DeFi Value-Investing Agent (Tier 2)
+// ============================================
+export type FeeSwitchState =
+  | "live_full"
+  | "live_partial"
+  | "live_buyback"
+  | "not_activated"
+  | "unknown";
+
+export interface FeeSwitchInfo {
+  state: FeeSwitchState;
+  holder_pct: number;
+  note: string;
+}
+
+export interface GimliProtocol {
+  ticker: string;
+  name: string;
+  theme: string;
+  tags: string[];
+  market_cap: number | null;
+  tvl: number | null;
+  fees_annualized: number | null;
+  revenue_annualized: number | null;
+  pf_ratio: number | null;
+  pe_ratio: number | null;
+  tradfi_peer: string;
+  peer_pe_mid: number;
+  peer_pe_range: string;
+  valuation: "cheap" | "fair" | "expensive" | "unknown";
+  upside_to_peer_pct: number | null;
+  fee_switch: FeeSwitchInfo;
+  pe_if_full_capture: number | null;
+  thesis_relevance: number;
+  defillama_slug: string;
+}
+
+export interface GimliData {
+  updated_at: string;
+  protocols: GimliProtocol[];
+  cheapest: GimliProtocol[];
+  most_expensive: GimliProtocol[];
+  summary: {
+    total_analyzed: number;
+    cheap: number;
+    fair: number;
+    expensive: number;
+    unknown: number;
+  };
+  narrative: {
+    text: string;
+    confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB";
+    model: string;
+    used_api: boolean;
+  };
+  health: {
+    defillama: "ok" | "error";
+    anthropic: "ok" | "stubbed";
+  };
+}

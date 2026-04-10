@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -305,6 +305,36 @@ export function getIntelligence(): IntelligenceData | null {
     return JSON.parse(raw) as IntelligenceData;
   } catch (err) {
     console.error("[data] Failed to read intelligence.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Ori — the truth agent (canonical portfolio + commodity snapshot)
+// ============================================
+export function getOri(): OriData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "ori.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as OriData;
+  } catch (err) {
+    console.error("[data] Failed to read ori.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Gimli — DeFi valuation data
+// ============================================
+export function getGimli(): GimliData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "gimli.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as GimliData;
+  } catch (err) {
+    console.error("[data] Failed to read gimli.json:", err);
     return null;
   }
 }

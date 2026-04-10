@@ -1,0 +1,815 @@
+{
+  "updated_at": "2026-04-10T19:55:27.219Z",
+  "protocols": [
+    {
+      "ticker": "AAVE",
+      "name": "Aave",
+      "theme": "Portfolio",
+      "tags": [
+        "lending",
+        "fee-switch"
+      ],
+      "market_cap": 1418464001.9775481,
+      "tvl": 61724993222,
+      "fees_annualized": 535552704,
+      "revenue_annualized": 71801088,
+      "pf_ratio": 2.6485983384700607,
+      "pe_ratio": 19.75546668565173,
+      "tradfi_peer": "Regional Banks",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "fair",
+      "upside_to_peer_pct": -11.416924345755195,
+      "fee_switch": {
+        "state": "live_buyback",
+        "holder_pct": 3,
+        "note": "sAVE buyback $50M/yr vs $1.8B mcap"
+      },
+      "pe_if_full_capture": 2.6485983384700607,
+      "thesis_relevance": 5,
+      "defillama_slug": "aave"
+    },
+    {
+      "ticker": "HYPE",
+      "name": "Hyperliquid",
+      "theme": "Portfolio",
+      "tags": [
+        "perp-dex",
+        "fee-burn"
+      ],
+      "market_cap": 10016108834.030008,
+      "tvl": 4958627218,
+      "fees_annualized": 754357584,
+      "revenue_annualized": 670051116,
+      "pf_ratio": 13.2776670460703,
+      "pe_ratio": 14.948275728310268,
+      "tradfi_peer": "CME/CBOE",
+      "peer_pe_mid": 21.5,
+      "peer_pe_range": "18-25x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 43.82929771145137,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 97,
+        "note": "97% fee burn active"
+      },
+      "pe_if_full_capture": 13.2776670460703,
+      "thesis_relevance": 5,
+      "defillama_slug": "hyperliquid"
+    },
+    {
+      "ticker": "PENDLE",
+      "name": "Pendle",
+      "theme": "Portfolio",
+      "tags": [
+        "yield",
+        "fixed-income"
+      ],
+      "market_cap": 181108950.6400475,
+      "tvl": 1994968291.0235698,
+      "fees_annualized": 6749532,
+      "revenue_annualized": 6651672,
+      "pf_ratio": 26.832816058957494,
+      "pe_ratio": 27.227582875410498,
+      "tradfi_peer": "Derivatives Platforms",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -35.72694249035075,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 80,
+        "note": "80% to vePENDLE stakers"
+      },
+      "pe_if_full_capture": 26.832816058957494,
+      "thesis_relevance": 4,
+      "defillama_slug": "pendle"
+    },
+    {
+      "ticker": "MORPHO",
+      "name": "Morpho",
+      "theme": "Portfolio",
+      "tags": [
+        "lending",
+        "isolated-markets"
+      ],
+      "market_cap": 1010776612.3522363,
+      "tvl": 15740131365,
+      "fees_annualized": 139250664,
+      "revenue_annualized": null,
+      "pf_ratio": 7.258684327366915,
+      "pe_ratio": null,
+      "tradfi_peer": "Regional Banks",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "not_activated",
+        "holder_pct": 0,
+        "note": "Governance has not activated fee switch"
+      },
+      "pe_if_full_capture": 7.258684327366915,
+      "thesis_relevance": 4,
+      "defillama_slug": "morpho"
+    },
+    {
+      "ticker": "UNI",
+      "name": "Uniswap",
+      "theme": "Portfolio",
+      "tags": [
+        "dex",
+        "liquidity"
+      ],
+      "market_cap": 2013359947.2491386,
+      "tvl": 3231918320,
+      "fees_annualized": 426392220,
+      "revenue_annualized": 45606384,
+      "pf_ratio": 4.721849632362285,
+      "pe_ratio": 44.14644991914155,
+      "tradfi_peer": "Exchanges (CME/ICE)",
+      "peer_pe_mid": 21.5,
+      "peer_pe_range": "18-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -51.29846218805972,
+      "fee_switch": {
+        "state": "live_partial",
+        "holder_pct": 10,
+        "note": "Fee switch Feb 2026, gradual rollout"
+      },
+      "pe_if_full_capture": 4.721849632362285,
+      "thesis_relevance": 4,
+      "defillama_slug": "uniswap"
+    },
+    {
+      "ticker": "wstETH",
+      "name": "Lido (wstETH)",
+      "theme": "Portfolio",
+      "tags": [
+        "LSD",
+        "staking"
+      ],
+      "market_cap": 284639266.1989202,
+      "tvl": 21111273904.694923,
+      "fees_annualized": 535180284,
+      "revenue_annualized": 53518056,
+      "pf_ratio": 0.5318567867849934,
+      "pe_ratio": 5.318565124991091,
+      "tradfi_peer": "Asset Managers",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 229.03611385278117,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": 0.5318567867849934,
+      "thesis_relevance": 4,
+      "defillama_slug": "lido"
+    },
+    {
+      "ticker": "COW",
+      "name": "CoW Protocol",
+      "theme": "Portfolio",
+      "tags": [
+        "dex",
+        "mev-protection"
+      ],
+      "market_cap": null,
+      "tvl": null,
+      "fees_annualized": null,
+      "revenue_annualized": null,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Exchanges (CME/ICE)",
+      "peer_pe_mid": 21.5,
+      "peer_pe_range": "18-25x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "not_activated",
+        "holder_pct": 0,
+        "note": "Surplus retained in treasury, no holder capture"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 3,
+      "defillama_slug": "cow-protocol"
+    },
+    {
+      "ticker": "TAO",
+      "name": "Bittensor",
+      "theme": "Watch-AI",
+      "tags": [
+        "AI",
+        "decentralized-inference",
+        "subnets"
+      ],
+      "market_cap": 2582543601.624602,
+      "tvl": 0,
+      "fees_annualized": null,
+      "revenue_annualized": null,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 3,
+      "defillama_slug": "bittensor"
+    },
+    {
+      "ticker": "VIRTUAL",
+      "name": "Virtuals Protocol",
+      "theme": "Watch-AI",
+      "tags": [
+        "AI",
+        "agent-tokens"
+      ],
+      "market_cap": 449936316.22148114,
+      "tvl": 0,
+      "fees_annualized": 4724604,
+      "revenue_annualized": 4724604,
+      "pf_ratio": 95.2325985884703,
+      "pe_ratio": 95.2325985884703,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -78.99878791880265,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "Agent tokens revenue"
+      },
+      "pe_if_full_capture": 95.2325985884703,
+      "thesis_relevance": 3,
+      "defillama_slug": "virtuals-protocol"
+    },
+    {
+      "ticker": "AKT",
+      "name": "Akash Network",
+      "theme": "Watch-AI",
+      "tags": [
+        "AI",
+        "DePIN",
+        "compute"
+      ],
+      "market_cap": null,
+      "tvl": null,
+      "fees_annualized": null,
+      "revenue_annualized": null,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 2,
+      "defillama_slug": "akash-network"
+    },
+    {
+      "ticker": "RAIL",
+      "name": "Railgun",
+      "theme": "Watch-Privacy",
+      "tags": [
+        "privacy",
+        "zk"
+      ],
+      "market_cap": 59796404.10852819,
+      "tvl": 185683839.90077,
+      "fees_annualized": 4007568,
+      "revenue_annualized": 4007568,
+      "pf_ratio": 14.92087073969255,
+      "pe_ratio": 14.92087073969255,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 34.040434696588676,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "Privacy fees to stakers"
+      },
+      "pe_if_full_capture": 14.92087073969255,
+      "thesis_relevance": 2,
+      "defillama_slug": "railgun"
+    },
+    {
+      "ticker": "NAM",
+      "name": "Namada",
+      "theme": "Watch-Privacy",
+      "tags": [
+        "privacy",
+        "shielded"
+      ],
+      "market_cap": null,
+      "tvl": 1474804.04439,
+      "fees_annualized": null,
+      "revenue_annualized": null,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 2,
+      "defillama_slug": "namada-shielded-pools"
+    },
+    {
+      "ticker": "ONDO",
+      "name": "Ondo Finance",
+      "theme": "Watch-RWA",
+      "tags": [
+        "RWA",
+        "treasuries",
+        "yield"
+      ],
+      "market_cap": 1248537155.4714277,
+      "tvl": 3563777549,
+      "fees_annualized": 52488612,
+      "revenue_annualized": null,
+      "pf_ratio": 23.786819805245138,
+      "pe_ratio": null,
+      "tradfi_peer": "Credit Platforms",
+      "peer_pe_mid": 14,
+      "peer_pe_range": "10-18x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "not_activated",
+        "holder_pct": 0,
+        "note": "Token for governance, no direct rev"
+      },
+      "pe_if_full_capture": 23.786819805245138,
+      "thesis_relevance": 4,
+      "defillama_slug": "ondo-finance"
+    },
+    {
+      "ticker": "CFG",
+      "name": "Centrifuge",
+      "theme": "Watch-RWA",
+      "tags": [
+        "RWA",
+        "credit",
+        "receivables"
+      ],
+      "market_cap": 119781957.96342434,
+      "tvl": 1972183048,
+      "fees_annualized": null,
+      "revenue_annualized": null,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Credit Platforms",
+      "peer_pe_mid": 14,
+      "peer_pe_range": "10-18x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 4,
+      "defillama_slug": "centrifuge"
+    },
+    {
+      "ticker": "SYRUP",
+      "name": "Maple Finance",
+      "theme": "Watch-RWA",
+      "tags": [
+        "RWA",
+        "credit",
+        "institutional"
+      ],
+      "market_cap": null,
+      "tvl": 6529636343.518061,
+      "fees_annualized": 102344892,
+      "revenue_annualized": 14636928,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Credit Platforms",
+      "peer_pe_mid": 14,
+      "peer_pe_range": "10-18x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 3,
+      "defillama_slug": "maple"
+    },
+    {
+      "ticker": "ENA",
+      "name": "Ethena",
+      "theme": "Watch-RWA",
+      "tags": [
+        "synthetic-dollar",
+        "basis-trade"
+      ],
+      "market_cap": 846002787.5483783,
+      "tvl": 6589792996.47079,
+      "fees_annualized": 267320400,
+      "revenue_annualized": 933000,
+      "pf_ratio": 3.164752063622448,
+      "pe_ratio": 906.7553993015845,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -97.79433350874946,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "All rev via sENA"
+      },
+      "pe_if_full_capture": 3.164752063622448,
+      "thesis_relevance": 3,
+      "defillama_slug": "ethena"
+    },
+    {
+      "ticker": "JUP",
+      "name": "Jupiter",
+      "theme": "Watch-Solana",
+      "tags": [
+        "dex-aggregator",
+        "perps"
+      ],
+      "market_cap": 584123700.1025642,
+      "tvl": 3075441951.09067,
+      "fees_annualized": 199058160,
+      "revenue_annualized": 59256816,
+      "pf_ratio": 2.9344373528950745,
+      "pe_ratio": 9.857493863702771,
+      "tradfi_peer": "Broker-Dealers",
+      "peer_pe_mid": 15,
+      "peer_pe_range": "12-18x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 52.168494420604674,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 50,
+        "note": "50% to veJUP"
+      },
+      "pe_if_full_capture": 2.9344373528950745,
+      "thesis_relevance": 3,
+      "defillama_slug": "jupiter"
+    },
+    {
+      "ticker": "JTO",
+      "name": "Jito",
+      "theme": "Watch-Solana",
+      "tags": [
+        "LSD",
+        "MEV"
+      ],
+      "market_cap": null,
+      "tvl": 944689937.4498,
+      "fees_annualized": 63083820,
+      "revenue_annualized": 2523336,
+      "pf_ratio": null,
+      "pe_ratio": null,
+      "tradfi_peer": "Asset Managers",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "unknown",
+      "upside_to_peer_pct": null,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "MEV revenue to stakers"
+      },
+      "pe_if_full_capture": null,
+      "thesis_relevance": 3,
+      "defillama_slug": "jito-liquid-staking"
+    },
+    {
+      "ticker": "KMNO",
+      "name": "Kamino",
+      "theme": "Watch-Solana",
+      "tags": [
+        "lending",
+        "leverage"
+      ],
+      "market_cap": 86701748.0767876,
+      "tvl": 4060975798,
+      "fees_annualized": 56252376,
+      "revenue_annualized": 8986944,
+      "pf_ratio": 1.541299305771326,
+      "pe_ratio": 9.647522903980219,
+      "tradfi_peer": "Regional Banks",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 81.39371291650556,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 50,
+        "note": "Kamino fee distribution to KMNO stakers"
+      },
+      "pe_if_full_capture": 1.541299305771326,
+      "thesis_relevance": 2,
+      "defillama_slug": "kamino"
+    }
+  ],
+  "cheapest": [
+    {
+      "ticker": "wstETH",
+      "name": "Lido (wstETH)",
+      "theme": "Portfolio",
+      "tags": [
+        "LSD",
+        "staking"
+      ],
+      "market_cap": 284639266.1989202,
+      "tvl": 21111273904.694923,
+      "fees_annualized": 535180284,
+      "revenue_annualized": 53518056,
+      "pf_ratio": 0.5318567867849934,
+      "pe_ratio": 5.318565124991091,
+      "tradfi_peer": "Asset Managers",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 229.03611385278117,
+      "fee_switch": {
+        "state": "unknown",
+        "holder_pct": 0,
+        "note": "Fee switch status not tracked"
+      },
+      "pe_if_full_capture": 0.5318567867849934,
+      "thesis_relevance": 4,
+      "defillama_slug": "lido"
+    },
+    {
+      "ticker": "KMNO",
+      "name": "Kamino",
+      "theme": "Watch-Solana",
+      "tags": [
+        "lending",
+        "leverage"
+      ],
+      "market_cap": 86701748.0767876,
+      "tvl": 4060975798,
+      "fees_annualized": 56252376,
+      "revenue_annualized": 8986944,
+      "pf_ratio": 1.541299305771326,
+      "pe_ratio": 9.647522903980219,
+      "tradfi_peer": "Regional Banks",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 81.39371291650556,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 50,
+        "note": "Kamino fee distribution to KMNO stakers"
+      },
+      "pe_if_full_capture": 1.541299305771326,
+      "thesis_relevance": 2,
+      "defillama_slug": "kamino"
+    },
+    {
+      "ticker": "JUP",
+      "name": "Jupiter",
+      "theme": "Watch-Solana",
+      "tags": [
+        "dex-aggregator",
+        "perps"
+      ],
+      "market_cap": 584123700.1025642,
+      "tvl": 3075441951.09067,
+      "fees_annualized": 199058160,
+      "revenue_annualized": 59256816,
+      "pf_ratio": 2.9344373528950745,
+      "pe_ratio": 9.857493863702771,
+      "tradfi_peer": "Broker-Dealers",
+      "peer_pe_mid": 15,
+      "peer_pe_range": "12-18x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 52.168494420604674,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 50,
+        "note": "50% to veJUP"
+      },
+      "pe_if_full_capture": 2.9344373528950745,
+      "thesis_relevance": 3,
+      "defillama_slug": "jupiter"
+    },
+    {
+      "ticker": "RAIL",
+      "name": "Railgun",
+      "theme": "Watch-Privacy",
+      "tags": [
+        "privacy",
+        "zk"
+      ],
+      "market_cap": 59796404.10852819,
+      "tvl": 185683839.90077,
+      "fees_annualized": 4007568,
+      "revenue_annualized": 4007568,
+      "pf_ratio": 14.92087073969255,
+      "pe_ratio": 14.92087073969255,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 34.040434696588676,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "Privacy fees to stakers"
+      },
+      "pe_if_full_capture": 14.92087073969255,
+      "thesis_relevance": 2,
+      "defillama_slug": "railgun"
+    },
+    {
+      "ticker": "HYPE",
+      "name": "Hyperliquid",
+      "theme": "Portfolio",
+      "tags": [
+        "perp-dex",
+        "fee-burn"
+      ],
+      "market_cap": 10016108834.030008,
+      "tvl": 4958627218,
+      "fees_annualized": 754357584,
+      "revenue_annualized": 670051116,
+      "pf_ratio": 13.2776670460703,
+      "pe_ratio": 14.948275728310268,
+      "tradfi_peer": "CME/CBOE",
+      "peer_pe_mid": 21.5,
+      "peer_pe_range": "18-25x",
+      "valuation": "cheap",
+      "upside_to_peer_pct": 43.82929771145137,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 97,
+        "note": "97% fee burn active"
+      },
+      "pe_if_full_capture": 13.2776670460703,
+      "thesis_relevance": 5,
+      "defillama_slug": "hyperliquid"
+    }
+  ],
+  "most_expensive": [
+    {
+      "ticker": "ENA",
+      "name": "Ethena",
+      "theme": "Watch-RWA",
+      "tags": [
+        "synthetic-dollar",
+        "basis-trade"
+      ],
+      "market_cap": 846002787.5483783,
+      "tvl": 6589792996.47079,
+      "fees_annualized": 267320400,
+      "revenue_annualized": 933000,
+      "pf_ratio": 3.164752063622448,
+      "pe_ratio": 906.7553993015845,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -97.79433350874946,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "All rev via sENA"
+      },
+      "pe_if_full_capture": 3.164752063622448,
+      "thesis_relevance": 3,
+      "defillama_slug": "ethena"
+    },
+    {
+      "ticker": "VIRTUAL",
+      "name": "Virtuals Protocol",
+      "theme": "Watch-AI",
+      "tags": [
+        "AI",
+        "agent-tokens"
+      ],
+      "market_cap": 449936316.22148114,
+      "tvl": 0,
+      "fees_annualized": 4724604,
+      "revenue_annualized": 4724604,
+      "pf_ratio": 95.2325985884703,
+      "pe_ratio": 95.2325985884703,
+      "tradfi_peer": "Fintech Median",
+      "peer_pe_mid": 20,
+      "peer_pe_range": "15-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -78.99878791880265,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 100,
+        "note": "Agent tokens revenue"
+      },
+      "pe_if_full_capture": 95.2325985884703,
+      "thesis_relevance": 3,
+      "defillama_slug": "virtuals-protocol"
+    },
+    {
+      "ticker": "UNI",
+      "name": "Uniswap",
+      "theme": "Portfolio",
+      "tags": [
+        "dex",
+        "liquidity"
+      ],
+      "market_cap": 2013359947.2491386,
+      "tvl": 3231918320,
+      "fees_annualized": 426392220,
+      "revenue_annualized": 45606384,
+      "pf_ratio": 4.721849632362285,
+      "pe_ratio": 44.14644991914155,
+      "tradfi_peer": "Exchanges (CME/ICE)",
+      "peer_pe_mid": 21.5,
+      "peer_pe_range": "18-25x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -51.29846218805972,
+      "fee_switch": {
+        "state": "live_partial",
+        "holder_pct": 10,
+        "note": "Fee switch Feb 2026, gradual rollout"
+      },
+      "pe_if_full_capture": 4.721849632362285,
+      "thesis_relevance": 4,
+      "defillama_slug": "uniswap"
+    },
+    {
+      "ticker": "PENDLE",
+      "name": "Pendle",
+      "theme": "Portfolio",
+      "tags": [
+        "yield",
+        "fixed-income"
+      ],
+      "market_cap": 181108950.6400475,
+      "tvl": 1994968291.0235698,
+      "fees_annualized": 6749532,
+      "revenue_annualized": 6651672,
+      "pf_ratio": 26.832816058957494,
+      "pe_ratio": 27.227582875410498,
+      "tradfi_peer": "Derivatives Platforms",
+      "peer_pe_mid": 17.5,
+      "peer_pe_range": "15-20x",
+      "valuation": "expensive",
+      "upside_to_peer_pct": -35.72694249035075,
+      "fee_switch": {
+        "state": "live_full",
+        "holder_pct": 80,
+        "note": "80% to vePENDLE stakers"
+      },
+      "pe_if_full_capture": 26.832816058957494,
+      "thesis_relevance": 4,
+      "defillama_slug": "pendle"
+    }
+  ],
+  "summary": {
+    "total_analyzed": 19,
+    "cheap": 5,
+    "fair": 1,
+    "expensive": 4,
+    "unknown": 9
+  },
+  "narrative": {
+    "text": "[DeFi value-investing narrative] LLM layer not yet activated. Add ANTHROPIC_API_KEY to enable narrative generation. Raw data still present in the FACT section above.",
+    "confidence": "STUB",
+    "model": "sonnet",
+    "used_api": false
+  },
+  "health": {
+    "defillama": "ok",
+    "anthropic": "stubbed"
+  }
+}

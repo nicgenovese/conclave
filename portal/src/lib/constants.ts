@@ -9,6 +9,7 @@ import {
   Gem,
   TrendingUp,
   Radio,
+  Sparkles,
 } from "lucide-react";
 
 // Ordered for the morning-brief reading flow:
@@ -25,11 +26,13 @@ export const NAV_ITEMS = [
   { href: "/agents",      label: "Agents",       icon: Bot },
 ] as const;
 
-export const ADMIN_NAV = {
-  href: "/admin",
-  label: "Admin",
-  icon: Settings,
-} as const;
+export const ADMIN_NAV_ITEMS = [
+  { href: "/admin",          label: "Settings",    icon: Settings },
+  { href: "/admin/research", label: "Deep Dive",   icon: Sparkles },
+] as const;
+
+// Legacy single-item export (kept for backward compat with Sidebar/MobileHeader)
+export const ADMIN_NAV = ADMIN_NAV_ITEMS[0];
 
 export const FUND_NAME = "Moria Capital";
 export const FUND_TAGLINE = "DeFi-Native Value Investing";
