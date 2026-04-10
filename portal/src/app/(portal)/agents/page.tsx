@@ -68,6 +68,57 @@ export default function AgentsPage() {
       ],
       trigger: '"Conclave: analyze [TICKER]"',
     },
+    {
+      name: "Gimli",
+      role: "Commodity Watchman",
+      description:
+        "Marc Rich's ghost. Tracks spot metals, oil, futures curves, tokenized commodities, and mining equities. Detects backwardation (tight physical) and PAXG premium/discount vs spot gold — the signals that preceded every great commodity trade.",
+      schedule: "Every 6 hours",
+      cost: "~$0.02 / run",
+      status: "active",
+      capabilities: [
+        "Spot gold, silver, copper, WTI, Brent (Metals-API)",
+        "Futures curve classification (Alpha Vantage)",
+        "PAXG / XAUT tokenized commodity tracking (CoinGecko)",
+        "Mining equity proxies: FCX, BHP, RIO, NEM (Yahoo)",
+        "Backwardation + premium signal generation",
+      ],
+      trigger: "tsx daily-brief/fetch-commodities.ts",
+    },
+    {
+      name: "Elrond",
+      role: "Macro Sage",
+      description:
+        "Buffett's macro lens. Pulls the actual numbers behind the regime — Fed funds, Treasury yields, CPI, unemployment, NFCI. Classifies risk-on / risk-off using deterministic rules (no LLM needed).",
+      schedule: "Every 12 hours",
+      cost: "~$0.01 / run",
+      status: "active",
+      capabilities: [
+        "Fed funds, 2Y/10Y/30Y Treasury, 10Y TIPS",
+        "CPI, Core CPI YoY with trend detection",
+        "Unemployment + NFP MoM changes",
+        "NFCI financial conditions regime",
+        "2s10s curve + automatic risk_on/risk_off classification",
+      ],
+      trigger: "tsx daily-brief/fetch-macro-data.ts",
+    },
+    {
+      name: "Aragorn",
+      role: "Intelligence Scribe",
+      description:
+        "Curated RSS from commodity, DeFi, regulatory, and company sources. Not a firehose — scored by relevance to the fund's positions, deduplicated, categorized. This is how Marc Rich would read the morning papers.",
+      schedule: "Every 4 hours",
+      cost: "~$0.03 / run",
+      status: "active",
+      capabilities: [
+        "13+ RSS feeds: Mining.com, The Block, Rekt, SEC, Protos, Decrypt",
+        "Google News RSS for Glencore, Trafigura, Coinbase, Circle",
+        "Keyword scoring against Moria's positions (high/med/low)",
+        "Deduplication by title hash across sources",
+        "Word-boundary matching — no false positives",
+      ],
+      trigger: "tsx daily-brief/fetch-intelligence.ts",
+    },
   ];
 
   return (

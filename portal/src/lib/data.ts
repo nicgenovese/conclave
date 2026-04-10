@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -260,6 +260,51 @@ export function getRiskAlerts(): RiskAlertsData | null {
     };
   } catch (err) {
     console.error("[data] Failed to read risk-alerts.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Gimli — Commodities
+// ============================================
+export function getCommodities(): CommoditiesData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "commodities.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as CommoditiesData;
+  } catch (err) {
+    console.error("[data] Failed to read commodities.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Elrond — Macro Data
+// ============================================
+export function getMacroDataFull(): MacroDataFull | null {
+  try {
+    const filePath = path.join(DATA_DIR, "macro-data.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as MacroDataFull;
+  } catch (err) {
+    console.error("[data] Failed to read macro-data.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Aragorn — Intelligence
+// ============================================
+export function getIntelligence(): IntelligenceData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "intelligence.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as IntelligenceData;
+  } catch (err) {
+    console.error("[data] Failed to read intelligence.json:", err);
     return null;
   }
 }

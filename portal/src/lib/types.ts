@@ -225,3 +225,141 @@ export interface RiskAlertsData {
     total: number;
   };
 }
+
+// ============================================
+// Gimli — Commodities
+// ============================================
+export interface CommodityPoint {
+  value: number | null;
+  source: "metals-api" | "coingecko" | "alpha-vantage" | "yahoo" | null;
+  error?: string;
+}
+
+export interface CurveState {
+  front: number | null;
+  next: number | null;
+  curve: "backwardation" | "contango" | "flat" | "unknown";
+  spread_pct: number | null;
+}
+
+export interface CommoditySignal {
+  type: "backwardation" | "contango" | "premium" | "discount" | "regime";
+  market: string;
+  severity: "info" | "warning" | "critical";
+  message: string;
+}
+
+export interface CommoditiesData {
+  updated_at: string;
+  spot: {
+    gold_usd_oz: CommodityPoint;
+    silver_usd_oz: CommodityPoint;
+    platinum_usd_oz: CommodityPoint;
+    palladium_usd_oz: CommodityPoint;
+    copper_usd_lb: CommodityPoint;
+    wti_usd_bbl: CommodityPoint;
+    brent_usd_bbl: CommodityPoint;
+  };
+  futures: {
+    gold: CurveState;
+    copper: CurveState;
+    wti: CurveState;
+  };
+  tokenized: {
+    paxg_usd: CommodityPoint;
+    xaut_usd: CommodityPoint;
+    paxg_premium_bps: number | null;
+  };
+  mining_equities: {
+    freeport_fcx: CommodityPoint;
+    bhp: CommodityPoint;
+    rio: CommodityPoint;
+    newmont_nem: CommodityPoint;
+  };
+  signals: CommoditySignal[];
+  health: {
+    metals_api: "ok" | "no_key" | "error";
+    alpha_vantage: "ok" | "no_key" | "error";
+    coingecko: "ok" | "error";
+  };
+}
+
+// ============================================
+// Elrond — Macro Data
+// ============================================
+export interface FredPoint {
+  value: number | null;
+  date: string | null;
+  error?: string;
+}
+
+export interface MacroDataFull {
+  updated_at: string;
+  fed: {
+    funds_rate: FredPoint;
+    balance_sheet_usd_bn: FredPoint;
+  };
+  yields: {
+    y2: FredPoint;
+    y10: FredPoint;
+    y30: FredPoint;
+    real_10y: FredPoint;
+    curve_2s10s_bps: number | null;
+    inverted: boolean;
+  };
+  inflation: {
+    cpi_yoy_pct: FredPoint;
+    core_cpi_yoy_pct: FredPoint;
+    trend: "declining" | "rising" | "stable" | "unknown";
+  };
+  employment: {
+    unrate: FredPoint;
+    nfp_thousands: FredPoint;
+  };
+  dollar: {
+    dxy_proxy: FredPoint;
+  };
+  financial_conditions: {
+    nfci: FredPoint;
+    regime: "loose" | "neutral" | "tight" | "unknown";
+  };
+  regime: "risk_on" | "risk_off" | "neutral" | "unknown";
+  regime_summary: string;
+  health: {
+    fred: "ok" | "no_key" | "error";
+  };
+}
+
+// ============================================
+// Aragorn — Intelligence
+// ============================================
+export type IntelligenceCategory = "commodity" | "defi" | "regulatory" | "company" | "exploits";
+export type IntelligencePriority = "high" | "medium" | "low";
+
+export interface IntelligenceItem {
+  id: string;
+  source: string;
+  source_weight: number;
+  title: string;
+  link: string;
+  category: IntelligenceCategory;
+  priority: IntelligencePriority;
+  priority_score: number;
+  matched_keywords: string[];
+  published: string;
+  snippet?: string;
+}
+
+export interface IntelligenceData {
+  updated_at: string;
+  categories: Record<IntelligenceCategory, IntelligenceItem[]>;
+  top_stories: IntelligenceItem[];
+  summary: {
+    total_items: number;
+    by_category: Record<IntelligenceCategory, number>;
+    by_priority: Record<IntelligencePriority, number>;
+    sources_succeeded: number;
+    sources_failed: number;
+    failed_sources: string[];
+  };
+}

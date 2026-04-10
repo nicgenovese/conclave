@@ -7,14 +7,20 @@ import {
   Settings,
   Bot,
   Vote,
+  Gem,
+  TrendingUp,
+  Radio,
 } from "lucide-react";
 
 export const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/research", label: "Research", icon: FileText },
   { href: "/briefs", label: "Briefs", icon: Newspaper },
+  { href: "/intelligence", label: "Intelligence", icon: Radio },
+  { href: "/commodities", label: "Commodities", icon: Gem },
+  { href: "/macro-data", label: "Macro", icon: TrendingUp },
   { href: "/governance", label: "Governance", icon: Vote },
-  { href: "/macro", label: "Macro", icon: Globe },
+  { href: "/macro", label: "Polymarket", icon: Globe },
   { href: "/risk", label: "Risk", icon: Shield },
   { href: "/agents", label: "Agents", icon: Bot },
 ] as const;

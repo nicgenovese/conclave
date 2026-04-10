@@ -1,0 +1,84 @@
+{
+  "updated_at": "2026-04-10T14:21:49.541Z",
+  "fed": {
+    "funds_rate": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "balance_sheet_usd_bn": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    }
+  },
+  "yields": {
+    "y2": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "y10": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "y30": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "real_10y": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "curve_2s10s_bps": null,
+    "inverted": false
+  },
+  "inflation": {
+    "cpi_yoy_pct": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "core_cpi_yoy_pct": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "trend": "unknown"
+  },
+  "employment": {
+    "unrate": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "nfp_thousands": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    }
+  },
+  "dollar": {
+    "dxy_proxy": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    }
+  },
+  "financial_conditions": {
+    "nfci": {
+      "value": null,
+      "date": null,
+      "error": "FRED_API_KEY not set"
+    },
+    "regime": "unknown"
+  },
+  "regime": "unknown",
+  "regime_summary": "FRED_API_KEY not set — add to enable macro regime detection",
+  "health": {
+    "fred": "no_key"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "updated_at": "2026-04-10T14:19:07.450Z",
+  "spot": {
+    "gold_usd_oz": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "silver_usd_oz": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "platinum_usd_oz": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "palladium_usd_oz": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "copper_usd_lb": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "wti_usd_bbl": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    },
+    "brent_usd_bbl": {
+      "value": null,
+      "source": null,
+      "error": "METALS_API_KEY not set"
+    }
+  },
+  "futures": {
+    "gold": {
+      "front": null,
+      "next": null,
+      "curve": "unknown",
+      "spread_pct": null
+    },
+    "copper": {
+      "front": null,
+      "next": null,
+      "curve": "unknown",
+      "spread_pct": null
+    },
+    "wti": {
+      "front": null,
+      "next": null,
+      "curve": "unknown",
+      "spread_pct": null
+    }
+  },
+  "tokenized": {
+    "paxg_usd": {
+      "value": 4765.88,
+      "source": "coingecko"
+    },
+    "xaut_usd": {
+      "value": 4754.79,
+      "source": "coingecko"
+    },
+    "paxg_premium_bps": null
+  },
+  "mining_equities": {
+    "freeport_fcx": {
+      "value": 67.96,
+      "source": "yahoo"
+    },
+    "bhp": {
+      "value": 78.14,
+      "source": "yahoo"
+    },
+    "rio": {
+      "value": 99.18,
+      "source": "yahoo"
+    },
+    "newmont_nem": {
+      "value": 121.34,
+      "source": "yahoo"
+    }
+  },
+  "signals": [],
+  "health": {
+    "metals_api": "no_key",
+    "alpha_vantage": "no_key",
+    "coingecko": "ok"
+  }
+}
