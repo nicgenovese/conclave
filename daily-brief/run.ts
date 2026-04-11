@@ -63,10 +63,30 @@ async function main() {
   // ─────────────────────────────────────────
   console.log("Tier 1 — Truth:");
   const oriResult = await runAgent("Ori     (multichain truth)      ", "🗿", () => fetchOri());
-  if (oriResult) writeJson("ori.json", oriResult);
-  // Back-compat: keep portfolio.json updated with Ori's legacy_shape so the
-  // old dashboard code still works while we migrate.
-  if (oriResult) writeJson("portfolio.json", oriResult.legacy_shape);
+  if (oriResult) {
+    writeJson("ori.json", oriResult);
+    // Back-compat shims — Ori is the single source of truth but we write the
+    // legacy file shapes so the portal pages that still read the old paths
+    // continue to work with zero changes.
+    writeJson("portfolio.json", oriResult.legacy_shape);
+    writeJson("commodities.json", {
+      updated_at: oriResult.updated_at,
+      source: "ori",
+      ...oriResult.commodities,
+    });
+    writeJson("risk-alerts.json", {
+      updated_at: oriResult.updated_at,
+      source: "ori",
+      alerts: oriResult.alerts,
+      concentration: oriResult.concentration,
+      summary: {
+        critical: oriResult.alerts.filter((a) => a.severity === "critical").length,
+        warning: oriResult.alerts.filter((a) => a.severity === "warning").length,
+        info: oriResult.alerts.filter((a) => a.severity === "info").length,
+        total: oriResult.alerts.length,
+      },
+    });
+  }
 
   console.log("");
 

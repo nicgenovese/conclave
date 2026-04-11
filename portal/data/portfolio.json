@@ -1,76 +1,76 @@
 {
-  "nav": 6862.0836739999995,
-  "updated_at": "2026-04-10",
+  "nav": 6875.877462,
+  "updated_at": "2026-04-11",
   "wallet": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
   "positions": [
     {
       "name": "ETH Core Long",
       "ticker": "ETH",
       "allocation_usd": 2001,
-      "allocation_pct": 29.16023900410399,
+      "allocation_pct": 29.101740266004754,
       "bucket": "Core"
     },
     {
       "name": "UNI LP (V4)",
       "ticker": "UNI",
       "allocation_usd": 406,
-      "allocation_pct": 5.916570232716752,
+      "allocation_pct": 5.904700923537197,
       "bucket": "Core"
     },
     {
       "name": "AAVE",
       "ticker": "AAVE",
       "allocation_usd": 901,
-      "allocation_pct": 13.130122610043827,
+      "allocation_pct": 13.103782098785748,
       "bucket": "DeFi Value"
     },
     {
       "name": "HYPE (spot)",
       "ticker": "HYPE",
       "allocation_usd": 301,
-      "allocation_pct": 4.386422758738282,
+      "allocation_pct": 4.377623098484474,
       "bucket": "DeFi Value"
     },
     {
       "name": "PENDLE",
       "ticker": "PENDLE",
       "allocation_usd": 349,
-      "allocation_pct": 5.085918746842725,
+      "allocation_pct": 5.075715818508575,
       "bucket": "DeFi Value"
     },
     {
       "name": "COW",
       "ticker": "COW",
       "allocation_usd": 280,
-      "allocation_pct": 4.080393263942588,
+      "allocation_pct": 4.072207533473929,
       "bucket": "DeFi Value"
     },
     {
       "name": "wstETH",
       "ticker": "wstETH",
       "allocation_usd": 596,
-      "allocation_pct": 8.685408518963508,
+      "allocation_pct": 8.667984606965934,
       "bucket": "Yield"
     },
     {
       "name": "Pendle PT-sUSDe",
       "ticker": "PT-sUSDe",
       "allocation_usd": 500,
-      "allocation_pct": 7.28641654275462,
+      "allocation_pct": 7.271799166917731,
       "bucket": "Yield"
     },
     {
       "name": "MORPHO",
       "ticker": "MORPHO",
       "allocation_usd": 396,
-      "allocation_pct": 5.770841901861659,
+      "allocation_pct": 5.759264940198842,
       "bucket": "Emerging"
     },
     {
       "name": "Gas Reserve",
       "ticker": "ETH",
       "allocation_usd": 67,
-      "allocation_pct": 0.9763798167291192,
+      "allocation_pct": 0.9744210883669758,
       "bucket": "Gas"
     }
   ],
@@ -78,44 +78,44 @@
     {
       "pair": "HYPE-PERP",
       "leverage": 3,
-      "capital_usd": 332.12453999999997,
+      "capital_usd": 336.80844,
       "entry_1": 38.178,
       "entry_2": 38.178,
       "stop": 29
     }
   ],
-  "total_perp_exposure": 996.37362,
+  "total_perp_exposure": 1010.42532,
   "avg_leverage": 3,
-  "max_perp_loss": 239.52844791136246,
+  "max_perp_loss": 242.9064798302687,
   "allocation_buckets": [
     {
       "name": "Core",
       "total_usd": 2407,
-      "pct": 35.07680923682074,
+      "pct": 35.00644118954195,
       "color": "#3b82f6"
     },
     {
       "name": "DeFi Value",
       "total_usd": 1831,
-      "pct": 26.68285737956742,
+      "pct": 26.62932854925273,
       "color": "#8b5cf6"
     },
     {
       "name": "Yield",
       "total_usd": 1096,
-      "pct": 15.971825061718128,
+      "pct": 15.939783773883665,
       "color": "#10b981"
     },
     {
       "name": "Emerging",
       "total_usd": 396,
-      "pct": 5.770841901861659,
+      "pct": 5.759264940198842,
       "color": "#f59e0b"
     },
     {
       "name": "Gas",
       "total_usd": 67,
-      "pct": 0.9763798167291192,
+      "pct": 0.9744210883669758,
       "color": "#6b7280"
     }
   ]

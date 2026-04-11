@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-04-11T11:35:05.244Z",
+  "updated_at": "2026-04-11T17:19:51.376Z",
   "fed": {
     "funds_rate": {
       "value": 3.75,
-      "date": "2026-04-10"
+      "date": "2026-04-11"
     },
     "balance_sheet_usd_bn": {
       "value": 6693.871,
@@ -71,8 +71,8 @@
   },
   "ai_parallel": {
     "closest_period": "Oct 2007 — pre-GFC peak",
-    "similarities": "FACT: Today's fed_funds (3.75) and y10 (4.29) are within 1% of Oct 2007 levels (4.75 and 4.65). FACT: The curve_2s10s_bps today (51) and in Oct 2007 (85) are both positive and steep, unlike the inverted curves in Feb 2024 (-40), Oct 2022 (-40), and Summer 2019 (-5). FACT: Both periods show loose financial conditions with negative NFCI (today -0.43, Oct 2007 -0.25) and risk_on or late_cycle_risk_on regimes despite elevated policy rates.",
-    "divergences": "FACT: Today's unemployment (4.3) is lower than Oct 2007 (4.7), and today's CPI (3.3) is lower than Oct 2007 (3.5). FACT: Today's curve is less steep (51 bps vs 85 bps), suggesting less extreme late-cycle dynamics than Oct 2007.",
+    "similarities": "FACT: Today's fed_funds (3.75) and y10 (4.29) are within 1% of Oct 2007 levels (4.75 and 4.65). FACT: The curve_2s10s_bps today (51) and in Oct 2007 (85) are both positive and steep, unlike the inverted curves in Feb 2024 (-40), Oct 2022 (-40), and Summer 2019 (-5). FACT: Both periods show loose financial conditions with negative NFCI (today: -0.43, Oct 2007: -0.25) and similar unemployment rates (today: 4.3, Oct 2007: 4.7), with CPI_yoy within 0.2 percentage points (today: 3.3, Oct 2007: 3.5).",
+    "divergences": "FACT: Oct 2007 had a steeper curve (85 bps vs today's 51 bps) and even looser financial conditions (NFCI -0.25 vs today's -0.43). INFERENCE: The Oct 2007 regime was labeled 'late_cycle_risk_on' while today is labeled 'risk_on', suggesting today may be earlier in the cycle despite similar rate levels.",
     "confidence": "INFERENCE"
   }
 }

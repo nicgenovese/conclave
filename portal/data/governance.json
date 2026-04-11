@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-11T11:32:29.446Z",
+  "updated_at": "2026-04-11T17:20:01.778Z",
   "source": "snapshot",
   "active": [
     {
@@ -52,7 +52,7 @@
       "relevance": "medium",
       "impact": "Medium impact — operational change for LDO",
       "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1c929502f12c61a510c71965d7a7f82dcc76b5d812e2f52796f6bacd6f66e32b",
-      "ai_summary": "The proposal creates a new Curated Module Committee (CMC) to handle day-to-day operations of Lido's Curated Modules in preparation for Curated Module v2 (CMv2). If it passes, the CMC receives governance authority over CMv2 and oversight of CMv1 and Simple DVT Module, taking over responsibilities currently performed by LNOSG.",
+      "ai_summary": "The proposal introduces the Curated Module Committee (CMC) to handle day-to-day operations of Lido's Curated Modules in preparation for Curated Module v2 (CMv2). If it passes, the CMC receives governance authority over CMv2, oversight of CMv1 and Simple DVT Module, and assumes responsibilities currently performed by LNOSG.",
       "ai_impact_score": 5,
       "ai_impact_reason": "Governance restructuring with no direct fee or collateral impact"
     },
@@ -81,7 +81,7 @@
       "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x60cfe3531cd13ab84f5f6aaef7bcaab1747cbea4544dc7d18daaf642e36c9d39",
       "ai_summary": "The proposal redirects post-Node Operator share of DVT incentives and APM incentives flows from their current destination to the Meta Treasury and LoL (Liquidity observation Lab). If it passes, incentive flows arising from Obol and SSV Network providers will be redirected to these new destinations.",
       "ai_impact_score": 4,
-      "ai_impact_reason": "Incentive flow redirection with no material protocol economics change"
+      "ai_impact_reason": "Incentive flow redirection, no direct token-holder value change"
     },
     {
       "id": "0x1d416954538fb9b82aae05daca1be29f7b20d5f9fac61bd2eb9da1f5901a3867",
@@ -106,9 +106,9 @@
       "relevance": "low",
       "impact": "Low impact — administrative",
       "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1d416954538fb9b82aae05daca1be29f7b20d5f9fac61bd2eb9da1f5901a3867",
-      "ai_summary": "The proposal introduces a new CSM Node Operator type called Identified DVT Cluster (IDVTC) that allows groups of 4 Identified Community Stakers to run validators collaboratively using DVT. If it passes, the Community Staking Module will support this new operator type combining ICS trust guarantees with DVT resilience.",
-      "ai_impact_score": 6,
-      "ai_impact_reason": "Operational upgrade expanding validator participation without fee changes"
+      "ai_summary": "The proposal introduces a new CSM Node Operator type called Identified DVT Cluster (IDVTC), allowing groups of 4 Identified Community Stakers to run validators collaboratively using DVT. If it passes, the Community Staking Module will support this new operator type combining ICS trust guarantees with DVT resilience.",
+      "ai_impact_score": 5,
+      "ai_impact_reason": "Operational expansion of staking module, no fee impact"
     },
     {
       "id": "0xde04e720b6c44e6d5a356021e464dc4d4b3036c6602c6088806f1f898cb7a56b",
@@ -133,9 +133,9 @@
       "relevance": "high",
       "impact": "High-impact proposal affecting LDO directly — review required",
       "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0xde04e720b6c44e6d5a356021e464dc4d4b3036c6602c6088806f1f898cb7a56b",
-      "ai_summary": "The proposal introduces a new Lido DAO Ops Multisigs Policy 3.0 that replaces the previous version governing how Safe multisig wallets execute delegated DAO functions. If it passes, the new policy framework will govern operational processes while maintaining DAO oversight and veto rights.",
+      "ai_summary": "The proposal introduces a new Lido DAO Ops Multisigs Policy 3.0, replacing the previous version to update governance processes for Safe multisig wallets executing delegated DAO functions. If it passes, the new policy framework governs how operational multisigs operate under DAO oversight.",
       "ai_impact_score": 3,
-      "ai_impact_reason": "Administrative policy update with no direct economic impact"
+      "ai_impact_reason": "Administrative policy update for multisig governance"
     }
   ],
   "recent_closed": [

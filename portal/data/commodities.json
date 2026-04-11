@@ -1,95 +1,61 @@
 {
-  "updated_at": "2026-04-10T17:50:11.489Z",
-  "spot": {
-    "gold_usd_oz": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "silver_usd_oz": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "platinum_usd_oz": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "palladium_usd_oz": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "copper_usd_lb": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "wti_usd_bbl": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    },
-    "brent_usd_bbl": {
-      "value": null,
-      "source": null,
-      "error": "METALS_API_KEY not set"
-    }
+  "updated_at": "2026-04-11T17:19:49.879Z",
+  "source": "ori",
+  "gold_usd_oz": {
+    "value": 4787.4,
+    "change_pct_24h": -0.10016276449230378,
+    "source": "yahoo"
   },
-  "futures": {
-    "gold": {
-      "front": null,
-      "next": null,
-      "curve": "unknown",
-      "spread_pct": null
-    },
-    "copper": {
-      "front": null,
-      "next": null,
-      "curve": "unknown",
-      "spread_pct": null
-    },
-    "wti": {
-      "front": null,
-      "next": null,
-      "curve": "unknown",
-      "spread_pct": null
-    }
+  "silver_usd_oz": {
+    "value": 76.48,
+    "change_pct_24h": 0.2661352701338581,
+    "source": "yahoo"
   },
-  "tokenized": {
-    "paxg_usd": {
-      "value": 4747.68,
-      "source": "coingecko"
-    },
-    "xaut_usd": {
-      "value": 4734.75,
-      "source": "coingecko"
-    },
-    "paxg_premium_bps": null
+  "copper_usd_lb": {
+    "value": 5.886,
+    "change_pct_24h": 2.4008350730688917,
+    "source": "yahoo"
+  },
+  "wti_usd_bbl": {
+    "value": 96.57,
+    "change_pct_24h": -1.3282926330847158,
+    "source": "yahoo"
+  },
+  "brent_usd_bbl": {
+    "value": 95.2,
+    "change_pct_24h": -0.750625521267722,
+    "source": "yahoo"
+  },
+  "paxg_usd": {
+    "value": 4733.692912396689,
+    "change_pct_24h": null,
+    "source": "defillama"
+  },
+  "xaut_usd": {
+    "value": 4724.375127042897,
+    "change_pct_24h": null,
+    "source": "defillama"
   },
   "mining_equities": {
-    "freeport_fcx": {
-      "value": 67.649,
+    "fcx": {
+      "value": 67.8,
+      "change_pct_24h": 4.147465437788023,
       "source": "yahoo"
     },
     "bhp": {
-      "value": 76.725,
+      "value": 76.81,
+      "change_pct_24h": -0.19490644490643383,
       "source": "yahoo"
     },
     "rio": {
-      "value": 98.165,
+      "value": 98.26,
+      "change_pct_24h": -0.1929913661757214,
       "source": "yahoo"
     },
-    "newmont_nem": {
-      "value": 120.99,
+    "nem": {
+      "value": 120.9,
+      "change_pct_24h": 2.3275497249259414,
       "source": "yahoo"
     }
-  },
-  "signals": [],
-  "health": {
-    "metals_api": "no_key",
-    "alpha_vantage": "no_key",
-    "coingecko": "ok"
   }
 }

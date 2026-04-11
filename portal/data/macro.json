@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-04-10T20:43:26.499Z",
+  "updated_at": "2026-04-11T17:19:50.756Z",
   "polymarket": [
     {
-      "id": "236840",
-      "question": "US x Iran ceasefire by...?",
+      "id": "320112",
+      "question": "Arsenal FC vs. AFC Bournemouth",
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0
+          "probability": 0.0005
         },
         {
           "name": "No",
-          "probability": 1
+          "probability": 0.9995
         }
       ],
-      "volume_usd": 24521078,
-      "end_date": "",
+      "volume_usd": 8339309,
+      "end_date": "2026-04-11T11:30:00Z",
       "category": "General",
-      "url": "https://polymarket.com/event/us-x-iran-ceasefire-by"
+      "url": "https://polymarket.com/event/epl-ars-bou-2026-04-11"
     },
     {
       "id": "30615",
@@ -25,53 +25,17 @@
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0.154
+          "probability": 0.1545
         },
         {
           "name": "No",
-          "probability": 0.846
+          "probability": 0.8455
         }
       ],
-      "volume_usd": 8383815,
+      "volume_usd": 7297391,
       "end_date": "2026-07-20T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/2026-fifa-world-cup-winner-595"
-    },
-    {
-      "id": "30829",
-      "question": "Democratic Presidential Nominee 2028",
-      "outcomes": [
-        {
-          "name": "Yes",
-          "probability": 0.0105
-        },
-        {
-          "name": "No",
-          "probability": 0.9895
-        }
-      ],
-      "volume_usd": 7613049,
-      "end_date": "2028-11-07T00:00:00Z",
-      "category": "Politics",
-      "url": "https://polymarket.com/event/democratic-presidential-nominee-2028"
-    },
-    {
-      "id": "75478",
-      "question": "Fed decision in April?",
-      "outcomes": [
-        {
-          "name": "Yes",
-          "probability": 0.0045
-        },
-        {
-          "name": "No",
-          "probability": 0.9955
-        }
-      ],
-      "volume_usd": 6775696,
-      "end_date": "2026-04-29T00:00:00Z",
-      "category": "Rates",
-      "url": "https://polymarket.com/event/fed-decision-in-april"
     },
     {
       "id": "34436",
@@ -79,17 +43,35 @@
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0.0495
+          "probability": 0.0115
         },
         {
           "name": "No",
-          "probability": 0.9505
+          "probability": 0.9885
         }
       ],
-      "volume_usd": 6360033,
+      "volume_usd": 6048978,
       "end_date": "2026-04-13T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/the-masters-winner-2026"
+    },
+    {
+      "id": "30829",
+      "question": "Democratic Presidential Nominee 2028",
+      "outcomes": [
+        {
+          "name": "Yes",
+          "probability": 0.011
+        },
+        {
+          "name": "No",
+          "probability": 0.989
+        }
+      ],
+      "volume_usd": 6015952,
+      "end_date": "2028-11-07T00:00:00Z",
+      "category": "Politics",
+      "url": "https://polymarket.com/event/democratic-presidential-nominee-2028"
     },
     {
       "id": "303923",
@@ -104,28 +86,10 @@
           "probability": 1
         }
       ],
-      "volume_usd": 4772582,
+      "volume_usd": 5019251,
       "end_date": "2026-04-30T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/military-action-against-iran-ends-on-127"
-    },
-    {
-      "id": "31552",
-      "question": "Presidential Election Winner 2028",
-      "outcomes": [
-        {
-          "name": "Yes",
-          "probability": 0.0065
-        },
-        {
-          "name": "No",
-          "probability": 0.9935
-        }
-      ],
-      "volume_usd": 3677507,
-      "end_date": "2028-11-07T00:00:00Z",
-      "category": "Politics",
-      "url": "https://polymarket.com/event/presidential-election-winner-2028"
     },
     {
       "id": "34038",
@@ -140,46 +104,82 @@
           "probability": 0
         }
       ],
-      "volume_usd": 3655970,
+      "volume_usd": 3801068,
       "end_date": "2026-04-12T00:00:00Z",
       "category": "General",
       "url": "https://polymarket.com/event/next-prime-minister-of-hungary"
     },
     {
-      "id": "31875",
-      "question": "Republican Presidential Nominee 2028",
+      "id": "320134",
+      "question": "Liverpool FC vs. Fulham FC",
       "outcomes": [
         {
           "name": "Yes",
-          "probability": 0.0195
+          "probability": 0.915
         },
         {
           "name": "No",
-          "probability": 0.9805
+          "probability": 0.085
         }
       ],
-      "volume_usd": 3539968,
-      "end_date": "2028-11-07T00:00:00Z",
-      "category": "Politics",
-      "url": "https://polymarket.com/event/republican-presidential-nominee-2028"
+      "volume_usd": 3799672,
+      "end_date": "2026-04-11T16:30:00Z",
+      "category": "General",
+      "url": "https://polymarket.com/event/epl-liv-ful-2026-04-11"
     },
     {
-      "id": "361796",
-      "question": "Counter-Strike: FUT Esports vs TheMongolz (BO3) - PGL Bucharest Playoffs",
+      "id": "365251",
+      "question": "Counter-Strike: Astralis vs FUT Esports (BO5) - PGL Bucharest Playoffs",
       "outcomes": [
         {
-          "name": "FUT Esports",
-          "probability": 0.9995
+          "name": "Astralis",
+          "probability": 0.425
         },
         {
-          "name": "TheMongolz",
-          "probability": 0.0005
+          "name": "FUT Esports",
+          "probability": 0.575
         }
       ],
-      "volume_usd": 2881168,
-      "end_date": "2026-04-10T22:45:00Z",
+      "volume_usd": 4288052,
+      "end_date": "2026-04-11T20:00:00Z",
       "category": "General",
-      "url": "https://polymarket.com/event/cs2-fut-mglz-2026-04-10"
+      "url": "https://polymarket.com/event/cs2-ast10-fut-2026-04-11"
+    },
+    {
+      "id": "234886",
+      "question": "US x Iran diplomatic meeting by...?",
+      "outcomes": [
+        {
+          "name": "Yes",
+          "probability": 0
+        },
+        {
+          "name": "No",
+          "probability": 1
+        }
+      ],
+      "volume_usd": 3654101,
+      "end_date": "2026-03-31T00:00:00Z",
+      "category": "General",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-833"
+    },
+    {
+      "id": "27830",
+      "question": "2026 NBA Champion",
+      "outcomes": [
+        {
+          "name": "Yes",
+          "probability": 0.405
+        },
+        {
+          "name": "No",
+          "probability": 0.595
+        }
+      ],
+      "volume_usd": 3193019,
+      "end_date": "2026-07-01T00:00:00Z",
+      "category": "General",
+      "url": "https://polymarket.com/event/2026-nba-champion"
     }
   ],
   "signals": [

@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-04-10T17:50:13.925Z",
-  "wallet": {
-    "address": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
-    "eth_balance": 0,
-    "eth_usd": 0,
-    "total_usd": 0,
-    "last_tx": null,
-    "tx_count_24h": 0,
-    "flow_24h": {
-      "inflows_eth": 0,
-      "outflows_eth": 0,
-      "inflows_usd": 0,
-      "outflows_usd": 0
-    },
-    "recent_txs": [],
-    "source": "fallback",
-    "error": "Etherscan error: NOTOK"
-  },
+  "updated_at": "2026-04-11T17:19:49.879Z",
+  "source": "ori",
   "alerts": [
     {
       "id": "concentration-max",
@@ -24,17 +8,13 @@
       "type": "concentration",
       "position": "ETH",
       "title": "ETH approaching concentration limit",
-      "message": "ETH is 27.8% of NAV (limit: 30%).",
-      "metric": {
-        "current": 27.8,
-        "threshold": 30
-      },
-      "created": "2026-04-10T17:50:13.925Z"
+      "message": "ETH is 29.1% of NAV (limit: 30%).",
+      "created": "2026-04-11T17:19:49.879Z"
     }
   ],
   "concentration": {
-    "max_position_pct": 27.8,
-    "max_position": "ETH",
+    "max_position_pct": 29.101740266004754,
+    "max_position_ticker": "ETH",
     "limit": 30,
     "breach": false
   },
