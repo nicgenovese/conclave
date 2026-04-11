@@ -35,6 +35,28 @@ function categorizeEvent(title: string): string {
   return "General";
 }
 
+// ─────────────────────────────────────────────
+// Crypto-price-prediction filter — we never surface these anywhere.
+// A DeFi value fund does not care if the market thinks BTC hits $150k.
+// Applied at fetch time so NO downstream consumer ever sees them.
+//
+// Heuristic: if a market mentions a major crypto ticker AND any
+// price/level/date verb, it's noise. We'd rather over-filter than let
+// another "Bitcoin above ___" bet onto the dashboard.
+// ─────────────────────────────────────────────
+const CRYPTO_TICKERS =
+  /\b(bitcoin|btc|ethereum|eth|solana|sol|xrp|ripple|hype|hyperliquid|doge|dogecoin|cardano|ada|bnb|binance coin|shiba|shib|litecoin|ltc|avax|avalanche|polkadot|dot|chainlink|link|uniswap|uni|pepe|trx|tron)\b/i;
+
+const PRICE_LEVEL_VERBS =
+  /\b(price|above|below|over|under|reach|hit|top|touch|cross|finish|close|between|range|all[- ]time high|ath|new high|new low|dip|pump|moon|\$\d|k\b|m\b)/i;
+
+function isCryptoPriceNoise(question: string): boolean {
+  // Must mention a crypto ticker AND a price/level verb to count as noise.
+  // This catches "Bitcoin above X", "Will ETH hit $5k", "HYPE price in April"
+  // but spares legitimate news like "SEC approves spot ETH ETF".
+  return CRYPTO_TICKERS.test(question) && PRICE_LEVEL_VERBS.test(question);
+}
+
 async function fetchPolymarketEvents(): Promise<PolymarketEvent[]> {
   const url =
     "https://gamma-api.polymarket.com/events?closed=false&order=volume24hr&ascending=false&limit=50";
@@ -97,11 +119,18 @@ export async function fetchMacro(): Promise<{ eventCount: number }> {
   }
 
   // Fetch Polymarket events
-  const events = await fetchPolymarketEvents();
+  const rawEvents = await fetchPolymarketEvents();
+
+  // Filter out crypto-price-prediction noise BEFORE anything downstream sees it.
+  // A DeFi value fund never wants "Will BTC hit $150k?" markets anywhere.
+  const events = rawEvents.filter((e) => !isCryptoPriceNoise(e.question));
+  const filteredOut = rawEvents.length - events.length;
 
   if (events.length > 0) {
     macro.polymarket = events;
-    console.log(`[fetch-macro] Fetched ${events.length} Polymarket events`);
+    console.log(
+      `[fetch-macro] Fetched ${rawEvents.length} Polymarket events, kept ${events.length} (filtered ${filteredOut} crypto-price-noise)`,
+    );
   } else {
     console.log("[fetch-macro] No new Polymarket data, keeping existing");
   }

@@ -117,7 +117,6 @@ function buildPayload() {
   const elrond = readJson<any>("macro-data.json");
   const gimli = readJson<any>("gimli.json");
   const thorin = readJson<any>("governance.json");
-  const macro = readJson<any>("macro.json"); // Polymarket events
   const ori = readJson<any>("ori.json");
 
   // Top Aragorn stories (sonnet-scored already)
@@ -133,20 +132,6 @@ function buildPayload() {
       url: s.link,
       published: s.published,
     }));
-
-  // Polymarket events (for storyline matching)
-  const polymarketEvents = (macro?.polymarket || []).slice(0, 50).map((e: any) => ({
-    id: e.id,
-    question: e.question,
-    outcomes: e.outcomes?.map((o: any) => ({
-      name: o.name,
-      probability: o.probability,
-    })),
-    volume_usd: e.volume_usd,
-    end_date: e.end_date,
-    category: e.category,
-    url: e.url,
-  }));
 
   // Macro state
   const macroSnapshot = elrond
@@ -200,7 +185,6 @@ function buildPayload() {
 
   return {
     top_stories: topStories,
-    polymarket_events: polymarketEvents,
     macro: macroSnapshot,
     defi_valuation: defiSnapshot,
     governance: govSnapshot,
@@ -260,7 +244,7 @@ export async function fetchStorylines(force = false): Promise<StorylinesData | n
   }
 
   console.log(
-    `[storylines] Generating from ${(payload.top_stories as any[]).length} stories, ${(payload.polymarket_events as any[]).length} Polymarket events...`,
+    `[storylines] Generating from ${(payload.top_stories as any[]).length} stories...`,
   );
 
   const response = await sonnet(
@@ -280,15 +264,9 @@ Rules:
 
 5. For each storyline, find 2-4 SOURCES from the top_stories list. Each source must be an item from the input (same title, source, URL). Do not invent sources.
 
-6. For each storyline, look at the polymarket_events list and find the ONE market that MOST CLOSELY touches the same topic — it doesn't need to be a perfect match, just the best available proxy. For example:
-   - Regulatory storyline → find any SEC/crypto regulation/ETF/bill market
-   - DeFi/Hyperliquid storyline → find any crypto price market or ETF approval market
-   - Commodity storyline → find any gold/oil/copper/Trump trade market
-   - Geopolitics storyline → find any election/war/sanction market
-   - Macro storyline → find any Fed/rate cut/recession/inflation market
-   Return the selected market's question + outcomes + volume_usd + end_date + url from the input verbatim. Only return null if there is truly NO related market at all.
+6. Do NOT write "Moria implications", portfolio advice, or speculation. Just the story + its sources. Stick to what the cited articles actually say.
 
-7. Do not write "Moria implications" or portfolio advice. Just the story + the market's view via Polymarket odds.
+7. Do NOT try to match storylines to Polymarket markets. Leave the polymarket field as null for every storyline — we display prediction markets separately on the dashboard.
 
 Respond with ONE JSON object only (no markdown fence):
 {
@@ -302,21 +280,14 @@ Respond with ONE JSON object only (no markdown fence):
       "sources": [
         { "title": "exact from top_stories", "source": "exact", "url": "exact", "published": "..." }
       ],
-      "polymarket": {
-        "question": "exact from polymarket_events or null",
-        "yes_probability": 0.62,
-        "no_probability": 0.38,
-        "volume_24h_usd": 1250000,
-        "end_date": "...",
-        "url": "..."
-      } or null
+      "polymarket": null
     },
     ... 3 more ...
   ]
 }
 
-Every number you cite must come from the payload. Every source/polymarket entry must be copied verbatim from the input arrays.`,
-    4000,
+Every number you cite must come from the payload. Every source must be copied verbatim from the top_stories array.`,
+    3500,
   );
 
   if (response.confidence === "STUB") {
