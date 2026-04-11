@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T20:43:25.251Z",
+  "updated_at": "2026-04-11T11:32:29.446Z",
   "source": "snapshot",
   "active": [
     {
@@ -14,7 +14,7 @@
       "created": "2026-04-06T19:39:07.000Z",
       "voting_ends": "2026-04-13T16:00:00.000Z",
       "author": "0x8Ee5143fb47d3234B36d6a77dEb88fbd8047Fbc1",
-      "scores_total": 64526698.18367922,
+      "scores_total": 64526957.30978292,
       "quorum": 0,
       "current_result": {
         "for": 99.8,
@@ -24,7 +24,10 @@
       },
       "relevance": "high",
       "impact": "High-impact proposal affecting LDO directly — review required",
-      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x43be9ee8ce820d444f706e9dd763a223ebabf37be27931cc056888e6c2e48814"
+      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x43be9ee8ce820d444f706e9dd763a223ebabf37be27931cc056888e6c2e48814",
+      "ai_summary": "The proposal authorizes the Lido Growth Committee to execute a one-time LDO token accumulation program using up to 10,000 stETH from the Lido DAO Treasury. If it passes, the Growth Committee gains discretion over execution timing and venues within predefined constraints to buy back LDO tokens.",
+      "ai_impact_score": 8,
+      "ai_impact_reason": "Treasury deployment for token buyback affects wstETH holder value"
     },
     {
       "id": "0x1c929502f12c61a510c71965d7a7f82dcc76b5d812e2f52796f6bacd6f66e32b",
@@ -38,7 +41,7 @@
       "created": "2026-04-06T18:03:13.000Z",
       "voting_ends": "2026-04-13T16:00:00.000Z",
       "author": "0xFf64362EBf794a22A23E12666C4f875A31581fCe",
-      "scores_total": 52254421.405532375,
+      "scores_total": 52254680.53163608,
       "quorum": 0,
       "current_result": {
         "for": 0,
@@ -48,7 +51,10 @@
       },
       "relevance": "medium",
       "impact": "Medium impact — operational change for LDO",
-      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1c929502f12c61a510c71965d7a7f82dcc76b5d812e2f52796f6bacd6f66e32b"
+      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1c929502f12c61a510c71965d7a7f82dcc76b5d812e2f52796f6bacd6f66e32b",
+      "ai_summary": "The proposal creates a new Curated Module Committee (CMC) to handle day-to-day operations of Lido's Curated Modules in preparation for Curated Module v2 (CMv2). If it passes, the CMC receives governance authority over CMv2 and oversight of CMv1 and Simple DVT Module, taking over responsibilities currently performed by LNOSG.",
+      "ai_impact_score": 5,
+      "ai_impact_reason": "Governance restructuring with no direct fee or collateral impact"
     },
     {
       "id": "0x60cfe3531cd13ab84f5f6aaef7bcaab1747cbea4544dc7d18daaf642e36c9d39",
@@ -62,7 +68,7 @@
       "created": "2026-04-06T17:17:40.000Z",
       "voting_ends": "2026-04-13T16:00:00.000Z",
       "author": "0xFf64362EBf794a22A23E12666C4f875A31581fCe",
-      "scores_total": 52254421.405532375,
+      "scores_total": 52254680.53163608,
       "quorum": 0,
       "current_result": {
         "for": 0,
@@ -72,7 +78,10 @@
       },
       "relevance": "high",
       "impact": "High-impact proposal affecting LDO directly — review required",
-      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x60cfe3531cd13ab84f5f6aaef7bcaab1747cbea4544dc7d18daaf642e36c9d39"
+      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x60cfe3531cd13ab84f5f6aaef7bcaab1747cbea4544dc7d18daaf642e36c9d39",
+      "ai_summary": "The proposal redirects post-Node Operator share of DVT incentives and APM incentives flows from their current destination to the Meta Treasury and LoL (Liquidity observation Lab). If it passes, incentive flows arising from Obol and SSV Network providers will be redirected to these new destinations.",
+      "ai_impact_score": 4,
+      "ai_impact_reason": "Incentive flow redirection with no material protocol economics change"
     },
     {
       "id": "0x1d416954538fb9b82aae05daca1be29f7b20d5f9fac61bd2eb9da1f5901a3867",
@@ -86,7 +95,7 @@
       "created": "2026-04-06T15:02:41.000Z",
       "voting_ends": "2026-04-13T16:00:00.000Z",
       "author": "0xFf64362EBf794a22A23E12666C4f875A31581fCe",
-      "scores_total": 52212012.28284809,
+      "scores_total": 52212271.40895179,
       "quorum": 0,
       "current_result": {
         "for": 100,
@@ -96,7 +105,10 @@
       },
       "relevance": "low",
       "impact": "Low impact — administrative",
-      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1d416954538fb9b82aae05daca1be29f7b20d5f9fac61bd2eb9da1f5901a3867"
+      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0x1d416954538fb9b82aae05daca1be29f7b20d5f9fac61bd2eb9da1f5901a3867",
+      "ai_summary": "The proposal introduces a new CSM Node Operator type called Identified DVT Cluster (IDVTC) that allows groups of 4 Identified Community Stakers to run validators collaboratively using DVT. If it passes, the Community Staking Module will support this new operator type combining ICS trust guarantees with DVT resilience.",
+      "ai_impact_score": 6,
+      "ai_impact_reason": "Operational upgrade expanding validator participation without fee changes"
     },
     {
       "id": "0xde04e720b6c44e6d5a356021e464dc4d4b3036c6602c6088806f1f898cb7a56b",
@@ -110,7 +122,7 @@
       "created": "2026-04-06T14:37:48.000Z",
       "voting_ends": "2026-04-13T16:00:00.000Z",
       "author": "0xFf64362EBf794a22A23E12666C4f875A31581fCe",
-      "scores_total": 52211994.44083147,
+      "scores_total": 52212253.56693517,
       "quorum": 0,
       "current_result": {
         "for": 0,
@@ -120,7 +132,10 @@
       },
       "relevance": "high",
       "impact": "High-impact proposal affecting LDO directly — review required",
-      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0xde04e720b6c44e6d5a356021e464dc4d4b3036c6602c6088806f1f898cb7a56b"
+      "url": "https://snapshot.box/#/s:lido-snapshot.eth/proposal/0xde04e720b6c44e6d5a356021e464dc4d4b3036c6602c6088806f1f898cb7a56b",
+      "ai_summary": "The proposal introduces a new Lido DAO Ops Multisigs Policy 3.0 that replaces the previous version governing how Safe multisig wallets execute delegated DAO functions. If it passes, the new policy framework will govern operational processes while maintaining DAO oversight and veto rights.",
+      "ai_impact_score": 3,
+      "ai_impact_reason": "Administrative policy update with no direct economic impact"
     }
   ],
   "recent_closed": [

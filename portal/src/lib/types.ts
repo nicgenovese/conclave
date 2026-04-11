@@ -141,6 +141,10 @@ export interface GovernanceAlert {
   relevance: "high" | "medium" | "low";
   impact: string;
   url: string;
+  // Thorin Sonnet enrichments (Wave 2)
+  ai_summary?: string;
+  ai_impact_score?: number;
+  ai_impact_reason?: string;
 }
 
 export interface GovernanceData {
@@ -325,6 +329,12 @@ export interface MacroDataFull {
   };
   regime: "risk_on" | "risk_off" | "neutral" | "unknown";
   regime_summary: string;
+  ai_parallel?: {
+    closest_period: string;
+    similarities: string;
+    divergences: string;
+    confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB";
+  };
   health: {
     fred: "ok" | "no_key" | "error";
   };

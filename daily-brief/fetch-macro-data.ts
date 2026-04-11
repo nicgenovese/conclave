@@ -11,6 +11,7 @@
 import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { sonnet, hasAnthropicKey } from "./lib/llm.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, "../portal/data/macro-data.json");
@@ -55,6 +56,13 @@ export interface MacroDataFull {
   };
   regime: "risk_on" | "risk_off" | "neutral" | "unknown";
   regime_summary: string;
+  // Sonnet-generated historical parallel (Wave 2)
+  ai_parallel?: {
+    closest_period: string;
+    similarities: string;
+    divergences: string;
+    confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB";
+  };
   health: {
     fred: "ok" | "no_key" | "error";
   };
@@ -225,6 +233,129 @@ function classifyRegime(data: {
   return { regime, summary };
 }
 
+// ─────────────────────────────────────────────────
+// Sonnet historical parallel finder
+// Given today's FRED readings, asks Sonnet which past macro regime most
+// closely matches and why. Fully grounded — we give Sonnet a library of
+// known regime snapshots, and it chooses the closest.
+// ─────────────────────────────────────────────────
+
+// Curated library of notable macro regimes. Sonnet chooses from THIS list.
+// Adding new periods here extends the parallel-finder's vocabulary.
+const HISTORICAL_REGIMES = [
+  {
+    period: "Jan 2001 — dot-com bust early",
+    fed_funds: 6.0,
+    y10: 5.2,
+    curve_2s10s_bps: 30,
+    cpi_yoy: 3.7,
+    unrate: 4.2,
+    nfci: -0.1,
+    regime: "risk_off_transition",
+    note: "Peak-cycle rates, curve normalizing after inversion, unemployment about to climb",
+  },
+  {
+    period: "Oct 2007 — pre-GFC peak",
+    fed_funds: 4.75,
+    y10: 4.65,
+    curve_2s10s_bps: 85,
+    cpi_yoy: 3.5,
+    unrate: 4.7,
+    nfci: -0.25,
+    regime: "late_cycle_risk_on",
+    note: "Rates peaking, curve steep, credit extended, still technically risk-on",
+  },
+  {
+    period: "Summer 2019",
+    fed_funds: 2.5,
+    y10: 2.0,
+    curve_2s10s_bps: -5,
+    cpi_yoy: 1.8,
+    unrate: 3.7,
+    nfci: -0.7,
+    regime: "risk_on",
+    note: "Curve flat-to-inverted, Fed mid-cycle cuts, low vol, very loose conditions",
+  },
+  {
+    period: "Feb 2024 — first cut pricing",
+    fed_funds: 5.5,
+    y10: 4.1,
+    curve_2s10s_bps: -40,
+    cpi_yoy: 3.2,
+    unrate: 3.9,
+    nfci: -0.55,
+    regime: "risk_on",
+    note: "Inverted curve but loose conditions, market pricing cuts, crypto rallying on ETF approvals",
+  },
+  {
+    period: "Oct 2022 — inflation peak",
+    fed_funds: 3.25,
+    y10: 4.1,
+    curve_2s10s_bps: -40,
+    cpi_yoy: 8.2,
+    unrate: 3.7,
+    nfci: 0.6,
+    regime: "risk_off",
+    note: "Aggressive hiking, inverted curve, tight conditions, crypto winter deepening",
+  },
+];
+
+async function findHistoricalParallelWithSonnet(data: MacroDataFull): Promise<MacroDataFull["ai_parallel"] | undefined> {
+  if (!hasAnthropicKey()) return undefined;
+
+  // Build payload with today's values + the library
+  const payload = {
+    today: {
+      fed_funds: data.fed.funds_rate.value,
+      y10: data.yields.y10.value,
+      curve_2s10s_bps: data.yields.curve_2s10s_bps,
+      cpi_yoy: data.inflation.cpi_yoy_pct.value !== null ? parseFloat(data.inflation.cpi_yoy_pct.value.toFixed(1)) : null,
+      unrate: data.employment.unrate.value,
+      nfci: data.financial_conditions.nfci.value !== null ? parseFloat(data.financial_conditions.nfci.value.toFixed(2)) : null,
+      current_regime: data.regime,
+      summary: data.regime_summary,
+    },
+    library: HISTORICAL_REGIMES,
+  };
+
+  const response = await sonnet(
+    "Elrond — historical parallel finder",
+    payload,
+    `Given today's macro snapshot and the library of past regimes, choose the ONE period in the library that most closely resembles today's conditions. Consider fed_funds, y10, curve_2s10s_bps, cpi_yoy, unrate, nfci as a multi-dimensional fingerprint.
+
+Respond with ONE JSON object only:
+{
+  "closest_period": "exact period string from library (e.g. 'Feb 2024 — first cut pricing')",
+  "similarities": "2-3 sentences explaining why this period matches today. Cite specific numbers from the payload.",
+  "divergences": "1-2 sentences on the 1-2 most important differences (cite numbers)."
+}
+
+Rules:
+- closest_period MUST be one of the library period strings, EXACTLY.
+- similarities and divergences must cite numbers from the payload, never invented.
+- No speculation about what will happen next — only what matches and diverges.`,
+    1200,
+  );
+
+  if (response.confidence === "STUB") return undefined;
+
+  try {
+    const jsonMatch = response.text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("no JSON");
+    const parsed = JSON.parse(jsonMatch[0]);
+
+    return {
+      closest_period: typeof parsed.closest_period === "string" ? parsed.closest_period : "unknown",
+      similarities: typeof parsed.similarities === "string" ? parsed.similarities : "",
+      divergences: typeof parsed.divergences === "string" ? parsed.divergences : "",
+      confidence: response.confidence,
+    };
+  } catch (err) {
+    console.warn(`[elrond] Sonnet parallel parse failed:`, err instanceof Error ? err.message : err);
+    return undefined;
+  }
+}
+
 export async function fetchMacroData(): Promise<MacroDataFull> {
   console.log("[elrond] Fetching FRED macro data...");
 
@@ -316,8 +447,14 @@ export async function fetchMacroData(): Promise<MacroDataFull> {
     nfci.value,
   ].filter((x) => x !== null).length;
 
+  // Sonnet historical parallel finder — only if we have enough data to compare
+  if (liveCount >= 4) {
+    const parallel = await findHistoricalParallelWithSonnet(data);
+    if (parallel) data.ai_parallel = parallel;
+  }
+
   console.log(
-    `[elrond] ${liveCount}/6 core series live · regime: ${regime} · ${summary}`,
+    `[elrond] ${liveCount}/6 core series live · regime: ${regime} · ${summary}${data.ai_parallel ? ` · parallel: ${data.ai_parallel.closest_period}` : ""}`,
   );
 
   return data;

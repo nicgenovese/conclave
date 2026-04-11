@@ -1,7 +1,25 @@
 {
-  "updated_at": "2026-04-10T20:43:25.933Z",
+  "updated_at": "2026-04-11T11:23:12.849Z",
   "categories": {
     "commodity": [
+      {
+        "id": "Northern Miner-argentina oks milei glacier mining",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Argentina OKs Milei glacier mining reform amid protests",
+        "link": "https://www.northernminer.com/regulatory-issues/argentina-oks-milei-glacier-mining-reform-amid-protests/1003889841/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 5.6,
+        "matched_keywords": [
+          "approved",
+          "mining"
+        ],
+        "published": "2026-04-09T21:35:00.000Z",
+        "snippet": "Argentina’s Congress approved on Thursday a bill pushed by the country’s right-wing President Javier Milei that opens sensitive high-altitude regions to mining, triggering warnings over water security",
+        "thesis_score": 5,
+        "thesis_reason": "Argentina Milei glacier mining reform approved, commodity access"
+      },
       {
         "id": "Northern Miner-gold price wins in iran",
         "source": "Northern Miner",
@@ -15,8 +33,10 @@
           "copper",
           "gold"
         ],
-        "published": "2026-04-10T18:45:51.000Z",
-        "snippet": "The U.S.-Iran war may shave as much as 0.7% off the global economy and push gold prices higher as investors focus on a swelling U.S. deficit and a weaker dollar,... The post Gold price wins in Iran wa"
+        "published": "2026-04-10T19:30:51.000Z",
+        "snippet": "The U.S.-Iran war may shave as much as 0.7% off the global economy and push gold prices higher as investors focus on a swelling U.S. deficit and a weaker dollar,... The post Gold price wins in Iran wa",
+        "thesis_score": 4,
+        "thesis_reason": "Gold price macro from Iran war, no DeFi"
       },
       {
         "id": "Northern Miner-blast from the past when",
@@ -32,23 +52,9 @@
           "mining"
         ],
         "published": "2026-04-10T11:00:54.000Z",
-        "snippet": "Chile’s 1971 move to nationalize copper reshaped Latin American mining and still reverberates through global supply. The Northern Miner tracked the crisis before and after the takeover. Even before Co"
-      },
-      {
-        "id": "Northern Miner-argentina oks milei glacier mining",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Argentina OKs Milei glacier mining reform amid protests",
-        "link": "https://www.northernminer.com/regulatory-issues/argentina-oks-milei-glacier-mining-reform-amid-protests/1003889841/",
-        "category": "commodity",
-        "priority": "medium",
-        "priority_score": 5.6,
-        "matched_keywords": [
-          "approved",
-          "mining"
-        ],
-        "published": "2026-04-09T21:35:00.000Z",
-        "snippet": "Argentina’s Congress approved on Thursday a bill pushed by the country’s right-wing President Javier Milei that opens sensitive high-altitude regions to mining, triggering warnings over water security"
+        "snippet": "Chile’s 1971 move to nationalize copper reshaped Latin American mining and still reverberates through global supply. The Northern Miner tracked the crisis before and after the takeover. Even before Co",
+        "thesis_score": 4,
+        "thesis_reason": "Chile 1971 copper nationalization historical retrospective"
       },
       {
         "id": "Northern Miner-orlas doubledigit gold assays extend",
@@ -64,52 +70,9 @@
           "mining"
         ],
         "published": "2026-04-09T21:30:09.000Z",
-        "snippet": "Orla Mining (TSX: OLA; NYSE: ORLA) says new drilling at its Musselwhite mine in Ontario shows more high-grade gold zones over 2 km beyond workings, boosting the case for longer... The post Orla’s doub"
-      },
-      {
-        "id": "Mining.com-peru pulls permit for 18b",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "Peru pulls permit for $1.8B Tia Maria copper mine",
-        "link": "https://www.mining.com/peru-pulls-permit-for-1-8b-tia-maria-copper-mine/",
-        "category": "commodity",
-        "priority": "medium",
-        "priority_score": 4.800000000000001,
-        "matched_keywords": [
-          "copper"
-        ],
-        "published": "2026-04-10T14:09:00.000Z",
-        "snippet": "Government cites legal and technical gaps, forcing review of a top copper project that has faced over a decade of delays."
-      },
-      {
-        "id": "Mining.com-first quantum taps ifc for",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "First Quantum taps IFC for Argentina copper push",
-        "link": "https://www.mining.com/first-quantum-taps-ifc-for-argentina-copper-push/",
-        "category": "commodity",
-        "priority": "medium",
-        "priority_score": 4.800000000000001,
-        "matched_keywords": [
-          "copper"
-        ],
-        "published": "2026-04-08T16:13:00.000Z",
-        "snippet": "Agreement boosts financing prospects while advancing sustainability at Taca Taca, a major copper project in Argentina."
-      },
-      {
-        "id": "Mining.com-gold price climbs to threeweek",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "Gold price climbs to three-week high on US-Iran ceasefire",
-        "link": "https://www.mining.com/gold-price-climbs-to-three-week-high-on-us-iran-ceasefire/",
-        "category": "commodity",
-        "priority": "medium",
-        "priority_score": 4.800000000000001,
-        "matched_keywords": [
-          "gold"
-        ],
-        "published": "2026-04-08T15:49:50.000Z",
-        "snippet": "Spot gold rose as much as 3% to over $4,850 per ounce."
+        "snippet": "Orla Mining (TSX: OLA; NYSE: ORLA) says new drilling at its Musselwhite mine in Ontario shows more high-grade gold zones over 2 km beyond workings, boosting the case for longer... The post Orla’s doub",
+        "thesis_score": 4,
+        "thesis_reason": "Orla Mining Musselwhite gold drilling results Ontario"
       },
       {
         "id": "Northern Miner-new woe besets bcs two",
@@ -123,8 +86,62 @@
         "matched_keywords": [
           "gold"
         ],
-        "published": "2026-04-10T19:03:31.000Z",
+        "published": "2026-04-10T21:01:31.000Z",
         "snippet": "Seabridge Gold’s (TSX: SEA; NYSE: SA) push for permits to dig tunnels at its giant KSM project is being delayed by British Columbia until the miner’s court fight with neighbour... The post New woe bes"
+      },
+      {
+        "id": "Northern Miner-nouveau monde raises 297m as",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Nouveau Monde raises $297M as Italy’s Eni takes stake",
+        "link": "https://www.northernminer.com/news/nouveau-monde-raises-297m-as-italys-eni-takes-stake/1003889879/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T20:55:07.000Z",
+        "snippet": "Nouveau Monde Graphite (NYSE: NMG; TSX: NOU) is raising $297 million (C$413 million) in a transaction that will see Italian energy giant Eni buy a 12% stake to help the Canadian... The post Nouveau Mo"
+      },
+      {
+        "id": "Northern Miner-infographic latin americas top miners",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Infographic: Latin America’s top miners may surprise",
+        "link": "https://www.northernminer.com/news/infographic-latin-americas-top-miners-may-surprise/1003889868/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-10T20:50:44.000Z",
+        "snippet": "Latin America’s most mining-dependent countries are not always its biggest economies. Our latest infographic ranks the region first by mining’s share of total exports and then by the value of... The p"
+      },
+      {
+        "id": "Northern Miner-paladin targets 2027 uranium decision",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Paladin targets 2027 uranium decision on Patterson Lake South",
+        "link": "https://www.northernminer.com/news/paladin-targets-2027-uranium-decision-on-patterson-lake-south/1003889872/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T20:45:00.000Z",
+        "snippet": "Australia’s Paladin Energy (ASX, TSX: PDN) expects making a final investment decision on its Patterson Lake South (PLS) uranium project in Saskatchewan by the end of 2027 as the company... The post Pa"
+      },
+      {
+        "id": "Northern Miner-eu us near critical minerals",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "EU, US near critical minerals pact to counter China’s grip",
+        "link": "https://www.northernminer.com/news/eu-us-near-critical-minerals-pact-to-counter-chinas-grip/1003889876/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T20:35:13.000Z",
+        "snippet": "The European Union and the U.S. are nearing a deal to coordinate critical minerals production and supply chains, aiming to reduce reliance on China. The proposed agreement, reported by Bloomberg... Th"
       },
       {
         "id": "Northern Miner-peru pulls permit for 18b",
@@ -142,6 +159,32 @@
         "snippet": "Peru has revoked Southern Copper’s (NYSE, LSE: SCCO) permit for its $1.8-billion Tía María project, forcing a fresh review of one of the country’s most contentious copper developments. The Ministry..."
       },
       {
+        "id": "Mining.com-neo performance begins producing heavy",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "Neo Performance begins producing heavy rare earths at Estonia plant",
+        "link": "https://www.mining.com/neo-performance-begins-producing-heavy-rare-earths-at-estonia-plant/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T15:17:36.000Z",
+        "snippet": "The small-scale production line is currently operating at its nameplate capacity, producing separated terbium and dysprosium oxides."
+      },
+      {
+        "id": "Northern Miner-neo performance begins producing heavy",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Neo Performance begins producing heavy rare earths at Estonia plant",
+        "link": "https://www.northernminer.com/news/neo-performance-begins-producing-heavy-rare-earths-at-estonia-plant/1003889890/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T15:17:36.000Z",
+        "snippet": "Neo Performance Materials (TSX: NEO) has produced its first batch of heavy rare earth elements following the successful commissioning of the solvent extraction line at its Silmet plant in Estonia.... "
+      },
+      {
         "id": "Mining.com-infographic latin americas top miners",
         "source": "Mining.com",
         "source_weight": 8,
@@ -157,64 +200,58 @@
         "snippet": "The region most mining-dependent countries are not always its biggest economies."
       },
       {
-        "id": "Mining.com-g mining to buy g2",
+        "id": "Mining.com-nouveau monde raises 297m as",
         "source": "Mining.com",
         "source_weight": 8,
-        "title": "G Mining to buy G2 Goldfields for $2.2B in Guyana play",
-        "link": "https://www.mining.com/g-mining-to-buy-g2-goldfields-for-2-2b-in-guyana-play/",
+        "title": "Nouveau Monde raises $297M as Italy’s Eni takes stake",
+        "link": "https://www.mining.com/nouveau-monde-raises-297m-as-italys-eni-takes-stake/",
         "category": "commodity",
         "priority": "low",
-        "priority_score": 1.6,
-        "matched_keywords": [
-          "mining"
-        ],
-        "published": "2026-04-09T14:58:10.000Z",
-        "snippet": "The deal combines G Mining’s Oko West project with G2’s Oko-Ghanie project to form a single district-scale development."
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T15:02:07.000Z",
+        "snippet": "The deal represents the final step in assembling a broader $633 million project financing package."
       },
       {
-        "id": "Mining.com-argentina approves milei glacier mining",
+        "id": "Mining.com-peru pulls permit for 18b",
         "source": "Mining.com",
         "source_weight": 8,
-        "title": "Argentina approves Milei glacier mining reform amid protests",
-        "link": "https://www.mining.com/argentina-approves-milei-glacier-mining-reform-amid-protests/",
+        "title": "Peru pulls permit for $1.8B Tia Maria copper mine",
+        "link": "https://www.mining.com/peru-pulls-permit-for-1-8b-tia-maria-copper-mine/",
         "category": "commodity",
-        "priority": "low",
-        "priority_score": 1.6,
+        "priority": "medium",
+        "priority_score": 4.800000000000001,
         "matched_keywords": [
-          "mining"
+          "copper"
         ],
-        "published": "2026-04-09T11:03:00.000Z",
-        "snippet": "Argentina loosens glacier protections to boost mining, raising concerns over water security and environmental risks."
+        "published": "2026-04-10T14:09:00.000Z",
+        "snippet": "Government cites legal and technical gaps, forcing review of a top copper project that has faced over a decade of delays."
       },
       {
-        "id": "Mining.com-the metals royalty debuts on",
+        "id": "Mining.com-paladin targets 2027 uranium decision",
         "source": "Mining.com",
         "source_weight": 8,
-        "title": "The Metals Royalty debuts on Nasdaq with deep-sea bet",
-        "link": "https://www.mining.com/the-metals-royalty-debuts-on-nasdaq-with-deep-sea-bet/",
+        "title": "Paladin targets 2027 uranium decision on Patterson Lake South",
+        "link": "https://www.mining.com/paladin-targets-2027-uranium-decision-on-patterson-lake-south/",
         "category": "commodity",
         "priority": "low",
-        "priority_score": 1.6,
-        "matched_keywords": [
-          "mining"
-        ],
-        "published": "2026-04-08T18:39:43.000Z",
-        "snippet": "Listing offers investors exposure to deep-sea mining as demand for critical minerals rises and risks remain."
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T12:36:00.000Z",
+        "snippet": "PLS has become Paladin’s clearest shot at adding a second uranium mine and diversify production from the Langer Heinrich uranium mine in Namibia."
       },
       {
-        "id": "Northern Miner-infographic latin americas top miners",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Infographic: Latin America’s top miners may surprise",
-        "link": "https://www.northernminer.com/news/infographic-latin-americas-top-miners-may-surprise/1003889868/",
+        "id": "Mining.com-eu us near critical minerals",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "EU, US near critical minerals pact to counter China’s grip",
+        "link": "https://www.mining.com/eu-us-near-critical-minerals-pact-to-counter-chinas-grip/",
         "category": "commodity",
         "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "mining"
-        ],
-        "published": "2026-04-10T11:30:44.000Z",
-        "snippet": "Latin America’s most mining-dependent countries are not always its biggest economies. Our latest infographic ranks the region first by mining’s share of total exports and then by the value of... The p"
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T11:09:00.000Z",
+        "snippet": "EU and US advance a minerals pact to reduce China reliance and stabilize supply chains amid rising geopolitical tensions."
       },
       {
         "id": "Northern Miner-barrick signals deal push amid",
@@ -247,125 +284,6 @@
         "snippet": "Canadian miner G Mining Ventures (TSX: GMIN; US-OTC: GMINF) agreed to buy G2 Goldfields (TSX: GTWO; US-OTC: GUYGF) in a $3 billion (US$2.2 billion) all-share deal that would bring two... The post G Mi"
       },
       {
-        "id": "Northern Miner-video at pdac metalquest seeks",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Video at PDAC: MetalQuest seeks Lac Otelnuk iron project partner",
-        "link": "https://www.northernminer.com/news/video-at-pdac-metalquest-seeks-lac-otelnuk-iron-ore-partner/1003889857/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "mining"
-        ],
-        "published": "2026-04-09T16:15:15.000Z",
-        "snippet": "MetalQuest Mining (TSXV: MQM; US-OTC: MQMIF) plans to update the 2015 feasibility study at its Lac Otelnuk iron ore project in northern Quebec after completing a gap analysis and stepping... The post "
-      },
-      {
-        "id": "Mining.com-neo performance begins producing heavy",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "Neo Performance begins producing heavy rare earths at Estonia plant",
-        "link": "https://www.mining.com/neo-performance-begins-producing-heavy-rare-earths-at-estonia-plant/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T15:17:36.000Z",
-        "snippet": "The small-scale production line is currently operating at its nameplate capacity, producing separated terbium and dysprosium oxides."
-      },
-      {
-        "id": "Northern Miner-neo performance begins producing heavy",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Neo Performance begins producing heavy rare earths at Estonia plant",
-        "link": "https://www.northernminer.com/news/neo-performance-begins-producing-heavy-rare-earths-at-estonia-plant/1003889890/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T15:17:36.000Z",
-        "snippet": "Neo Performance Materials (TSX: NEO) has produced its first batch of heavy rare earth elements following the successful commissioning of the solvent extraction line at its Silmet plant in Estonia.... "
-      },
-      {
-        "id": "Mining.com-nouveau monde raises 297m as",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "Nouveau Monde raises $297M as Italy’s Eni takes stake",
-        "link": "https://www.mining.com/nouveau-monde-raises-297m-as-italys-eni-takes-stake/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T15:02:07.000Z",
-        "snippet": "The deal represents the final step in assembling a broader $633 million project financing package."
-      },
-      {
-        "id": "Northern Miner-nouveau monde raises 297m as",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Nouveau Monde raises $297M as Italy’s Eni takes stake",
-        "link": "https://www.northernminer.com/news/nouveau-monde-raises-297m-as-italys-eni-takes-stake/1003889879/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T15:02:07.000Z",
-        "snippet": "Nouveau Monde Graphite (NYSE: NMG; TSX: NOU) is raising $297 million (C$413 million) in a transaction that will see Italian energy giant Eni buy a 12% stake to help the Canadian... The post Nouveau Mo"
-      },
-      {
-        "id": "Mining.com-paladin targets 2027 uranium decision",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "Paladin targets 2027 uranium decision on Patterson Lake South",
-        "link": "https://www.mining.com/paladin-targets-2027-uranium-decision-on-patterson-lake-south/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T12:36:00.000Z",
-        "snippet": "PLS has become Paladin’s clearest shot at adding a second uranium mine and diversify production from the Langer Heinrich uranium mine in Namibia."
-      },
-      {
-        "id": "Northern Miner-paladin targets 2027 uranium decision",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "Paladin targets 2027 uranium decision on Patterson Lake South",
-        "link": "https://www.northernminer.com/news/paladin-targets-2027-uranium-decision-on-patterson-lake-south/1003889872/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T12:00:00.000Z",
-        "snippet": "Australia’s Paladin Energy (ASX, TSX: PDN) expects making a final investment decision on its Patterson Lake South (PLS) uranium project in Saskatchewan by the end of 2027 as the company... The post Pa"
-      },
-      {
-        "id": "Northern Miner-eu us near critical minerals",
-        "source": "Northern Miner",
-        "source_weight": 7,
-        "title": "EU, US near critical minerals pact to counter China’s grip",
-        "link": "https://www.northernminer.com/news/eu-us-near-critical-minerals-pact-to-counter-chinas-grip/1003889876/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T11:15:13.000Z",
-        "snippet": "The European Union and the U.S. are nearing a deal to coordinate critical minerals production and supply chains, aiming to reduce reliance on China. The proposed agreement, reported by Bloomberg... Th"
-      },
-      {
-        "id": "Mining.com-eu us near critical minerals",
-        "source": "Mining.com",
-        "source_weight": 8,
-        "title": "EU, US near critical minerals pact to counter China’s grip",
-        "link": "https://www.mining.com/eu-us-near-critical-minerals-pact-to-counter-chinas-grip/",
-        "category": "commodity",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T11:09:00.000Z",
-        "snippet": "EU and US advance a minerals pact to reduce China reliance and stabilize supply chains amid rising geopolitical tensions."
-      },
-      {
         "id": "Northern Miner-huge lithium deposit due on",
         "source": "Northern Miner",
         "source_weight": 7,
@@ -392,6 +310,21 @@
         "snippet": "The transaction is expected to close in the second half of 2026."
       },
       {
+        "id": "Northern Miner-video at pdac metalquest seeks",
+        "source": "Northern Miner",
+        "source_weight": 7,
+        "title": "Video at PDAC: MetalQuest seeks Lac Otelnuk iron project partner",
+        "link": "https://www.northernminer.com/news/video-at-pdac-metalquest-seeks-lac-otelnuk-iron-ore-partner/1003889857/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T16:15:15.000Z",
+        "snippet": "MetalQuest Mining (TSXV: MQM; US-OTC: MQMIF) plans to update the 2015 feasibility study at its Lac Otelnuk iron ore project in northern Quebec after completing a gap analysis and stepping... The post "
+      },
+      {
         "id": "Mining.com-niocorp lines up traxys as",
         "source": "Mining.com",
         "source_weight": 8,
@@ -403,6 +336,21 @@
         "matched_keywords": [],
         "published": "2026-04-09T15:16:00.000Z",
         "snippet": "The deal positions NioCorp to sell out the rest of the scheduled minerals output from its Elk Creek project over an initial term of 10 years."
+      },
+      {
+        "id": "Mining.com-g mining to buy g2",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "G Mining to buy G2 Goldfields for $2.2B in Guyana play",
+        "link": "https://www.mining.com/g-mining-to-buy-g2-goldfields-for-2-2b-in-guyana-play/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T14:58:10.000Z",
+        "snippet": "The deal combines G Mining’s Oko West project with G2’s Oko-Ghanie project to form a single district-scale development."
       },
       {
         "id": "Mining.com-barrick signals deal push amid",
@@ -418,6 +366,36 @@
         "snippet": "Canadian miner cuts exposure to volatile regions as leadership reshapes portfolio after setbacks and output decline."
       },
       {
+        "id": "Mining.com-argentina approves milei glacier mining",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "Argentina approves Milei glacier mining reform amid protests",
+        "link": "https://www.mining.com/argentina-approves-milei-glacier-mining-reform-amid-protests/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-09T11:03:00.000Z",
+        "snippet": "Argentina loosens glacier protections to boost mining, raising concerns over water security and environmental risks."
+      },
+      {
+        "id": "Mining.com-the metals royalty debuts on",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "The Metals Royalty debuts on Nasdaq with deep-sea bet",
+        "link": "https://www.mining.com/the-metals-royalty-debuts-on-nasdaq-with-deep-sea-bet/",
+        "category": "commodity",
+        "priority": "low",
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "mining"
+        ],
+        "published": "2026-04-08T18:39:43.000Z",
+        "snippet": "Listing offers investors exposure to deep-sea mining as demand for critical minerals rises and risks remain."
+      },
+      {
         "id": "Mining.com-uranium energy adds second isr",
         "source": "Mining.com",
         "source_weight": 8,
@@ -429,26 +407,39 @@
         "matched_keywords": [],
         "published": "2026-04-08T17:01:12.000Z",
         "snippet": "The Vancouver-based company becomes the only US uranium producer with two active ISR operations."
+      },
+      {
+        "id": "Mining.com-first quantum taps ifc for",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "First Quantum taps IFC for Argentina copper push",
+        "link": "https://www.mining.com/first-quantum-taps-ifc-for-argentina-copper-push/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 4.800000000000001,
+        "matched_keywords": [
+          "copper"
+        ],
+        "published": "2026-04-08T16:13:00.000Z",
+        "snippet": "Agreement boosts financing prospects while advancing sustainability at Taca Taca, a major copper project in Argentina."
+      },
+      {
+        "id": "Mining.com-gold price climbs to threeweek",
+        "source": "Mining.com",
+        "source_weight": 8,
+        "title": "Gold price climbs to three-week high on US-Iran ceasefire",
+        "link": "https://www.mining.com/gold-price-climbs-to-three-week-high-on-us-iran-ceasefire/",
+        "category": "commodity",
+        "priority": "medium",
+        "priority_score": 4.800000000000001,
+        "matched_keywords": [
+          "gold"
+        ],
+        "published": "2026-04-08T15:49:50.000Z",
+        "snippet": "Spot gold rose as much as 3% to over $4,850 per ounce."
       }
     ],
     "defi": [
-      {
-        "id": "The Block-ai agents reshaping crypto development",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "AI agents reshaping crypto development, trading and risk, with Cambrian and Ethereum Foundation",
-        "link": "https://www.theblock.co/post/397076/ai-agents-reshaping-crypto-development-trading-and-risk-with-cambrian-and-ethereum-foundation?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "high",
-        "priority_score": 9,
-        "matched_keywords": [
-          "ethereum",
-          "crypto",
-          "trading"
-        ],
-        "published": "2026-04-10T19:26:08.000Z",
-        "snippet": "Builders and researchers discuss how AI agents are transforming crypto, from development and trading to entirely new financial systems."
-      },
       {
         "id": "Protos-bitcoin depot didnt spot 50",
         "source": "Protos",
@@ -463,98 +454,50 @@
           "hack"
         ],
         "published": "2026-04-09T10:49:19.000Z",
-        "snippet": "An SEC filing states that Bitcoin Depot was hacked for 50.9 BTC on March 23 but onchain sleuth ZachXBT says it took place three days earlier. The post Bitcoin Depot didn’t spot 50 BTC hack for three d"
+        "snippet": "An SEC filing states that Bitcoin Depot was hacked for 50.9 BTC on March 23 but onchain sleuth ZachXBT says it took place three days earlier. The post Bitcoin Depot didn’t spot 50 BTC hack for three d",
+        "thesis_score": 3,
+        "thesis_reason": "Bitcoin Depot hack 50 BTC, not DeFi infrastructure"
       },
       {
-        "id": "The Block-crypto bill negotiations enter critical",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Crypto bill negotiations enter critical week as lawmakers return amid pressure to resolve stablecoin rewards",
-        "link": "https://www.theblock.co/post/397092/crypto-bill-negotiations-critical-week-lawmakers-return-resolve-stablecoin-rewards?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "high",
-        "priority_score": 7.2,
-        "matched_keywords": [
-          "stablecoin",
-          "crypto"
-        ],
-        "published": "2026-04-10T20:07:56.000Z",
-        "snippet": "Negotiations over how to treat stablecoin rewards are intensifying as lawmakers return to Washington D.C. next week."
-      },
-      {
-        "id": "The Block-hsbc and anchorpoint financial gain",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "HSBC and Anchorpoint Financial gain first Hong Kong stablecoin issuer licenses",
-        "link": "https://www.theblock.co/post/396990/hsbc-and-anchorpoint-financial-gain-first-hong-kong-stablecoin-issuer-licenses?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "stablecoin"
-        ],
-        "published": "2026-04-10T10:28:09.000Z",
-        "snippet": "Anchorpoint Financial is a joint venture between Standard Chartered, Animoca Brands, and Hong Kong Telecommunications."
-      },
-      {
-        "id": "The Block-bitget debuts ipo prime market",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Bitget debuts IPO Prime market with SpaceX pre-IPO exposure token",
-        "link": "https://www.theblock.co/post/396976/bitget-debuts-ipo-prime?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "tokenized"
-        ],
-        "published": "2026-04-10T10:00:00.000Z",
-        "snippet": "Bitget has launched IPO Prime, a subscription-based market for pre-IPO tokenized allocations, with SpaceX's preSPAX as its first offering."
-      },
-      {
-        "id": "CoinDesk-hsbc and standard charteredled group",
+        "id": "CoinDesk-bhutan has sold 70 of",
         "source": "CoinDesk",
         "source_weight": 8,
-        "title": "HSBC and Standard Chartered-led group land Hong Kong’s first stablecoin licenses",
-        "link": "https://www.coindesk.com/policy/2026/03/24/hong-kong-awards-first-stablecoin-licenses-to-hsbc-standard-chartered-led-group",
+        "title": "Bhutan has sold 70% of its bitcoin in 18 months. It may have stopped BTC mining too.",
+        "link": "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
         "category": "defi",
-        "priority": "medium",
-        "priority_score": 4.800000000000001,
+        "priority": "low",
+        "priority_score": 1.6,
         "matched_keywords": [
-          "stablecoin"
+          "mining"
         ],
-        "published": "2026-04-10T09:19:49.000Z",
-        "snippet": "The approvals by the Hong Kong Monetary Authority, the territory's central bank, mark the first batch under the Stablecoins Ordinance, which took effect in August 2025."
+        "published": "2026-04-11T02:30:00.000Z",
+        "snippet": "The kingdom's holdings have dropped from 13,000 BTC to 3,954 since October 2024, with $215.7 million moved out this year alone. Its last mining inflow over $100,000 was recorded more than a year ago."
       },
       {
-        "id": "Decrypt-td cuts bitcoin giant strategys",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "TD Cuts Bitcoin Giant Strategy's Price Target, Calls Ethereum Treasury Sharplink a ‘Buy’",
-        "link": "https://decrypt.co/363902/td-cuts-bitcoin-giant-strategy-price-target-ethereum-treasury-sharplink-buy",
+        "id": "CoinDesk-federal judge blocks arizona from",
+        "source": "CoinDesk",
+        "source_weight": 8,
+        "title": "Federal judge blocks Arizona from bringing criminal charges against Kalshi",
+        "link": "https://www.coindesk.com/policy/2026/04/10/federal-judge-blocks-arizona-from-bringing-criminal-charges-against-kalshi",
         "category": "defi",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "ethereum"
-        ],
-        "published": "2026-04-09T22:09:21.000Z",
-        "snippet": "TD Cowen remains positive on $55 billion Bitcoin treasury pioneer Strategy, despite trimming its price target yet again."
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T23:31:34.000Z",
+        "snippet": "Judge Michael Liburdi ordered Arizona not to bring any enforcement actions under state law against Kalshi, at least temporarily."
       },
       {
-        "id": "Decrypt-pepe may follow dogecoin to",
+        "id": "Decrypt-this space invaders clone game",
         "source": "Decrypt",
         "source_weight": 7,
-        "title": "Pepe May Follow Dogecoin to Wall Street—But ETF Investors Aren't Buying Meme Hype",
-        "link": "https://decrypt.co/363869/pepe-follow-dogecoin-wall-street-etf-investors-arent-buying-meme-hype",
+        "title": "This 'Space Invaders' Clone Game Pays Real Bitcoin—If You're Skilled, Lucky or Rich",
+        "link": "https://decrypt.co/364036/space-invaders-clone-game-pays-real-bitcoin-skilled-lucky-rich",
         "category": "defi",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "etf"
-        ],
-        "published": "2026-04-09T21:19:39.000Z",
-        "snippet": "There's now an application for a Pepe ETF, but Dogecoin funds have generated tepid inflows, according to CoinShares' James Butterfill"
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T20:52:57.000Z",
+        "snippet": "A new free-to-play web game based on an arcade classic will give you the chance to earn real Bitcoin—but it won't be easy."
       },
       {
         "id": "Protos-crypto yields are falling below",
@@ -571,198 +514,6 @@
         ],
         "published": "2026-04-10T18:50:37.000Z",
         "snippet": "Crypto investors used to receive compensation for taking outsized risk depositing assets into DeFi, but many yields have fallen below TradFi. The post Crypto yields are falling below TradFi appeared f"
-      },
-      {
-        "id": "Protos-cz vs star xu 1b",
-        "source": "Protos",
-        "source_weight": 7,
-        "title": "CZ vs Star Xu: $1B bet sends crypto rivalry nuclear",
-        "link": "https://protos.com/cz-vs-star-xu-1b-bet-sends-crypto-rivalry-nuclear/",
-        "category": "defi",
-        "priority": "medium",
-        "priority_score": 2.8,
-        "matched_keywords": [
-          "crypto",
-          "staking"
-        ],
-        "published": "2026-04-10T14:07:04.000Z",
-        "snippet": "More than a decade of Binance-OKCoin rivalry just boiled over with CZ staking $1B on winning an argument with Star Xu. The post CZ vs Star Xu: $1B bet sends crypto rivalry nuclear appeared first on Pr"
-      },
-      {
-        "id": "The Block-us government moves bitcoin possibly",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "US government moves bitcoin possibly linked to steroid distribution conspiracy",
-        "link": "https://www.theblock.co/post/397104/us-government-bitcoin-possibly-linked-steroid-distribution-conspiracy?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T20:41:50.000Z",
-        "snippet": "The U.S. government currently holds roughly 328,000 bitcoins, worth more than $22 billion at current prices, among other crypto assets."
-      },
-      {
-        "id": "The Block-how telegram plans to turn",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "How Telegram plans to turn crypto into a global payments network",
-        "link": "https://www.theblock.co/post/397077/how-telegram-plans-to-turn-crypto-into-a-global-payments-network?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T19:14:13.000Z",
-        "snippet": "Nikola Plecas explains how TON is building crypto payments into Telegram and where the biggest opportunities for adoption lie."
-      },
-      {
-        "id": "The Block-its time to pass the",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "‘It’s time to pass the Clarity Act’: Coinbase CEO Brian Armstrong backs Bessent’s crypto bill push",
-        "link": "https://www.theblock.co/post/396992/coinbase-ceo-brian-armstrong-clarity-act?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T11:45:21.000Z",
-        "snippet": "Coinbase CEO Brian Armstrong backed passing the Clarity Act after the firm previously withheld support for earlier versions of the bill."
-      },
-      {
-        "id": "CoinDesk-star xu calls cz a",
-        "source": "CoinDesk",
-        "source_weight": 8,
-        "title": "Star Xu calls CZ a ‘liar’ as founders of world’s largest crypto exchanges argue over past allegations",
-        "link": "https://www.coindesk.com/business/2026/04/10/star-xu-calls-cz-a-liar-as-founders-of-world-s-largest-crypto-exchanges-argue-over-past-allegations",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.6,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T15:38:47.000Z",
-        "snippet": "The dispute between the crypto exchange founders, which included a $1 billion wager from CZ, revives allegations dating back 11 years to Zhao’s time at OKCoin."
-      },
-      {
-        "id": "CoinDesk-binance offers uae staff temporary",
-        "source": "CoinDesk",
-        "source_weight": 8,
-        "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region",
-        "link": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.6,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T12:48:41.000Z",
-        "snippet": "The crypto exchange said its operations in the United Arab Emirates remain unchanged and that many employees have chosen to remain"
-      },
-      {
-        "id": "CoinDesk-japan moves to classify cryptocurrencies",
-        "source": "CoinDesk",
-        "source_weight": 8,
-        "title": "Japan moves to classify cryptocurrencies as financial products",
-        "link": "https://www.coindesk.com/policy/2026/04/10/japan-moves-to-classify-cryptocurrencies-as-financial-products",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.6,
-        "matched_keywords": [
-          "trading"
-        ],
-        "published": "2026-04-10T08:58:19.000Z",
-        "snippet": "The new rules ban insider trading, require issuers to publish annual disclosures, and impose stricter penalties: up to 10 years in prison and 10 million yen in fines for operating without registration"
-      },
-      {
-        "id": "Decrypt-exodus rolls out exodus pay",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "Exodus Rolls Out 'Exodus Pay' to Turn Bitcoin Wallet Into Spending App",
-        "link": "https://decrypt.co/363947/exodus-pay-bitcoin-wallet-spending-app",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T16:33:33.000Z",
-        "snippet": "The feature lets users spend crypto directly from a self-custodial wallet."
-      },
-      {
-        "id": "Decrypt-trumplinked wlfi erases 427 million",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "Trump-Linked WLFI Erases $427 Million From Market Cap on DeFi Loan, Token Unlock Proposal",
-        "link": "https://decrypt.co/363928/trump-linked-wlfi-erases-427-million-token-unlock-proposal-defi-loan",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "defi"
-        ],
-        "published": "2026-04-10T15:39:07.000Z",
-        "snippet": "Onlookers expressed concerns that Dolomite’s protocol could be stuck with bad debt if World Liberty’s loans were unwound."
-      },
-      {
-        "id": "Decrypt-operation atlantic us and uk",
-        "source": "Decrypt",
-        "source_weight": 7,
-        "title": "'Operation Atlantic': US and UK Team With Firms to Trace, Freeze Millions in Stolen Crypto",
-        "link": "https://decrypt.co/363878/operation-atlantic-us-uk-agencies-trace-freeze-millions-stolen-crypto",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T00:01:18.000Z",
-        "snippet": "Crypto firms like Coinbase and Kraken teamed up with government agencies to trace and freeze millions in funds tied to crypto scams and fraud."
-      },
-      {
-        "id": "Protos-crypto robin hood faked prison",
-        "source": "Protos",
-        "source_weight": 7,
-        "title": "‘Crypto Robin Hood’ faked prison for clout, rugged memecoins for Palestine",
-        "link": "https://protos.com/crypto-robin-hood-faked-prison-for-clout-rugged-memecoins-for-palestine/",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-09T18:37:35.000Z",
-        "snippet": "William Banks' curious story began in 2023, when the \"comedian\" from Brooklyn was charged for stealing yard signs in Westport, Connecticut. The post ‘Crypto Robin Hood’ faked prison for clout, rugged "
-      },
-      {
-        "id": "The Block-world decreasing wld token unlock",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "World decreasing WLD token unlock rate by over 40% starting in July",
-        "link": "https://www.theblock.co/post/397069/world-decreasing-wld-token-unlock-rate-by-over-40-starting-in-july?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T19:03:32.000Z",
-        "snippet": "OpenAI CEO Sam Altman is a co-founder of Tools for Humanity, the chief developer behind the World project."
-      },
-      {
-        "id": "The Block-justin suns frozen wlfi takes",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Justin Sun’s frozen WLFI takes $11 million hit as World Liberty brushes off liquidation fears",
-        "link": "https://www.theblock.co/post/397066/justin-sun-frozen-wlfi-11-million-hit-world-liberty-brushes-off-liquidation-fears?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T18:57:01.000Z",
-        "snippet": "Tron founder Justin Sun’s World Liberty token position is down by more than $80 million, according to Bubblemaps data."
       },
       {
         "id": "Decrypt-suspect arrested after molotov cocktail",
@@ -856,17 +607,19 @@
         "snippet": "Privacy-focused coin Zcash is soaring higher than Bitcoin. Myriad predictors think ZEC is likely to keep rising after a massive gain."
       },
       {
-        "id": "The Block-one basis point benchmark says",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "‘One basis point’: Benchmark says a fraction of NYSE’s $44 trillion market could drive Securitize growth",
-        "link": "https://www.theblock.co/post/397043/one-basis-point-benchmark-fraction-nyse-44-trillion-market-drive-securitize-growth?utm_source=rss&utm_medium=rss",
+        "id": "Decrypt-exodus rolls out exodus pay",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Exodus Rolls Out 'Exodus Pay' to Turn Bitcoin Wallet Into Spending App",
+        "link": "https://decrypt.co/363947/exodus-pay-bitcoin-wallet-spending-app",
         "category": "defi",
         "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T16:06:26.000Z",
-        "snippet": "Benchmark’s base case notes that even 0.01% of NYSE’s roughly $44 trillion market could exceed Securitize’s $4 billion asset base."
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T16:33:33.000Z",
+        "snippet": "The feature lets users spend crypto directly from a self-custodial wallet."
       },
       {
         "id": "Decrypt-powell bessent warn banks about",
@@ -880,6 +633,36 @@
         "matched_keywords": [],
         "published": "2026-04-10T15:45:18.000Z",
         "snippet": "Treasury and Federal Reserve officials reportedly alerted banks to cybersecurity risks tied to Anthropic’s advanced new Mythos AI model."
+      },
+      {
+        "id": "Decrypt-trumplinked wlfi erases 427 million",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "Trump-Linked WLFI Erases $427 Million From Market Cap on DeFi Loan, Token Unlock Proposal",
+        "link": "https://decrypt.co/363928/trump-linked-wlfi-erases-427-million-token-unlock-proposal-defi-loan",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "defi"
+        ],
+        "published": "2026-04-10T15:39:07.000Z",
+        "snippet": "Onlookers expressed concerns that Dolomite’s protocol could be stuck with bad debt if World Liberty’s loans were unwound."
+      },
+      {
+        "id": "CoinDesk-star xu calls cz a",
+        "source": "CoinDesk",
+        "source_weight": 8,
+        "title": "Star Xu calls CZ a ‘liar’ as founders of world’s largest crypto exchanges argue over past allegations",
+        "link": "https://www.coindesk.com/business/2026/04/10/star-xu-calls-cz-a-liar-as-founders-of-world-s-largest-crypto-exchanges-argue-over-past-allegations",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T15:38:47.000Z",
+        "snippet": "The dispute between the crypto exchange founders, which included a $1 billion wager from CZ, revives allegations dating back 11 years to Zhao’s time at OKCoin."
       },
       {
         "id": "Protos-justin suns blacklisted wlfi has",
@@ -921,6 +704,22 @@
         "snippet": "For the digital asset ecosystem of the future to flourish, investors need options, explains Sullivan."
       },
       {
+        "id": "Protos-cz vs star xu 1b",
+        "source": "Protos",
+        "source_weight": 7,
+        "title": "CZ vs Star Xu: $1B bet sends crypto rivalry nuclear",
+        "link": "https://protos.com/cz-vs-star-xu-1b-bet-sends-crypto-rivalry-nuclear/",
+        "category": "defi",
+        "priority": "medium",
+        "priority_score": 2.8,
+        "matched_keywords": [
+          "crypto",
+          "staking"
+        ],
+        "published": "2026-04-10T14:07:04.000Z",
+        "snippet": "More than a decade of Binance-OKCoin rivalry just boiled over with CZ staking $1B on winning an argument with Star Xu. The post CZ vs Star Xu: $1B bet sends crypto rivalry nuclear appeared first on Pr"
+      },
+      {
         "id": "Decrypt-morning minute bitcoin breaks 73k",
         "source": "Decrypt",
         "source_weight": 7,
@@ -960,43 +759,19 @@
         "snippet": "World Liberty Financial responded to CoinDesk's reporting by saying it would \"simply supply more collateral\" if markets moved against it, a statement that did not reassure holders."
       },
       {
-        "id": "The Block-bhutan moves another 18 million",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Bhutan moves another $18 million in bitcoin as tracked holdings continue to shrink: Arkham",
-        "link": "https://www.theblock.co/post/397032/bhutan-moves-another-18-million-in-bitcoin-as-tracked-holdings-continue-to-shrink-arkham?utm_source=rss&utm_medium=rss",
+        "id": "CoinDesk-binance offers uae staff temporary",
+        "source": "CoinDesk",
+        "source_weight": 8,
+        "title": "Binance offers UAE staff temporary relocation as Middle East conflict disrupts region",
+        "link": "https://www.coindesk.com/business/2026/04/10/binance-offers-uae-staff-temporary-relocation-as-middle-east-conflict-disrupts-region",
         "category": "defi",
         "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T13:13:52.000Z",
-        "snippet": "Bhutan moved more bitcoin to a new wallet, continuing an outflow streak that has cut its holdings to 3,774 BTC from a peak of 13,000 BTC."
-      },
-      {
-        "id": "The Block-bittensor cofounder denies suspending subnet",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Bittensor co-founder denies suspending subnet emissions after Covenant AI exit",
-        "link": "https://www.theblock.co/post/397028/bittensor-co-founder-denies-suspending-subnet-emissions-after-covenant-ai-exit?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T13:02:46.000Z",
-        "snippet": "Bittensor co-founder Jacob Steeves denied suspending subnet emissions, and said token sales were less than 1% of his holdings."
-      },
-      {
-        "id": "The Block-bitcoin rebound faces oil shock",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Bitcoin rebound faces oil shock, inflation test despite ceasefire relief as macro jitters persist: analysts",
-        "link": "https://www.theblock.co/post/397016/bitcoin-rebound-faces-oil-shock-inflation-test-despite-ceasefire-relief-as-macro-jitters-persist-analysts?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T12:41:00.000Z",
-        "snippet": "Bitcoin trades at a macro crossroads, with derivatives positioning signaling caution despite ceasefire relief, analysts said."
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T12:48:41.000Z",
+        "snippet": "The crypto exchange said its operations in the United Arab Emirates remain unchanged and that many employees have chosen to remain"
       },
       {
         "id": "CoinDesk-bitcoin gains after core cpi",
@@ -1025,19 +800,6 @@
         "snippet": "Institutions are betting on the bitcoin price hitting $80,000 through call options, but they are also buying downside protection."
       },
       {
-        "id": "The Block-td cowen cuts strategy price",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "TD Cowen cuts Strategy price target to $350, initiates coverage of Sharplink, Strive, Nakamoto and Smarter Web with buy ratings",
-        "link": "https://www.theblock.co/post/396989/td-cowen-cuts-strategy-price-target-sharplink-strive-nakamoto-smarter-web-buy-ratings?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T11:13:07.000Z",
-        "snippet": "TD Cowen cut its Strategy price target to $350 on lower bitcoin assumptions while assigning buy ratings to four digital asset treasury firms."
-      },
-      {
         "id": "Protos-judge cant decide if roman",
         "source": "Protos",
         "source_weight": 7,
@@ -1051,19 +813,6 @@
         "snippet": "The Tornado Cash co-founder will have to wait a little while longer before finding out if he'll be acquitted ahead of a potential retrial. The post Judge can’t decide if Roman Storm should be acquitte"
       },
       {
-        "id": "The Block-starkware researcher proposes quantumsafe bitcoin",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "StarkWare researcher proposes ‘quantum-safe’ Bitcoin transactions without a soft fork",
-        "link": "https://www.theblock.co/post/396987/starkware-quantum-safe-bitcoin?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T10:41:30.000Z",
-        "snippet": "It may face limited adoption due to higher costs and a complex user experience, with the proposal described as a “last-resort measure.”"
-      },
-      {
         "id": "CoinDesk-bitcoin holds steady as inflation",
         "source": "CoinDesk",
         "source_weight": 8,
@@ -1075,6 +824,21 @@
         "matched_keywords": [],
         "published": "2026-04-10T10:34:25.000Z",
         "snippet": "Traders face a pivotal Friday as narrowing volatility on bitcoin's chart hints at a massive price move while bittensor faces a high-profile developer exit."
+      },
+      {
+        "id": "CoinDesk-hsbc and standard charteredled group",
+        "source": "CoinDesk",
+        "source_weight": 8,
+        "title": "HSBC and Standard Chartered-led group land Hong Kong’s first stablecoin licenses",
+        "link": "https://www.coindesk.com/policy/2026/03/24/hong-kong-awards-first-stablecoin-licenses-to-hsbc-standard-chartered-led-group",
+        "category": "defi",
+        "priority": "medium",
+        "priority_score": 4.800000000000001,
+        "matched_keywords": [
+          "stablecoin"
+        ],
+        "published": "2026-04-10T09:19:49.000Z",
+        "snippet": "The approvals by the Hong Kong Monetary Authority, the territory's central bank, mark the first batch under the Stablecoins Ordinance, which took effect in August 2025."
       },
       {
         "id": "CoinDesk-xrp adjacent flare proposes protocollevel",
@@ -1103,6 +867,21 @@
         "snippet": "The stock has plunged roughly 99% from its May 2025 peak as pressure builds on the bitcoin treasury firm."
       },
       {
+        "id": "CoinDesk-japan moves to classify cryptocurrencies",
+        "source": "CoinDesk",
+        "source_weight": 8,
+        "title": "Japan moves to classify cryptocurrencies as financial products",
+        "link": "https://www.coindesk.com/policy/2026/04/10/japan-moves-to-classify-cryptocurrencies-as-financial-products",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.6,
+        "matched_keywords": [
+          "trading"
+        ],
+        "published": "2026-04-10T08:58:19.000Z",
+        "snippet": "The new rules ban insider trading, require issuers to publish annual disclosures, and impose stricter penalties: up to 10 years in prison and 10 million yen in fines for operating without registration"
+      },
+      {
         "id": "CoinDesk-xrp may be less exposed",
         "source": "CoinDesk",
         "source_weight": 8,
@@ -1116,30 +895,34 @@
         "snippet": "XRP’s design leaves a smaller share of its supply exposed to future quantum attacks than Bitcoin’s, experts said, pointing to additional XRPL features that stand out."
       },
       {
-        "id": "CoinDesk-xrp edges higher to 135",
-        "source": "CoinDesk",
-        "source_weight": 8,
-        "title": "XRP edges higher to $1.35 on breakout, but bullish momentum still lacks",
-        "link": "https://www.coindesk.com/markets/2026/04/10/xrp-edges-higher-to-usd1-35-on-breakout-but-bullish-momentum-still-lacks",
+        "id": "Decrypt-operation atlantic us and uk",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "'Operation Atlantic': US and UK Team With Firms to Trace, Freeze Millions in Stolen Crypto",
+        "link": "https://decrypt.co/363878/operation-atlantic-us-uk-agencies-trace-freeze-millions-stolen-crypto",
         "category": "defi",
         "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T05:01:38.000Z",
-        "snippet": "Strong volume pushed price above $1.34, though weak fundamentals and overhead resistance continue to cap follow-through."
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T00:01:18.000Z",
+        "snippet": "Crypto firms like Coinbase and Kraken teamed up with government agencies to trace and freeze millions in funds tied to crypto scams and fraud."
       },
       {
-        "id": "CoinDesk-eth sol doge slide as",
-        "source": "CoinDesk",
-        "source_weight": 8,
-        "title": "ETH, SOL, DOGE slide as Bitcoin fails to break $73,000 for the third time since the ceasefire",
-        "link": "https://www.coindesk.com/markets/2026/04/10/eth-sol-doge-slide-as-bitcoin-fails-to-break-usd73-000-for-the-third-time-since-the-ceasefire",
+        "id": "Decrypt-td cuts bitcoin giant strategys",
+        "source": "Decrypt",
+        "source_weight": 7,
+        "title": "TD Cuts Bitcoin Giant Strategy's Price Target, Calls Ethereum Treasury Sharplink a ‘Buy’",
+        "link": "https://decrypt.co/363902/td-cuts-bitcoin-giant-strategy-price-target-ethereum-treasury-sharplink-buy",
         "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T04:55:41.000Z",
-        "snippet": "The level that has capped every rally during the six-week war remains intact, with analysts saying $75,000 needs to break before the market enters a genuine bullish phase."
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "ethereum"
+        ],
+        "published": "2026-04-09T22:09:21.000Z",
+        "snippet": "TD Cowen remains positive on $55 billion Bitcoin treasury pioneer Strategy, despite trimming its price target yet again."
       },
       {
         "id": "Decrypt-ai should advance mankind not",
@@ -1153,6 +936,21 @@
         "matched_keywords": [],
         "published": "2026-04-09T21:57:09.000Z",
         "snippet": "The Florida attorney general's probe into AI giant OpenAI cites national security and child safety risks tied to ChatGPT."
+      },
+      {
+        "id": "Protos-crypto robin hood faked prison",
+        "source": "Protos",
+        "source_weight": 7,
+        "title": "‘Crypto Robin Hood’ faked prison for clout, rugged memecoins for Palestine",
+        "link": "https://protos.com/crypto-robin-hood-faked-prison-for-clout-rugged-memecoins-for-palestine/",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-09T18:37:35.000Z",
+        "snippet": "William Banks' curious story began in 2023, when the \"comedian\" from Brooklyn was charged for stealing yard signs in Westport, Connecticut. The post ‘Crypto Robin Hood’ faked prison for clout, rugged "
       },
       {
         "id": "Protos-nft game studio boss says",
@@ -1196,6 +994,75 @@
     ],
     "regulatory": [
       {
+        "id": "SEC Press-sec clarifies the application of",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
+        "category": "regulatory",
+        "priority": "high",
+        "priority_score": 7.2,
+        "matched_keywords": [
+          "sec",
+          "crypto"
+        ],
+        "published": "2026-03-17T19:45:25.000Z",
+        "snippet": "The Securities and Exchange Commission (SEC) today issued an interpretation clarifying how the federal securities laws apply to certain crypto assets and transactions involving crypto assets. This is ",
+        "thesis_score": 9,
+        "thesis_reason": "SEC clarifies crypto asset securities law application"
+      },
+      {
+        "id": "SEC Press-sec and cftc announce historic",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC and CFTC Announce Historic Memorandum of Understanding Between Agencies\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-26-sec-cftc-announce-historic-memorandum-understanding-between-agencies",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-11T19:30:00.000Z",
+        "snippet": "The two agencies have entered into a MOU to guide coordination and collaboration to support lawful innovation, uphold market integrity, and ensure investor and customer protection.",
+        "thesis_score": 8,
+        "thesis_reason": "SEC CFTC MOU coordination crypto market integrity"
+      },
+      {
+        "id": "SEC Press-sec appoints david woodcock as",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "    SEC Appoints David Woodcock as Director of the Division of Enforcement\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-35-sec-appoints-david-woodcock-director-division-enforcement",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-04-08T16:20:00.000Z",
+        "snippet": "The Securities and Exchange Commission today announced that David Woodcock has been appointed Director of the Division of Enforcement, effective May 4, 2026. Mr. Woodcock is currently a partner in the",
+        "thesis_score": 3,
+        "thesis_reason": "SEC appoints David Woodcock Enforcement Director"
+      },
+      {
+        "id": "SEC Press-sec announces enforcement results for",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Announces Enforcement Results for Fiscal Year 2025\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-34",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-04-07T19:48:30.000Z",
+        "snippet": "The Securities and Exchange Commission today announced enforcement results for the fiscal year that ended on September 30, 2025.Central to an effective enforcement program is determining which cases t",
+        "thesis_score": 3,
+        "thesis_reason": "SEC fiscal year 2025 enforcement results announcement"
+      },
+      {
         "id": "SEC Press-sec approves amendment to nms",
         "source": "SEC Press",
         "source_weight": 9,
@@ -1209,7 +1076,128 @@
           "approved"
         ],
         "published": "2026-03-27T20:04:54.000Z",
-        "snippet": "The Securities and Exchange Commission today approved an amendment to the National Market System Plan governing the Consolidated Audit Trail (“CAT”) and provided exemptive relief from certain requirem"
+        "snippet": "The Securities and Exchange Commission today approved an amendment to the National Market System Plan governing the Consolidated Audit Trail (“CAT”) and provided exemptive relief from certain requirem",
+        "thesis_score": 3,
+        "thesis_reason": "CAT audit trail cost reduction, no DeFi impact"
+      },
+      {
+        "id": "SEC Press-sec publishes data on public",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Publishes Data on Public and Private Offerings, Municipal Advisors, Transfer Agents, and Securities-Based Swap Dealers\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-29-sec-publishes-data-public-private-offerings-municipal-advisors-transfer-agents-securities-based-swap",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-17T19:13:00.000Z",
+        "snippet": "The Securities and Exchange Commission’s Division of Economic and Risk Analysis (DERA) published a new report on security based swap dealers (SBSDs) and updated statistics and data visualizations on i",
+        "thesis_score": 3,
+        "thesis_reason": "SEC publishes swap dealer transfer agent data"
+      },
+      {
+        "id": "SEC Press-sec proposes amendments to exchange",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-28-sec-proposes-amendments-exchange-act-rule-15c2-11",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-16T19:15:00.000Z",
+        "snippet": "The Securities and Exchange Commission today proposed amendments to Exchange Act Rule 15c2-11, which sets out certain information gathering and review requirements for broker-dealers that publish quot",
+        "thesis_score": 3,
+        "thesis_reason": "SEC proposes Rule 15c2-11 broker-dealer amendments"
+      },
+      {
+        "id": "SEC Press-sec announces enforcement division director",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Announces Enforcement Division Director Judge Margaret A. Ryan Has Resigned From Agency\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-27-sec-announces-enforcement-division-director-judge-margaret-ryan-has-resigned-agency",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-16T18:09:04.000Z",
+        "snippet": "The Securities and Exchange Commission today announced that Judge Margaret A. Ryan has resigned from her role as Director of the Division of Enforcement. Principal Deputy Director Sam Waldon has been ",
+        "thesis_score": 3,
+        "thesis_reason": "SEC Enforcement Director Margaret Ryan resigned"
+      },
+      {
+        "id": "SEC Press-sec adopts final rules for",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Adopts Final Rules for the Holding Foreign Insiders Accountable Act\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-23-sec-adopts-final-rules-holding-foreign-insiders-accountable-act",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-02-27T16:00:00.000Z",
+        "snippet": "The Securities and Exchange Commission today adopted final rule and form amendments to reflect the requirements of the recently enacted Holding Foreign Insiders Accountable Act (HFIA), which will incr",
+        "thesis_score": 3,
+        "thesis_reason": "SEC adopts HFIA foreign insiders accountability rules"
+      },
+      {
+        "id": "SEC Press-sec announces agenda and panelists",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-33",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-04-02T20:44:29.000Z",
+        "snippet": "The Securities and Exchange Commission today announced the agenda and panelists for its April 16, 2026, roundtable on options market structure.The roundtable will be held at the SEC’s headquarters at ",
+        "thesis_score": 2,
+        "thesis_reason": "SEC options market structure roundtable agenda announced"
+      },
+      {
+        "id": "SEC Press-sec investor advisory committee to",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Investor Advisory Committee to Host March 12 Meeting\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-25-sec-investor-advisory-committee-host-march-12-meeting",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-05T15:30:07.000Z",
+        "snippet": "The Securities and Exchange Commission’s Investor Advisory Committee will hold a public meeting at the SEC Headquarters in Washington D.C. on March 12 at 10 a.m. ET to discuss public company disclosur",
+        "thesis_score": 2,
+        "thesis_reason": "SEC Investor Advisory Committee March meeting announcement"
+      },
+      {
+        "id": "SEC Press-sec announces roundtable on options",
+        "source": "SEC Press",
+        "source_weight": 9,
+        "title": "  SEC Announces Roundtable on Options Market Structure Reform\n",
+        "link": "https://www.sec.gov/newsroom/press-releases/2026-24-sec-announces-roundtable-options-market-structure-reform",
+        "category": "regulatory",
+        "priority": "medium",
+        "priority_score": 5.4,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-03-05T15:09:00.000Z",
+        "snippet": "The Securities and Exchange Commission announced today that it will host a roundtable on April 16, 2026, to discuss listed options market structure, including facilitating competition in a quote drive",
+        "thesis_score": 2,
+        "thesis_reason": "SEC options market structure roundtable April announcement"
       },
       {
         "id": "SEC Press-sec fsa hold spring financial",
@@ -1225,68 +1213,9 @@
           "regulatory"
         ],
         "published": "2026-02-27T14:55:00.000Z",
-        "snippet": "The U.S. Securities and Exchange Commission (SEC) and the Financial Services Agency of Japan (FSA) convened the Spring SEC-FSA Financial Regulatory Dialogue in Tokyo on Feb. 27, 2026.The SEC–FSA Dialo"
-      },
-      {
-        "id": "SEC Press-sec clarifies the application of",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
-        "category": "regulatory",
-        "priority": "high",
-        "priority_score": 7.2,
-        "matched_keywords": [
-          "sec",
-          "crypto"
-        ],
-        "published": "2026-03-17T19:45:25.000Z",
-        "snippet": "The Securities and Exchange Commission (SEC) today issued an interpretation clarifying how the federal securities laws apply to certain crypto assets and transactions involving crypto assets. This is "
-      },
-      {
-        "id": "SEC Press-sec appoints david woodcock as",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "    SEC Appoints David Woodcock as Director of the Division of Enforcement\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-35-sec-appoints-david-woodcock-director-division-enforcement",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-04-08T16:20:00.000Z",
-        "snippet": "The Securities and Exchange Commission today announced that David Woodcock has been appointed Director of the Division of Enforcement, effective May 4, 2026. Mr. Woodcock is currently a partner in the"
-      },
-      {
-        "id": "SEC Press-sec announces enforcement results for",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "    SEC Announces Enforcement Results for Fiscal Year 2025\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-34",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-04-07T19:48:30.000Z",
-        "snippet": "The Securities and Exchange Commission today announced enforcement results for the fiscal year that ended on September 30, 2025.Central to an effective enforcement program is determining which cases t"
-      },
-      {
-        "id": "SEC Press-sec announces agenda and panelists",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Announces Agenda and Panelists for Roundtable on Options Market Structure\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-33",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-04-02T20:44:29.000Z",
-        "snippet": "The Securities and Exchange Commission today announced the agenda and panelists for its April 16, 2026, roundtable on options market structure.The roundtable will be held at the SEC’s headquarters at "
+        "snippet": "The U.S. Securities and Exchange Commission (SEC) and the Financial Services Agency of Japan (FSA) convened the Spring SEC-FSA Financial Regulatory Dialogue in Tokyo on Feb. 27, 2026.The SEC–FSA Dialo",
+        "thesis_score": 2,
+        "thesis_reason": "SEC-FSA dialogue in Tokyo, no crypto relevance"
       },
       {
         "id": "SEC Press-sec highlights financial independence during",
@@ -1301,112 +1230,9 @@
           "sec"
         ],
         "published": "2026-03-31T13:52:09.000Z",
-        "snippet": "The Securities and Exchange Commission’s Office of Investor Education and Assistance (OIEA) today announced that as part of April’s National Financial Literacy Month it will highlight financial planni"
-      },
-      {
-        "id": "SEC Press-sec publishes data on public",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Publishes Data on Public and Private Offerings, Municipal Advisors, Transfer Agents, and Securities-Based Swap Dealers\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-29-sec-publishes-data-public-private-offerings-municipal-advisors-transfer-agents-securities-based-swap",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-17T19:13:00.000Z",
-        "snippet": "The Securities and Exchange Commission’s Division of Economic and Risk Analysis (DERA) published a new report on security based swap dealers (SBSDs) and updated statistics and data visualizations on i"
-      },
-      {
-        "id": "SEC Press-sec proposes amendments to exchange",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Proposes Amendments to Exchange Act Rule 15c2-11\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-28-sec-proposes-amendments-exchange-act-rule-15c2-11",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-16T19:15:00.000Z",
-        "snippet": "The Securities and Exchange Commission today proposed amendments to Exchange Act Rule 15c2-11, which sets out certain information gathering and review requirements for broker-dealers that publish quot"
-      },
-      {
-        "id": "SEC Press-sec announces enforcement division director",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Announces Enforcement Division Director Judge Margaret A. Ryan Has Resigned From Agency\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-27-sec-announces-enforcement-division-director-judge-margaret-ryan-has-resigned-agency",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-16T18:09:04.000Z",
-        "snippet": "The Securities and Exchange Commission today announced that Judge Margaret A. Ryan has resigned from her role as Director of the Division of Enforcement. Principal Deputy Director Sam Waldon has been "
-      },
-      {
-        "id": "SEC Press-sec and cftc announce historic",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC and CFTC Announce Historic Memorandum of Understanding Between Agencies\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-26-sec-cftc-announce-historic-memorandum-understanding-between-agencies",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-11T19:30:00.000Z",
-        "snippet": "The two agencies have entered into a MOU to guide coordination and collaboration to support lawful innovation, uphold market integrity, and ensure investor and customer protection."
-      },
-      {
-        "id": "SEC Press-sec investor advisory committee to",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Investor Advisory Committee to Host March 12 Meeting\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-25-sec-investor-advisory-committee-host-march-12-meeting",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-05T15:30:07.000Z",
-        "snippet": "The Securities and Exchange Commission’s Investor Advisory Committee will hold a public meeting at the SEC Headquarters in Washington D.C. on March 12 at 10 a.m. ET to discuss public company disclosur"
-      },
-      {
-        "id": "SEC Press-sec announces roundtable on options",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Announces Roundtable on Options Market Structure Reform\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-24-sec-announces-roundtable-options-market-structure-reform",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-03-05T15:09:00.000Z",
-        "snippet": "The Securities and Exchange Commission announced today that it will host a roundtable on April 16, 2026, to discuss listed options market structure, including facilitating competition in a quote drive"
-      },
-      {
-        "id": "SEC Press-sec adopts final rules for",
-        "source": "SEC Press",
-        "source_weight": 9,
-        "title": "  SEC Adopts Final Rules for the Holding Foreign Insiders Accountable Act\n",
-        "link": "https://www.sec.gov/newsroom/press-releases/2026-23-sec-adopts-final-rules-holding-foreign-insiders-accountable-act",
-        "category": "regulatory",
-        "priority": "medium",
-        "priority_score": 5.4,
-        "matched_keywords": [
-          "sec"
-        ],
-        "published": "2026-02-27T16:00:00.000Z",
-        "snippet": "The Securities and Exchange Commission today adopted final rule and form amendments to reflect the requirements of the recently enacted Holding Foreign Insiders Accountable Act (HFIA), which will incr"
+        "snippet": "The Securities and Exchange Commission’s Office of Investor Education and Assistance (OIEA) today announced that as part of April’s National Financial Literacy Month it will highlight financial planni",
+        "thesis_score": 1,
+        "thesis_reason": "SEC financial literacy month investor education announcement"
       },
       {
         "id": "SEC Press-sec announces roundtable on private",
@@ -1426,23 +1252,6 @@
     ],
     "company": [
       {
-        "id": "Trafigura News-trafigura signs deal with heath",
-        "source": "Trafigura News",
-        "source_weight": 7,
-        "title": "Trafigura signs deal with Heath Goldfields for gold doré - Mining Technology",
-        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONTRmd1FZNWRESFlYRjh4YnlPX05keFFDYzRXZnJNa1cyU19qVUdkMDhnakJ1NVpNdzkwaFR0UlA3U2ZRbFoyaVhKbGxTbnZSTGJ4dWdrSHRTeE9VUzRSUnFPWFMtTmxiVjc3Rk5aeVRKSUJ0ck9veFpaaGxTV2o3Vmh1bFNleHp5?oc=5",
-        "category": "company",
-        "priority": "high",
-        "priority_score": 9.799999999999999,
-        "matched_keywords": [
-          "gold",
-          "trafigura",
-          "mining"
-        ],
-        "published": "2026-04-09T12:20:55.000Z",
-        "snippet": "Trafigura signs deal with Heath Goldfields for gold doré Mining Technology"
-      },
-      {
         "id": "Trafigura News-trafiguras ghana gold mine deal",
         "source": "Trafigura News",
         "source_weight": 7,
@@ -1456,29 +1265,15 @@
           "trafigura"
         ],
         "published": "2026-04-10T12:32:00.000Z",
-        "snippet": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics IndexBox"
-      },
-      {
-        "id": "Trafigura News-trafigura signs gold offtake pact",
-        "source": "Trafigura News",
-        "source_weight": 7,
-        "title": "Trafigura signs gold offtake pact and provides debt financing for Ghana mine - CNBC Africa",
-        "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZ25NOGRyTEE5NjZJQnVVRHVuMGhMcENsalNlWThsVy1aWlY1WFBIUEhOWUNwRkJKQVNoSldwVVZ0RkRFeWN1NlhLc1hDUjdhbkdCX3JKdUYwVHZiUkpheVh2UTVObi1RbjRWUE01R0R5cmdVU1BDcDUtZVBITEkwamhzN0x2WEZFVVBaVzR6TlhTaExadnhYVzFHSTRuS1hMa1BLUnRsTlR3NkFrVEE?oc=5",
-        "category": "company",
-        "priority": "high",
-        "priority_score": 8.399999999999999,
-        "matched_keywords": [
-          "gold",
-          "trafigura"
-        ],
-        "published": "2026-04-09T15:32:30.000Z",
-        "snippet": "Trafigura signs gold offtake pact and provides debt financing for Ghana mine CNBC Africa"
+        "snippet": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics IndexBox",
+        "thesis_score": 7,
+        "thesis_reason": "Trafigura $65M financing offtake Ghana gold, trade finance"
       },
       {
         "id": "Trafigura News-trafigura signs offtake financing deal",
         "source": "Trafigura News",
         "source_weight": 7,
-        "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg.com",
+        "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg",
         "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
         "category": "company",
         "priority": "high",
@@ -1488,7 +1283,9 @@
           "trafigura"
         ],
         "published": "2026-04-09T09:09:25.000Z",
-        "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg.com"
+        "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg",
+        "thesis_score": 7,
+        "thesis_reason": "Trafigura Ghana gold offtake financing deal, commodity rails"
       },
       {
         "id": "Trafigura News-trafigura enters ghana gold sector",
@@ -1504,7 +1301,9 @@
           "trafigura"
         ],
         "published": "2026-04-09T06:11:00.000Z",
-        "snippet": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal Reuters"
+        "snippet": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal Reuters",
+        "thesis_score": 7,
+        "thesis_reason": "Trafigura enters Ghana gold Bogoso-Prestea, trade finance"
       },
       {
         "id": "Trafigura News-trafigura signs gold offtake agreement",
@@ -1520,55 +1319,9 @@
           "trafigura"
         ],
         "published": "2026-04-09T06:00:25.000Z",
-        "snippet": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana Trafigura"
-      },
-      {
-        "id": "Circle News-polymarket launching stablecoin circle slow",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Polymarket launching stablecoin, Circle slow to act in Drift exploit - CoinGeek",
-        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaUZPaG1ORjVER2djaEtqTWcwckRhZjZxRUdzT3c1X3dRMmhuVHRTRDhRakhHdUUzWGFhMC1qSzRzZ2FCSUEyd3hUb0xPYmFSTmhId2J4aWRBVl9rZXlBOU9uS0ExcG5FLUk0VlBWczB2WkI5YTFGZnRWeEpYcFJIR1Q2NG13amppZHVlay0zZEY5bUk?oc=5",
-        "category": "company",
-        "priority": "high",
-        "priority_score": 8.399999999999999,
-        "matched_keywords": [
-          "stablecoin",
-          "exploit"
-        ],
-        "published": "2026-04-08T07:03:37.000Z",
-        "snippet": "Polymarket launching stablecoin, Circle slow to act in Drift exploit CoinGeek"
-      },
-      {
-        "id": "Trafigura News-bolivia halts contracts with vitol",
-        "source": "Trafigura News",
-        "source_weight": 7,
-        "title": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation - Reuters",
-        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbGYzLVYzbzk0ZmtBTnhTS3FqeXdaWWF2NVpVZTNWSXdMSThfZVk2TWtZZEVQUnUyelRxZkl2WGtEZHR1OENrMHRZTXBxNmp4N3BUZ2E3TFVDR1lOWDlfbl83bVdObGlEbE44dzZyYk15SXlDZnY0eUxVV3M5RjdqNERFWm9lb1pOVXVLWWwxb0tTcjNaTTNwRGNvMzdLUHJvdzlMZEhzLUdkYl9lb2FiWE5iSzJnVUhXeGExNXpUb1VzdldMLWVfdVJ3?oc=5",
-        "category": "company",
-        "priority": "high",
-        "priority_score": 8.399999999999999,
-        "matched_keywords": [
-          "trafigura",
-          "vitol"
-        ],
-        "published": "2026-03-31T07:00:00.000Z",
-        "snippet": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation Reuters"
-      },
-      {
-        "id": "Glencore News-glencore canada near deal to",
-        "source": "Glencore News",
-        "source_weight": 7,
-        "title": "Glencore, Canada Near Deal to Save Threatened Copper Facility - Bloomberg.com",
-        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdHIwdkZ6NWdfU2tQWnNmSElfNzAtQng4UkJweTZ2aUZHdnI3aURFQkM1WDlIQW5tSTI1TklKeUxIcjVXcThrbTdiS29NRVg1eHpHRzJjUW9YemFvZmtTWFpoajNsWFFzZlJXbmdxWWdOZ1d0ZERENTlVQ1FIMFZZaFYyQWJ6TlZYVGN4TUphV0NTZG9HQ05ieThoODJIcnVrWjZ3bTVRTG9DOU1JUVB5cWJaTi05UHJablVNdHZpeFUzN1k?oc=5",
-        "category": "company",
-        "priority": "high",
-        "priority_score": 8.399999999999999,
-        "matched_keywords": [
-          "copper",
-          "glencore"
-        ],
-        "published": "2026-03-29T07:00:00.000Z",
-        "snippet": "Glencore, Canada Near Deal to Save Threatened Copper Facility Bloomberg.com"
+        "snippet": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana Trafigura",
+        "thesis_score": 7,
+        "thesis_reason": "Trafigura gold offtake debt financing Bogoso-Prestea Ghana"
       },
       {
         "id": "Circle News-circle clarifies usdc freeze policy",
@@ -1584,7 +1337,64 @@
           "crypto"
         ],
         "published": "2026-04-10T16:14:45.000Z",
-        "snippet": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts Crypto Briefing"
+        "snippet": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts Crypto Briefing",
+        "thesis_score": 6,
+        "thesis_reason": "Circle USDC freeze policy GENIUS CLARITY Acts stablecoin"
+      },
+      {
+        "id": "Trafigura News-trafigura signs deal with heath",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "Trafigura signs deal with Heath Goldfields for gold doré - Mining Technology",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONTRmd1FZNWRESFlYRjh4YnlPX05keFFDYzRXZnJNa1cyU19qVUdkMDhnakJ1NVpNdzkwaFR0UlA3U2ZRbFoyaVhKbGxTbnZSTGJ4dWdrSHRTeE9VUzRSUnFPWFMtTmxiVjc3Rk5aeVRKSUJ0ck9veFpaaGxTV2o3Vmh1bFNleHp5?oc=5",
+        "category": "company",
+        "priority": "high",
+        "priority_score": 9.799999999999999,
+        "matched_keywords": [
+          "gold",
+          "trafigura",
+          "mining"
+        ],
+        "published": "2026-04-09T12:20:55.000Z",
+        "snippet": "Trafigura signs deal with Heath Goldfields for gold doré Mining Technology",
+        "thesis_score": 6,
+        "thesis_reason": "Trafigura gold doré offtake, commodity trade finance activity"
+      },
+      {
+        "id": "Trafigura News-bolivia halts contracts with vitol",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbGYzLVYzbzk0ZmtBTnhTS3FqeXdaWWF2NVpVZTNWSXdMSThfZVk2TWtZZEVQUnUyelRxZkl2WGtEZHR1OENrMHRZTXBxNmp4N3BUZ2E3TFVDR1lOWDlfbl83bVdObGlEbE44dzZyYk15SXlDZnY0eUxVV3M5RjdqNERFWm9lb1pOVXVLWWwxb0tTcjNaTTNwRGNvMzdLUHJvdzlMZEhzLUdkYl9lb2FiWE5iSzJnVUhXeGExNXpUb1VzdldMLWVfdVJ3?oc=5",
+        "category": "company",
+        "priority": "high",
+        "priority_score": 8.399999999999999,
+        "matched_keywords": [
+          "trafigura",
+          "vitol"
+        ],
+        "published": "2026-03-31T07:00:00.000Z",
+        "snippet": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation Reuters",
+        "thesis_score": 6,
+        "thesis_reason": "Bolivia halts Trafigura contracts fuel smuggling, commodity disruption"
+      },
+      {
+        "id": "Glencore News-glencore canada near deal to",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore, Canada Near Deal to Save Threatened Copper Facility - Bloomberg",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdHIwdkZ6NWdfU2tQWnNmSElfNzAtQng4UkJweTZ2aUZHdnI3aURFQkM1WDlIQW5tSTI1TklKeUxIcjVXcThrbTdiS29NRVg1eHpHRzJjUW9YemFvZmtTWFpoajNsWFFzZlJXbmdxWWdOZ1d0ZERENTlVQ1FIMFZZaFYyQWJ6TlZYVGN4TUphV0NTZG9HQ05ieThoODJIcnVrWjZ3bTVRTG9DOU1JUVB5cWJaTi05UHJablVNdHZpeFUzN1k?oc=5",
+        "category": "company",
+        "priority": "high",
+        "priority_score": 8.399999999999999,
+        "matched_keywords": [
+          "copper",
+          "glencore"
+        ],
+        "published": "2026-03-29T07:00:00.000Z",
+        "snippet": "Glencore, Canada Near Deal to Save Threatened Copper Facility Bloomberg",
+        "thesis_score": 6,
+        "thesis_reason": "Glencore Canada copper facility deal, commodity infrastructure"
       },
       {
         "id": "Glencore News-glencore buys 45 stake in",
@@ -1600,22 +1410,96 @@
           "mining"
         ],
         "published": "2026-04-10T14:14:03.000Z",
-        "snippet": "Glencore buys 45% stake in South Carolina aluminum recycling plant Mining.com"
+        "snippet": "Glencore buys 45% stake in South Carolina aluminum recycling plant Mining.com",
+        "thesis_score": 5,
+        "thesis_reason": "Glencore buys 45% aluminum recycling plant stake"
       },
       {
-        "id": "Coinbase News-ripple xrp price will the",
+        "id": "Circle News-polymarket launching stablecoin circle slow",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Polymarket launching stablecoin, Circle slow to act in Drift exploit - CoinGeek",
+        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQaUZPaG1ORjVER2djaEtqTWcwckRhZjZxRUdzT3c1X3dRMmhuVHRTRDhRakhHdUUzWGFhMC1qSzRzZ2FCSUEyd3hUb0xPYmFSTmhId2J4aWRBVl9rZXlBOU9uS0ExcG5FLUk0VlBWczB2WkI5YTFGZnRWeEpYcFJIR1Q2NG13amppZHVlay0zZEY5bUk?oc=5",
+        "category": "company",
+        "priority": "high",
+        "priority_score": 8.399999999999999,
+        "matched_keywords": [
+          "stablecoin",
+          "exploit"
+        ],
+        "published": "2026-04-08T07:03:37.000Z",
+        "snippet": "Polymarket launching stablecoin, Circle slow to act in Drift exploit CoinGeek",
+        "thesis_score": 5,
+        "thesis_reason": "Polymarket stablecoin launch, Circle Drift exploit response"
+      },
+      {
+        "id": "Coinbase News-coinbase says ai agents are",
         "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Ripple (XRP) Price: Will the CLARITY Act Pass After Endorsements From Coinbase, the SEC, and the U.S. Treasury? - 24/7 Wall St.",
-        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPRml1bDhMSXFSeVdEQi13aEdFejNYdlNaaTdpZ1RFWHFzNm8wam1TRzRIVmNYT3JhRDg5b0thSzVtLXFqb1pmMHcyLWN1SjdKZWJKR085T0I3SjJVNGFTV3N3TXpiTmJkUDdrY2V1VmpIel9mVDJUakJZMFJKTGhBSkk4dm1sNnpKQm54SGZCc2t6Z3ljYjkyNDBHVkNlRUtsNTludnROaUItdWZmcGdwWi1KakV0WlpacWJ5UWh0dUtHMG9EUnIzZ1BldTd0RE8yWG5EMUZTSWpMV05lSW0wamh3?oc=5",
+        "title": "Coinbase Says AI Agents Are the Future Of Crypto. So Which Cryptocurrencies Should You Be Buying? - The Motley Fool",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSmNwY3lBZ3FhLXo3NXRQdTRGU2VlcklKZHNTdlVtNE53UWZnVC1ZVWdDeUZjSFhYYVlJOWZ4Z1hNRzQ0cXFtdDJ3dDdoSmJnOVBCRm1VRnJRNmdIb2Z4OFpJMHE2aHJZSXQyZDVVNE9JTC1Dc0dWWlZycDVSZTZaX1htenFoWVFsY0NqN2Fxc29tRS1FdVJ0Ng?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 1.4,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-11T11:21:18.000Z",
+        "snippet": "Coinbase Says AI Agents Are the Future Of Crypto. So Which Cryptocurrencies Should You Be Buying? The Motley Fool"
+      },
+      {
+        "id": "Glencore News-key facts glencore jv sets",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Key facts: Glencore JV sets R0.62/kWh tariff; buys 45% Charleston plant - TradingView",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRlQ1VGxfVUxJanBUeHFicG5jaF95RlNhWW9JZDdBdUkxd3hUSjJTRWF5cEJwZmlLNGR5NzRLRkZRVFFVOFlQRlhpUXVTVnJneERDRm1PUWRPUU1ZOVlaMFJEMGFjSnN6ZWtlNGhtMTI0dkNEMUN3YVE3MUVlOFQ2N0MwWk80ZGZLOVQtVUp2bmRFSDlma2h4ZjE0X3BDWHFFOGxPWjlXTHgxMXlmdVlhYmtzVU5lTUxlelRTMjZHMDZyWkI4b2JQQjhB?oc=5",
         "category": "company",
         "priority": "medium",
         "priority_score": 4.199999999999999,
         "matched_keywords": [
-          "sec"
+          "glencore"
         ],
-        "published": "2026-04-10T20:26:08.000Z",
-        "snippet": "Ripple (XRP) Price: Will the CLARITY Act Pass After Endorsements From Coinbase, the SEC, and the U.S. Treasury? 24/7 Wall St."
+        "published": "2026-04-11T01:05:00.000Z",
+        "snippet": "Key facts: Glencore JV sets R0.62/kWh tariff; buys 45% Charleston plant TradingView"
+      },
+      {
+        "id": "Coinbase News-detroit at charlotte prediction markets",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Detroit at Charlotte | Prediction Markets - Coinbase",
+        "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE53bHBiRFRiOVduQ0l6cERTMWZvdXhvWk9sRG5TVC0xRHd3SHlFVnRONjhfS1dqVlVnc3lBTnk2RXZ6S2hfRkdPR1JQVzR0SWlTaVhGeDRYV2dHSFdKUEpkcGZnUUNVVDlpYU84WXlvSHdqSGp4?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T23:27:34.000Z",
+        "snippet": "Detroit at Charlotte | Prediction Markets Coinbase"
+      },
+      {
+        "id": "Coinbase News-coinbase director paul clement to",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase director Paul Clement to step down after 2026 annual meeting - Investing.com",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTVhWbGVWTnVrRnF0bk84bllJcEJBQmdTNnhhOExGaGlFMmhlRkpSZnktT3l5QVl5dGYtd1YtOS1IOXdDMXVHYVdnTVVVbWlpV2h2UHl2Z04xa1RsRGlyQjR0TUJSaVBRVW5fZmp2WU1tejVFcmRybE5PcXQ3eHVobE1YUHlfNmx6aS0zOTVKRmtDWld1bzhSRkpYZlpIdE5mZ09LOVpGMDVYOWhidUdlVWpNY2xnRkUwQXA5RFBfb2gwRG8?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T23:21:46.000Z",
+        "snippet": "Coinbase director Paul Clement to step down after 2026 annual meeting Investing.com"
+      },
+      {
+        "id": "Coinbase News-us transfers bitcoins linked to",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "US Transfers Bitcoins Linked to Glenn Olivio to Coinbase Address - FinanceFeeds",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQczRQMktkVHdkeXVXZjNwVVA3NFhHVGZHQ0oyVk12RmN0OWhjQXVMUFowUm1LY3JZd2ZIM3VKSjJpcVBrYUxyUUMyQjRBTWZEOThqR09sOHBKanBLb0hmQ1haRUNiVEdQaDZQV1N2LWhCcWhORGxwV3ozc0NSR1NGcm11YWw0NC1OTENiR1dMRzMyZTJV?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T22:57:56.000Z",
+        "snippet": "US Transfers Bitcoins Linked to Glenn Olivio to Coinbase Address FinanceFeeds"
       },
       {
         "id": "Glencore News-glencore acquires 45 in south",
@@ -1633,34 +1517,17 @@
         "snippet": "Glencore acquires 45% in South Caroline recycling and remelting plant chemengonline.com"
       },
       {
-        "id": "Glencore News-glencore taiwan refiner book tankers",
-        "source": "Glencore News",
+        "id": "Coinbase News-treasury secretary gains support as",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire - Reuters",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDJzLUh0a3A4ZnVTQkJIM1ZqOTg2eUNIYTdCWHpzd0gtZGNkWnNkVDZmMWJwYVF0X1ROSEtFRVZvemlVX2VCNWNhR05VRU0tckJXRjBDWTMyYnhMOVZwYjJnRGhpaHhMOEZ4V0dWOVl3dTV1QmR0dDIyRmxFeTdNUFc2WWpIdkc5dmpqYVFmczNNamk5OVk0NmtmSU5zWFd0UFBpMVFsVHJKbmtTT3N2R1k1eEc?oc=5",
+        "title": "Treasury Secretary gains support as Coinbase backs key U.S. bill - thestreet.com",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRno2Z1JqQ2ZXd29GZGpkZndHTjFxNjE2ZUZ6bEdsQlMwN1hmTjZhZXVIQThCNUNDMmZzZnAxbXlnei14WWRtQnNiVmRkQTFPeF91N21GdE44eHpyNDZGOXpmc1JNVzBlLUZXOTNJQjVaOVpKN013UW5GMUNJSE4wQURZdDBlbHpRU3Bmc2tVTGdOSlJod2xLNWRyaTRKb2k0V01UQUZYQQ?oc=5",
         "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-10T18:22:45.000Z",
-        "snippet": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire Reuters"
-      },
-      {
-        "id": "Circle News-drift hack fallout why circle",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Drift Hack Fallout: Why Circle Didn’t Freeze $275M Stolen USDC - BeInCrypto",
-        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TU0VNelA3TFRzdjNQNGtPblVzN2kzQVpqVnExV1NKdG9fdTRsbVVhUU1ES1J5VWxZS25VdXVwUTREXzRybzRfV0dwN01tTUt2UnZSX2k4Nm5UeFZWeHRzQTlBY29zemRTRUJaOEY3Yw?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "hack"
-        ],
-        "published": "2026-04-10T17:39:00.000Z",
-        "snippet": "Drift Hack Fallout: Why Circle Didn’t Freeze $275M Stolen USDC BeInCrypto"
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T16:44:49.000Z",
+        "snippet": "Treasury Secretary gains support as Coinbase backs key U.S. bill thestreet.com"
       },
       {
         "id": "Glencore News-eqt glencore boost lng deals",
@@ -1693,49 +1560,32 @@
         "snippet": "Circle defends USDC freeze policy after Drift exploit, calls for faster legal frameworks AMBCrypto"
       },
       {
-        "id": "Glencore News-glencore acquires 45 ownership in",
-        "source": "Glencore News",
+        "id": "Coinbase News-coinbase ceo calls for passage",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Glencore - Acquires 45% Ownership In South Carolina Aluminium Recycling And Remelting Plant - TradingView",
-        "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOekxpSkg2MTY2NHp5SWV0aFBGVldaLXRxSjdfQW5IN2RPWDdzRHpGYXlKREFqT1drSXRXZ3R6ZFBqU3JYQ010TDhCOUF3U2VfVDJiZWxONUNlRmF5dDVUN095S0JqSE5tZlF1VEtVLU5UdXlGT0VzZG81d0FvSGs2blVoWVk1VTlyeS1LLWt1a3FieDhxdC1fZmtmZVRqb1lJQ2VJaGRVVkhZZm9xb1FkaGdpNmhvN3JxZUF1VFVyZWxsV2pfSk56SHk5bnhWanJLT083dDBqTFFiaC1fd2luN2xQQXlldEUwazdicTlzMA?oc=5",
+        "title": "Coinbase CEO Calls For Passage Of U.S. Clarity Act - Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZExJRTBqLTRJQVN3cXdWcThKVkF1S1RlcEhFT2tjWDBpNGpRNkgta1R4VlF1Mk1pRjZ6YTUyd2p5RXhPV3pkc1JydFljdkd5YnhYbEFGU2VHVlluQV9kczZnRFdGeThpTzdzUUt3RVJBUTRnTl9ZV2tKY0pCOGZOS0dJa3FkaVppU2s3dDlNcjByQmhWQ2NmRg?oc=5",
         "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-10T12:04:50.000Z",
-        "snippet": "Glencore - Acquires 45% Ownership In South Carolina Aluminium Recycling And Remelting Plant TradingView"
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T13:10:00.000Z",
+        "snippet": "Coinbase CEO Calls For Passage Of U.S. Clarity Act Yahoo Finance"
       },
       {
-        "id": "Glencore News-glencore chrome venture provisionally oks",
-        "source": "Glencore News",
+        "id": "Coinbase News-its time to pass the",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal - Bloomberg.com",
-        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWkZZZXlyQm1EU1oyNFk4RllPV3F4bFRQUE5aZTNpbE5EX0JCX1FadHhDQUhkNXloWV9hYk8xSHpSN0NnT1lFUUtvMkQyd2xiaGt0S0RzdDlBQUV0V24tV1pGVHc5NVpmOENXM3Jyd2RlY0E1djgwNmEwQU5oOHA4c3VraGlaTDh3VjEtQklydzJzU1FHZTBfQmJpWlB1bVFkVnBHMDRoU1BvZG53Xzc1Rw?oc=5",
+        "title": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push - The Block",
+        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmtWLXJ4aVVFSjlLUThpWkhVUkZlMzJPS2htaExnZzBIRmd6dkRfWVctTTlCUHBNX2UwOFB2S0c0MGlDRFJWRmlOQzNCZnhrRU1zNThGSFlQT0dmZWtQZ0I0a3lHQVF5YzZYbW5XTUlZU2t5ZzJVYlQ4QVU0WE1iWnFn?oc=5",
         "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
+        "priority": "low",
+        "priority_score": 1.4,
         "matched_keywords": [
-          "glencore"
+          "crypto"
         ],
-        "published": "2026-04-10T10:33:30.000Z",
-        "snippet": "Glencore Chrome Venture Provisionally OKs Cheaper Power Deal Bloomberg.com"
-      },
-      {
-        "id": "Glencore News-core lithium launches multilayered funding",
-        "source": "Glencore News",
-        "source_weight": 7,
-        "title": "Core Lithium launches multi-layered funding and Glencore marketing deal - TipRanks",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSi10SVlqZ1FYc21qcDFFMmNjYU9yYVd3TjJDdXphc01sVjczbzdPZE9aSDhUcXc1Uk5UZTJVcUVKRjNJMzFfYWVNRVdCYVMzOThDMXRuY3hQUHlhTElKWG5uRlBTMWZib1haZDAwOGVHZ3NIck5jcXZCTFdFdDhYRjRydk11YmYtbzhNbGphT3ZhSnN1UVdUZUNVNFJUY21hUGpxY21td0g4bGlQMUd4QUZGMmt0Y1NoRTBNYTVzeWc?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-09T23:42:45.000Z",
-        "snippet": "Core Lithium launches multi-layered funding and Glencore marketing deal TipRanks"
+        "published": "2026-04-10T11:45:21.000Z",
+        "snippet": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push The Block"
       },
       {
         "id": "Glencore News-eqt glencore agree to buy",
@@ -1768,10 +1618,36 @@
         "snippet": "EQT, Glencore commit to buy more LNG from Commonwealth, filing shows Reuters"
       },
       {
+        "id": "Circle News-circle stock drops as analysts",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle stock drops as analysts slash price target again - thestreet.com",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNR3Q5azZfYWdnUkhmVzlRWENXZUY3S3k5RWNQeFl5VTRtbHFzeXA0Q2hjQUFFcjdyeEhSejhsbTdGakVlZzZkUTlnTjB6WU1fNWx5dG1VWGljckIxYTJlbTc5RWJFbmVsdFFDLW9XMlZoN0ppQnA2TEJnU2FCc1MxMVRjZGJleFV1TTYyN1FsY1pZa2FV?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T20:39:09.000Z",
+        "snippet": "Circle stock drops as analysts slash price target again thestreet.com"
+      },
+      {
+        "id": "Coinbase News-coin stock quote price and",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "COIN Stock Quote Price and Forecast - CNN",
+        "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBjZzc1UzB3dFNkX3N4T0tBSFRYWmFFR2dCMEV1V1hTekhsdHpVaVBJS3pKUUFmMlZaMWxKamZYd180LU91UkZsWlREOEwyQmlM?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T20:15:40.000Z",
+        "snippet": "COIN Stock Quote Price and Forecast CNN"
+      },
+      {
         "id": "Glencore News-glencore and mercuria agree to",
         "source": "Glencore News",
         "source_weight": 7,
-        "title": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth - Bloomberg.com",
+        "title": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth - Bloomberg",
         "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRnpZTGpsVGRLemRkQ3JTRWlZZlhuc0RneUNFT1FNaVBLbW9wM1E5SVAtRkNRUFQzeUVMcjF5RmxNUE51bWl1ZC1EVWJOSmFMeTZBQzhNenp4LTdScndvRmo5a28xdnl0ZndpZk14SmtZRUZuMkx2Rmh4NjZhbXJRWU5YNnF3aEw3WW1GRHFpSnRCeG10aFNQTm15TGpGVE1mcjVRRVY1d2R1c1kweUhaVEJ3?oc=5",
         "category": "company",
         "priority": "medium",
@@ -1780,7 +1656,22 @@
           "glencore"
         ],
         "published": "2026-04-09T18:36:52.000Z",
-        "snippet": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth Bloomberg.com"
+        "snippet": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth Bloomberg"
+      },
+      {
+        "id": "Glencore News-glencore taiwan refiner book tankers",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDJzLUh0a3A4ZnVTQkJIM1ZqOTg2eUNIYTdCWHpzd0gtZGNkWnNkVDZmMWJwYVF0X1ROSEtFRVZvemlVX2VCNWNhR05VRU0tckJXRjBDWTMyYnhMOVZwYjJnRGhpaHhMOEZ4V0dWOVl3dTV1QmR0dDIyRmxFeTdNUFc2WWpIdkc5dmpqYVFmczNNamk5OVk0NmtmSU5zWFd0UFBpMVFsVHJKbmtTT3N2R1k1eEc?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-09T17:35:03.000Z",
+        "snippet": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire Reuters"
       },
       {
         "id": "Glencore News-lynas glencore rio tinto top",
@@ -1813,6 +1704,19 @@
         "snippet": "New Coinbase Store-of-Value Index combines dynamic Bitcoin and gold exposure to maximize alt-asset upside KITCO"
       },
       {
+        "id": "Circle News-circle internet cut to sell",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle Internet cut to Sell at Compass Point on margin concerns despite USDC resilience (CRCL:NYSE) - Seeking Alpha",
+        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdHVHSGgzOVZMQkVmX1hKalFKZEN6bXRjQTlLVjJtRW1heE0wb3VLQ3Q2X3RuR01sY1JPVDZ5WkZ2TndreXQ2aGFjc1ptdVlEc3FxTU9FeGlIRmVDenlWcDNuVWQ3UmlwdUFfd2VkMFluTGNlN3lHZTZXNXVVSmZrcEZrNHc5M0I1ekZYaGFtT0FabkJtVktsSVUyRlJ4cy1CR0lvZzVBUWxZQzhwN3RSLVI1TVJTSzk3Z2Mwc3FleHVtZzA?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T13:27:21.000Z",
+        "snippet": "Circle Internet cut to Sell at Compass Point on margin concerns despite USDC resilience (CRCL:NYSE) Seeking Alpha"
+      },
+      {
         "id": "Trafigura News-tufton assets wins big pay",
         "source": "Trafigura News",
         "source_weight": 7,
@@ -1826,6 +1730,32 @@
         ],
         "published": "2026-04-09T06:56:45.000Z",
         "snippet": "Tufton Assets wins big pay rise for tankers chartered to Trafigura Tradewinds News"
+      },
+      {
+        "id": "Trafigura News-worlds largest private metal trader",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "World’s largest private metal trader seals $2.8 billion pact with Ghana’s top miner - Business Insider Africa",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPSUVuM0pZQXpGVUZoR1hFbG5wMjJKWGt4VEd6b203aUJDY09OUTQ1SXY2c3ZfNlpaLU1iQ0ZPakdzWjg3SGFMUks0c2xXNl9TekNxZmZ2cjZWX2ZOTXZfVm1sSWhqZVRmUGZuWWI2RmQySzdpODVNWUtPTVo1eTFtdDJfbVpsLW0za05qa25GRzBMUnVwbE5vbXFsN0dBM2RhUk9rXzJZcWdSSl82NzYzNzMzZ1BjRVlVLXA3MnJDTFo5MVBzZHcxaUpoRVBoQy1XY0V4UFJmRlZLZw?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T05:37:38.000Z",
+        "snippet": "World’s largest private metal trader seals $2.8 billion pact with Ghana’s top miner Business Insider Africa"
+      },
+      {
+        "id": "Coinbase News-2 reasons to like coin",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "2 Reasons to Like COIN (and 1 Not So Much) - TradingView",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYllVT1VWZWxnRDdlNVY4Qmt4QURBX2RTamh6SzdLWERyRVM4T09XVWZDd3AwUEJFUTRNcnJjQmV3RWJxenpvUDBqYkxaam1FMnFRaWNZdnUyMTkyWEpCTnRVby1MRmxrcmFQV2ZoT3NiNlhYcGFua3c0WmV2dXQwQ3ZBRnd1NG1kWVpQMExLQmIzbTBNOTh6WUNvdDBWNm9KcDEw?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T04:02:00.000Z",
+        "snippet": "2 Reasons to Like COIN (and 1 Not So Much) TradingView"
       },
       {
         "id": "Circle News-circle launches managed payments for",
@@ -1843,6 +1773,45 @@
         "snippet": "Circle Launches Managed Payments for Stablecoin Settlement PYMNTS.com"
       },
       {
+        "id": "Coinbase News-coinbase wins occ nod for",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Wins OCC Nod For $376 Billion Institutional Custody Empire - Forbes",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWk1zVzlObV9taVFnckpTcGxJZ24yVnFqT1JhaVFhSVdtUjMzRlA4SF9CTTBXdktvMTlkVDU0UVl5MHltVFJRaFktWU1ybEhIZWlOalBCY0lLZjBialFoTU9Wc3J5Q2tHRGx1SzJlSzN1Yzg0YVdCRjM0NVZOR2hGRnhIZVZhUXg2eGt3TE11SUlEanB3clJXZHNSRUlZc2d6eEw2YjVVYXJsWlQ0ZEJ6SHFSUUpsQi1XNlE?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T20:17:12.000Z",
+        "snippet": "Coinbase Wins OCC Nod For $376 Billion Institutional Custody Empire Forbes"
+      },
+      {
+        "id": "Circle News-circle rolls out usdc payments",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins - The Block",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcTg3blVUMzFROTl4ZXFIa2lnWUNGUHJaSHg2THNKeTBCa3VqUmxWc0l1UjNLY3F1NW1rbUI5YmFEcmgwY2FNbGpIMlR2aWUtWldOZjRKQUtLWHQ5N2lDWXdfMzJfTlBzeHg3amhjU00ySXFZSldpSS1KRnNIM29ZeC1TRGk5TWVoYVFmVHRibUY1NVUtUzVwUTBrZjNjcTBtVG1DaS1XMlFucTRFYkItOGIzb1N3ZHUyMkF0QVRKMlA?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T15:52:29.000Z",
+        "snippet": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins The Block"
+      },
+      {
+        "id": "Coinbase News-barclays downgrades coinbase global stock",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ - TipRanks",
+        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQR0kzc3JOam9zZ2htUm5FbnFsa3VuV1pJLTZzcGN1dHdfUTZGQl9Fa3I2VkhoblpKYU5IVmJZc0NFbW9mUXY1MDR2S1paT0g0Qzg1aTFpT2d4SGVwTHJsb2g3bWtZVUlzQnhFRThnYXhDMk1peUZ1dmw3LTVxcERaRFNNbGkwdEVSaVBrZFFSYTE2OXJGZGVWTEw4bEN5UTUzMnVubHhzSXlXOERMLUtSSnpRdWRCVW5fLUxYOWpybU1WcGdzYzhNV1AwN29zc3F2aGc?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T15:50:54.000Z",
+        "snippet": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ TipRanks"
+      },
+      {
         "id": "Circle News-circle launches cpn managed payments",
         "source": "Circle News",
         "source_weight": 7,
@@ -1858,19 +1827,17 @@
         "snippet": "Circle Launches CPN Managed Payments, a Full-Stack Platform for Seamless Stablecoin Settlement Business Wire"
       },
       {
-        "id": "Trafigura News-trafigura signs 11b deal for",
-        "source": "Trafigura News",
+        "id": "Coinbase News-coinbase downgraded deere upgraded wall",
+        "source": "Coinbase News",
         "source_weight": 7,
-        "title": "Trafigura signs $1.1b deal for recycled battery metals - Resource Recycling",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSEtoYUFBUERSb2dDc0xEOUtIa2FNWlJFbWpCaGVCOGRRNWg0RVRVUnk1b1gyQ3g4YUozS3B5NXdIRVBrMnR1eUZDaDcteXcwUWFnNk1RZUQwU1R0cGFtVmpPOEd3bFp5NEZyRkFiUnVDRUFhdWtZZ1k1NFE2T1FVYWNiRXBNWUNTaDd4SDZ4eEpCY2d1THRtODNhQ1lDUXNQM002bjRCaw?oc=5",
+        "title": "Coinbase downgraded, Deere upgraded: Wall Street's top analyst calls - Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMFhwVzFuRW44SFRYYVUyU2hLNGRCUzF4dXc0TkQzNS1uQ3NlUmFSRi1uZnpTWkhLTWFJTUxzT25NTTRoVWdDcFBVektrSFlSemE2dkFXOHdZa2NWODQxTGRxY0h2ZWVONWVaVV9UX25iZ1RVUDRKeUVZaXRSSy1QTGpNeDhnbm5jUXFuSUdLWmRZNDlya0IzdWFCQTl2NG4wdnRqOVQ2UQ?oc=5",
         "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "trafigura"
-        ],
-        "published": "2026-04-08T10:00:00.000Z",
-        "snippet": "Trafigura signs $1.1b deal for recycled battery metals Resource Recycling"
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T13:42:56.000Z",
+        "snippet": "Coinbase downgraded, Deere upgraded: Wall Street's top analyst calls Yahoo Finance"
       },
       {
         "id": "Circle News-circle partners can now access",
@@ -1886,6 +1853,32 @@
         ],
         "published": "2026-04-08T02:19:36.000Z",
         "snippet": "Circle Partners Can Now Access Stablecoin Payouts Through Circle Mint Singapore Circle Internet Financial"
+      },
+      {
+        "id": "Coinbase News-coinbase plans australia expansion after",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Plans Australia Expansion After Securing License - Bloomberg",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSGpfcEJZM0F0MEo5MXVtYmF2YjdENXlUaGxHcUxjZzhWa1dYTDVfZ2VyTW1YR3F5d1ZCb0ZpYkJPd3BXSU9iV3FlZldTUkMzNDdtblY0VVhSRmM4Nzl0YjNOOFV2b2cxZmxNcDhUREpSeUlIVUt1b3lGRF94WnMtQkpTanFoaEJ6OFpJUHItY2R0WHBENmZpVTZJNTcyQWE0WEl3Vm5kYklrTnY1cXptNTh4Zw?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-07T22:39:27.000Z",
+        "snippet": "Coinbase Plans Australia Expansion After Securing License Bloomberg"
+      },
+      {
+        "id": "Coinbase News-coinbase jumps on schwab news",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? - Investor's Business Daily",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5jb1ZXQ1dqdVFiSnRaSGJFeFU0SU1sVHQ3aHpIZFdGWXhGNHkySzFhQ1lsUUVSV1N2NnhhS1Z2ODl6WjIteVpVQkt5TGNuS0RmZmxHRzBtZHl1WjU2b2ZoNEs0N0tmVjVHNm1lUDVrTVZ3OXZEcWNV?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-07T21:04:00.000Z",
+        "snippet": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? Investor's Business Daily"
       },
       {
         "id": "Circle News-circle mints 1 billion of",
@@ -1906,7 +1899,7 @@
         "id": "Trafigura News-trafigura fraudster gupta linked to",
         "source": "Trafigura News",
         "source_weight": 7,
-        "title": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse - Bloomberg.com",
+        "title": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse - Bloomberg",
         "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRXEtMFVQNUZwNnN6Nkp3YTlyZm83YnJWRV9KZzI4R0dnMWt1ZkVjSnhYTmQ3ZXBxUlNQMC1wdlE2WUliUnJNTVlpT3dRWFJXaTc3ZnpOMHBINGd3QXBDWVhLQm1LaUllaWdlcEh1VmIzblRJU2pKWV82NjVXYkItVDJTekk2SXRSY1lJRWJGOFhWZkZRZHBwUmV6TVpzRC13bWR1Y2k1c1RodVYxQk9R?oc=5",
         "category": "company",
         "priority": "medium",
@@ -1915,7 +1908,20 @@
           "trafigura"
         ],
         "published": "2026-04-07T10:31:38.000Z",
-        "snippet": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse Bloomberg.com"
+        "snippet": "Trafigura Fraudster Gupta Linked to Mauritian Bank Collapse Bloomberg"
+      },
+      {
+        "id": "Circle News-circles usdc freeze powers face",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle’s USDC freeze powers face fresh scrutiny after blocked wallets and delayed theft response - CryptoSlate",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONW1ZTWVEWmt5aEN3REVWMWJCR1R2cW4wQUV2V1ZSbGYzc2NNMTRadVVFNDFzaVB5R3V5bkdKNlM5NEFJUUlfMmRKMHNrU0VoME5adEZ4dTdKYThNTEgyNlJ6dVEzaWhpcURSaFF2OVdzZGs2ZGp6Y0hyVEpYMldaX0EzX3A0Zw?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-05T12:50:56.000Z",
+        "snippet": "Circle’s USDC freeze powers face fresh scrutiny after blocked wallets and delayed theft response CryptoSlate"
       },
       {
         "id": "Circle News-crcl news circle faces backlash",
@@ -1946,6 +1952,36 @@
         ],
         "published": "2026-04-02T07:00:00.000Z",
         "snippet": "Trafigura rejects Bolivia's claim that its fuel contracts were suspended Reuters"
+      },
+      {
+        "id": "Circle News-usdc stablecoin issuer circle unveils",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "USDC Stablecoin Issuer Circle Unveils New Token to Give Bitcoin More Utility - Decrypt",
+        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQOFNCQUtjV1ZtZG9PMmtIVHR3Q3RjTUxueXJkeWFkOU91aU5kWTA3RDBDY01INHliQTEyUzJkczk3aDhNYUpKbkdCSlh0QUxhS2g3VzhNekVHaWFtMGpHX0ZVSlZZaksxSnNXa1VMeFdNUkJENndidmJUTmJOdjN1QmRB0gGKAUFVX3lxTFBPTld1OUxwRjYwc3ZaNHN4Z1YyRW1fZ3JHZk1JVWhkVUJqeEpsc3lhYUJOVVJSZDNrbFRvOEx1SUtBdDBHbG9tbG4xZlFKX3QyTWlUa00zbXV2TTVZRDkybmNSOEczeVRDQUJhOVdXeWROclo2dW1Gb3NFV1hVWC1hTm5GcFJ3QVR6QQ?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "stablecoin"
+        ],
+        "published": "2026-04-02T07:00:00.000Z",
+        "snippet": "USDC Stablecoin Issuer Circle Unveils New Token to Give Bitcoin More Utility Decrypt"
+      },
+      {
+        "id": "Trafigura News-what trafiguras billiondollar recycling bet",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "What Trafigura’s billion-dollar recycling bet means for critical minerals - Latitude Media",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPN3R0M2luVm8tN21wZ0k3bkM1UW1ZdUFhUkx0R0IzaFBtUWc2elJZQllQcGhBdEgtWVRySW5iNlBObmxLMUlIMWVUWUR0VDhUcXZwTmsxWkg2T2U4SzZabUduSFF0Wl9uYTkzRk5lRW1EQmg2b2cyRFZNY01tT21WTkp1QXg2ck1nUWZKeHBCRVNGNTZLUEREcGFXbmZtZWp1anY4MnBXaS10SVl4?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "trafigura"
+        ],
+        "published": "2026-03-31T21:12:19.000Z",
+        "snippet": "What Trafigura’s billion-dollar recycling bet means for critical minerals Latitude Media"
       },
       {
         "id": "Trafigura News-trafigura closes jpy1047 billion term",
@@ -2004,7 +2040,7 @@
         "matched_keywords": [
           "glencore"
         ],
-        "published": "2026-03-12T07:00:00.000Z",
+        "published": "2026-03-13T07:00:00.000Z",
         "snippet": "Exclusive: Glencore raises hope of reviving Rio Tinto deal as coal prices turn Reuters"
       },
       {
@@ -2023,259 +2059,32 @@
         "snippet": "Trafigura signs battery-grade lithium carbonate offtake agreement with Smackover Lithium Trafigura"
       },
       {
-        "id": "Coinbase News-coinbase backs trump administrations crypto",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Backs Trump Administration's Crypto CLARITY Push - Yahoo Finance",
-        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZHIwU2dQRDBHb2E0QndZeVd4Q1IzbmZxQ3p4Um11eFVhX0EwSjRkVHp3a1lsRnZLUF96OHBnYkg2LTVOOGVJVS02X0l1MkUxMUZSXzltbm9hOGNvZWpUT1ZXdk92UlFNY3RCeUR5SUNSeXFpLXpLeWYtUjc4YmF5c2hwM19jQklXT2xteXB5b3ZYTlNJZEFPcWlQRHhkbzI4RG1ubHllZkpHckN0?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T18:56:15.000Z",
-        "snippet": "Coinbase Backs Trump Administration's Crypto CLARITY Push Yahoo Finance"
-      },
-      {
-        "id": "Coinbase News-its time to pass the",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push - The Block",
-        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmtWLXJ4aVVFSjlLUThpWkhVUkZlMzJPS2htaExnZzBIRmd6dkRfWVctTTlCUHBNX2UwOFB2S0c0MGlDRFJWRmlOQzNCZnhrRU1zNThGSFlQT0dmZWtQZ0I0a3lHQVF5YzZYbW5XTUlZU2t5ZzJVYlQ4QVU0WE1iWnFn?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T11:45:21.000Z",
-        "snippet": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push The Block"
-      },
-      {
-        "id": "Coinbase News-coinbase australia receives afsl licence",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Australia Receives AFSL Licence: A New Chapter for Crypto in Australia - Coinbase",
-        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE90bWpMRlhfbkJQYWhMVzZZSzY5MTBFLTVfWDdlQ29TZFBzaVdIZV9sLUNQWFYyN1h2SVZVdy1FTFczRlBqZ3o3eUdyeGkwZnpoSHJ2WG11OTBSWjA4MFZDMWtPWGZ0X0dkazlMMzJabmFNcEVwdzVoRndn?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-07T21:00:00.000Z",
-        "snippet": "Coinbase Australia Receives AFSL Licence: A New Chapter for Crypto in Australia Coinbase"
-      },
-      {
-        "id": "Circle News-circle mints 1 billion usdc",
+        "id": "Circle News-circle reports 4th quarter fiscal",
         "source": "Circle News",
         "source_weight": 7,
-        "title": "Circle mints $1 billion USDC in 24 hours as institutional flows surge - crypto.news",
-        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSHJkX0RWbE95QXE3WHRzN2x6eGwyTjlZVXExS2J5UG1PMjA0WGI5YWVub0NtQWZTSWtfcXFzWmVkMW1xT0FUZ1RfNnpYb1A3enBZRF9ZWXV1M1dCRzQ0UXlSRkpMZThtMWpYbnZDdkpYVDI3ODRaNTJFcmdZTkVpOVh0OFQ3SXBOX2d6NFRmOUJpaTg?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-07T17:34:45.000Z",
-        "snippet": "Circle mints $1 billion USDC in 24 hours as institutional flows surge crypto.news"
-      },
-      {
-        "id": "Coinbase News-coinbase ceo backs us treasury",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase CEO backs US Treasury Secretary‘s push to pass CLARITY Act - TradingView",
-        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNMWktdW55NUpmTGM3SWI3N3pEMDJ4T3hPMmVOUjkyQWdtaFlubHF0b1BYamYxTU1sNkxCa2ZJY2txRHp5bjFfaW83X1Z6Uzh5cmZ2MXB1UHJVT0U3VmNobnBnYTdOVXZHVEs2dE83RGR3aGJvQm9pbGhqQUV6Q05xbllRVjcwMDRBQU81Rm9TU3lSU1Zva054R2pQY3Z3TkdnTHNmTzl2NDdYSGJhOGNFR09FMzlsNC1CSUg3YVV3NWpIVmFFTUltYlJkSQ?oc=5",
+        "title": "Circle Reports 4th Quarter & Fiscal Year 2025 Financial Results - Circle Internet Financial",
+        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObmFOR2pIYlloMTQ3UjIySGlKX0ZUTzI2S0pBZ3JVUmUtdHhjaG12dFkxZFRid2k2Y1pkdnJNN3poMmZMbkY2VjIxaEdlT1Z0QmpoeTN4bDhMUUtIeUhCT1NvT3hwaTBOV1l5WkxVblhxdEl6eHBsNTlfTE9ocGwtS3ZUQWVCTGRVcHVMSWtabzJBN3NkWDNES2ctbGdpZXZxcXVBSjdIdUdzUQ?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
-        "published": "2026-04-10T18:11:16.000Z",
-        "snippet": "Coinbase CEO backs US Treasury Secretary‘s push to pass CLARITY Act TradingView"
+        "published": "2026-02-25T08:00:00.000Z",
+        "snippet": "Circle Reports 4th Quarter & Fiscal Year 2025 Financial Results Circle Internet Financial"
       },
       {
-        "id": "Coinbase News-treasury secretary gains support as",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Treasury Secretary gains support as Coinbase backs key U.S. bill - thestreet.com",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRno2Z1JqQ2ZXd29GZGpkZndHTjFxNjE2ZUZ6bEdsQlMwN1hmTjZhZXVIQThCNUNDMmZzZnAxbXlnei14WWRtQnNiVmRkQTFPeF91N21GdE44eHpyNDZGOXpmc1JNVzBlLUZXOTNJQjVaOVpKN013UW5GMUNJSE4wQURZdDBlbHpRU3Bmc2tVTGdOSlJod2xLNWRyaTRKb2k0V01UQUZYQQ?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T16:44:49.000Z",
-        "snippet": "Treasury Secretary gains support as Coinbase backs key U.S. bill thestreet.com"
-      },
-      {
-        "id": "Coinbase News-coinbase upgrades x402 protocol to",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Upgrades x402 Protocol to Enable Usage-Based AI Payments - FinanceFeeds",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONEt4SldOZE5LVzRkM0NrLXdsaVJ6VHdTVVlhamFyZklUTFV6OWJCVDFvS0pla3lRdXNhZS1YR1kyTm9XTVVOcEFrcHFQZm9QU2FDVzRXdmNMUEpJSTY3YmhnSm50ZmJ4bmV6RmJEcUVSeHhQNUotcTNvWVhOZGpuaQ?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T16:02:04.000Z",
-        "snippet": "Coinbase Upgrades x402 Protocol to Enable Usage-Based AI Payments FinanceFeeds"
-      },
-      {
-        "id": "Coinbase News-coinbase gains afsl strengthens australia",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Gains AFSL, Strengthens Australia Expansion Push - Zacks Investment Research",
-        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPY2RDUm03eW14cDRqaC1TZV9yc3VMMXkySzlkbXdGekFMNG80eUFETHVjT3lZSWFITy14Rl8zdmwzdjFjTklBLWllVlVwLXlHZ3p5ck9mSGVyRzJhdlNqNUNBVU01UVVOWFVKS0o0XzdSbV9zaExmMkdjanBQRzdKb0NnSlJ6WTRZQm9QclR5dTBZeTh6UENsMWJ6ZDZyQQ?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T15:29:48.000Z",
-        "snippet": "Coinbase Gains AFSL, Strengthens Australia Expansion Push Zacks Investment Research"
-      },
-      {
-        "id": "Coinbase News-coinbase ceo calls for passage",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase CEO Calls For Passage Of U.S. Clarity Act - Yahoo Finance",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZExJRTBqLTRJQVN3cXdWcThKVkF1S1RlcEhFT2tjWDBpNGpRNkgta1R4VlF1Mk1pRjZ6YTUyd2p5RXhPV3pkc1JydFljdkd5YnhYbEFGU2VHVlluQV9kczZnRFdGeThpTzdzUUt3RVJBUTRnTl9ZV2tKY0pCOGZOS0dJa3FkaVppU2s3dDlNcjByQmhWQ2NmRg?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T13:10:00.000Z",
-        "snippet": "Coinbase CEO Calls For Passage Of U.S. Clarity Act Yahoo Finance"
-      },
-      {
-        "id": "Circle News-circle stock drops as analysts",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Circle stock drops as analysts slash price target again - thestreet.com",
-        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNR3Q5azZfYWdnUkhmVzlRWENXZUY3S3k5RWNQeFl5VTRtbHFzeXA0Q2hjQUFFcjdyeEhSejhsbTdGakVlZzZkUTlnTjB6WU1fNWx5dG1VWGljckIxYTJlbTc5RWJFbmVsdFFDLW9XMlZoN0ppQnA2TEJnU2FCc1MxMVRjZGJleFV1TTYyN1FsY1pZa2FV?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T20:39:09.000Z",
-        "snippet": "Circle stock drops as analysts slash price target again thestreet.com"
-      },
-      {
-        "id": "Circle News-circle internet cut to sell",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Circle Internet cut to Sell at Compass Point on margin concerns despite USDC resilience (CRCL:NYSE) - Seeking Alpha",
-        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdHVHSGgzOVZMQkVmX1hKalFKZEN6bXRjQTlLVjJtRW1heE0wb3VLQ3Q2X3RuR01sY1JPVDZ5WkZ2TndreXQ2aGFjc1ptdVlEc3FxTU9FeGlIRmVDenlWcDNuVWQ3UmlwdUFfd2VkMFluTGNlN3lHZTZXNXVVSmZrcEZrNHc5M0I1ekZYaGFtT0FabkJtVktsSVUyRlJ4cy1CR0lvZzVBUWxZQzhwN3RSLVI1TVJTSzk3Z2Mwc3FleHVtZzA?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T13:27:21.000Z",
-        "snippet": "Circle Internet cut to Sell at Compass Point on margin concerns despite USDC resilience (CRCL:NYSE) Seeking Alpha"
-      },
-      {
-        "id": "Trafigura News-worlds largest private metal trader",
+        "id": "Trafigura News-miombo restoration alliance launches four",
         "source": "Trafigura News",
         "source_weight": 7,
-        "title": "World’s largest private metal trader seals $2.8 billion pact with Ghana’s top miner - Business Insider Africa",
-        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPSUVuM0pZQXpGVUZoR1hFbG5wMjJKWGt4VEd6b203aUJDY09OUTQ1SXY2c3ZfNlpaLU1iQ0ZPakdzWjg3SGFMUks0c2xXNl9TekNxZmZ2cjZWX2ZOTXZfVm1sSWhqZVRmUGZuWWI2RmQySzdpODVNWUtPTVo1eTFtdDJfbVpsLW0za05qa25GRzBMUnVwbE5vbXFsN0dBM2RhUk9rXzJZcWdSSl82NzYzNzMzZ1BjRVlVLXA3MnJDTFo5MVBzZHcxaUpoRVBoQy1XY0V4UFJmRlZLZw?oc=5",
+        "title": "Miombo Restoration Alliance launches four large-scale carbon removal projects - Trafigura",
+        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRkg1NHNVcDdRM244V1puYUVVb0pZLUZKVnpLenhubEJ2eWZYYXZOT0VoUHVxMm91UFJhbjl0VzRHUnZSdDhldUZfcy03ZzlaZkRtY1FNZEFfcUVWdUp3X2VTb2p5UFdGQ25zU3Z2SURUYmowc2otWnRHOG05WUVHOXdMX0IyTlhycjBGRnBIOFplNkV4NjZpdUhVTWFXdmtnZmVwOTRMWU9xQXhRRXJFOWRCb0tZWUFnVFQ0WGF4VWtqMjlqdnVNTXNXODFmMkQ1RTdTOW9jVXNUZw?oc=5",
         "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T05:37:38.000Z",
-        "snippet": "World’s largest private metal trader seals $2.8 billion pact with Ghana’s top miner Business Insider Africa"
-      },
-      {
-        "id": "Coinbase News-coinbase wins occ nod for",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Wins OCC Nod For $376 Billion Institutional Custody Empire - Forbes",
-        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWk1zVzlObV9taVFnckpTcGxJZ24yVnFqT1JhaVFhSVdtUjMzRlA4SF9CTTBXdktvMTlkVDU0UVl5MHltVFJRaFktWU1ybEhIZWlOalBCY0lLZjBialFoTU9Wc3J5Q2tHRGx1SzJlSzN1Yzg0YVdCRjM0NVZOR2hGRnhIZVZhUXg2eGt3TE11SUlEanB3clJXZHNSRUlZc2d6eEw2YjVVYXJsWlQ0ZEJ6SHFSUUpsQi1XNlE?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T20:17:12.000Z",
-        "snippet": "Coinbase Wins OCC Nod For $376 Billion Institutional Custody Empire Forbes"
-      },
-      {
-        "id": "Circle News-circle rolls out usdc payments",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins - The Block",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcTg3blVUMzFROTl4ZXFIa2lnWUNGUHJaSHg2THNKeTBCa3VqUmxWc0l1UjNLY3F1NW1rbUI5YmFEcmgwY2FNbGpIMlR2aWUtWldOZjRKQUtLWHQ5N2lDWXdfMzJfTlBzeHg3amhjU00ySXFZSldpSS1KRnNIM29ZeC1TRGk5TWVoYVFmVHRibUY1NVUtUzVwUTBrZjNjcTBtVG1DaS1XMlFucTRFYkItOGIzb1N3ZHUyMkF0QVRKMlA?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T15:52:29.000Z",
-        "snippet": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins The Block"
-      },
-      {
-        "id": "Coinbase News-barclays downgrades coinbase global stock",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ - TipRanks",
-        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQR0kzc3JOam9zZ2htUm5FbnFsa3VuV1pJLTZzcGN1dHdfUTZGQl9Fa3I2VkhoblpKYU5IVmJZc0NFbW9mUXY1MDR2S1paT0g0Qzg1aTFpT2d4SGVwTHJsb2g3bWtZVUlzQnhFRThnYXhDMk1peUZ1dmw3LTVxcERaRFNNbGkwdEVSaVBrZFFSYTE2OXJGZGVWTEw4bEN5UTUzMnVubHhzSXlXOERMLUtSSnpRdWRCVW5fLUxYOWpybU1WcGdzYzhNV1AwN29zc3F2aGc?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T15:50:54.000Z",
-        "snippet": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ TipRanks"
-      },
-      {
-        "id": "Coinbase News-coinbase downgraded deere upgraded wall",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase downgraded, Deere upgraded: Wall Street's top analyst calls - Yahoo Finance",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMFhwVzFuRW44SFRYYVUyU2hLNGRCUzF4dXc0TkQzNS1uQ3NlUmFSRi1uZnpTWkhLTWFJTUxzT25NTTRoVWdDcFBVektrSFlSemE2dkFXOHdZa2NWODQxTGRxY0h2ZWVONWVaVV9UX25iZ1RVUDRKeUVZaXRSSy1QTGpNeDhnbm5jUXFuSUdLWmRZNDlya0IzdWFCQTl2NG4wdnRqOVQ2UQ?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T13:42:56.000Z",
-        "snippet": "Coinbase downgraded, Deere upgraded: Wall Street's top analyst calls Yahoo Finance"
-      },
-      {
-        "id": "Coinbase News-coinbase wins australian derivatives license",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Wins Australian Derivatives License As COIN Targets Trend Reversal - Benzinga",
-        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYlVLeGhfNG1sTTZVd3hxbTVscWNQajlDaFQtS1hCR2pkY1M3clEwQmJNUHVqR1ZmSWRpR09GSTJoeks1NHVkZnJubS1wVF9ZUlptdTRlbDFNcFFxbGZ2VEV5Nkc3MkpaaERmbURRYjlDQTF2MDRJLWR1cGdCdFNwQWZ6Vl9sc3ZxYjNpS0lUWXdSRWoyTVlOVTE4TXRyaGxBdzRpYnZYR3FEVzl1MkMyQmZqYjNSRHRpOXdfbmp5b0VWNVItdndVRWRTU1ZqS0JUWjl3?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-08T12:21:26.000Z",
-        "snippet": "Coinbase Wins Australian Derivatives License As COIN Targets Trend Reversal Benzinga"
-      },
-      {
-        "id": "Coinbase News-coinbase plans australia expansion after",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Plans Australia Expansion After Securing License - Bloomberg.com",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSGpfcEJZM0F0MEo5MXVtYmF2YjdENXlUaGxHcUxjZzhWa1dYTDVfZ2VyTW1YR3F5d1ZCb0ZpYkJPd3BXSU9iV3FlZldTUkMzNDdtblY0VVhSRmM4Nzl0YjNOOFV2b2cxZmxNcDhUREpSeUlIVUt1b3lGRF94WnMtQkpTanFoaEJ6OFpJUHItY2R0WHBENmZpVTZJNTcyQWE0WEl3Vm5kYklrTnY1cXptNTh4Zw?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-07T22:39:27.000Z",
-        "snippet": "Coinbase Plans Australia Expansion After Securing License Bloomberg.com"
-      },
-      {
-        "id": "Circle News-circle usdc liquidity returns to",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Circle USDC liquidity returns to market as post-quantum era threats escalate - Cryptopolitan",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORmZrVy1jN0xJVlJJX1FfMTBjMkdtcDBmZEpiUUIxQWk0WnU5R3B2Z2c3WG5zRkJaZFhpMk1RcE5aV0dzSGhrVUcyMFhVNHNrZ1VUZzJFeHNzX2pNeHNjQTA2RDlQa3ZVZEZXMmhZM3NUNEFzZXpMQXZpZTFTTUpMVg?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-06T16:04:00.000Z",
-        "snippet": "Circle USDC liquidity returns to market as post-quantum era threats escalate Cryptopolitan"
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "trafigura"
+        ],
+        "published": "2026-01-29T08:00:00.000Z",
+        "snippet": "Miombo Restoration Alliance launches four large-scale carbon removal projects Trafigura"
       }
     ],
     "exploits": [
@@ -2293,7 +2102,22 @@
           "defi"
         ],
         "published": "2025-04-14T00:00:00.000Z",
-        "snippet": "DeFi’s chaotic interfaces aren’t a bug — they’re a feature. Confusion keeps users compliant, disoriented, and easier to exploit in a space where clarity threatens profit and understanding kills the hy"
+        "snippet": "DeFi’s chaotic interfaces aren’t a bug — they’re a feature. Confusion keeps users compliant, disoriented, and easier to exploit in a space where clarity threatens profit and understanding kills the hy",
+        "thesis_score": 4,
+        "thesis_reason": "DeFi UX problem opinion piece, no actionable data"
+      },
+      {
+        "id": "Rekt News-transparent when you want it",
+        "source": "Rekt News",
+        "source_weight": 10,
+        "title": "Transparent When You Want It, Private When You Need It",
+        "link": "https://www.rekt.news/transparent-when-you-want-it",
+        "category": "exploits",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-09T00:00:00.000Z",
+        "snippet": "Public blockchains solved settlement. They didn't solve privacy. Institutions need to protect positions, counterparty relationships, and transaction amounts without abandoning transparency entirely - "
       },
       {
         "id": "Rekt News-why privacy matters more than",
@@ -2326,6 +2150,19 @@
         "snippet": "Social recovery sounds like a friendly safety net — until it isn't. In reality, it hands your security over to the very humans crypto was built to eliminate from the trust model. A UX-driven mirage of"
       },
       {
+        "id": "Rekt News-the inflation game why emissionsheavy",
+        "source": "Rekt News",
+        "source_weight": 10,
+        "title": "The Inflation Game - Why Emissions-Heavy Protocols Die Before They Grow",
+        "link": "https://www.rekt.news/inflation-game",
+        "category": "exploits",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2025-05-06T00:00:00.000Z",
+        "snippet": "It’s the usual story, wild yields, mooning TVL, nonstop hype — until the emissions stop and it all unravels. What seemed like growth was just a protocol burning its own token for attention, leaving in"
+      },
+      {
         "id": "Rekt News-the fake treasury playbook how",
         "source": "Rekt News",
         "source_weight": 10,
@@ -2339,32 +2176,6 @@
         ],
         "published": "2025-04-28T00:00:00.000Z",
         "snippet": "Behind flashy treasury dashboards lie recycled tokens, illiquid assets, and deceptive accounting — in Web3, war chests are often just smoke and mirrors crafted to inspire trust, not to fund survival."
-      },
-      {
-        "id": "Rekt News-transparent when you want it",
-        "source": "Rekt News",
-        "source_weight": 10,
-        "title": "Transparent When You Want It, Private When You Need It",
-        "link": "https://www.rekt.news/transparent-when-you-want-it",
-        "category": "exploits",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T00:00:00.000Z",
-        "snippet": "Public blockchains solved settlement. They didn't solve privacy. Institutions need to protect positions, counterparty relationships, and transaction amounts without abandoning transparency entirely - "
-      },
-      {
-        "id": "Rekt News-the inflation game why emissionsheavy",
-        "source": "Rekt News",
-        "source_weight": 10,
-        "title": "The Inflation Game - Why Emissions-Heavy Protocols Die Before They Grow",
-        "link": "https://www.rekt.news/inflation-game",
-        "category": "exploits",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2025-05-06T00:00:00.000Z",
-        "snippet": "It’s the usual story, wild yields, mooning TVL, nonstop hype — until the emissions stop and it all unravels. What seemed like growth was just a protocol burning its own token for attention, leaving in"
       },
       {
         "id": "Rekt News-mev for hire the rise",
@@ -2383,36 +2194,129 @@
   },
   "top_stories": [
     {
-      "id": "SEC Press-sec approves amendment to nms",
+      "id": "SEC Press-sec clarifies the application of",
       "source": "SEC Press",
       "source_weight": 9,
-      "title": "  SEC Approves Amendment to NMS Plan to Further Reduce the Costs of the Consolidated Audit Trail\n",
-      "link": "https://www.sec.gov/newsroom/press-releases/2026-31-sec-approves-amendment-nms-plan-further-reduce-costs-consolidated-audit-trail",
+      "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
+      "link": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
       "category": "regulatory",
       "priority": "high",
-      "priority_score": 10.8,
+      "priority_score": 7.2,
       "matched_keywords": [
         "sec",
-        "approved"
+        "crypto"
       ],
-      "published": "2026-03-27T20:04:54.000Z",
-      "snippet": "The Securities and Exchange Commission today approved an amendment to the National Market System Plan governing the Consolidated Audit Trail (“CAT”) and provided exemptive relief from certain requirem"
+      "published": "2026-03-17T19:45:25.000Z",
+      "snippet": "The Securities and Exchange Commission (SEC) today issued an interpretation clarifying how the federal securities laws apply to certain crypto assets and transactions involving crypto assets. This is ",
+      "thesis_score": 9,
+      "thesis_reason": "SEC clarifies crypto asset securities law application"
     },
     {
-      "id": "SEC Press-sec fsa hold spring financial",
+      "id": "SEC Press-sec and cftc announce historic",
       "source": "SEC Press",
       "source_weight": 9,
-      "title": "  SEC, FSA Hold Spring Financial Regulatory Dialogue\n",
-      "link": "https://www.sec.gov/newsroom/press-releases/2026-22-sec-fsa-hold-spring-financial-regulatory-dialogue",
+      "title": "  SEC and CFTC Announce Historic Memorandum of Understanding Between Agencies\n",
+      "link": "https://www.sec.gov/newsroom/press-releases/2026-26-sec-cftc-announce-historic-memorandum-understanding-between-agencies",
       "category": "regulatory",
-      "priority": "high",
-      "priority_score": 10.8,
+      "priority": "medium",
+      "priority_score": 5.4,
       "matched_keywords": [
-        "sec",
-        "regulatory"
+        "sec"
       ],
-      "published": "2026-02-27T14:55:00.000Z",
-      "snippet": "The U.S. Securities and Exchange Commission (SEC) and the Financial Services Agency of Japan (FSA) convened the Spring SEC-FSA Financial Regulatory Dialogue in Tokyo on Feb. 27, 2026.The SEC–FSA Dialo"
+      "published": "2026-03-11T19:30:00.000Z",
+      "snippet": "The two agencies have entered into a MOU to guide coordination and collaboration to support lawful innovation, uphold market integrity, and ensure investor and customer protection.",
+      "thesis_score": 8,
+      "thesis_reason": "SEC CFTC MOU coordination crypto market integrity"
+    },
+    {
+      "id": "Trafigura News-trafiguras ghana gold mine deal",
+      "source": "Trafigura News",
+      "source_weight": 7,
+      "title": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics - IndexBox",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQVE5VUh5Ykh3UzlhRWlOOEJsNXFYcTczZnFxb0dfWEtmZ1ZhLU5ub3Zzb2o4dTdrbjd2d1Frd09fUGtqTmVWT1hSYzJKLXJreGM0c2lvZ014dEVwb0NrR193LURpdXpTRm5oS2R6S2xRLVJwVm5yUjRYZEFoS0VOSEZseEc2MTFjLUQ5Y1Y3SQ?oc=5",
+      "category": "company",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "gold",
+        "trafigura"
+      ],
+      "published": "2026-04-10T12:32:00.000Z",
+      "snippet": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics IndexBox",
+      "thesis_score": 7,
+      "thesis_reason": "Trafigura $65M financing offtake Ghana gold, trade finance"
+    },
+    {
+      "id": "Trafigura News-trafigura signs offtake financing deal",
+      "source": "Trafigura News",
+      "source_weight": 7,
+      "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
+      "category": "company",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "gold",
+        "trafigura"
+      ],
+      "published": "2026-04-09T09:09:25.000Z",
+      "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg",
+      "thesis_score": 7,
+      "thesis_reason": "Trafigura Ghana gold offtake financing deal, commodity rails"
+    },
+    {
+      "id": "Trafigura News-trafigura enters ghana gold sector",
+      "source": "Trafigura News",
+      "source_weight": 7,
+      "title": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZjJjUVdoYlFRY25CeVpJb25xODhUZnB1eXVZd1BOMmhCRU85c2lSZnFjVWpsMDVhRUVXc0ZDbWgtNEJnMTM0ajdETERoNEkyTmZLTmdVMU1UUm1oX0M0NENzZl95d3M2dXM1eDZ5dm9YRHBvZ3FMWlpMdFd6UXJwZEx4OHpyZHBLZmhRRzF5dEd2aWJKam5SeDVCM3pvYkJQd3UzT1c2SlVkdFNENTNtRVlES1R2b0Fa?oc=5",
+      "category": "company",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "gold",
+        "trafigura"
+      ],
+      "published": "2026-04-09T06:11:00.000Z",
+      "snippet": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal Reuters",
+      "thesis_score": 7,
+      "thesis_reason": "Trafigura enters Ghana gold Bogoso-Prestea, trade finance"
+    },
+    {
+      "id": "Trafigura News-trafigura signs gold offtake agreement",
+      "source": "Trafigura News",
+      "source_weight": 7,
+      "title": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana - Trafigura",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQelFfX3JVYmEzM0RKR3ZLcVFDcEhJOU00YlJJcHNTOENXejhieDQySXdFZVVkNEJhREVHcTlyUGxDRUtLQjdNYkR4VkZ6TjlfUUF4LXlFYTZEMDZDcFd0UlV2MXBvUkVpa0xVMnFrUThKN3gyLV9QYWROLUk4OW10TFZHdzIzMUh1WS1hZnkwZkVSRmt2VXhHcHVwSVdQVk5QVi1jQ2k2UFZkRWp2aXhhOV83c05TSGVNNFprZDZNTERaNHhvMVVhUUlGeGlwN3pJVWotRkxkNm1xVDBuMHYwUFlXaDFONTUxWThyYm14aFBlanBqS2xj?oc=5",
+      "category": "company",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "gold",
+        "trafigura"
+      ],
+      "published": "2026-04-09T06:00:25.000Z",
+      "snippet": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana Trafigura",
+      "thesis_score": 7,
+      "thesis_reason": "Trafigura gold offtake debt financing Bogoso-Prestea Ghana"
+    },
+    {
+      "id": "Circle News-circle clarifies usdc freeze policy",
+      "source": "Circle News",
+      "source_weight": 7,
+      "title": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts - Crypto Briefing",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1teTlyRjlNblZIUkNuUWkxbFV0aTQtTUgxVUVVQThtSVAyTjhxbnRlQTltMTdCaVloNV9iY2Q2cUV6TnF3dEIzU3lkRDcxVzVtWHlrbUNYMENkQmNuUFRNVzBHeUwzTUVaUjNpQkdNT2UxRUhVSEl5bXNlMkxmdw?oc=5",
+      "category": "company",
+      "priority": "medium",
+      "priority_score": 5.6,
+      "matched_keywords": [
+        "exploit",
+        "crypto"
+      ],
+      "published": "2026-04-10T16:14:45.000Z",
+      "snippet": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts Crypto Briefing",
+      "thesis_score": 6,
+      "thesis_reason": "Circle USDC freeze policy GENIUS CLARITY Acts stablecoin"
     },
     {
       "id": "Trafigura News-trafigura signs deal with heath",
@@ -2429,140 +2333,68 @@
         "mining"
       ],
       "published": "2026-04-09T12:20:55.000Z",
-      "snippet": "Trafigura signs deal with Heath Goldfields for gold doré Mining Technology"
+      "snippet": "Trafigura signs deal with Heath Goldfields for gold doré Mining Technology",
+      "thesis_score": 6,
+      "thesis_reason": "Trafigura gold doré offtake, commodity trade finance activity"
     },
     {
-      "id": "The Block-ai agents reshaping crypto development",
-      "source": "The Block",
-      "source_weight": 9,
-      "title": "AI agents reshaping crypto development, trading and risk, with Cambrian and Ethereum Foundation",
-      "link": "https://www.theblock.co/post/397076/ai-agents-reshaping-crypto-development-trading-and-risk-with-cambrian-and-ethereum-foundation?utm_source=rss&utm_medium=rss",
-      "category": "defi",
-      "priority": "high",
-      "priority_score": 9,
-      "matched_keywords": [
-        "ethereum",
-        "crypto",
-        "trading"
-      ],
-      "published": "2026-04-10T19:26:08.000Z",
-      "snippet": "Builders and researchers discuss how AI agents are transforming crypto, from development and trading to entirely new financial systems."
-    },
-    {
-      "id": "Northern Miner-gold price wins in iran",
-      "source": "Northern Miner",
+      "id": "Trafigura News-bolivia halts contracts with vitol",
+      "source": "Trafigura News",
       "source_weight": 7,
-      "title": "Gold price wins in Iran war, but not copper",
-      "link": "https://www.northernminer.com/news/gold-price-wins-in-iran-war-but-not-copper/1003889896/",
-      "category": "commodity",
+      "title": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbGYzLVYzbzk0ZmtBTnhTS3FqeXdaWWF2NVpVZTNWSXdMSThfZVk2TWtZZEVQUnUyelRxZkl2WGtEZHR1OENrMHRZTXBxNmp4N3BUZ2E3TFVDR1lOWDlfbl83bVdObGlEbE44dzZyYk15SXlDZnY0eUxVV3M5RjdqNERFWm9lb1pOVXVLWWwxb0tTcjNaTTNwRGNvMzdLUHJvdzlMZEhzLUdkYl9lb2FiWE5iSzJnVUhXeGExNXpUb1VzdldMLWVfdVJ3?oc=5",
+      "category": "company",
+      "priority": "high",
+      "priority_score": 8.399999999999999,
+      "matched_keywords": [
+        "trafigura",
+        "vitol"
+      ],
+      "published": "2026-03-31T07:00:00.000Z",
+      "snippet": "Bolivia halts contracts with Vitol, Trafigura amid fuel smuggling investigation Reuters",
+      "thesis_score": 6,
+      "thesis_reason": "Bolivia halts Trafigura contracts fuel smuggling, commodity disruption"
+    },
+    {
+      "id": "Glencore News-glencore canada near deal to",
+      "source": "Glencore News",
+      "source_weight": 7,
+      "title": "Glencore, Canada Near Deal to Save Threatened Copper Facility - Bloomberg",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdHIwdkZ6NWdfU2tQWnNmSElfNzAtQng4UkJweTZ2aUZHdnI3aURFQkM1WDlIQW5tSTI1TklKeUxIcjVXcThrbTdiS29NRVg1eHpHRzJjUW9YemFvZmtTWFpoajNsWFFzZlJXbmdxWWdOZ1d0ZERENTlVQ1FIMFZZaFYyQWJ6TlZYVGN4TUphV0NTZG9HQ05ieThoODJIcnVrWjZ3bTVRTG9DOU1JUVB5cWJaTi05UHJablVNdHZpeFUzN1k?oc=5",
+      "category": "company",
       "priority": "high",
       "priority_score": 8.399999999999999,
       "matched_keywords": [
         "copper",
-        "gold"
+        "glencore"
       ],
-      "published": "2026-04-10T18:45:51.000Z",
-      "snippet": "The U.S.-Iran war may shave as much as 0.7% off the global economy and push gold prices higher as investors focus on a swelling U.S. deficit and a weaker dollar,... The post Gold price wins in Iran wa"
-    },
-    {
-      "id": "Trafigura News-trafiguras ghana gold mine deal",
-      "source": "Trafigura News",
-      "source_weight": 7,
-      "title": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics - IndexBox",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQVE5VUh5Ykh3UzlhRWlOOEJsNXFYcTczZnFxb0dfWEtmZ1ZhLU5ub3Zzb2o4dTdrbjd2d1Frd09fUGtqTmVWT1hSYzJKLXJreGM0c2lvZ014dEVwb0NrR193LURpdXpTRm5oS2R6S2xRLVJwVm5yUjRYZEFoS0VOSEZseEc2MTFjLUQ5Y1Y3SQ?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "gold",
-        "trafigura"
-      ],
-      "published": "2026-04-10T12:32:00.000Z",
-      "snippet": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics IndexBox"
-    },
-    {
-      "id": "Trafigura News-trafigura signs gold offtake pact",
-      "source": "Trafigura News",
-      "source_weight": 7,
-      "title": "Trafigura signs gold offtake pact and provides debt financing for Ghana mine - CNBC Africa",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZ25NOGRyTEE5NjZJQnVVRHVuMGhMcENsalNlWThsVy1aWlY1WFBIUEhOWUNwRkJKQVNoSldwVVZ0RkRFeWN1NlhLc1hDUjdhbkdCX3JKdUYwVHZiUkpheVh2UTVObi1RbjRWUE01R0R5cmdVU1BDcDUtZVBITEkwamhzN0x2WEZFVVBaVzR6TlhTaExadnhYVzFHSTRuS1hMa1BLUnRsTlR3NkFrVEE?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "gold",
-        "trafigura"
-      ],
-      "published": "2026-04-09T15:32:30.000Z",
-      "snippet": "Trafigura signs gold offtake pact and provides debt financing for Ghana mine CNBC Africa"
-    },
-    {
-      "id": "Protos-bitcoin depot didnt spot 50",
-      "source": "Protos",
-      "source_weight": 7,
-      "title": "Bitcoin Depot didn’t spot 50 BTC hack for three days, report",
-      "link": "https://protos.com/bitcoin-depot-didnt-spot-50-btc-hack-for-three-days-report/",
-      "category": "defi",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "sec",
-        "hack"
-      ],
-      "published": "2026-04-09T10:49:19.000Z",
-      "snippet": "An SEC filing states that Bitcoin Depot was hacked for 50.9 BTC on March 23 but onchain sleuth ZachXBT says it took place three days earlier. The post Bitcoin Depot didn’t spot 50 BTC hack for three d"
-    },
-    {
-      "id": "Trafigura News-trafigura signs offtake financing deal",
-      "source": "Trafigura News",
-      "source_weight": 7,
-      "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg.com",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "gold",
-        "trafigura"
-      ],
-      "published": "2026-04-09T09:09:25.000Z",
-      "snippet": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner Bloomberg.com"
-    },
-    {
-      "id": "Trafigura News-trafigura enters ghana gold sector",
-      "source": "Trafigura News",
-      "source_weight": 7,
-      "title": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZjJjUVdoYlFRY25CeVpJb25xODhUZnB1eXVZd1BOMmhCRU85c2lSZnFjVWpsMDVhRUVXc0ZDbWgtNEJnMTM0ajdETERoNEkyTmZLTmdVMU1UUm1oX0M0NENzZl95d3M2dXM1eDZ5dm9YRHBvZ3FMWlpMdFd6UXJwZEx4OHpyZHBLZmhRRzF5dEd2aWJKam5SeDVCM3pvYkJQd3UzT1c2SlVkdFNENTNtRVlES1R2b0Fa?oc=5",
-      "category": "company",
-      "priority": "high",
-      "priority_score": 8.399999999999999,
-      "matched_keywords": [
-        "gold",
-        "trafigura"
-      ],
-      "published": "2026-04-09T06:11:00.000Z",
-      "snippet": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal Reuters"
+      "published": "2026-03-29T07:00:00.000Z",
+      "snippet": "Glencore, Canada Near Deal to Save Threatened Copper Facility Bloomberg",
+      "thesis_score": 6,
+      "thesis_reason": "Glencore Canada copper facility deal, commodity infrastructure"
     }
   ],
   "summary": {
-    "total_items": 165,
+    "total_items": 148,
     "by_category": {
       "commodity": 30,
-      "defi": 55,
+      "defi": 40,
       "regulatory": 15,
-      "company": 58,
+      "company": 56,
       "exploits": 7
     },
     "by_priority": {
-      "high": 17,
-      "medium": 60,
-      "low": 88
+      "high": 14,
+      "medium": 55,
+      "low": 79
     },
-    "sources_succeeded": 12,
-    "sources_failed": 1,
+    "sources_succeeded": 11,
+    "sources_failed": 2,
     "failed_sources": [
+      "The Block: Status code 403",
       "CFTC News: unable to get local issuer certificate"
-    ]
+    ],
+    "sonnet_rescored": 30,
+    "sonnet_confidence": "GUESS"
   }
 }

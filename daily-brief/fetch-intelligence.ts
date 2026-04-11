@@ -10,6 +10,7 @@ import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import Parser from "rss-parser";
+import { sonnet, hasAnthropicKey } from "./lib/llm.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, "../portal/data/intelligence.json");
@@ -82,6 +83,12 @@ interface IntelligenceItem {
   matched_keywords: string[];
   published: string;
   snippet?: string;
+  /**
+   * Sonnet's thesis-relevance score (1-10), only set when ANTHROPIC_API_KEY
+   * is present. 1-3 = noise, 4-6 = tangential, 7-8 = relevant, 9-10 = critical.
+   */
+  thesis_score?: number;
+  thesis_reason?: string;
 }
 
 export interface IntelligenceData {
@@ -95,7 +102,112 @@ export interface IntelligenceData {
     sources_succeeded: number;
     sources_failed: number;
     failed_sources: string[];
+    sonnet_rescored: number;
+    sonnet_confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB" | "skipped";
   };
+}
+
+// ─────────────────────────────────────────────────
+// Sonnet thesis-relevance rescorer
+// ─────────────────────────────────────────────────
+// Takes the top 30 candidates from keyword scoring and asks Sonnet to rank
+// each 1-10 on Moria thesis relevance. This replaces shallow keyword matching
+// with real semantic understanding while keeping the grounded-generation guarantee.
+async function rescoreWithSonnet(
+  candidates: IntelligenceItem[],
+): Promise<{ rescored: IntelligenceItem[]; confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB" | "skipped" }> {
+  if (!hasAnthropicKey()) {
+    return { rescored: candidates, confidence: "skipped" };
+  }
+
+  // Cap to top 30 candidates by keyword score so the Sonnet call stays cheap
+  const toScore = candidates.slice(0, 30);
+
+  // Build a compact JSON payload with just the fields Sonnet needs
+  const payload = {
+    thesis: "Moria Capital invests in undervalued DeFi infrastructure (2-9x earnings vs TradFi 15-25x) and tracks commodity trade finance migration to on-chain rails. Positions include AAVE, HYPE (Hyperliquid), PENDLE, MORPHO, UNI, wstETH, COW, ETH. Watchlist includes Bittensor, Virtuals, Zcash, Jupiter, Ondo, Centrifuge, and AI/privacy/RWA protocols.",
+    items: toScore.map((item, idx) => ({
+      idx,
+      source: item.source,
+      title: item.title,
+      snippet: item.snippet?.slice(0, 200) || "",
+    })),
+  };
+
+  const response = await sonnet(
+    "Aragorn — thesis-relevance rescoring",
+    payload,
+    `Score each item 1-10 on how much it MOVES Moria's thesis. Scoring key:
+  10 = directly affects a held position or watchlist protocol (e.g. Aave fee switch, Hyperliquid governance, Pendle treasury move)
+  8-9 = regulatory decision that changes the playing field for DeFi/commodities/RWA (SEC rulings, MiCA updates, commodity tokenization)
+  6-7 = sector-level story that moves our theme (DeFi TVL trends, stablecoin developments, RWA inflows)
+  4-5 = tangential — crypto industry news that doesn't directly touch our thesis
+  1-3 = noise — generic market moves, price commentary, macro reactions unrelated to our positions
+
+Respond with ONE JSON object only (no prose, no markdown fence):
+{
+  "scores": [
+    {"idx": 0, "score": 8, "reason": "brief 5-word why"},
+    {"idx": 1, "score": 3, "reason": "..."}
+  ]
+}
+
+Rules:
+- Use ONLY the items I gave you. Do not invent items.
+- Every idx from 0 to ${toScore.length - 1} must appear in your output.
+- "reason" must be 5-15 words, factual, no speculation.`,
+    3000,
+  );
+
+  if (response.confidence === "STUB") {
+    return { rescored: candidates, confidence: "STUB" };
+  }
+
+  // Try to parse the JSON response
+  try {
+    // Extract JSON from response (Sonnet sometimes wraps in code fences)
+    const jsonMatch = response.text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("no JSON found in response");
+    const parsed = JSON.parse(jsonMatch[0]);
+    if (!Array.isArray(parsed.scores)) throw new Error("scores is not an array");
+
+    // Apply scores back to candidates
+    const scoresByIdx: Record<number, { score: number; reason: string }> = {};
+    for (const s of parsed.scores) {
+      if (typeof s.idx === "number" && typeof s.score === "number") {
+        scoresByIdx[s.idx] = {
+          score: Math.max(1, Math.min(10, s.score)),
+          reason: typeof s.reason === "string" ? s.reason : "",
+        };
+      }
+    }
+
+    // Apply scores to candidates
+    const rescored = candidates.map((item, idx) => {
+      if (idx < toScore.length && scoresByIdx[idx]) {
+        return {
+          ...item,
+          thesis_score: scoresByIdx[idx].score,
+          thesis_reason: scoresByIdx[idx].reason,
+        };
+      }
+      return item;
+    });
+
+    // Sort by thesis_score (desc) for items that got scored, keep others at end
+    rescored.sort((a, b) => {
+      const aScore = a.thesis_score ?? -1;
+      const bScore = b.thesis_score ?? -1;
+      if (bScore !== aScore) return bScore - aScore;
+      // Fall back to published date
+      return new Date(b.published).getTime() - new Date(a.published).getTime();
+    });
+
+    return { rescored, confidence: response.confidence };
+  } catch (err) {
+    console.warn(`[aragorn] Sonnet rescoring parse failed:`, err instanceof Error ? err.message : err);
+    return { rescored: candidates, confidence: "GUESS" };
+  }
 }
 
 function stripHtml(text: string): string {
@@ -226,13 +338,18 @@ export async function fetchIntelligence(): Promise<IntelligenceData> {
     }
   }
 
-  // Sort by priority score (desc), then by date (desc)
+  // Initial sort by keyword priority score (desc), then by date (desc)
   allItems.sort((a, b) => {
     if (b.priority_score !== a.priority_score) return b.priority_score - a.priority_score;
     return new Date(b.published).getTime() - new Date(a.published).getTime();
   });
 
-  // Group by category
+  // Sonnet rescoring — replaces keyword sort for the top 30 candidates with
+  // real semantic thesis-relevance scoring. Falls back gracefully if Sonnet
+  // fails or ANTHROPIC_API_KEY is missing.
+  const { rescored: sortedItems, confidence: sonnetConfidence } = await rescoreWithSonnet(allItems);
+
+  // Group by category (using the rescored order)
   const byCategory: Record<Category, IntelligenceItem[]> = {
     commodity: [],
     defi: [],
@@ -240,15 +357,21 @@ export async function fetchIntelligence(): Promise<IntelligenceData> {
     company: [],
     exploits: [],
   };
-  for (const item of allItems) {
+  for (const item of sortedItems) {
     byCategory[item.category].push(item);
   }
 
-  // Top stories: top 10 by score across all categories (minus low)
-  const topStories = allItems.filter((i) => i.priority !== "low").slice(0, 10);
+  // Top stories: prefer items with high thesis_score (Sonnet-verified) over
+  // keyword priority. If Sonnet skipped, fall back to keyword priority.
+  const topStories = sortedItems
+    .filter((i) => {
+      if (i.thesis_score !== undefined) return i.thesis_score >= 6;
+      return i.priority !== "low";
+    })
+    .slice(0, 10);
 
   const byPriority: Record<Priority, number> = { high: 0, medium: 0, low: 0 };
-  for (const item of allItems) byPriority[item.priority]++;
+  for (const item of sortedItems) byPriority[item.priority]++;
 
   const byCategoryCount: Record<Category, number> = {
     commodity: byCategory.commodity.length,
@@ -258,17 +381,21 @@ export async function fetchIntelligence(): Promise<IntelligenceData> {
     exploits: byCategory.exploits.length,
   };
 
+  const rescoredCount = sortedItems.filter((i) => i.thesis_score !== undefined).length;
+
   const data: IntelligenceData = {
     updated_at: new Date().toISOString(),
     categories: byCategory,
     top_stories: topStories,
     summary: {
-      total_items: allItems.length,
+      total_items: sortedItems.length,
       by_category: byCategoryCount,
       by_priority: byPriority,
       sources_succeeded: succeededCount,
       sources_failed: failedSources.length,
       failed_sources: failedSources,
+      sonnet_rescored: rescoredCount,
+      sonnet_confidence: sonnetConfidence,
     },
   };
 
