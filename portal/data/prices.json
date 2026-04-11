@@ -1,0 +1,305 @@
+{
+  "updated_at": "2026-04-11T21:54:10.400Z",
+  "tokens": {
+    "ETH": {
+      "ticker": "ETH",
+      "name": "Ethereum",
+      "price": 2301.578706061065,
+      "change_24h_pct": 2.159991470169911,
+      "change_7d_pct": 11.227307860745157,
+      "price_24h_ago": 2252.9159144782348,
+      "price_7d_ago": 2069.2568671558656,
+      "source": "defillama"
+    },
+    "AAVE": {
+      "ticker": "AAVE",
+      "name": "Aave",
+      "price": 95.53251153418942,
+      "change_24h_pct": 1.2244191525033716,
+      "change_7d_pct": 0.88335315991945,
+      "price_24h_ago": 94.37694217860752,
+      "price_7d_ago": 94.69601132582507,
+      "source": "defillama"
+    },
+    "HYPE": {
+      "ticker": "HYPE",
+      "name": "Hyperliquid",
+      "price": 42.54753727061927,
+      "change_24h_pct": 2.2864736787372717,
+      "change_7d_pct": 17.157989332212935,
+      "price_24h_ago": 41.59644549312859,
+      "price_7d_ago": 36.31637715288163,
+      "source": "defillama"
+    },
+    "PENDLE": {
+      "ticker": "PENDLE",
+      "name": "Pendle",
+      "price": 1.1322094392250894,
+      "change_24h_pct": 3.6334521711191106,
+      "change_7d_pct": 7.247714353025636,
+      "price_24h_ago": 1.0925134843096707,
+      "price_7d_ago": 1.0556956351519187,
+      "source": "defillama"
+    },
+    "MORPHO": {
+      "ticker": "MORPHO",
+      "name": "Morpho",
+      "price": 1.8141332318856898,
+      "change_24h_pct": -1.1835684724896651,
+      "change_7d_pct": 22.40988181182449,
+      "price_24h_ago": 1.8358619147066022,
+      "price_7d_ago": 1.4820153447043432,
+      "source": "defillama"
+    },
+    "UNI": {
+      "ticker": "UNI",
+      "name": "Uniswap",
+      "price": 3.1883327570268425,
+      "change_24h_pct": 0.28478145887140244,
+      "change_7d_pct": 1.4575214465752337,
+      "price_24h_ago": 3.1792787605908432,
+      "price_7d_ago": 3.142529712502125,
+      "source": "defillama"
+    },
+    "wstETH": {
+      "ticker": "wstETH",
+      "name": "Lido (wstETH)",
+      "price": 2832.8186778754502,
+      "change_24h_pct": 2.1009062190319305,
+      "change_7d_pct": 11.314318461214038,
+      "price_24h_ago": 2774.5284373856066,
+      "price_7d_ago": 2544.882560514897,
+      "source": "defillama"
+    },
+    "COW": {
+      "ticker": "COW",
+      "name": "CoW Protocol",
+      "price": 0.22679975223831045,
+      "change_24h_pct": 3.3274513573499815,
+      "change_7d_pct": 10.883730752335406,
+      "price_24h_ago": 0.21949612543325112,
+      "price_7d_ago": 0.20453834904317886,
+      "source": "defillama"
+    },
+    "SOL": {
+      "ticker": "SOL",
+      "name": "Solana",
+      "price": 85.42601435973552,
+      "change_24h_pct": 0.2681463531248081,
+      "change_7d_pct": 5.557782830948177,
+      "price_24h_ago": 85.19756020908355,
+      "price_7d_ago": 80.92820071500186,
+      "source": "defillama"
+    },
+    "BTC": {
+      "ticker": "BTC",
+      "name": "Bitcoin",
+      "price": 73522.10892017436,
+      "change_24h_pct": 0.4808037495311131,
+      "change_7d_pct": 9.154300013436677,
+      "price_24h_ago": 73170.3033580854,
+      "price_7d_ago": 67356.12697907818,
+      "source": "defillama"
+    },
+    "ENS": {
+      "ticker": "ENS",
+      "name": "ENS",
+      "price": 5.87693636361072,
+      "change_24h_pct": -0.12009487564345106,
+      "change_7d_pct": 3.737035978014744,
+      "price_24h_ago": 5.884002749395464,
+      "price_7d_ago": 5.665224871911931,
+      "source": "defillama"
+    },
+    "TAO": {
+      "ticker": "TAO",
+      "name": "Bittensor",
+      "price": 278.1957654672478,
+      "change_24h_pct": 4.914874897818466,
+      "change_7d_pct": -8.473482882298502,
+      "price_24h_ago": 265.1633200136737,
+      "price_7d_ago": 303.9510015545472,
+      "source": "defillama"
+    },
+    "VIRTUAL": {
+      "ticker": "VIRTUAL",
+      "name": "Virtuals Protocol",
+      "price": 0.6944534813120943,
+      "change_24h_pct": 1.599075536776834,
+      "change_7d_pct": 9.221476214221113,
+      "price_24h_ago": 0.6835234254279371,
+      "price_7d_ago": 0.6358213653421335,
+      "source": "defillama"
+    },
+    "RENDER": {
+      "ticker": "RENDER",
+      "name": "Render Network",
+      "price": 2.0467650415007332,
+      "change_24h_pct": 1.4800266386378773,
+      "change_7d_pct": 9.506481246938769,
+      "price_24h_ago": 2.01691417444055,
+      "price_7d_ago": 1.8690811887976266,
+      "source": "defillama"
+    },
+    "IO": {
+      "ticker": "IO",
+      "name": "io.net",
+      "price": 0.10369386367421944,
+      "change_24h_pct": 1.307336060811281,
+      "change_7d_pct": 6.447230921171944,
+      "price_24h_ago": 0.10235573030167885,
+      "price_7d_ago": 0.09741339702017099,
+      "source": "defillama"
+    },
+    "AKT": {
+      "ticker": "AKT",
+      "name": "Akash Network",
+      "price": 0.46907477455206764,
+      "change_24h_pct": -1.1272612478178312,
+      "change_7d_pct": 3.7638202104132814,
+      "price_24h_ago": 0.4744227584590044,
+      "price_7d_ago": 0.4520600471348041,
+      "source": "defillama"
+    },
+    "NEAR": {
+      "ticker": "NEAR",
+      "name": "Near Protocol",
+      "price": 1.4081934769144984,
+      "change_24h_pct": 4.280199740932098,
+      "change_7d_pct": 11.185335763232636,
+      "price_24h_ago": 1.3503939198552894,
+      "price_7d_ago": 1.2665280607806262,
+      "source": "defillama"
+    },
+    "WLD": {
+      "ticker": "WLD",
+      "name": "Worldcoin",
+      "price": 0.29980202774681164,
+      "change_24h_pct": 7.104944850377562,
+      "change_7d_pct": 14.149694961018424,
+      "price_24h_ago": 0.27991427302037847,
+      "price_7d_ago": 0.2626393595262717,
+      "source": "defillama"
+    },
+    "ZEC": {
+      "ticker": "ZEC",
+      "name": "Zcash",
+      "price": 372.8966981631011,
+      "change_24h_pct": -1.4017518062053456,
+      "change_7d_pct": 48.32300432498139,
+      "price_24h_ago": 378.19809681625725,
+      "price_7d_ago": 251.408538992421,
+      "source": "defillama"
+    },
+    "XMR": {
+      "ticker": "XMR",
+      "name": "Monero",
+      "price": 338.1193600422832,
+      "change_24h_pct": -1.8202605472617472,
+      "change_7d_pct": 3.970210776235249,
+      "price_24h_ago": 344.38812114086636,
+      "price_7d_ago": 325.20792015126705,
+      "source": "defillama"
+    },
+    "RAIL": {
+      "ticker": "RAIL",
+      "name": "Railgun",
+      "price": 1.0284605982440684,
+      "change_24h_pct": -2.171665673469908,
+      "change_7d_pct": 2.3966532131309433,
+      "price_24h_ago": 1.05129112677242,
+      "price_7d_ago": 1.0043888798820455,
+      "source": "defillama"
+    },
+    "NAM": {
+      "ticker": "NAM",
+      "name": "Namada",
+      "price": 0.0006239458437101904,
+      "change_24h_pct": -5.627828421973718,
+      "change_7d_pct": -29.712955744499748,
+      "price_24h_ago": 0.000661154483654449,
+      "price_7d_ago": 0.0008877110288520406,
+      "source": "defillama"
+    },
+    "ONDO": {
+      "ticker": "ONDO",
+      "name": "Ondo Finance",
+      "price": 0.25907516225382926,
+      "change_24h_pct": 0.5967478815235431,
+      "change_7d_pct": 1.2725037697168236,
+      "price_24h_ago": 0.2575383078575776,
+      "price_7d_ago": 0.25581984508148364,
+      "source": "defillama"
+    },
+    "CFG": {
+      "ticker": "CFG",
+      "name": "Centrifuge",
+      "price": 0.20469223903202874,
+      "change_24h_pct": -0.4403753716785714,
+      "change_7d_pct": 28.352953042994773,
+      "price_24h_ago": 0.20559764040512518,
+      "price_7d_ago": 0.15947606516186844,
+      "source": "defillama"
+    },
+    "SYRUP": {
+      "ticker": "SYRUP",
+      "name": "Maple Finance",
+      "price": 0.23843066149093434,
+      "change_24h_pct": 2.629748460195097,
+      "change_7d_pct": 14.299493555820048,
+      "price_24h_ago": 0.23232119835450007,
+      "price_7d_ago": 0.20860167798949414,
+      "source": "defillama"
+    },
+    "ENA": {
+      "ticker": "ENA",
+      "name": "Ethena",
+      "price": 0.09691527551239108,
+      "change_24h_pct": 2.1394342176054106,
+      "change_7d_pct": 20.497218134781352,
+      "price_24h_ago": 0.09488526762926414,
+      "price_7d_ago": 0.08042947132936061,
+      "source": "defillama"
+    },
+    "JUP": {
+      "ticker": "JUP",
+      "name": "Jupiter",
+      "price": 0.167430685195146,
+      "change_24h_pct": 0.22795191774594584,
+      "change_7d_pct": 2.916291828250863,
+      "price_24h_ago": 0.16704989176327908,
+      "price_7d_ago": 0.16268627854816056,
+      "source": "defillama"
+    },
+    "JTO": {
+      "ticker": "JTO",
+      "name": "Jito",
+      "price": 0.30577121106972444,
+      "change_24h_pct": -0.40354407371951706,
+      "change_7d_pct": 11.24171722244281,
+      "price_24h_ago": 0.30701013226419505,
+      "price_7d_ago": 0.2748709914809151,
+      "source": "defillama"
+    },
+    "KMNO": {
+      "ticker": "KMNO",
+      "name": "Kamino",
+      "price": 0.01980995911580688,
+      "change_24h_pct": -0.1533193328094912,
+      "change_7d_pct": 16.148576227150773,
+      "price_24h_ago": 0.019840378251368758,
+      "price_7d_ago": 0.017055705510384142,
+      "source": "defillama"
+    },
+    "SPX": {
+      "ticker": "SPX",
+      "name": "S&P 500",
+      "price": 6816.89,
+      "change_24h_pct": -0.1138541124701102,
+      "change_7d_pct": 4.417080434861796,
+      "price_24h_ago": 6824.66015625,
+      "price_7d_ago": 6528.52001953125,
+      "source": "yahoo"
+    }
+  }
+}

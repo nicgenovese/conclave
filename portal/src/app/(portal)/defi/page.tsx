@@ -1,7 +1,7 @@
-import { getOri, getGimli, getGovernance } from "@/lib/data";
+import { getOri, getGimli, getGovernance, getPrices } from "@/lib/data";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { formatUSD } from "@/lib/utils";
-import type { GimliProtocol, OriPosition, OriPerp } from "@/lib/types";
+import type { GimliProtocol, OriPosition, OriPerp, PriceRow } from "@/lib/types";
 
 // ─────────────────────────────────────────────
 // /defi — The real meat for a DeFi fund
@@ -63,10 +63,58 @@ function positionHealth(
   return { color: "green", reason: "OK" };
 }
 
+// ─────────────────────────────────────────────
+// Price cell with 24h + 7d changes
+// ─────────────────────────────────────────────
+function PriceChangeCell({ row }: { row: PriceRow | null }) {
+  if (!row || row.price === null) {
+    return <span className="text-moria-light text-[11px]">—</span>;
+  }
+  const d24 = row.change_24h_pct;
+  const d7 = row.change_7d_pct;
+  return (
+    <div className="flex flex-col items-end gap-0 leading-tight">
+      <span className="font-mono text-[12px] tabular-nums text-moria-black">
+        {row.price >= 1000
+          ? `$${Math.round(row.price).toLocaleString("en-US")}`
+          : row.price >= 1
+            ? `$${row.price.toFixed(2)}`
+            : `$${row.price.toFixed(4)}`}
+      </span>
+      <div className="flex items-center gap-1.5 text-[9px] font-mono tabular-nums">
+        {d24 !== null && (
+          <span
+            className={
+              d24 > 0 ? "text-moria-pos" : d24 < 0 ? "text-moria-neg" : "text-moria-dim"
+            }
+          >
+            {d24 > 0 ? "+" : ""}
+            {d24.toFixed(1)}%
+          </span>
+        )}
+        {d7 !== null && (
+          <>
+            <span className="text-moria-rule">·</span>
+            <span
+              className={
+                d7 > 0 ? "text-moria-pos" : d7 < 0 ? "text-moria-neg" : "text-moria-dim"
+              }
+            >
+              {d7 > 0 ? "+" : ""}
+              {d7.toFixed(1)}%
+            </span>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function DeFiPage() {
   const ori = getOri();
   const gimli = getGimli();
   const governance = getGovernance();
+  const prices = getPrices();
 
   const positions = ori?.positions ?? [];
   const perps = ori?.perps ?? [];
@@ -254,13 +302,16 @@ export default function DeFiPage() {
                   <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
                     Asset
                   </th>
+                  <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
+                    Price · 24h · 7d
+                  </th>
                   <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
                     Value
                   </th>
                   <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
                     Alloc
                   </th>
-                  <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
+                  <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
                     P/E
                   </th>
                   <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
@@ -277,20 +328,26 @@ export default function DeFiPage() {
                     (p) => p.ticker.toUpperCase() === pos.ticker.toUpperCase(),
                   );
                   const health = positionHealth(pos);
+                  const priceRow = prices?.tokens[pos.ticker] ?? null;
+                  // Prefer the watchlist name if available, otherwise Ori's name
+                  const displayName = priceRow?.name || protocol?.name || pos.name;
                   return (
                     <tr
                       key={`${pos.ticker}-${pos.chain}`}
                       className="border-b border-moria-rule/30 hover:bg-moria-faint/30 transition-colors"
                     >
                       <td className="px-3 sm:px-5 py-3">
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono font-medium text-moria-black">
-                            {pos.ticker}
+                        <div className="flex flex-col leading-tight">
+                          <span className="font-serif font-medium text-moria-black text-[13px]">
+                            {displayName}
                           </span>
-                          <span className="text-[10px] text-moria-light hidden sm:inline">
-                            {pos.theme}
+                          <span className="font-mono text-[9px] text-moria-light uppercase tracking-wider mt-0.5">
+                            {pos.ticker} · {pos.theme}
                           </span>
                         </div>
+                      </td>
+                      <td className="px-3 sm:px-5 py-3 text-right hidden md:table-cell">
+                        <PriceChangeCell row={priceRow} />
                       </td>
                       <td className="px-3 sm:px-5 py-3 text-right font-mono tabular-nums text-moria-black">
                         {pos.value_usd !== null ? formatUSD(pos.value_usd) : "—"}
@@ -312,7 +369,7 @@ export default function DeFiPage() {
                           </span>
                         </div>
                       </td>
-                      <td className="px-3 sm:px-5 py-3 text-right font-mono tabular-nums text-moria-body hidden md:table-cell">
+                      <td className="px-3 sm:px-5 py-3 text-right font-mono tabular-nums text-moria-body hidden lg:table-cell">
                         {protocol?.pe_ratio !== null && protocol?.pe_ratio !== undefined
                           ? `${protocol.pe_ratio.toFixed(1)}x`
                           : "—"}
@@ -461,13 +518,13 @@ export default function DeFiPage() {
                     <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
                       Protocol
                     </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                      Theme
+                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
+                      Price · 24h · 7d
                     </th>
                     <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
                       P/E
                     </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
+                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
                       TradFi Peer
                     </th>
                     <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
@@ -490,23 +547,29 @@ export default function DeFiPage() {
                             : p.valuation === "expensive"
                               ? { label: "PASS", color: "text-moria-neg bg-moria-neg/10" }
                               : { label: "—", color: "text-moria-light bg-moria-faint" };
+                    const priceRow = prices?.tokens[p.ticker] ?? null;
                     return (
                       <tr
                         key={p.ticker}
                         className="border-b border-moria-rule/30 hover:bg-moria-faint/30 transition-colors"
                       >
                         <td className="px-3 sm:px-5 py-3">
-                          <span className="font-mono font-medium text-moria-black">
-                            {p.ticker}
-                          </span>
+                          <div className="flex flex-col leading-tight">
+                            <span className="font-serif font-medium text-moria-black text-[13px]">
+                              {p.name}
+                            </span>
+                            <span className="font-mono text-[9px] text-moria-light uppercase tracking-wider mt-0.5">
+                              {p.ticker} · {p.theme}
+                            </span>
+                          </div>
                         </td>
-                        <td className="px-3 sm:px-5 py-3 text-right text-[11px] text-moria-dim hidden sm:table-cell">
-                          {p.theme}
+                        <td className="px-3 sm:px-5 py-3 text-right hidden md:table-cell">
+                          <PriceChangeCell row={priceRow} />
                         </td>
                         <td className="px-3 sm:px-5 py-3 text-right font-mono tabular-nums text-moria-body">
                           {p.pe_ratio !== null ? `${p.pe_ratio.toFixed(1)}x` : "—"}
                         </td>
-                        <td className="px-3 sm:px-5 py-3 text-right text-[11px] text-moria-light hidden md:table-cell">
+                        <td className="px-3 sm:px-5 py-3 text-right text-[11px] text-moria-light hidden lg:table-cell">
                           {p.peer_pe_range}
                         </td>
                         <td className="px-3 sm:px-5 py-3 text-right font-mono tabular-nums hidden lg:table-cell">

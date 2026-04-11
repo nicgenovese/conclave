@@ -1,21 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { OriData } from "@/lib/types";
-
-interface BenchmarkPrice {
-  symbol: string;
-  label: string;
-  price: number | null;
-  change_pct_24h: number | null;
-}
+import type { OriData, PriceRow } from "@/lib/types";
 
 export function NavReturnCard({
   ori,
   benchmarks,
 }: {
   ori: OriData | null;
-  benchmarks: BenchmarkPrice[];
+  benchmarks: PriceRow[];
 }) {
   const nav = ori?.nav_usd ?? 0;
   const positions = ori?.positions.length ?? 0;
@@ -80,39 +73,55 @@ export function NavReturnCard({
             Benchmarks · Live
           </p>
           <div className="grid grid-cols-3 gap-4">
-            {benchmarks.map((b, i) => (
-              <motion.div
-                key={b.symbol}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 + i * 0.08 }}
-              >
-                <p className="text-[10px] font-mono uppercase tracking-wider text-moria-dim mb-0.5">
-                  {b.label}
-                </p>
-                <p className="font-mono text-[16px] sm:text-[18px] tabular-nums text-moria-black leading-tight">
-                  {b.price !== null
-                    ? b.price >= 1000
-                      ? `$${Math.round(b.price).toLocaleString("en-US")}`
-                      : `$${b.price.toFixed(2)}`
-                    : "—"}
-                </p>
-                {b.change_pct_24h !== null && (
-                  <p
-                    className={`font-mono text-[10px] tabular-nums mt-0.5 ${
-                      b.change_pct_24h > 0
-                        ? "text-moria-pos"
-                        : b.change_pct_24h < 0
-                          ? "text-moria-neg"
-                          : "text-moria-dim"
-                    }`}
-                  >
-                    {b.change_pct_24h > 0 ? "+" : ""}
-                    {b.change_pct_24h.toFixed(2)}% 24h
+            {benchmarks.map((b, i) => {
+              const fmtPrice =
+                b.price !== null
+                  ? b.price >= 1000
+                    ? `$${Math.round(b.price).toLocaleString("en-US")}`
+                    : `$${b.price.toFixed(2)}`
+                  : "—";
+              const d24 = b.change_24h_pct;
+              const d7 = b.change_7d_pct;
+              return (
+                <motion.div
+                  key={b.ticker}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 + i * 0.08 }}
+                >
+                  <p className="text-[10px] font-mono uppercase tracking-wider text-moria-dim mb-0.5">
+                    {b.name}
                   </p>
-                )}
-              </motion.div>
-            ))}
+                  <p className="font-mono text-[16px] sm:text-[18px] tabular-nums text-moria-black leading-tight">
+                    {fmtPrice}
+                  </p>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    {d24 !== null && (
+                      <span
+                        className={`font-mono text-[10px] tabular-nums ${
+                          d24 > 0 ? "text-moria-pos" : d24 < 0 ? "text-moria-neg" : "text-moria-dim"
+                        }`}
+                      >
+                        {d24 > 0 ? "+" : ""}
+                        {d24.toFixed(1)}%
+                        <span className="text-moria-light ml-0.5">24h</span>
+                      </span>
+                    )}
+                    {d7 !== null && (
+                      <span
+                        className={`font-mono text-[10px] tabular-nums ${
+                          d7 > 0 ? "text-moria-pos" : d7 < 0 ? "text-moria-neg" : "text-moria-dim"
+                        }`}
+                      >
+                        {d7 > 0 ? "+" : ""}
+                        {d7.toFixed(1)}%
+                        <span className="text-moria-light ml-0.5">7d</span>
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

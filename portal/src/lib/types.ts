@@ -510,7 +510,7 @@ export interface StorylinesData {
 }
 
 // ============================================
-// Benchmarks — BTC / ETH / SPX for NAV comparison
+// Benchmarks — BTC / ETH / SPX for NAV comparison (legacy)
 // ============================================
 export interface Benchmark {
   symbol: string;
@@ -526,6 +526,27 @@ export interface BenchmarksData {
   btc: Benchmark;
   eth: Benchmark;
   spx: Benchmark;
+}
+
+// ============================================
+// Prices — unified live price dictionary with 24h + 7d deltas
+// Replaces benchmarks as the source of truth for all tokens.
+// ============================================
+export interface PriceRow {
+  ticker: string;
+  name: string;
+  price: number | null;
+  change_24h_pct: number | null;
+  change_7d_pct: number | null;
+  price_24h_ago: number | null;
+  price_7d_ago: number | null;
+  source: string;
+  error?: string;
+}
+
+export interface PricesData {
+  updated_at: string;
+  tokens: Record<string, PriceRow>;
 }
 
 // ============================================

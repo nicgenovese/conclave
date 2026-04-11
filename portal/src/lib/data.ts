@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData, StorylinesData, BenchmarksData, DurinBriefData } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData, StorylinesData, BenchmarksData, DurinBriefData, PricesData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -365,6 +365,21 @@ export function getDurinBrief(): DurinBriefData | null {
     return JSON.parse(raw) as DurinBriefData;
   } catch (err) {
     console.error("[data] Failed to read durin-brief.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Prices — unified live prices with 24h + 7d deltas
+// ============================================
+export function getPrices(): PricesData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "prices.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as PricesData;
+  } catch (err) {
+    console.error("[data] Failed to read prices.json:", err);
     return null;
   }
 }

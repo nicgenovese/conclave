@@ -4,7 +4,7 @@ import {
   getMacroDataFull,
   getHeadlines,
   getStorylines,
-  getBenchmarks,
+  getPrices,
   getDurinBrief,
 } from "@/lib/data";
 import { ErrorBoundary } from "@/components/error-boundary";
@@ -28,7 +28,7 @@ export default function Home() {
   const macro = getMacroDataFull();
   const headlines = getHeadlines();
   const storylinesData = getStorylines();
-  const benchmarks = getBenchmarks();
+  const prices = getPrices();
   const durinBrief = getDurinBrief();
 
   const storylines = storylinesData?.storylines ?? [];
@@ -38,27 +38,10 @@ export default function Home() {
   const warningCount = riskAlerts?.summary?.warning ?? 0;
   const showRiskBanner = criticalCount + warningCount > 0;
 
-  // Shape benchmarks for the NAV card
-  const benchmarkList = [
-    {
-      symbol: "BTC",
-      label: "Bitcoin",
-      price: benchmarks?.btc.price ?? null,
-      change_pct_24h: benchmarks?.btc.change_pct_24h ?? null,
-    },
-    {
-      symbol: "ETH",
-      label: "Ethereum",
-      price: benchmarks?.eth.price ?? null,
-      change_pct_24h: benchmarks?.eth.change_pct_24h ?? null,
-    },
-    {
-      symbol: "SPX",
-      label: "S&P 500",
-      price: benchmarks?.spx.price ?? null,
-      change_pct_24h: benchmarks?.spx.change_pct_24h ?? null,
-    },
-  ];
+  // Benchmarks: BTC, ETH, S&P 500 pulled from the unified prices dictionary
+  const benchmarkList = ["BTC", "ETH", "SPX"]
+    .map((t) => prices?.tokens[t])
+    .filter((t): t is NonNullable<typeof t> => !!t);
 
   // Agent health strip
   const agentStatuses: AgentStatus[] = [
@@ -81,10 +64,10 @@ export default function Home() {
       ok: storylines.length > 0,
     },
     {
-      name: "benchmarks",
-      label: "Benchmarks",
-      updated_at: benchmarks?.updated_at ?? null,
-      ok: !!benchmarks?.btc.price,
+      name: "prices",
+      label: "Prices",
+      updated_at: prices?.updated_at ?? null,
+      ok: !!prices && Object.values(prices.tokens).some((t) => t.price !== null),
     },
   ];
 
