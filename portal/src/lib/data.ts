@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData, StorylinesData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -320,6 +320,21 @@ export function getOri(): OriData | null {
     return JSON.parse(raw) as OriData;
   } catch (err) {
     console.error("[data] Failed to read ori.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Storylines — "Today's Big Picture" hero card
+// ============================================
+export function getStorylines(): StorylinesData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "storylines.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as StorylinesData;
+  } catch (err) {
+    console.error("[data] Failed to read storylines.json:", err);
     return null;
   }
 }

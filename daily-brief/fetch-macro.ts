@@ -37,7 +37,7 @@ function categorizeEvent(title: string): string {
 
 async function fetchPolymarketEvents(): Promise<PolymarketEvent[]> {
   const url =
-    "https://gamma-api.polymarket.com/events?closed=false&order=volume24hr&ascending=false&limit=10";
+    "https://gamma-api.polymarket.com/events?closed=false&order=volume24hr&ascending=false&limit=50";
 
   try {
     const res = await fetch(url);

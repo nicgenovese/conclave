@@ -1,0 +1,136 @@
+{
+  "updated_at": "2026-04-11T20:07:23.113Z",
+  "next_refresh_at": "2026-04-12T08:07:23.113Z",
+  "model": "claude-sonnet-4-5",
+  "storylines": [
+    {
+      "rank": 1,
+      "title": "Hyperliquid ETF Race Accelerates as HYPE Surges 200%",
+      "category": "Crypto",
+      "importance": 9,
+      "summary": "FACT: Bitwise filed an updated S-1 for a Hyperliquid ETF on 2026-04-11, joining Grayscale, 21Shares, and VanEck in the race. FACT: HYPE has surged around 200% over the last 12 months according to CoinDesk.",
+      "sources": [
+        {
+          "title": "Bitwise files updated S-1 for Hyperliquid ETF as HYPE fund race heats up",
+          "source": "CoinDesk",
+          "url": "https://www.coindesk.com/markets/2026/04/11/bitwise-files-updated-s-1-for-hyperliquid-etf-as-hype-fund-race-heats-up",
+          "published": "2026-04-11T13:59:18.000Z"
+        }
+      ],
+      "polymarket": {
+        "question": "What price will Bitcoin hit in April?",
+        "yes_probability": 0.105,
+        "no_probability": 0.895,
+        "volume_24h_usd": 1203814,
+        "end_date": "2026-05-01T04:00:00Z",
+        "url": "https://polymarket.com/event/what-price-will-bitcoin-hit-in-april-2026"
+      },
+      "confidence": "GUESS"
+    },
+    {
+      "rank": 2,
+      "title": "SEC and CFTC Signal Regulatory Clarity for Crypto",
+      "category": "Regulatory",
+      "importance": 8,
+      "summary": "FACT: The SEC issued an interpretation on 2026-03-17 clarifying how federal securities laws apply to certain crypto assets. FACT: The SEC and CFTC announced a historic MOU on 2026-03-11 to guide coordination and support lawful innovation.",
+      "sources": [
+        {
+          "title": "  SEC Clarifies the Application of Federal Securities Laws to Crypto Assets\n",
+          "source": "SEC Press",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
+          "published": "2026-03-17T19:45:25.000Z"
+        },
+        {
+          "title": "  SEC and CFTC Announce Historic Memorandum of Understanding Between Agencies\n",
+          "source": "SEC Press",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-26-sec-cftc-announce-historic-memorandum-understanding-between-agencies",
+          "published": "2026-03-11T19:30:00.000Z"
+        }
+      ],
+      "polymarket": {
+        "question": "Who will be confirmed as Fed Chair?",
+        "yes_probability": 0.948,
+        "no_probability": 0.052,
+        "volume_24h_usd": 686281,
+        "end_date": "2026-10-31T00:00:00Z",
+        "url": "https://polymarket.com/event/who-will-be-confirmed-as-fed-chair"
+      },
+      "confidence": "GUESS"
+    },
+    {
+      "rank": 3,
+      "title": "Trafigura Deploys $65M in Ghana Gold Trade Finance",
+      "category": "Commodity",
+      "importance": 7,
+      "summary": "FACT: Trafigura signed a gold offtake agreement and provided debt financing for the Bogoso-Prestea mine in Ghana on 2026-04-09. FACT: The deal involves $65M in financing according to multiple sources including Bloomberg and Reuters.",
+      "sources": [
+        {
+          "title": "Trafigura's Ghana Gold Mine Deal: $65M Financing & Offtake for Bogoso-Prestea - News and Statistics - IndexBox",
+          "source": "Trafigura News",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQVE5VUh5Ykh3UzlhRWlOOEJsNXFYcTczZnFxb0dfWEtmZ1ZhLU5ub3Zzb2o4dTdrbjd2d1Frd09fUGtqTmVWT1hSYzJKLXJreGM0c2lvZ014dEVwb0NrR193LURpdXpTRm5oS2R6S2xRLVJwVm5yUjRYZEFoS0VOSEZseEc2MTFjLUQ5Y1Y3SQ?oc=5",
+          "published": "2026-04-10T12:32:00.000Z"
+        },
+        {
+          "title": "Trafigura Signs Offtake, Financing Deal With Ghanaian Gold Miner - Bloomberg.com",
+          "source": "Trafigura News",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPODd5aVF3TjI4SjlGQzcwRzhERWRYckZXb0twRVdNNElBNDh2TWNGRHdqVlhhcVMzU2xHYl9nVFhxUDRSc1FLR25na1h6WkhteEhxd2ZyTHAxQ1VJampXanl2VGppRTVoZ01Ta0lyWUJrdDBjZmhFWnhJNUE0cWktNmVZdVRiUWhoRmhfRTJSQ0hNb0RfUGFrdkJZZlgxckE4UjZoVHVvMUlQNmxaNjlKbzRIdjU?oc=5",
+          "published": "2026-04-09T09:09:25.000Z"
+        },
+        {
+          "title": "Trafigura enters Ghana gold sector with Bogoso-Prestea deal - Reuters",
+          "source": "Trafigura News",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZjJjUVdoYlFRY25CeVpJb25xODhUZnB1eXVZd1BOMmhCRU85c2lSZnFjVWpsMDVhRUVXc0ZDbWgtNEJnMTM0ajdETERoNEkyTmZLTmdVMU1UUm1oX0M0NENzZl95d3M2dXM1eDZ5dm9YRHBvZ3FMWlpMdFd6UXJwZEx4OHpyZHBLZmhRRzF5dEd2aWJKam5SeDVCM3pvYkJQd3UzT1c2SlVkdFNENTNtRVlES1R2b0Fa?oc=5",
+          "published": "2026-04-09T06:11:00.000Z"
+        },
+        {
+          "title": "Trafigura signs gold offtake agreement and provides debt financing for Bogoso–Prestea mine in Ghana - Trafigura",
+          "source": "Trafigura News",
+          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQelFfX3JVYmEzM0RKR3ZLcVFDcEhJOU00YlJJcHNTOENXejhieDQySXdFZVVkNEJhREVHcTlyUGxDRUtLQjdNYkR4VkZ6TjlfUUF4LXlFYTZEMDZDcFd0UlV2MXBvUkVpa0xVMnFrUThKN3gyLV9QYWROLUk4OW10TFZHdzIzMUh1WS1hZnkwZkVSRmt2VXhHcHVwSVdQVk5QVi1jQ2k2UFZkRWp2aXhhOV83c05TSGVNNFprZDZNTERaNHhvMVVhUUlGeGlwN3pJVWotRkxkNm1xVDBuMHYwUFlXaDFONTUxWThyYm14aFBlanBqS2xj?oc=5",
+          "published": "2026-04-09T06:00:25.000Z"
+        }
+      ],
+      "polymarket": {
+        "question": "What will WTI Crude Oil (WTI) hit in April 2026?",
+        "yes_probability": 0.028,
+        "no_probability": 0.972,
+        "volume_24h_usd": 1147892,
+        "end_date": "2026-04-30T00:00:00Z",
+        "url": "https://polymarket.com/event/what-price-will-wti-hit-in-april-2026"
+      },
+      "confidence": "GUESS"
+    },
+    {
+      "rank": 4,
+      "title": "Circle Faces Stablecoin Yield Regulation Pressure",
+      "category": "DeFi",
+      "importance": 6,
+      "summary": "FACT: Circle posted its worst day on record on 2026-03-24 as proposed law could limit stablecoin yield according to CNBC. FACT: Circle clarified its USDC freeze policy on 2026-04-10 after a Drift exploit and urged passage of GENIUS and CLARITY Acts.",
+      "sources": [
+        {
+          "title": "Circle posts worst day on record as proposed law could limit stablecoin yield - CNBC",
+          "source": "Circle News",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONVRsSm05ekF6akZtd2RfY0xBdU5lbGZ5U1JaQnlGbElTOURpR3g2Y0U5cFJtT3ZaYmg0QjB1bktQMmJSRk03ZmVnM2Y5SUhNQkRlOUhvV0F0SWpNU2dQZlAxcjZRVVBHcW9rSnh2RTY3QW55V2E1VGp1dEk1VzJqbDVGNHZCVHZoai1tRVoxa1M4RWxoLV9Fd1VjNmFXS1BtcUJwRFU2TDRJQ2s4VUZ30gG0AUFVX3lxTE51MTBwQU5XYmhOVENzMmZaWGNudVY5dEtnLUw0enkwRW44djFiemdSLU1WSVVpMnFyV3lxUFpMelh5V1BNWnVicEVIUlJvMDcxdGNET3dOek0wMWpCWndEX3QtQlhkb01OVkFDMDE4TWxrQ1pBQnBrX3ppRWtsalQtVmtCLU91NDNkcE0zdUFpMjBncXVfcnZCUzVaVTRtbHBKY0hEckJ0amdyZEttSXFwTm9Hcw?oc=5",
+          "published": "2026-03-24T07:00:00.000Z"
+        },
+        {
+          "title": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts - Crypto Briefing",
+          "source": "Circle News",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1teTlyRjlNblZIUkNuUWkxbFV0aTQtTUgxVUVVQThtSVAyTjhxbnRlQTltMTdCaVloNV9iY2Q2cUV6TnF3dEIzU3lkRDcxVzVtWHlrbUNYMENkQmNuUFRNVzBHeUwzTUVaUjNpQkdNT2UxRUhVSEl5bXNlMkxmdw?oc=5",
+          "published": "2026-04-10T16:14:45.000Z"
+        }
+      ],
+      "polymarket": {
+        "question": "Fed decision in April?",
+        "yes_probability": 0.0035,
+        "no_probability": 0.9965,
+        "volume_24h_usd": 2373816,
+        "end_date": "2026-04-29T00:00:00Z",
+        "url": "https://polymarket.com/event/fed-decision-in-april"
+      },
+      "confidence": "GUESS"
+    }
+  ],
+  "cost_usd": 0.094002,
+  "input_tokens": 13829,
+  "output_tokens": 3501
+}

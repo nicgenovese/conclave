@@ -461,6 +461,55 @@ export interface OriData {
 }
 
 // ============================================
+// Storylines — "Today's Big Picture" hero card
+// ============================================
+export type StorylineCategory =
+  | "Geopolitics"
+  | "Regulatory"
+  | "DeFi"
+  | "Commodity"
+  | "Macro"
+  | "Crypto"
+  | "Other";
+
+export interface StorylineSource {
+  title: string;
+  source: string;
+  url: string;
+  published?: string;
+}
+
+export interface MatchedPolymarket {
+  question: string;
+  yes_probability: number | null;
+  no_probability: number | null;
+  volume_24h_usd: number | null;
+  end_date: string | null;
+  url: string;
+}
+
+export interface Storyline {
+  rank: 1 | 2 | 3 | 4;
+  title: string;
+  category: StorylineCategory;
+  importance: number;
+  summary: string;
+  sources: StorylineSource[];
+  polymarket: MatchedPolymarket | null;
+  confidence: "FACT" | "INFERENCE" | "GUESS" | "STUB";
+}
+
+export interface StorylinesData {
+  updated_at: string;
+  next_refresh_at: string;
+  model: string;
+  storylines: Storyline[];
+  cost_usd: number;
+  input_tokens: number;
+  output_tokens: number;
+}
+
+// ============================================
 // Gimli — DeFi Value-Investing Agent (Tier 2)
 // ============================================
 export type FeeSwitchState =

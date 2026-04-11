@@ -8,9 +8,11 @@ import {
   getIntelligence,
   getOri,
   getGimli,
+  getStorylines,
 } from "@/lib/data";
 import { formatUSD } from "@/lib/utils";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { StorylineCard } from "@/components/dashboard/storyline-card";
 import type {
   RiskAlert,
   GovernanceAlert,
@@ -71,6 +73,8 @@ export default function Home() {
   const commodities = getCommodities();
   const macro = getMacroDataFull();
   const intelligence = getIntelligence();
+  const storylinesData = getStorylines();
+  const storylines = storylinesData?.storylines ?? [];
 
   const stale = isStale(portfolio.updated_at);
   const criticalCount = riskAlerts?.summary?.critical ?? 0;
@@ -200,6 +204,40 @@ export default function Home() {
                 ))}
             </div>
           </div>
+        )}
+
+        {/* ═══════════════════════════════════════
+            HERO — Today's Big Picture (4 storylines + Polymarket odds)
+            ═══════════════════════════════════════ */}
+        {storylines.length > 0 && (
+          <section>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <h2 className="text-[15px] font-semibold text-moria-black">
+                  Today&rsquo;s Big Picture
+                </h2>
+                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+                  Storylines
+                </span>
+                {storylinesData && (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-moria-light">
+                    <span className="h-1.5 w-1.5 rounded-full bg-moria-pos animate-pulse inline-block" />
+                    updated {hoursAgo(storylinesData.updated_at)}
+                  </span>
+                )}
+              </div>
+              {storylinesData && (
+                <span className="text-[10px] font-mono text-moria-light hidden sm:inline">
+                  refreshes every 12h · next {hoursAgo(storylinesData.next_refresh_at)}
+                </span>
+              )}
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {storylines.slice(0, 4).map((s, i) => (
+                <StorylineCard key={s.rank} storyline={s} index={i} />
+              ))}
+            </div>
+          </section>
         )}
 
         {/* ═══════════════════════════════════════

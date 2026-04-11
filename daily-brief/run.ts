@@ -19,6 +19,7 @@ import { fetchMacro } from "./fetch-macro.js";
 import { fetchGovernance } from "./fetch-governance.js";
 import { fetchIntelligence } from "./fetch-intelligence.js";
 import { fetchMacroData } from "./fetch-macro-data.js";
+import { fetchStorylines } from "./fetch-storylines.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, "../portal/data");
@@ -69,10 +70,45 @@ async function main() {
     // legacy file shapes so the portal pages that still read the old paths
     // continue to work with zero changes.
     writeJson("portfolio.json", oriResult.legacy_shape);
+
+    // Remap Ori's commodity shape into the legacy CommoditiesData shape that
+    // portal/commodities/page.tsx and the old dashboard section expect.
+    const oc = oriResult.commodities;
+    const emptyPoint = { value: null, source: null as null };
+    const emptyCurve = { front: null, next: null, curve: "unknown" as const, spread_pct: null };
+    const toPoint = (p?: { value: number | null } | null) =>
+      p && typeof p.value === "number"
+        ? { value: p.value, source: "yahoo" as const }
+        : emptyPoint;
     writeJson("commodities.json", {
       updated_at: oriResult.updated_at,
-      source: "ori",
-      ...oriResult.commodities,
+      spot: {
+        gold_usd_oz: toPoint(oc.gold_usd_oz),
+        silver_usd_oz: toPoint(oc.silver_usd_oz),
+        platinum_usd_oz: emptyPoint,
+        palladium_usd_oz: emptyPoint,
+        copper_usd_lb: toPoint(oc.copper_usd_lb),
+        wti_usd_bbl: toPoint(oc.wti_usd_bbl),
+        brent_usd_bbl: toPoint(oc.brent_usd_bbl),
+      },
+      futures: { gold: emptyCurve, copper: emptyCurve, wti: emptyCurve },
+      tokenized: {
+        paxg_usd: toPoint(oc.paxg_usd),
+        xaut_usd: toPoint(oc.xaut_usd),
+        paxg_premium_bps: null,
+      },
+      mining_equities: {
+        freeport_fcx: toPoint(oc.mining_equities?.fcx),
+        bhp: toPoint(oc.mining_equities?.bhp),
+        rio: toPoint(oc.mining_equities?.rio),
+        newmont_nem: toPoint(oc.mining_equities?.nem),
+      },
+      signals: [],
+      health: {
+        metals_api: "no_key" as const,
+        alpha_vantage: "no_key" as const,
+        coingecko: "ok" as const,
+      },
     });
     writeJson("risk-alerts.json", {
       updated_at: oriResult.updated_at,
@@ -117,20 +153,23 @@ async function main() {
   console.log("");
 
   // ─────────────────────────────────────────
-  // TIER 3: Durin synthesis (Wave 2 activates Sonnet writing)
-  // For now: the legacy analyze.ts still produces a basic markdown brief
+  // TIER 3: Synthesis — brief markdown + storylines
   // ─────────────────────────────────────────
   console.log("Tier 3 — Synthesis:");
   try {
     const { analyzeAndBrief } = await import("./analyze.js");
-    const briefResult = await runAgent(
-      "Durin   (write brief markdown)  ",
-      "📝",
-      () => analyzeAndBrief(),
-    );
-  } catch (err) {
-    console.log(`  📝 Durin   (write brief)             ✗  analyze.ts not available`);
+    await runAgent("Durin    (write brief markdown) ", "📝", () => analyzeAndBrief());
+  } catch {
+    console.log(`  📝 Durin    (write brief)             ✗  analyze.ts not available`);
   }
+
+  // Storylines — "Today's Big Picture" hero card content, refreshes every 12h
+  const storylinesResult = await runAgent(
+    "Storylines (12h refresh check)   ",
+    "📰",
+    () => fetchStorylines(false),
+  );
+  if (storylinesResult) writeJson("storylines.json", storylinesResult);
 
   console.log("");
 
