@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData, StorylinesData } from "./types";
+import { Portfolio, RiskScore, MacroData, MemoMeta, HeadlinesData, Headline, PolymarketEvent, GovernanceData, RiskAlertsData, CommoditiesData, MacroDataFull, IntelligenceData, OriData, GimliData, StorylinesData, BenchmarksData, DurinBriefData } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -335,6 +335,36 @@ export function getStorylines(): StorylinesData | null {
     return JSON.parse(raw) as StorylinesData;
   } catch (err) {
     console.error("[data] Failed to read storylines.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Benchmarks — BTC / ETH / SPX for NAV comparison
+// ============================================
+export function getBenchmarks(): BenchmarksData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "benchmarks.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as BenchmarksData;
+  } catch (err) {
+    console.error("[data] Failed to read benchmarks.json:", err);
+    return null;
+  }
+}
+
+// ============================================
+// Durin — Daily Brief
+// ============================================
+export function getDurinBrief(): DurinBriefData | null {
+  try {
+    const filePath = path.join(DATA_DIR, "durin-brief.json");
+    if (!fs.existsSync(filePath)) return null;
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as DurinBriefData;
+  } catch (err) {
+    console.error("[data] Failed to read durin-brief.json:", err);
     return null;
   }
 }

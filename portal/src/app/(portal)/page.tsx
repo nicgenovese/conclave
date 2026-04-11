@@ -1,122 +1,106 @@
 import {
-  getPortfolio,
-  getHeadlines,
-  getGovernance,
+  getOri,
   getRiskAlerts,
   getMacroDataFull,
-  getIntelligence,
-  getOri,
-  getGimli,
+  getHeadlines,
   getStorylines,
+  getBenchmarks,
+  getDurinBrief,
 } from "@/lib/data";
-import { formatUSD } from "@/lib/utils";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { StorylineCard } from "@/components/dashboard/storyline-card";
-import { MarketsSnapshot } from "@/components/dashboard/markets-snapshot";
-import { NewsFeed } from "@/components/dashboard/news-feed";
 import { AgentStatusStrip, type AgentStatus } from "@/components/dashboard/agent-status";
-import type {
-  RiskAlert,
-  GovernanceAlert,
-  IntelligenceItem,
-  PolymarketEvent,
-  GimliProtocol,
-} from "@/lib/types";
+import { NavReturnCard } from "@/components/dashboard/nav-return-card";
+import { FedRatesCard } from "@/components/dashboard/fed-rates-card";
+import { GlobalPredictions } from "@/components/dashboard/global-predictions";
+import { DailyBriefCard } from "@/components/dashboard/daily-brief-card";
+import type { RiskAlert, PolymarketEvent } from "@/lib/types";
 import Link from "next/link";
 
 // ─────────────────────────────────────────────
-// Helpers
-// ─────────────────────────────────────────────
-function isStale(dateStr: string): boolean {
-  if (!dateStr || dateStr === "N/A") return true;
-  try {
-    return Date.now() - new Date(dateStr).getTime() > 24 * 60 * 60 * 1000;
-  } catch {
-    return true;
-  }
-}
-
-function hoursAgo(iso: string): string {
-  try {
-    const diff = Date.now() - new Date(iso).getTime();
-    const h = diff / (1000 * 60 * 60);
-    if (h < 1) return "just now";
-    if (h < 24) return `${Math.round(h)}h ago`;
-    if (h < 48) return "yesterday";
-    return `${Math.round(h / 24)}d ago`;
-  } catch {
-    return iso;
-  }
-}
-
-function PctChange({ value }: { value: number }) {
-  const color =
-    value > 0 ? "text-moria-pos" : value < 0 ? "text-moria-neg" : "text-moria-dim";
-  const arrow = value > 0 ? "↑" : value < 0 ? "↓" : "";
-  return (
-    <span className={`font-mono text-xs tabular-nums ${color}`}>
-      {arrow}
-      {Math.abs(value).toFixed(1)}%
-    </span>
-  );
-}
-
-// ─────────────────────────────────────────────
-// Dashboard
+// Dashboard — ruthlessly focused.
+// One question: "What should I care about right now?"
+// Answer in 10 seconds: NAV return, rates, what the world expects, the brief.
 // ─────────────────────────────────────────────
 export default function Home() {
-  // Ori is the source of truth; portfolio is the legacy-shape shim for existing code paths
   const ori = getOri();
-  const portfolio = getPortfolio();
-  const gimli = getGimli();
-  const headlines = getHeadlines();
-  const governance = getGovernance();
   const riskAlerts = getRiskAlerts();
   const macro = getMacroDataFull();
-  const intelligence = getIntelligence();
+  const headlines = getHeadlines();
   const storylinesData = getStorylines();
+  const benchmarks = getBenchmarks();
+  const durinBrief = getDurinBrief();
+
   const storylines = storylinesData?.storylines ?? [];
   const polymarketEvents: PolymarketEvent[] = headlines?.polymarket ?? [];
 
-  // Build the agent-status strip from each data file's updated_at + health
-  const agentStatuses: AgentStatus[] = [
-    { name: "ori", label: "Ori", updated_at: ori?.updated_at ?? null, ok: ori?.health.defillama === "ok" },
-    { name: "gimli", label: "Gimli", updated_at: gimli?.updated_at ?? null, ok: gimli?.health.defillama === "ok" },
-    { name: "thorin", label: "Thorin", updated_at: governance?.updated_at ?? null, ok: !!governance },
-    { name: "aragorn", label: "Aragorn", updated_at: intelligence?.updated_at ?? null, ok: (intelligence?.summary.sources_succeeded ?? 0) > 0 },
-    { name: "elrond", label: "Elrond", updated_at: macro?.updated_at ?? null, ok: macro?.health.fred === "ok" },
-    { name: "storylines", label: "Storylines", updated_at: storylinesData?.updated_at ?? null, ok: storylines.length > 0 },
-  ];
-
-  const stale = isStale(portfolio.updated_at);
   const criticalCount = riskAlerts?.summary?.critical ?? 0;
   const warningCount = riskAlerts?.summary?.warning ?? 0;
   const showRiskBanner = criticalCount + warningCount > 0;
 
-  const topIntel: IntelligenceItem[] = (intelligence?.top_stories || []).slice(0, 6);
-  const topGovernance: GovernanceAlert[] = (governance?.active || [])
-    .filter((a) => a.relevance === "high" || a.relevance === "medium")
-    .slice(0, 3);
-  const topPositions = portfolio.positions.slice(0, 6);
+  // Shape benchmarks for the NAV card
+  const benchmarkList = [
+    {
+      symbol: "BTC",
+      label: "Bitcoin",
+      price: benchmarks?.btc.price ?? null,
+      change_pct_24h: benchmarks?.btc.change_pct_24h ?? null,
+    },
+    {
+      symbol: "ETH",
+      label: "Ethereum",
+      price: benchmarks?.eth.price ?? null,
+      change_pct_24h: benchmarks?.eth.change_pct_24h ?? null,
+    },
+    {
+      symbol: "SPX",
+      label: "S&P 500",
+      price: benchmarks?.spx.price ?? null,
+      change_pct_24h: benchmarks?.spx.change_pct_24h ?? null,
+    },
+  ];
 
-  // Gimli DeFi valuation: top 5 cheapest + top 3 most expensive for the dashboard
-  const topCheap: GimliProtocol[] = (gimli?.cheapest || []).slice(0, 5);
-  const topExpensive: GimliProtocol[] = (gimli?.most_expensive || []).slice(0, 3);
-  const hasPerps = portfolio.perps.length > 0;
+  // Agent health strip
+  const agentStatuses: AgentStatus[] = [
+    {
+      name: "ori",
+      label: "Ori",
+      updated_at: ori?.updated_at ?? null,
+      ok: ori?.health.defillama === "ok",
+    },
+    {
+      name: "durin",
+      label: "Durin",
+      updated_at: durinBrief?.updated_at ?? null,
+      ok: !!durinBrief && durinBrief.confidence !== "STUB",
+    },
+    {
+      name: "storylines",
+      label: "Storylines",
+      updated_at: storylinesData?.updated_at ?? null,
+      ok: storylines.length > 0,
+    },
+    {
+      name: "benchmarks",
+      label: "Benchmarks",
+      updated_at: benchmarks?.updated_at ?? null,
+      ok: !!benchmarks?.btc.price,
+    },
+  ];
 
   return (
     <ErrorBoundary>
-      <div className="space-y-10">
+      <div className="space-y-8">
         {/* ═══════════════════════════════════════
-            HEADER
+            HEADER + AGENT STATUS STRIP
             ═══════════════════════════════════════ */}
         <div className="space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1">
             <div>
               <p className="text-copper text-[10px] font-mono uppercase tracking-widest mb-1">
-                Conclave
+                Conclave · Moria Capital
               </p>
-              <h1 className="text-[22px] sm:text-[28px] font-semibold tracking-tight text-moria-black leading-none">
+              <h1 className="text-[22px] sm:text-[30px] font-semibold tracking-tight text-moria-black leading-none">
                 Morning Brief
               </h1>
             </div>
@@ -129,28 +113,19 @@ export default function Home() {
                   year: "numeric",
                 })}
               </p>
-              {stale && (
-                <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center sm:justify-end gap-1.5">
-                  <span className="h-1.5 w-1.5 bg-copper rounded-full inline-block" />
-                  Portfolio data stale
-                </p>
-              )}
             </div>
           </div>
           <AgentStatusStrip agents={agentStatuses} />
         </div>
 
         {/* ═══════════════════════════════════════
-            RISK ALERTS (critical only, at the top)
+            RISK BANNER — critical only
             ═══════════════════════════════════════ */}
         {showRiskBanner && riskAlerts && (
           <div className="card overflow-hidden border-l-4 border-moria-neg">
-            <div className="flex items-center justify-between px-5 pt-5 pb-3">
+            <div className="flex items-center justify-between px-5 pt-4 pb-3">
               <div className="flex items-center gap-2.5 flex-wrap">
-                <h2 className="text-[15px] font-semibold text-moria-black">Risk</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Balin
-                </span>
+                <h2 className="text-[14px] font-semibold text-moria-black">Risk</h2>
                 {criticalCount > 0 && (
                   <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-moria-neg text-white text-[10px] font-mono font-medium rounded">
                     <span className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
@@ -163,8 +138,8 @@ export default function Home() {
                   </span>
                 )}
               </div>
-              <Link href="/risk" className="text-copper text-[11px] font-mono hover:underline">
-                View all →
+              <Link href="/defi" className="text-copper text-[11px] font-mono hover:underline">
+                View book →
               </Link>
             </div>
             <div className="divide-y divide-moria-rule/30">
@@ -179,7 +154,9 @@ export default function Home() {
                       }`}
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-medium text-moria-black">{alert.title}</p>
+                      <p className="text-[13px] font-medium text-moria-black">
+                        {alert.title}
+                      </p>
                       <p className="text-[12px] text-moria-dim mt-0.5">{alert.message}</p>
                     </div>
                   </div>
@@ -189,30 +166,36 @@ export default function Home() {
         )}
 
         {/* ═══════════════════════════════════════
-            HERO — Today's Big Picture (4 storylines + Polymarket odds)
+            HERO TRIPTYCH — NAV / Fed & Rates / Global Predictions
+            ═══════════════════════════════════════ */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <NavReturnCard ori={ori} benchmarks={benchmarkList} />
+          <FedRatesCard macro={macro} polymarket={polymarketEvents} />
+          <GlobalPredictions polymarket={polymarketEvents} />
+        </div>
+
+        {/* ═══════════════════════════════════════
+            DAILY BRIEF — Durin's letter, wide
+            ═══════════════════════════════════════ */}
+        <DailyBriefCard brief={durinBrief} />
+
+        {/* ═══════════════════════════════════════
+            STORYLINES — 4 big picture cards
             ═══════════════════════════════════════ */}
         {storylines.length > 0 && (
           <section>
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5 flex-wrap">
+              <div className="flex items-center gap-2.5">
                 <h2 className="text-[15px] font-semibold text-moria-black">
                   Today&rsquo;s Big Picture
                 </h2>
                 <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Storylines
+                  Storylines · 12h refresh
                 </span>
-                {storylinesData && (
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-moria-light">
-                    <span className="h-1.5 w-1.5 rounded-full bg-moria-pos animate-pulse inline-block" />
-                    updated {hoursAgo(storylinesData.updated_at)}
-                  </span>
-                )}
               </div>
-              {storylinesData && (
-                <span className="text-[10px] font-mono text-moria-light hidden sm:inline">
-                  refreshes every 12h · next {hoursAgo(storylinesData.next_refresh_at)}
-                </span>
-              )}
+              <Link href="/flow" className="text-copper text-[11px] font-mono hover:underline">
+                More flow →
+              </Link>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {storylines.slice(0, 4).map((s, i) => (
@@ -222,537 +205,40 @@ export default function Home() {
           </section>
         )}
 
-        {/* ═══════════════════════════════════════
-            MARKETS SNAPSHOT — 4 columns, live data
-            ═══════════════════════════════════════ */}
-        <section>
-          <div className="flex items-center gap-2.5 mb-4">
-            <h2 className="text-[15px] font-semibold text-moria-black">Markets</h2>
-            <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-              Live
-            </span>
-          </div>
-          <MarketsSnapshot ori={ori} macro={macro} polymarket={polymarketEvents} />
-        </section>
-
-        {/* ═══════════════════════════════════════
-            NEWS FEED — streaming, Aragorn
-            ═══════════════════════════════════════ */}
-        {topIntel.length > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-[15px] font-semibold text-moria-black">News</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Aragorn
-                </span>
-              </div>
-              <Link
-                href="/intelligence"
-                className="text-copper text-[11px] font-mono hover:underline"
-              >
-                View all →
-              </Link>
-            </div>
-            <NewsFeed items={intelligence?.top_stories ?? []} />
-          </section>
-        )}
-
-        {/* ═══════════════════════════════════════
-            1. MACRO — the big picture
-            ═══════════════════════════════════════ */}
-        <section>
-          <div className="flex items-center gap-2.5 mb-4">
-            <h2 className="text-[15px] font-semibold text-moria-black">Macro</h2>
-            <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-              Elrond
-            </span>
-          </div>
-          <Link href="/macro" className="block">
-            <div className="card p-5 hover:shadow-card-hover transition-shadow">
-              {macro ? (
-                <>
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <p className="text-[11px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                        Regime
-                      </p>
-                      <div className="flex items-center gap-3">
-                        <span
-                          className={`px-3 py-1 rounded text-[12px] font-mono font-semibold tracking-wider ${
-                            macro.regime === "risk_on"
-                              ? "bg-moria-pos/10 text-moria-pos"
-                              : macro.regime === "risk_off"
-                              ? "bg-moria-neg/10 text-moria-neg"
-                              : "bg-moria-faint text-moria-dim"
-                          }`}
-                        >
-                          {macro.regime.toUpperCase().replace("_", " ")}
-                        </span>
-                        <p className="text-[13px] text-moria-dim">{macro.regime_summary}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-5 pt-5 border-t border-moria-rule/30">
-                    <div>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                        Fed Funds
-                      </p>
-                      <p className="font-mono text-[18px] tabular-nums text-moria-black">
-                        {macro.fed.funds_rate.value !== null
-                          ? `${macro.fed.funds_rate.value.toFixed(2)}%`
-                          : "—"}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                        10Y
-                      </p>
-                      <p className="font-mono text-[18px] tabular-nums text-moria-black">
-                        {macro.yields.y10.value !== null
-                          ? `${macro.yields.y10.value.toFixed(2)}%`
-                          : "—"}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                        CPI YoY
-                      </p>
-                      <p className="font-mono text-[18px] tabular-nums text-moria-black">
-                        {macro.inflation.cpi_yoy_pct.value !== null
-                          ? `${macro.inflation.cpi_yoy_pct.value.toFixed(1)}%`
-                          : "—"}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                        Unemployment
-                      </p>
-                      <p className="font-mono text-[18px] tabular-nums text-moria-black">
-                        {macro.employment.unrate.value !== null
-                          ? `${macro.employment.unrate.value.toFixed(1)}%`
-                          : "—"}
-                      </p>
-                    </div>
-                  </div>
-                  {macro.health.fred === "no_key" && (
-                    <p className="text-[11px] text-copper mt-3">
-                      Add FRED_API_KEY to enable live FRED data (free)
-                    </p>
-                  )}
-                </>
-              ) : (
-                <p className="text-[13px] text-moria-light">
-                  Run Elrond to populate macro data.
-                </p>
-              )}
-            </div>
+        {/* Everything else — portfolio details, DeFi valuation, news, governance —
+            lives in dedicated tabs. The dashboard is ruthlessly focused. */}
+        <div className="flex items-center justify-center gap-6 py-6 border-t border-moria-rule/30">
+          <Link
+            href="/defi"
+            className="text-[11px] font-mono text-moria-dim hover:text-copper transition-colors"
+          >
+            → DeFi book
           </Link>
-        </section>
-
-        {/* ═══════════════════════════════════════
-            1b. DeFi VALUATION (Gimli) — cheap vs expensive
-            ═══════════════════════════════════════ */}
-        {gimli && gimli.summary.total_analyzed > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-[15px] font-semibold text-moria-black">DeFi Valuation</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Gimli
-                </span>
-                <span className="px-2 py-0.5 bg-moria-pos/10 text-moria-pos text-[10px] font-mono font-medium rounded">
-                  {gimli.summary.cheap} CHEAP
-                </span>
-                <span className="px-2 py-0.5 bg-moria-neg/10 text-moria-neg text-[10px] font-mono font-medium rounded">
-                  {gimli.summary.expensive} EXPENSIVE
-                </span>
-              </div>
-            </div>
-
-            <div className="card overflow-hidden">
-              {/* FACT block */}
-              <div className="px-5 pt-4 pb-3 bg-moria-faint/30 border-b border-moria-rule/40">
-                <span className="text-[9px] font-mono uppercase tracking-widest text-moria-dim">
-                  FACT &middot; DeFi Llama revenue / market cap / TradFi peer comparison
-                </span>
-              </div>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-[12px] sm:text-[13px]">
-                  <thead>
-                    <tr className="border-b border-copper bg-[#F5F4F2]">
-                      <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
-                        Protocol
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim">
-                        P/E
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                        Peer (TradFi)
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden md:table-cell">
-                        Upside to Peer
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
-                        Fee Switch
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {topCheap.map((p) => (
-                      <tr key={`cheap-${p.ticker}`} className="border-b border-moria-rule/30">
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
-                          <div className="flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-moria-pos" />
-                            <span className="font-mono font-medium text-moria-black">
-                              {p.ticker}
-                            </span>
-                            <span className="text-[10px] text-moria-light hidden sm:inline">
-                              {p.theme}
-                            </span>
-                          </div>
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-black">
-                          {p.pe_ratio !== null ? `${p.pe_ratio.toFixed(1)}x` : "—"}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right text-[11px] text-moria-dim hidden sm:table-cell">
-                          {p.peer_pe_range}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-pos hidden md:table-cell">
-                          {p.upside_to_peer_pct !== null
-                            ? `+${p.upside_to_peer_pct.toFixed(0)}%`
-                            : "—"}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
-                          <span
-                            className={`text-[10px] font-mono ${
-                              p.fee_switch.state === "live_full"
-                                ? "text-moria-pos"
-                                : p.fee_switch.state === "not_activated"
-                                ? "text-moria-neg"
-                                : "text-moria-dim"
-                            }`}
-                          >
-                            {p.fee_switch.state.replace(/_/g, " ")}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                    {topExpensive.map((p) => (
-                      <tr key={`exp-${p.ticker}`} className="border-b border-moria-rule/30 bg-moria-faint/20">
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
-                          <div className="flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-moria-neg" />
-                            <span className="font-mono font-medium text-moria-black">
-                              {p.ticker}
-                            </span>
-                            <span className="text-[10px] text-moria-light hidden sm:inline">
-                              {p.theme}
-                            </span>
-                          </div>
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-neg">
-                          {p.pe_ratio !== null ? `${p.pe_ratio.toFixed(1)}x` : "—"}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right text-[11px] text-moria-dim hidden sm:table-cell">
-                          {p.peer_pe_range}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-dim hidden md:table-cell">
-                          —
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
-                          <span
-                            className={`text-[10px] font-mono ${
-                              p.fee_switch.state === "live_full"
-                                ? "text-moria-pos"
-                                : p.fee_switch.state === "not_activated"
-                                ? "text-moria-neg"
-                                : "text-moria-dim"
-                            }`}
-                          >
-                            {p.fee_switch.state.replace(/_/g, " ")}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* INFERENCE block — Sonnet narrative (stubbed in Wave 1) */}
-              <div className="px-5 py-4 bg-moria-faint/20 border-t border-moria-rule/40">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[9px] font-mono uppercase tracking-widest text-copper">
-                    {gimli.narrative.confidence === "STUB" ? "INFERENCE (stubbed)" : "INFERENCE"}
-                  </span>
-                  <span className="text-[9px] font-mono text-moria-light">
-                    · {gimli.narrative.model}
-                  </span>
-                </div>
-                <p
-                  className={`font-serif text-[13px] leading-relaxed ${
-                    gimli.narrative.confidence === "STUB"
-                      ? "text-moria-light italic"
-                      : "text-moria-body"
-                  }`}
-                >
-                  {gimli.narrative.text}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* News section moved up — see streaming NewsFeed above */}
-
-        {/* Commodities merged into Markets snapshot above */}
-
-        {/* ═══════════════════════════════════════
-            4. GOVERNANCE — decisions that affect us
-            ═══════════════════════════════════════ */}
-        {topGovernance.length > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-[15px] font-semibold text-moria-black">Governance</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Thorin
-                </span>
-                {governance && governance.summary.high_relevance > 0 && (
-                  <span className="px-2 py-0.5 bg-copper/10 text-copper text-[10px] font-mono font-medium rounded">
-                    {governance.summary.high_relevance} HIGH
-                  </span>
-                )}
-              </div>
-              <Link
-                href="/governance"
-                className="text-copper text-[11px] font-mono hover:underline"
-              >
-                View all →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {topGovernance.map((alert) => (
-                <div key={alert.id} className="card p-4">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="font-mono font-medium text-copper text-[11px]">
-                      {alert.protocol}
-                    </span>
-                    <span
-                      className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-medium tracking-wider ${
-                        alert.relevance === "high"
-                          ? "bg-copper text-white"
-                          : "bg-moria-faint text-moria-dim"
-                      }`}
-                    >
-                      {alert.relevance.toUpperCase()}
-                    </span>
-                  </div>
-                  <a
-                    href={alert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-serif text-[14px] text-moria-black leading-snug hover:text-copper transition-colors line-clamp-2 block"
-                  >
-                    {alert.title}
-                  </a>
-                  <div className="mt-2 flex items-center gap-3 text-[10px] font-mono">
-                    <span className="text-moria-pos">
-                      For {alert.current_result.for.toFixed(0)}%
-                    </span>
-                    <span className="text-moria-neg">
-                      Against {alert.current_result.against.toFixed(0)}%
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Polymarket merged into Markets snapshot + Storyline cards above */}
-
-        {/* ═══════════════════════════════════════
-            6. PORTFOLIO — where we are
-            ═══════════════════════════════════════ */}
-        <section>
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2.5">
-              <h2 className="text-[15px] font-semibold text-moria-black">Portfolio</h2>
-              <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                Durin
-              </span>
-            </div>
-            <p className="font-mono text-[11px] text-moria-light">
-              as of {portfolio.updated_at}
-            </p>
-          </div>
-
-          {/* Metric cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-4">
-            <div className="card p-3 sm:p-5">
-              <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-                NAV
-              </p>
-              <p className="font-mono text-[20px] sm:text-[28px] tabular-nums text-moria-black leading-tight">
-                {formatUSD(portfolio.nav)}
-              </p>
-            </div>
-            <div className="card p-3 sm:p-5">
-              <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-                Positions
-              </p>
-              <p className="font-mono text-[20px] sm:text-[28px] tabular-nums text-moria-black leading-tight">
-                {portfolio.positions.length}
-              </p>
-              <p className="text-moria-dim text-[10px] sm:text-xs mt-0.5">
-                {portfolio.allocation_buckets.length} buckets
-              </p>
-            </div>
-            <div className="card p-3 sm:p-5">
-              <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-                Perps
-              </p>
-              <p className="font-mono text-[20px] sm:text-[28px] tabular-nums text-moria-black leading-tight">
-                {formatUSD(portfolio.total_perp_exposure)}
-              </p>
-              <p className="text-moria-dim text-[10px] sm:text-xs mt-0.5">
-                {portfolio.avg_leverage.toFixed(1)}x avg
-              </p>
-            </div>
-            <div className="card p-3 sm:p-5">
-              <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-wider text-moria-light mb-1">
-                Max Loss
-              </p>
-              <p className="font-mono text-[20px] sm:text-[28px] tabular-nums text-moria-neg leading-tight">
-                {formatUSD(portfolio.max_perp_loss)}
-              </p>
-            </div>
-          </div>
-
-          {/* Positions table */}
-          <div className="card overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-[12px] sm:text-[13px]">
-                <thead>
-                  <tr className="border-t-2 border-copper bg-[#F5F4F2]">
-                    <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                      Asset
-                    </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                      Value
-                    </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                      Alloc
-                    </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                      P&L
-                    </th>
-                    <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden lg:table-cell">
-                      Bucket
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {topPositions.map((pos) => (
-                    <tr
-                      key={pos.ticker}
-                      className="border-b border-moria-rule/30 hover:bg-[#F8F7F5] transition-colors"
-                    >
-                      <td className="px-3 sm:px-5 py-2.5 sm:py-3">
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono font-medium text-moria-black">
-                            {pos.ticker}
-                          </span>
-                          <span className="sm:hidden">
-                            <PctChange value={pos.pnl_pct ?? 0} />
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-black">
-                        {formatUSD(pos.allocation_usd)}
-                      </td>
-                      <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden sm:table-cell">
-                        <div className="flex items-center justify-end gap-2">
-                          <div className="w-12 h-1 bg-moria-faint rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-copper rounded-full"
-                              style={{
-                                width: `${Math.min(pos.allocation_pct, 100)}%`,
-                              }}
-                            />
-                          </div>
-                          <span className="font-mono text-xs tabular-nums text-moria-dim">
-                            {pos.allocation_pct.toFixed(1)}%
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden sm:table-cell">
-                        <PctChange value={pos.pnl_pct ?? 0} />
-                      </td>
-                      <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right hidden lg:table-cell">
-                        <span className="text-[11px] text-moria-light">{pos.bucket}</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════
-            7. PERPS — leveraged positions
-            ═══════════════════════════════════════ */}
-        {hasPerps && (
-          <section>
-            <h2 className="text-[15px] font-semibold text-moria-black mb-4">Perp Monitor</h2>
-            <div className="card overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-[12px] sm:text-[13px]">
-                  <thead>
-                    <tr className="border-t-2 border-copper bg-[#F5F4F2]">
-                      <th className="text-left px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                        Pair
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                        Leverage
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim">
-                        Capital
-                      </th>
-                      <th className="text-right px-3 sm:px-5 py-2.5 text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-moria-dim hidden sm:table-cell">
-                        Stop
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {portfolio.perps.map((perp) => (
-                      <tr key={perp.pair} className="border-b border-moria-rule/30">
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3">
-                          <span className="font-mono font-medium text-moria-black">
-                            {perp.pair}
-                          </span>
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono text-moria-dim">
-                          {perp.leverage}x
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-black">
-                          {formatUSD(perp.capital_usd)}
-                        </td>
-                        <td className="px-3 sm:px-5 py-2.5 sm:py-3 text-right font-mono tabular-nums text-moria-neg hidden sm:table-cell">
-                          ${perp.stop.toFixed(2)}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-        )}
+          <Link
+            href="/markets"
+            className="text-[11px] font-mono text-moria-dim hover:text-copper transition-colors"
+          >
+            → Markets
+          </Link>
+          <Link
+            href="/flow"
+            className="text-[11px] font-mono text-moria-dim hover:text-copper transition-colors"
+          >
+            → Flow
+          </Link>
+          <Link
+            href="/governance"
+            className="text-[11px] font-mono text-moria-dim hover:text-copper transition-colors"
+          >
+            → Governance
+          </Link>
+          <Link
+            href="/research"
+            className="text-[11px] font-mono text-moria-dim hover:text-copper transition-colors"
+          >
+            → Research
+          </Link>
+        </div>
       </div>
     </ErrorBoundary>
   );

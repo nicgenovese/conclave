@@ -510,6 +510,52 @@ export interface StorylinesData {
 }
 
 // ============================================
+// Benchmarks — BTC / ETH / SPX for NAV comparison
+// ============================================
+export interface Benchmark {
+  symbol: string;
+  label: string;
+  price: number | null;
+  change_pct_24h: number | null;
+  source: string;
+  error?: string;
+}
+
+export interface BenchmarksData {
+  updated_at: string;
+  btc: Benchmark;
+  eth: Benchmark;
+  spx: Benchmark;
+}
+
+// ============================================
+// Durin — Daily Brief
+// ============================================
+export interface DurinSummary {
+  nav_usd?: number;
+  positions_count?: number;
+  macro_regime?: string;
+  cheap_defi_count?: number;
+  high_relevance_governance?: number;
+  critical_risk_alerts?: number;
+  high_priority_news?: number;
+}
+
+export interface DurinBriefData {
+  updated_at: string;
+  model?: string;
+  confidence?: "FACT" | "INFERENCE" | "GUESS" | "STUB";
+  what_moved?: string;
+  risks_today?: string;
+  decisions_this_week?: string;
+  summary?: DurinSummary;
+  sources?: string[];
+  cost_usd?: number;
+  input_tokens?: number;
+  output_tokens?: number;
+}
+
+// ============================================
 // Gimli — DeFi Value-Investing Agent (Tier 2)
 // ============================================
 export type FeeSwitchState =

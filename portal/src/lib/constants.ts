@@ -1,29 +1,28 @@
 import {
   LayoutDashboard,
   FileText,
-  Newspaper,
-  Shield,
   Settings,
-  Bot,
   Vote,
-  Gem,
-  TrendingUp,
   Radio,
   Sparkles,
+  Activity,
+  Coins,
 } from "lucide-react";
 
-// Ordered for the morning-brief reading flow:
-// macro → news → specific → portfolio → risk → archives
+// Streamlined nav — 7 items built around the new architecture.
+// Dashboard: morning brief + key KPIs
+// Flow: news + Polymarket deep dive
+// Markets: macro + commodities + equities
+// DeFi: portfolio + watchlist
+// Governance: fee-switch-focused
+// Research: memos
 export const NAV_ITEMS = [
-  { href: "/",            label: "Dashboard",    icon: LayoutDashboard },
-  { href: "/macro",       label: "Macro",        icon: TrendingUp },
-  { href: "/intelligence",label: "News",         icon: Radio },
-  { href: "/commodities", label: "Commodities",  icon: Gem },
-  { href: "/governance",  label: "Governance",   icon: Vote },
-  { href: "/risk",        label: "Risk",         icon: Shield },
-  { href: "/research",    label: "Research",     icon: FileText },
-  { href: "/briefs",      label: "Briefs",       icon: Newspaper },
-  { href: "/agents",      label: "Agents",       icon: Bot },
+  { href: "/",            label: "Dashboard",   icon: LayoutDashboard },
+  { href: "/flow",        label: "Flow",        icon: Radio },
+  { href: "/markets",     label: "Markets",     icon: Activity },
+  { href: "/defi",        label: "DeFi",        icon: Coins },
+  { href: "/governance",  label: "Governance",  icon: Vote },
+  { href: "/research",    label: "Research",    icon: FileText },
 ] as const;
 
 export const ADMIN_NAV_ITEMS = [

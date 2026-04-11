@@ -1,0 +1,24 @@
+{
+  "updated_at": "2026-04-11T21:25:45.200Z",
+  "btc": {
+    "symbol": "BTC",
+    "label": "Bitcoin",
+    "price": 73391.90082014618,
+    "change_pct_24h": 0.3373334942611034,
+    "source": "defillama"
+  },
+  "eth": {
+    "symbol": "ETH",
+    "label": "Ethereum",
+    "price": 2299.406401884668,
+    "change_pct_24h": 2.2296435423807366,
+    "source": "defillama"
+  },
+  "spx": {
+    "symbol": "SPX",
+    "label": "S&P 500",
+    "price": 6816.89,
+    "change_pct_24h": -0.1138541124701102,
+    "source": "yahoo"
+  }
+}
