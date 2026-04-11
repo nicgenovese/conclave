@@ -328,17 +328,23 @@ export async function fetchGimli(): Promise<GimliData> {
   };
 
   // Narrative — Sonnet if key available, stub otherwise
+  // Round numbers before handing to Sonnet so it naturally cites clean values.
+  // Post-validator checks that any number in output appears in input, so we
+  // round consistently to avoid false-positive rejections on float precision.
+  const round1 = (n: number | null) => (n === null ? null : parseFloat(n.toFixed(1)));
+  const round0 = (n: number | null) => (n === null ? null : Math.round(n));
+
   const narrativeData = {
     summary,
     cheapest: cheapest.slice(0, 3).map((p) => ({
       ticker: p.ticker,
-      pe_ratio: p.pe_ratio,
+      pe_ratio: round1(p.pe_ratio),
       peer_pe_mid: p.peer_pe_mid,
-      upside_to_peer_pct: p.upside_to_peer_pct,
+      upside_to_peer_pct: round0(p.upside_to_peer_pct),
     })),
     most_expensive: mostExpensive.slice(0, 2).map((p) => ({
       ticker: p.ticker,
-      pe_ratio: p.pe_ratio,
+      pe_ratio: round1(p.pe_ratio),
       peer_pe_mid: p.peer_pe_mid,
     })),
   };
@@ -346,7 +352,15 @@ export async function fetchGimli(): Promise<GimliData> {
   const narrativeResponse = await sonnet(
     "DeFi value-investing narrative",
     narrativeData,
-    "Write exactly 3 sentences. First sentence: which protocols are cheapest vs TradFi peers right now (name them, cite their P/E ratios from the data). Second sentence: what the cheapest protocol's upside to peer multiple would be in percentage terms (cite the number). Third sentence: what the expensive protocols signal about sector froth. Do not mention any protocol or number not in the JSON. Be direct and unemotional — Moria house style.",
+    `Write exactly 3 sentences. Strict rules:
+
+Sentence 1 (FACT): Name the 3 cheapest protocols. For each, cite the pe_ratio EXACTLY as it appears in the JSON (including decimal places). Do NOT round. Do NOT mention peer multiples here.
+
+Sentence 2 (FACT): For the single cheapest protocol, state its upside_to_peer_pct EXACTLY as it appears in the JSON. Do NOT do any arithmetic.
+
+Sentence 3 (INFERENCE): Name the 2 most expensive protocols with their pe_ratios. Conclude in one short phrase whether this signals sector froth. Do NOT compute ratios or multiples you do not see in the JSON — if you are tempted to say "X times above peer", instead just name the peer_pe_mid directly from the JSON.
+
+Format each sentence with its label prefix (FACT: or INFERENCE:).`,
     600,
   );
 

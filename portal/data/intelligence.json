@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T19:55:05.199Z",
+  "updated_at": "2026-04-10T20:43:25.933Z",
   "categories": {
     "commodity": [
       {
@@ -466,6 +466,22 @@
         "snippet": "An SEC filing states that Bitcoin Depot was hacked for 50.9 BTC on March 23 but onchain sleuth ZachXBT says it took place three days earlier. The post Bitcoin Depot didn’t spot 50 BTC hack for three d"
       },
       {
+        "id": "The Block-crypto bill negotiations enter critical",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "Crypto bill negotiations enter critical week as lawmakers return amid pressure to resolve stablecoin rewards",
+        "link": "https://www.theblock.co/post/397092/crypto-bill-negotiations-critical-week-lawmakers-return-resolve-stablecoin-rewards?utm_source=rss&utm_medium=rss",
+        "category": "defi",
+        "priority": "high",
+        "priority_score": 7.2,
+        "matched_keywords": [
+          "stablecoin",
+          "crypto"
+        ],
+        "published": "2026-04-10T20:07:56.000Z",
+        "snippet": "Negotiations over how to treat stablecoin rewards are intensifying as lawmakers return to Washington D.C. next week."
+      },
+      {
         "id": "The Block-hsbc and anchorpoint financial gain",
         "source": "The Block",
         "source_weight": 9,
@@ -573,6 +589,21 @@
         "snippet": "More than a decade of Binance-OKCoin rivalry just boiled over with CZ staking $1B on winning an argument with Star Xu. The post CZ vs Star Xu: $1B bet sends crypto rivalry nuclear appeared first on Pr"
       },
       {
+        "id": "The Block-us government moves bitcoin possibly",
+        "source": "The Block",
+        "source_weight": 9,
+        "title": "US government moves bitcoin possibly linked to steroid distribution conspiracy",
+        "link": "https://www.theblock.co/post/397104/us-government-bitcoin-possibly-linked-steroid-distribution-conspiracy?utm_source=rss&utm_medium=rss",
+        "category": "defi",
+        "priority": "low",
+        "priority_score": 1.8,
+        "matched_keywords": [
+          "crypto"
+        ],
+        "published": "2026-04-10T20:41:50.000Z",
+        "snippet": "The U.S. government currently holds roughly 328,000 bitcoins, worth more than $22 billion at current prices, among other crypto assets."
+      },
+      {
         "id": "The Block-how telegram plans to turn",
         "source": "The Block",
         "source_weight": 9,
@@ -601,21 +632,6 @@
         ],
         "published": "2026-04-10T11:45:21.000Z",
         "snippet": "Coinbase CEO Brian Armstrong backed passing the Clarity Act after the firm previously withheld support for earlier versions of the bill."
-      },
-      {
-        "id": "The Block-japans cabinet approves bill to",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "Japan’s cabinet approves bill to classify crypto assets as financial products: Nikkei",
-        "link": "https://www.theblock.co/post/396982/japans-bill-classify-crypto-financial-products?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 1.8,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-10T08:39:29.000Z",
-        "snippet": "If passed during the current parliamentary session, the legislation would take effect as early as fiscal 2027, Nikkei reported."
       },
       {
         "id": "CoinDesk-star xu calls cz a",
@@ -1100,19 +1116,6 @@
         "snippet": "XRP’s design leaves a smaller share of its supply exposed to future quantum attacks than Bitcoin’s, experts said, pointing to additional XRPL features that stand out."
       },
       {
-        "id": "The Block-world liberty defends borrowing position",
-        "source": "The Block",
-        "source_weight": 9,
-        "title": "World Liberty defends borrowing position on Dolomite, dismisses liquidation concerns as ‘FUD’",
-        "link": "https://www.theblock.co/post/396967/world-liberty-rebuts-dolomite-criticism?utm_source=rss&utm_medium=rss",
-        "category": "defi",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-10T06:18:30.000Z",
-        "snippet": "The project said it did supply WLFI as collateral and borrowed stablecoins, but it is 'nowhere near liquidation.'"
-      },
-      {
         "id": "CoinDesk-xrp edges higher to 135",
         "source": "CoinDesk",
         "source_weight": 8,
@@ -1259,7 +1262,7 @@
         "id": "SEC Press-sec announces enforcement results for",
         "source": "SEC Press",
         "source_weight": 9,
-        "title": "  SEC Announces Enforcement Results for Fiscal Year 2025\n",
+        "title": "    SEC Announces Enforcement Results for Fiscal Year 2025\n",
         "link": "https://www.sec.gov/newsroom/press-releases/2026-34",
         "category": "regulatory",
         "priority": "medium",
@@ -1584,6 +1587,37 @@
         "snippet": "Circle clarifies USDC freeze policy after Drift exploit, urges passage of GENIUS and CLARITY Acts Crypto Briefing"
       },
       {
+        "id": "Glencore News-glencore buys 45 stake in",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore buys 45% stake in South Carolina aluminum recycling plant - Mining.com",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdlVyUTZucV9ZRDZ3a0stUUlEZWpENzU4blBJaTVuUXVIZUpWUUdabXh6RWE3Nk8zbVJDVGZwWWVpN1VSUDlmcjRKa3RDTkNqTVp6S2NRcDZpblM3SGhSSG9NZnQ1SzR3V0V4WnhaeUhaZllrRkxrS0dDekpRR0hjaFg2R08wZ0ZNNGJ3QW9sUzhMemVTN2paTg?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 5.6,
+        "matched_keywords": [
+          "glencore",
+          "mining"
+        ],
+        "published": "2026-04-10T14:14:03.000Z",
+        "snippet": "Glencore buys 45% stake in South Carolina aluminum recycling plant Mining.com"
+      },
+      {
+        "id": "Coinbase News-ripple xrp price will the",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Ripple (XRP) Price: Will the CLARITY Act Pass After Endorsements From Coinbase, the SEC, and the U.S. Treasury? - 24/7 Wall St.",
+        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPRml1bDhMSXFSeVdEQi13aEdFejNYdlNaaTdpZ1RFWHFzNm8wam1TRzRIVmNYT3JhRDg5b0thSzVtLXFqb1pmMHcyLWN1SjdKZWJKR085T0I3SjJVNGFTV3N3TXpiTmJkUDdrY2V1VmpIel9mVDJUakJZMFJKTGhBSkk4dm1sNnpKQm54SGZCc2t6Z3ljYjkyNDBHVkNlRUtsNTludnROaUItdWZmcGdwWi1KakV0WlpacWJ5UWh0dUtHMG9EUnIzZ1BldTd0RE8yWG5EMUZTSWpMV05lSW0wamh3?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "sec"
+        ],
+        "published": "2026-04-10T20:26:08.000Z",
+        "snippet": "Ripple (XRP) Price: Will the CLARITY Act Pass After Endorsements From Coinbase, the SEC, and the U.S. Treasury? 24/7 Wall St."
+      },
+      {
         "id": "Glencore News-glencore acquires 45 in south",
         "source": "Glencore News",
         "source_weight": 7,
@@ -1597,6 +1631,21 @@
         ],
         "published": "2026-04-10T19:06:12.000Z",
         "snippet": "Glencore acquires 45% in South Caroline recycling and remelting plant chemengonline.com"
+      },
+      {
+        "id": "Glencore News-glencore taiwan refiner book tankers",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDJzLUh0a3A4ZnVTQkJIM1ZqOTg2eUNIYTdCWHpzd0gtZGNkWnNkVDZmMWJwYVF0X1ROSEtFRVZvemlVX2VCNWNhR05VRU0tckJXRjBDWTMyYnhMOVZwYjJnRGhpaHhMOEZ4V0dWOVl3dTV1QmR0dDIyRmxFeTdNUFc2WWpIdkc5dmpqYVFmczNNamk5OVk0NmtmSU5zWFd0UFBpMVFsVHJKbmtTT3N2R1k1eEc?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-10T18:22:45.000Z",
+        "snippet": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire Reuters"
       },
       {
         "id": "Circle News-drift hack fallout why circle",
@@ -1614,6 +1663,21 @@
         "snippet": "Drift Hack Fallout: Why Circle Didn’t Freeze $275M Stolen USDC BeInCrypto"
       },
       {
+        "id": "Glencore News-eqt glencore boost lng deals",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "EQT, Glencore Boost LNG Deals as Commonwealth Nears FID - Pipeline and Gas Journal",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQ0cxWVZVakZrUkh4RDJEanRPX0FyVWZobTN6MEhGUjhzckxIZXdFY0t5dzlrNDdRTTY1NkNHSjFCMW1CcXUwRXJ3ZFhWMDFOWlV2UTcwNlU0eXUwTXhpd2FtWEFNM24yb0lVc1k5Wl9kRWc4blNydmxRcWhUQTA5VlZMQnM0TG9OaGgwZ3REcVo2UEpDRE00?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-10T15:10:52.000Z",
+        "snippet": "EQT, Glencore Boost LNG Deals as Commonwealth Nears FID Pipeline and Gas Journal"
+      },
+      {
         "id": "Circle News-circle defends usdc freeze policy",
         "source": "Circle News",
         "source_weight": 7,
@@ -1627,36 +1691,6 @@
         ],
         "published": "2026-04-10T15:03:15.000Z",
         "snippet": "Circle defends USDC freeze policy after Drift exploit, calls for faster legal frameworks AMBCrypto"
-      },
-      {
-        "id": "Glencore News-eqt glencore boost lng deals",
-        "source": "Glencore News",
-        "source_weight": 7,
-        "title": "EQT, Glencore Boost LNG Deals as Commonwealth Nears FID - Pipeline and Gas Journal",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQ0cxWVZVakZrUkh4RDJEanRPX0FyVWZobTN6MEhGUjhzckxIZXdFY0t5dzlrNDdRTTY1NkNHSjFCMW1CcXUwRXJ3ZFhWMDFOWlV2UTcwNlU0eXUwTXhpd2FtWEFNM24yb0lVc1k5Wl9kRWc4blNydmxRcWhUQTA5VlZMQnM0TG9OaGgwZ3REcVo2UEpDRE00?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-10T14:20:10.000Z",
-        "snippet": "EQT, Glencore Boost LNG Deals as Commonwealth Nears FID Pipeline and Gas Journal"
-      },
-      {
-        "id": "Glencore News-glencore buys 45 stake in",
-        "source": "Glencore News",
-        "source_weight": 7,
-        "title": "Glencore buys 45% stake in South Carolina aluminum recycling plant (GLCNF:OTCMKTS) - Seeking Alpha",
-        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPN1ljSnUzdE5zaUItZUdwVmpTM3RpTzlPSUFRZnZjaEI2bzBXMmt6NnBIWFRPVG0yZl9HYjJlcnhCMWNYd3FjWkJLdV9leGNLZXdqbEhrb19jcGRWVlN3Um5Jdm9hcENlMm9TR2dUX3NzbHItLWM5Z0lsZUUwdGFYa3RGVUw0b3FPWnV4QlF5a0tyTXZ4eGM5NHEwTG5Nc2hRSEpuaHlCbFM1ZzRmMldxVw?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-10T13:07:22.000Z",
-        "snippet": "Glencore buys 45% stake in South Carolina aluminum recycling plant (GLCNF:OTCMKTS) Seeking Alpha"
       },
       {
         "id": "Glencore News-glencore acquires 45 ownership in",
@@ -1734,6 +1768,21 @@
         "snippet": "EQT, Glencore commit to buy more LNG from Commonwealth, filing shows Reuters"
       },
       {
+        "id": "Glencore News-glencore and mercuria agree to",
+        "source": "Glencore News",
+        "source_weight": 7,
+        "title": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth - Bloomberg.com",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRnpZTGpsVGRLemRkQ3JTRWlZZlhuc0RneUNFT1FNaVBLbW9wM1E5SVAtRkNRUFQzeUVMcjF5RmxNUE51bWl1ZC1EVWJOSmFMeTZBQzhNenp4LTdScndvRmo5a28xdnl0ZndpZk14SmtZRUZuMkx2Rmh4NjZhbXJRWU5YNnF3aEw3WW1GRHFpSnRCeG10aFNQTm15TGpGVE1mcjVRRVY1d2R1c1kweUhaVEJ3?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "glencore"
+        ],
+        "published": "2026-04-09T18:36:52.000Z",
+        "snippet": "Glencore and Mercuria Agree to Buy More LNG From Commonwealth Bloomberg.com"
+      },
+      {
         "id": "Glencore News-lynas glencore rio tinto top",
         "source": "Glencore News",
         "source_weight": 7,
@@ -1762,21 +1811,6 @@
         ],
         "published": "2026-04-09T15:17:00.000Z",
         "snippet": "New Coinbase Store-of-Value Index combines dynamic Bitcoin and gold exposure to maximize alt-asset upside KITCO"
-      },
-      {
-        "id": "Glencore News-glencore taiwan refiner book tankers",
-        "source": "Glencore News",
-        "source_weight": 7,
-        "title": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire - Reuters",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDJzLUh0a3A4ZnVTQkJIM1ZqOTg2eUNIYTdCWHpzd0gtZGNkWnNkVDZmMWJwYVF0X1ROSEtFRVZvemlVX2VCNWNhR05VRU0tckJXRjBDWTMyYnhMOVZwYjJnRGhpaHhMOEZ4V0dWOVl3dTV1QmR0dDIyRmxFeTdNUFc2WWpIdkc5dmpqYVFmczNNamk5OVk0NmtmSU5zWFd0UFBpMVFsVHJKbmtTT3N2R1k1eEc?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "glencore"
-        ],
-        "published": "2026-04-09T08:38:24.000Z",
-        "snippet": "Glencore, Taiwan refiner book tankers to load Middle East oil after ceasefire Reuters"
       },
       {
         "id": "Trafigura News-tufton assets wins big pay",
@@ -1809,21 +1843,6 @@
         "snippet": "Circle Launches Managed Payments for Stablecoin Settlement PYMNTS.com"
       },
       {
-        "id": "Circle News-circle launches stablecoin settlement platform",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "Circle Launches Stablecoin Settlement Platform Without Requiring USDC Holdings - FinanceFeeds",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxORTMtZ3N3S084RVZzU0U3QS1IVFdQY2VFcllwYUJ1Qk5XSzNDa1hiZDNDZFdJWVY0RjdoUDRTLXFjblVxeFJnOGgzUXktREZGSktvdWgyUTlRQjNRa0ZYWExER0oxbmhCNGoxWm5nNGhBRjJueVBmNGZlQzBVeFdoM2sxWVlQNWlRX3dBMkdYenNoanVjbHFrc3ZOQWloVGs1TWxCQUFWYw?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "stablecoin"
-        ],
-        "published": "2026-04-08T19:30:22.000Z",
-        "snippet": "Circle Launches Stablecoin Settlement Platform Without Requiring USDC Holdings FinanceFeeds"
-      },
-      {
         "id": "Circle News-circle launches cpn managed payments",
         "source": "Circle News",
         "source_weight": 7,
@@ -1852,6 +1871,21 @@
         ],
         "published": "2026-04-08T10:00:00.000Z",
         "snippet": "Trafigura signs $1.1b deal for recycled battery metals Resource Recycling"
+      },
+      {
+        "id": "Circle News-circle partners can now access",
+        "source": "Circle News",
+        "source_weight": 7,
+        "title": "Circle Partners Can Now Access Stablecoin Payouts Through Circle Mint Singapore - Circle Internet Financial",
+        "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcVJZcXFuR2tEU18zcWVBZXQycWJCVXVSbmdkdE1fb0FSeEZfT3habW01b3NpMWo2SWlDcTZRQWtoQk10b204VW5xdVhEb3NRREhjb2FQNE44VkdaV0RGcGR5QWZDdFhxSDlSMmVmbFF3ODlENWl4MWhreW1fTGNYSlN3ZWZVTXZBYk4wSXVYb1daRy1PRDV4UE5OSmxxdDk2TlZvV2V1SmhPQWs?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "stablecoin"
+        ],
+        "published": "2026-04-08T02:19:36.000Z",
+        "snippet": "Circle Partners Can Now Access Stablecoin Payouts Through Circle Mint Singapore Circle Internet Financial"
       },
       {
         "id": "Circle News-circle mints 1 billion of",
@@ -1899,21 +1933,6 @@
         "snippet": "CRCL news: Circle faces backlash after $285 million Drift hack CoinDesk"
       },
       {
-        "id": "Circle News-usdc stablecoin issuer circle unveils",
-        "source": "Circle News",
-        "source_weight": 7,
-        "title": "USDC Stablecoin Issuer Circle Unveils New Token to Give Bitcoin More Utility - Decrypt",
-        "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQOFNCQUtjV1ZtZG9PMmtIVHR3Q3RjTUxueXJkeWFkOU91aU5kWTA3RDBDY01INHliQTEyUzJkczk3aDhNYUpKbkdCSlh0QUxhS2g3VzhNekVHaWFtMGpHX0ZVSlZZaksxSnNXa1VMeFdNUkJENndidmJUTmJOdjN1QmRB0gGKAUFVX3lxTFBPTld1OUxwRjYwc3ZaNHN4Z1YyRW1fZ3JHZk1JVWhkVUJqeEpsc3lhYUJOVVJSZDNrbFRvOEx1SUtBdDBHbG9tbG4xZlFKX3QyTWlUa00zbXV2TTVZRDkybmNSOEczeVRDQUJhOVdXeWROclo2dW1Gb3NFV1hVWC1hTm5GcFJ3QVR6QQ?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "stablecoin"
-        ],
-        "published": "2026-04-02T21:04:47.000Z",
-        "snippet": "USDC Stablecoin Issuer Circle Unveils New Token to Give Bitcoin More Utility Decrypt"
-      },
-      {
         "id": "Trafigura News-trafigura rejects bolivias claim that",
         "source": "Trafigura News",
         "source_weight": 7,
@@ -1927,21 +1946,6 @@
         ],
         "published": "2026-04-02T07:00:00.000Z",
         "snippet": "Trafigura rejects Bolivia's claim that its fuel contracts were suspended Reuters"
-      },
-      {
-        "id": "Trafigura News-what trafiguras billiondollar recycling bet",
-        "source": "Trafigura News",
-        "source_weight": 7,
-        "title": "What Trafigura’s billion-dollar recycling bet means for critical minerals - Latitude Media",
-        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPN3R0M2luVm8tN21wZ0k3bkM1UW1ZdUFhUkx0R0IzaFBtUWc2elJZQllQcGhBdEgtWVRySW5iNlBObmxLMUlIMWVUWUR0VDhUcXZwTmsxWkg2T2U4SzZabUduSFF0Wl9uYTkzRk5lRW1EQmg2b2cyRFZNY01tT21WTkp1QXg2ck1nUWZKeHBCRVNGNTZLUEREcGFXbmZtZWp1anY4MnBXaS10SVl4?oc=5",
-        "category": "company",
-        "priority": "medium",
-        "priority_score": 4.199999999999999,
-        "matched_keywords": [
-          "trafigura"
-        ],
-        "published": "2026-03-31T21:12:19.000Z",
-        "snippet": "What Trafigura’s billion-dollar recycling bet means for critical minerals Latitude Media"
       },
       {
         "id": "Trafigura News-trafigura closes jpy1047 billion term",
@@ -1972,6 +1976,21 @@
         ],
         "published": "2026-03-19T07:00:00.000Z",
         "snippet": "Glencore could walk away from South Africa smelter rescue talks over conditions Reuters"
+      },
+      {
+        "id": "Trafigura News-nth cycle signs 11 billion",
+        "source": "Trafigura News",
+        "source_weight": 7,
+        "title": "Nth Cycle signs $1.1 billion lithium offtake deal with Trafigura - Reuters",
+        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSk9SeXlmaFBMbnV0NzN2MndaTU9xaWRqTlR6S0ZQbUt3alhreTJTN2xPTG1PLXVWVmZRUGZxV1hFTUVSQW1PVWhFUFpSa3cwX21INzlkZG85dVhjaUdXX01VQU5DX2c3cHpwQy1kMHdFek91X0VwRVFueWhmX1JxZFctQ3doZVVwcE93UHhZUU1LOGZ6cENTRHQwVHQ3dTZGQnhRU0JzN285bkdKQlc5TXZRZUc?oc=5",
+        "category": "company",
+        "priority": "medium",
+        "priority_score": 4.199999999999999,
+        "matched_keywords": [
+          "trafigura"
+        ],
+        "published": "2026-03-16T07:00:00.000Z",
+        "snippet": "Nth Cycle signs $1.1 billion lithium offtake deal with Trafigura Reuters"
       },
       {
         "id": "Glencore News-exclusive glencore raises hope of",
@@ -2034,21 +2053,6 @@
         "snippet": "'It's time to pass the Clarity Act': Coinbase CEO Brian Armstrong backs Bessent's crypto bill push The Block"
       },
       {
-        "id": "Coinbase News-coinbase slapped with underweight rating",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? - 24/7 Wall St.",
-        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQNzBDQ1VaT25wcGt5Y3EyTDg2bG5TUGdJcS1hcnUwNGJuRzNTWmY4U1JmM0xFdVVzSEpGUUJaWVVvcTBEOFZXc0Z2X2dJcnZ5RnBMX1ZpNTBYcndMQm1LRVFnRHBoWXBPY3pubXVJOWk3TFZGaTlFRWFlNThVcVBEZjhTb3BlRnZrVnd3OHJmSFl4STlPN2xiM1NWWFE0STMxOHRYUmJNSlNxUHcxNkNYREhlaklWQ0JkTkpkOHBqNXFSQk80LVMtYkVvb3NWSDdQbGxn?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 1.4,
-        "matched_keywords": [
-          "crypto"
-        ],
-        "published": "2026-04-08T14:30:12.000Z",
-        "snippet": "Coinbase Slapped With Underweight Rating at Barclays: Is Crypto's Favorite Stock Heading to $140? 24/7 Wall St."
-      },
-      {
         "id": "Coinbase News-coinbase australia receives afsl licence",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -2079,6 +2083,19 @@
         "snippet": "Circle mints $1 billion USDC in 24 hours as institutional flows surge crypto.news"
       },
       {
+        "id": "Coinbase News-coinbase ceo backs us treasury",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase CEO backs US Treasury Secretary‘s push to pass CLARITY Act - TradingView",
+        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNMWktdW55NUpmTGM3SWI3N3pEMDJ4T3hPMmVOUjkyQWdtaFlubHF0b1BYamYxTU1sNkxCa2ZJY2txRHp5bjFfaW83X1Z6Uzh5cmZ2MXB1UHJVT0U3VmNobnBnYTdOVXZHVEs2dE83RGR3aGJvQm9pbGhqQUV6Q05xbllRVjcwMDRBQU81Rm9TU3lSU1Zva054R2pQY3Z3TkdnTHNmTzl2NDdYSGJhOGNFR09FMzlsNC1CSUg3YVV3NWpIVmFFTUltYlJkSQ?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T18:11:16.000Z",
+        "snippet": "Coinbase CEO backs US Treasury Secretary‘s push to pass CLARITY Act TradingView"
+      },
+      {
         "id": "Coinbase News-treasury secretary gains support as",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -2090,6 +2107,19 @@
         "matched_keywords": [],
         "published": "2026-04-10T16:44:49.000Z",
         "snippet": "Treasury Secretary gains support as Coinbase backs key U.S. bill thestreet.com"
+      },
+      {
+        "id": "Coinbase News-coinbase upgrades x402 protocol to",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Upgrades x402 Protocol to Enable Usage-Based AI Payments - FinanceFeeds",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONEt4SldOZE5LVzRkM0NrLXdsaVJ6VHdTVVlhamFyZklUTFV6OWJCVDFvS0pla3lRdXNhZS1YR1kyTm9XTVVOcEFrcHFQZm9QU2FDVzRXdmNMUEpJSTY3YmhnSm50ZmJ4bmV6RmJEcUVSeHhQNUotcTNvWVhOZGpuaQ?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-10T16:02:04.000Z",
+        "snippet": "Coinbase Upgrades x402 Protocol to Enable Usage-Based AI Payments FinanceFeeds"
       },
       {
         "id": "Coinbase News-coinbase gains afsl strengthens australia",
@@ -2116,19 +2146,6 @@
         "matched_keywords": [],
         "published": "2026-04-10T13:10:00.000Z",
         "snippet": "Coinbase CEO Calls For Passage Of U.S. Clarity Act Yahoo Finance"
-      },
-      {
-        "id": "Coinbase News-coinbases retail traders havent left",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase's Retail Traders Haven't Left The Market, They've Moved To Kalshi, Polymarket, Analyst Says - Benzinga",
-        "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOemtDM2Y0anR1a185OXlpZTlmalZhbWJiVzdtbUY1NkRxWENMc2N5UVpOWk04TTFVYmhsN2pjekdmMGpUS1pFYmdhM2ctRWp1WFVKRUlWWUlPUUFEcFhsM3MwWnlZSDlicE9LUWhPVGJDVG9WWXR0c0huUFg4cEU0UjlVWVlEcGFhU1g3alBUU3VNY2lCV1Q0eGJLalZfYTRRYnFydnJnVVAyVC1PR3lmRHcwYmtkaE5VYTZfcjdlUzRaZ1hIOE93cHo1Q2FQU3NHYk5URVg4NmlkcWZpTUJtUVZBaThjV2t6NkdHZ3lsS3J0LWM?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T21:07:11.000Z",
-        "snippet": "Coinbase's Retail Traders Haven't Left The Market, They've Moved To Kalshi, Polymarket, Analyst Says Benzinga"
       },
       {
         "id": "Circle News-circle stock drops as analysts",
@@ -2170,19 +2187,6 @@
         "snippet": "World’s largest private metal trader seals $2.8 billion pact with Ghana’s top miner Business Insider Africa"
       },
       {
-        "id": "Coinbase News-2 reasons to like coin",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "2 Reasons to Like COIN (and 1 Not So Much) - TradingView",
-        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYllVT1VWZWxnRDdlNVY4Qmt4QURBX2RTamh6SzdLWERyRVM4T09XVWZDd3AwUEJFUTRNcnJjQmV3RWJxenpvUDBqYkxaam1FMnFRaWNZdnUyMTkyWEpCTnRVby1MRmxrcmFQV2ZoT3NiNlhYcGFua3c0WmV2dXQwQ3ZBRnd1NG1kWVpQMExLQmIzbTBNOTh6WUNvdDBWNm9KcDEw?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-09T04:02:00.000Z",
-        "snippet": "2 Reasons to Like COIN (and 1 Not So Much) TradingView"
-      },
-      {
         "id": "Coinbase News-coinbase wins occ nod for",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -2209,6 +2213,19 @@
         "snippet": "Circle rolls out USDC payments platform that lets users pay without holding stablecoins The Block"
       },
       {
+        "id": "Coinbase News-barclays downgrades coinbase global stock",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ - TipRanks",
+        "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQR0kzc3JOam9zZ2htUm5FbnFsa3VuV1pJLTZzcGN1dHdfUTZGQl9Fa3I2VkhoblpKYU5IVmJZc0NFbW9mUXY1MDR2S1paT0g0Qzg1aTFpT2d4SGVwTHJsb2g3bWtZVUlzQnhFRThnYXhDMk1peUZ1dmw3LTVxcERaRFNNbGkwdEVSaVBrZFFSYTE2OXJGZGVWTEw4bEN5UTUzMnVubHhzSXlXOERMLUtSSnpRdWRCVW5fLUxYOWpybU1WcGdzYzhNV1AwN29zc3F2aGc?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T15:50:54.000Z",
+        "snippet": "Barclays Downgrades Coinbase Global Stock (COIN) to Sell, Says ‘Decline in Volumes Will Weigh on Profitability’ TipRanks"
+      },
+      {
         "id": "Coinbase News-coinbase downgraded deere upgraded wall",
         "source": "Coinbase News",
         "source_weight": 7,
@@ -2220,6 +2237,19 @@
         "matched_keywords": [],
         "published": "2026-04-08T13:42:56.000Z",
         "snippet": "Coinbase downgraded, Deere upgraded: Wall Street's top analyst calls Yahoo Finance"
+      },
+      {
+        "id": "Coinbase News-coinbase wins australian derivatives license",
+        "source": "Coinbase News",
+        "source_weight": 7,
+        "title": "Coinbase Wins Australian Derivatives License As COIN Targets Trend Reversal - Benzinga",
+        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYlVLeGhfNG1sTTZVd3hxbTVscWNQajlDaFQtS1hCR2pkY1M3clEwQmJNUHVqR1ZmSWRpR09GSTJoeks1NHVkZnJubS1wVF9ZUlptdTRlbDFNcFFxbGZ2VEV5Nkc3MkpaaERmbURRYjlDQTF2MDRJLWR1cGdCdFNwQWZ6Vl9sc3ZxYjNpS0lUWXdSRWoyTVlOVTE4TXRyaGxBdzRpYnZYR3FEVzl1MkMyQmZqYjNSRHRpOXdfbmp5b0VWNVItdndVRWRTU1ZqS0JUWjl3?oc=5",
+        "category": "company",
+        "priority": "low",
+        "priority_score": 0,
+        "matched_keywords": [],
+        "published": "2026-04-08T12:21:26.000Z",
+        "snippet": "Coinbase Wins Australian Derivatives License As COIN Targets Trend Reversal Benzinga"
       },
       {
         "id": "Coinbase News-coinbase plans australia expansion after",
@@ -2235,30 +2265,17 @@
         "snippet": "Coinbase Plans Australia Expansion After Securing License Bloomberg.com"
       },
       {
-        "id": "Coinbase News-coinbase jumps on schwab news",
-        "source": "Coinbase News",
+        "id": "Circle News-circle usdc liquidity returns to",
+        "source": "Circle News",
         "source_weight": 7,
-        "title": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? - Investor's Business Daily",
-        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5jb1ZXQ1dqdVFiSnRaSGJFeFU0SU1sVHQ3aHpIZFdGWXhGNHkySzFhQ1lsUUVSV1N2NnhhS1Z2ODl6WjIteVpVQkt5TGNuS0RmZmxHRzBtZHl1WjU2b2ZoNEs0N0tmVjVHNm1lUDVrTVZ3OXZEcWNV?oc=5",
+        "title": "Circle USDC liquidity returns to market as post-quantum era threats escalate - Cryptopolitan",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORmZrVy1jN0xJVlJJX1FfMTBjMkdtcDBmZEpiUUIxQWk0WnU5R3B2Z2c3WG5zRkJaZFhpMk1RcE5aV0dzSGhrVUcyMFhVNHNrZ1VUZzJFeHNzX2pNeHNjQTA2RDlQa3ZVZEZXMmhZM3NUNEFzZXpMQXZpZTFTTUpMVg?oc=5",
         "category": "company",
         "priority": "low",
         "priority_score": 0,
         "matched_keywords": [],
-        "published": "2026-04-07T21:04:00.000Z",
-        "snippet": "Coinbase Jumps On Schwab News But Gains Fade; Is Coinbase Stock A Buy Now? Investor's Business Daily"
-      },
-      {
-        "id": "Coinbase News-coinbases trust company draws criticism",
-        "source": "Coinbase News",
-        "source_weight": 7,
-        "title": "Coinbase’s Trust Company Draws Criticism From Banking Sector - PYMNTS.com",
-        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNEV2YWlhLU5wd2lxUDBFQ1AxeW9HbmhzV21OYW5rblNDNEVXaGlrTl9YZnduYUxHX0czWk1UYXBPaWxxaTIwMmJ3UVp1TjlpaDVTVU5JYkJGNTF0VE03OFRQc18ycjdsUFFuMEgzdlNQV2dBT0t4NXdLdzJzMVZDTnhkOThua1BIV3psYk9vOXliVEw0cm9XUkM0NDI5M2draHJYbVBfOA?oc=5",
-        "category": "company",
-        "priority": "low",
-        "priority_score": 0,
-        "matched_keywords": [],
-        "published": "2026-04-06T10:56:51.000Z",
-        "snippet": "Coinbase’s Trust Company Draws Criticism From Banking Sector PYMNTS.com"
+        "published": "2026-04-06T16:04:00.000Z",
+        "snippet": "Circle USDC liquidity returns to market as post-quantum era threats escalate Cryptopolitan"
       }
     ],
     "exploits": [
@@ -2529,18 +2546,18 @@
     }
   ],
   "summary": {
-    "total_items": 164,
+    "total_items": 165,
     "by_category": {
       "commodity": 30,
       "defi": 55,
       "regulatory": 15,
-      "company": 57,
+      "company": 58,
       "exploits": 7
     },
     "by_priority": {
-      "high": 16,
-      "medium": 59,
-      "low": 89
+      "high": 17,
+      "medium": 60,
+      "low": 88
     },
     "sources_succeeded": 12,
     "sources_failed": 1,

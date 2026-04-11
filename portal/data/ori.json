@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-04-10T19:55:01.590Z",
+  "updated_at": "2026-04-10T20:43:22.285Z",
   "wallet_address": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
-  "nav_usd": 6865.3696660000005,
+  "nav_usd": 6862.0836739999995,
   "positions": [
     {
       "ticker": "ETH",
@@ -9,10 +9,10 @@
       "theme": "Portfolio",
       "bucket": "Core",
       "chain": "ethereum",
-      "balance": 0.8888179472123302,
-      "price_usd": 2251.3046752441196,
+      "balance": 0.8913209056685031,
+      "price_usd": 2244.982684995167,
       "value_usd": 2001,
-      "allocation_pct": 29.14628195346473,
+      "allocation_pct": 29.16023900410399,
       "source": "manual"
     },
     {
@@ -21,10 +21,10 @@
       "theme": "Portfolio",
       "bucket": "Core",
       "chain": "ethereum",
-      "balance": 127.54847681984482,
-      "price_usd": 3.183103476597785,
+      "balance": 127.62624477396567,
+      "price_usd": 3.181163879882639,
       "value_usd": 406,
-      "allocation_pct": 5.913738367369655,
+      "allocation_pct": 5.916570232716752,
       "source": "manual"
     },
     {
@@ -33,10 +33,10 @@
       "theme": "Portfolio",
       "bucket": "DeFi Value",
       "chain": "ethereum",
-      "balance": 9.575244980596834,
-      "price_usd": 94.09680920182993,
+      "balance": 9.50091179605484,
+      "price_usd": 94.83300333070467,
       "value_usd": 901,
-      "allocation_pct": 13.123838100985369,
+      "allocation_pct": 13.130122610043827,
       "source": "manual"
     },
     {
@@ -45,10 +45,10 @@
       "theme": "Portfolio",
       "bucket": "DeFi Value",
       "chain": "other",
-      "balance": 7.217125108478734,
-      "price_usd": 41.70635751434916,
+      "balance": 7.247512340863714,
+      "price_usd": 41.531491888998794,
       "value_usd": 301,
-      "allocation_pct": 4.384323272360262,
+      "allocation_pct": 4.386422758738282,
       "source": "manual"
     },
     {
@@ -57,10 +57,10 @@
       "theme": "Portfolio",
       "bucket": "DeFi Value",
       "chain": "ethereum",
-      "balance": 321.31482292799825,
-      "price_usd": 1.086162153428588,
+      "balance": 318.10192966283967,
+      "price_usd": 1.097132608940504,
       "value_usd": 349,
-      "allocation_pct": 5.08348445865027,
+      "allocation_pct": 5.085918746842725,
       "source": "manual"
     },
     {
@@ -69,10 +69,10 @@
       "theme": "Portfolio",
       "bucket": "DeFi Value",
       "chain": "ethereum",
-      "balance": 1270.2735876751365,
-      "price_usd": 0.2204249562587993,
+      "balance": 1275.1847638611416,
+      "price_usd": 0.2195760237537546,
       "value_usd": 280,
-      "allocation_pct": 4.078440253358384,
+      "allocation_pct": 4.080393263942588,
       "source": "manual"
     },
     {
@@ -81,10 +81,10 @@
       "theme": "Portfolio",
       "bucket": "Yield",
       "chain": "ethereum",
-      "balance": 0.2153671320685106,
-      "price_usd": 2767.3674913886393,
+      "balance": 0.21536245657564027,
+      "price_usd": 2767.4275706019866,
       "value_usd": 596,
-      "allocation_pct": 8.681251396434272,
+      "allocation_pct": 8.685408518963508,
       "source": "manual"
     },
     {
@@ -96,7 +96,7 @@
       "balance": null,
       "price_usd": null,
       "value_usd": 500,
-      "allocation_pct": 7.282929023854255,
+      "allocation_pct": 7.28641654275462,
       "source": "manual"
     },
     {
@@ -105,10 +105,10 @@
       "theme": "Portfolio",
       "bucket": "Emerging",
       "chain": "ethereum",
-      "balance": 216.563298575244,
-      "price_usd": 1.8285646857304931,
+      "balance": 216.0851863376951,
+      "price_usd": 1.8326105861839894,
       "value_usd": 396,
-      "allocation_pct": 5.76807978689257,
+      "allocation_pct": 5.770841901861659,
       "source": "manual"
     },
     {
@@ -117,10 +117,10 @@
       "theme": "Portfolio",
       "bucket": "Gas",
       "chain": "ethereum",
-      "balance": 0.029760520971127497,
-      "price_usd": 2251.3046752441196,
+      "balance": 0.029844328175806952,
+      "price_usd": 2244.982684995167,
       "value_usd": 67,
-      "allocation_pct": 0.9759124891964702,
+      "allocation_pct": 0.9763798167291192,
       "source": "manual"
     }
   ],
@@ -129,71 +129,71 @@
       "pair": "HYPE-PERP",
       "side": "long",
       "leverage": 3,
-      "size_usd": 999.66436,
+      "size_usd": 996.37362,
       "entry_price": 38.178,
-      "mark_price": 41.618,
-      "liquidation_price": 26.8802745957,
-      "unrealized_pnl_usd": 82.6288,
+      "mark_price": 41.481,
+      "liquidation_price": 26.8800665235,
+      "unrealized_pnl_usd": 79.33806,
       "stop_loss": 29,
-      "distance_to_stop_pct": 30.31861213897833,
+      "distance_to_stop_pct": 30.088474241218876,
       "source": "hyperliquid"
     }
   ],
   "commodities": {
     "gold_usd_oz": {
-      "value": 4787.6,
-      "change_pct_24h": -0.0959893159717761,
+      "value": 4771.8,
+      "change_pct_24h": -0.42569174909226737,
       "source": "yahoo"
     },
     "silver_usd_oz": {
-      "value": 76.56,
-      "change_pct_24h": 0.3710161647678871,
+      "value": 76.31,
+      "change_pct_24h": 0.04326336903653952,
       "source": "yahoo"
     },
     "copper_usd_lb": {
-      "value": 5.8725,
-      "change_pct_24h": 2.165970772442578,
+      "value": 5.863,
+      "change_pct_24h": 2.0006958942240813,
       "source": "yahoo"
     },
     "wti_usd_bbl": {
-      "value": 96.14,
-      "change_pct_24h": -1.767650965566572,
+      "value": 95.7,
+      "change_pct_24h": -2.217226933687546,
       "source": "yahoo"
     },
     "brent_usd_bbl": {
-      "value": 94.46,
-      "change_pct_24h": -1.522101751459558,
+      "value": 94.45,
+      "change_pct_24h": -1.5325271059216001,
       "source": "yahoo"
     },
     "paxg_usd": {
-      "value": 4746.896198317292,
+      "value": 4738.474272230014,
       "change_pct_24h": null,
       "source": "defillama"
     },
     "xaut_usd": {
-      "value": 4733.770989758766,
+      "value": 4725.4452183770445,
       "change_pct_24h": null,
       "source": "defillama"
     },
     "mining_equities": {
       "fcx": {
-        "value": 67.97,
-        "change_pct_24h": 4.408602150537642,
+        "value": 67.8,
+        "change_pct_24h": 4.147465437788023,
         "source": "yahoo"
       },
       "bhp": {
-        "value": 76.875,
-        "change_pct_24h": -0.11044698544697733,
+        "value": 76.81,
+        "change_pct_24h": -0.19490644490643383,
         "source": "yahoo"
       },
       "rio": {
-        "value": 98.275,
-        "change_pct_24h": -0.1777552056881637,
+        "value": 98.26,
+        "change_pct_24h": -0.1929913661757214,
         "source": "yahoo"
       },
       "nem": {
-        "value": 120.415,
-        "change_pct_24h": 1.9170545916208215,
+        "value": 120.9,
+        "change_pct_24h": 2.3275497249259414,
         "source": "yahoo"
       }
     }
@@ -205,25 +205,25 @@
       "type": "concentration",
       "position": "ETH",
       "title": "ETH approaching concentration limit",
-      "message": "ETH is 29.1% of NAV (limit: 30%).",
-      "created": "2026-04-10T19:55:01.590Z"
+      "message": "ETH is 29.2% of NAV (limit: 30%).",
+      "created": "2026-04-10T20:43:22.285Z"
     }
   ],
   "concentration": {
-    "max_position_pct": 29.14628195346473,
+    "max_position_pct": 29.16023900410399,
     "max_position_ticker": "ETH",
     "limit": 30,
     "breach": false
   },
   "health": {
-    "etherscan": "error",
+    "etherscan": "ok",
     "defillama": "ok",
     "hyperliquid": "ok",
     "yahoo": "ok",
     "stale": false
   },
   "legacy_shape": {
-    "nav": 6865.3696660000005,
+    "nav": 6862.0836739999995,
     "updated_at": "2026-04-10",
     "wallet": "0x08fC70ADf6B0950749b7647F67616589b1853A53",
     "positions": [
@@ -231,70 +231,70 @@
         "name": "ETH Core Long",
         "ticker": "ETH",
         "allocation_usd": 2001,
-        "allocation_pct": 29.14628195346473,
+        "allocation_pct": 29.16023900410399,
         "bucket": "Core"
       },
       {
         "name": "UNI LP (V4)",
         "ticker": "UNI",
         "allocation_usd": 406,
-        "allocation_pct": 5.913738367369655,
+        "allocation_pct": 5.916570232716752,
         "bucket": "Core"
       },
       {
         "name": "AAVE",
         "ticker": "AAVE",
         "allocation_usd": 901,
-        "allocation_pct": 13.123838100985369,
+        "allocation_pct": 13.130122610043827,
         "bucket": "DeFi Value"
       },
       {
         "name": "HYPE (spot)",
         "ticker": "HYPE",
         "allocation_usd": 301,
-        "allocation_pct": 4.384323272360262,
+        "allocation_pct": 4.386422758738282,
         "bucket": "DeFi Value"
       },
       {
         "name": "PENDLE",
         "ticker": "PENDLE",
         "allocation_usd": 349,
-        "allocation_pct": 5.08348445865027,
+        "allocation_pct": 5.085918746842725,
         "bucket": "DeFi Value"
       },
       {
         "name": "COW",
         "ticker": "COW",
         "allocation_usd": 280,
-        "allocation_pct": 4.078440253358384,
+        "allocation_pct": 4.080393263942588,
         "bucket": "DeFi Value"
       },
       {
         "name": "wstETH",
         "ticker": "wstETH",
         "allocation_usd": 596,
-        "allocation_pct": 8.681251396434272,
+        "allocation_pct": 8.685408518963508,
         "bucket": "Yield"
       },
       {
         "name": "Pendle PT-sUSDe",
         "ticker": "PT-sUSDe",
         "allocation_usd": 500,
-        "allocation_pct": 7.282929023854255,
+        "allocation_pct": 7.28641654275462,
         "bucket": "Yield"
       },
       {
         "name": "MORPHO",
         "ticker": "MORPHO",
         "allocation_usd": 396,
-        "allocation_pct": 5.76807978689257,
+        "allocation_pct": 5.770841901861659,
         "bucket": "Emerging"
       },
       {
         "name": "Gas Reserve",
         "ticker": "ETH",
         "allocation_usd": 67,
-        "allocation_pct": 0.9759124891964702,
+        "allocation_pct": 0.9763798167291192,
         "bucket": "Gas"
       }
     ],
@@ -302,44 +302,44 @@
       {
         "pair": "HYPE-PERP",
         "leverage": 3,
-        "capital_usd": 333.22145333333333,
+        "capital_usd": 332.12453999999997,
         "entry_1": 38.178,
         "entry_2": 38.178,
         "stop": 29
       }
     ],
-    "total_perp_exposure": 999.66436,
+    "total_perp_exposure": 996.37362,
     "avg_leverage": 3,
-    "max_perp_loss": 240.31954256587557,
+    "max_perp_loss": 239.52844791136246,
     "allocation_buckets": [
       {
         "name": "Core",
         "total_usd": 2407,
-        "pct": 35.06002032083438,
+        "pct": 35.07680923682074,
         "color": "#3b82f6"
       },
       {
         "name": "DeFi Value",
         "total_usd": 1831,
-        "pct": 26.670086085354285,
+        "pct": 26.68285737956742,
         "color": "#8b5cf6"
       },
       {
         "name": "Yield",
         "total_usd": 1096,
-        "pct": 15.964180420288528,
+        "pct": 15.971825061718128,
         "color": "#10b981"
       },
       {
         "name": "Emerging",
         "total_usd": 396,
-        "pct": 5.76807978689257,
+        "pct": 5.770841901861659,
         "color": "#f59e0b"
       },
       {
         "name": "Gas",
         "total_usd": 67,
-        "pct": 0.9759124891964702,
+        "pct": 0.9763798167291192,
         "color": "#6b7280"
       }
     ]
