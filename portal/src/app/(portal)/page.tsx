@@ -3,7 +3,6 @@ import {
   getHeadlines,
   getGovernance,
   getRiskAlerts,
-  getCommodities,
   getMacroDataFull,
   getIntelligence,
   getOri,
@@ -13,6 +12,9 @@ import {
 import { formatUSD } from "@/lib/utils";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { StorylineCard } from "@/components/dashboard/storyline-card";
+import { MarketsSnapshot } from "@/components/dashboard/markets-snapshot";
+import { NewsFeed } from "@/components/dashboard/news-feed";
+import { AgentStatusStrip, type AgentStatus } from "@/components/dashboard/agent-status";
 import type {
   RiskAlert,
   GovernanceAlert,
@@ -70,11 +72,21 @@ export default function Home() {
   const headlines = getHeadlines();
   const governance = getGovernance();
   const riskAlerts = getRiskAlerts();
-  const commodities = getCommodities();
   const macro = getMacroDataFull();
   const intelligence = getIntelligence();
   const storylinesData = getStorylines();
   const storylines = storylinesData?.storylines ?? [];
+  const polymarketEvents: PolymarketEvent[] = headlines?.polymarket ?? [];
+
+  // Build the agent-status strip from each data file's updated_at + health
+  const agentStatuses: AgentStatus[] = [
+    { name: "ori", label: "Ori", updated_at: ori?.updated_at ?? null, ok: ori?.health.defillama === "ok" },
+    { name: "gimli", label: "Gimli", updated_at: gimli?.updated_at ?? null, ok: gimli?.health.defillama === "ok" },
+    { name: "thorin", label: "Thorin", updated_at: governance?.updated_at ?? null, ok: !!governance },
+    { name: "aragorn", label: "Aragorn", updated_at: intelligence?.updated_at ?? null, ok: (intelligence?.summary.sources_succeeded ?? 0) > 0 },
+    { name: "elrond", label: "Elrond", updated_at: macro?.updated_at ?? null, ok: macro?.health.fred === "ok" },
+    { name: "storylines", label: "Storylines", updated_at: storylinesData?.updated_at ?? null, ok: storylines.length > 0 },
+  ];
 
   const stale = isStale(portfolio.updated_at);
   const criticalCount = riskAlerts?.summary?.critical ?? 0;
@@ -85,7 +97,6 @@ export default function Home() {
   const topGovernance: GovernanceAlert[] = (governance?.active || [])
     .filter((a) => a.relevance === "high" || a.relevance === "medium")
     .slice(0, 3);
-  const topPolymarket: PolymarketEvent[] = (headlines?.polymarket || []).slice(0, 4);
   const topPositions = portfolio.positions.slice(0, 6);
 
   // Gimli DeFi valuation: top 5 cheapest + top 3 most expensive for the dashboard
@@ -99,63 +110,34 @@ export default function Home() {
         {/* ═══════════════════════════════════════
             HEADER
             ═══════════════════════════════════════ */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1">
-          <div>
-            <p className="text-copper text-[10px] font-mono uppercase tracking-widest mb-1">
-              Conclave
-            </p>
-            <h1 className="text-[22px] sm:text-[28px] font-semibold tracking-tight text-moria-black leading-none">
-              Morning Brief
-            </h1>
-          </div>
-          <div className="sm:text-right">
-            <p className="text-[12px] sm:text-[13px] text-moria-dim">
-              {new Date().toLocaleDateString("en-US", {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </p>
-            {ori && (
-              <div className="mt-1 flex items-center sm:justify-end gap-2 text-[10px] font-mono text-moria-light">
-                <span className="inline-flex items-center gap-1">
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full inline-block ${
-                      ori.health.defillama === "ok" ? "bg-moria-pos" : "bg-moria-neg"
-                    }`}
-                  />
-                  DeFi Llama
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full inline-block ${
-                      ori.health.hyperliquid === "ok" ? "bg-moria-pos" : "bg-moria-neg"
-                    }`}
-                  />
-                  Hyperliquid
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full inline-block ${
-                      ori.health.etherscan === "ok"
-                        ? "bg-moria-pos"
-                        : ori.health.etherscan === "stub"
-                          ? "bg-copper"
-                          : "bg-moria-neg"
-                    }`}
-                  />
-                  Etherscan {ori.health.etherscan === "stub" ? "(stub)" : ""}
-                </span>
-              </div>
-            )}
-            {stale && (
-              <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center sm:justify-end gap-1.5">
-                <span className="h-1.5 w-1.5 bg-copper rounded-full inline-block" />
-                Portfolio data stale
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1">
+            <div>
+              <p className="text-copper text-[10px] font-mono uppercase tracking-widest mb-1">
+                Conclave
               </p>
-            )}
+              <h1 className="text-[22px] sm:text-[28px] font-semibold tracking-tight text-moria-black leading-none">
+                Morning Brief
+              </h1>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-[12px] sm:text-[13px] text-moria-dim">
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </p>
+              {stale && (
+                <p className="text-copper text-[11px] font-mono mt-0.5 flex items-center sm:justify-end gap-1.5">
+                  <span className="h-1.5 w-1.5 bg-copper rounded-full inline-block" />
+                  Portfolio data stale
+                </p>
+              )}
+            </div>
           </div>
+          <AgentStatusStrip agents={agentStatuses} />
         </div>
 
         {/* ═══════════════════════════════════════
@@ -237,6 +219,42 @@ export default function Home() {
                 <StorylineCard key={s.rank} storyline={s} index={i} />
               ))}
             </div>
+          </section>
+        )}
+
+        {/* ═══════════════════════════════════════
+            MARKETS SNAPSHOT — 4 columns, live data
+            ═══════════════════════════════════════ */}
+        <section>
+          <div className="flex items-center gap-2.5 mb-4">
+            <h2 className="text-[15px] font-semibold text-moria-black">Markets</h2>
+            <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+              Live
+            </span>
+          </div>
+          <MarketsSnapshot ori={ori} macro={macro} polymarket={polymarketEvents} />
+        </section>
+
+        {/* ═══════════════════════════════════════
+            NEWS FEED — streaming, Aragorn
+            ═══════════════════════════════════════ */}
+        {topIntel.length > 0 && (
+          <section>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2.5">
+                <h2 className="text-[15px] font-semibold text-moria-black">News</h2>
+                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
+                  Aragorn
+                </span>
+              </div>
+              <Link
+                href="/intelligence"
+                className="text-copper text-[11px] font-mono hover:underline"
+              >
+                View all →
+              </Link>
+            </div>
+            <NewsFeed items={intelligence?.top_stories ?? []} />
           </section>
         )}
 
@@ -487,151 +505,9 @@ export default function Home() {
           </section>
         )}
 
-        {/* ═══════════════════════════════════════
-            2. NEWS — what's happening in the world
-            ═══════════════════════════════════════ */}
-        {topIntel.length > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-[15px] font-semibold text-moria-black">News</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Aragorn
-                </span>
-                {intelligence && intelligence.summary.by_priority.high > 0 && (
-                  <span className="px-2 py-0.5 bg-copper/10 text-copper text-[10px] font-mono font-medium rounded">
-                    {intelligence.summary.by_priority.high} HIGH
-                  </span>
-                )}
-              </div>
-              <Link
-                href="/intelligence"
-                className="text-copper text-[11px] font-mono hover:underline"
-              >
-                View all →
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {topIntel.map((item) => (
-                <div key={item.id} className="card p-4">
-                  <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                    <span className="text-copper text-[9px] font-mono font-medium uppercase tracking-widest">
-                      {item.category}
-                    </span>
-                    <span className="text-moria-rule text-[9px]">·</span>
-                    <span className="font-mono text-[10px] text-moria-dim">{item.source}</span>
-                    <span className="text-moria-rule text-[9px]">·</span>
-                    <span className="font-mono text-[10px] text-moria-light">
-                      {hoursAgo(item.published)}
-                    </span>
-                    {item.priority === "high" && (
-                      <span className="px-1.5 py-0.5 bg-copper text-white text-[9px] font-mono font-medium rounded tracking-wider">
-                        HIGH
-                      </span>
-                    )}
-                  </div>
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-serif text-[14px] leading-snug text-moria-black hover:text-copper transition-colors line-clamp-2 block"
-                  >
-                    {item.title}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* News section moved up — see streaming NewsFeed above */}
 
-        {/* ═══════════════════════════════════════
-            3. COMMODITIES — the fund's edge
-            ═══════════════════════════════════════ */}
-        {commodities && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2.5">
-                <h2 className="text-[15px] font-semibold text-moria-black">Commodities</h2>
-                <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                  Gimli
-                </span>
-                {commodities.signals.length > 0 && (
-                  <span className="px-2 py-0.5 bg-copper/10 text-copper text-[10px] font-mono font-medium rounded">
-                    {commodities.signals.length} SIGNAL{commodities.signals.length !== 1 ? "S" : ""}
-                  </span>
-                )}
-              </div>
-              <Link
-                href="/commodities"
-                className="text-copper text-[11px] font-mono hover:underline"
-              >
-                View all →
-              </Link>
-            </div>
-            <Link href="/commodities" className="block">
-              <div className="card p-5 hover:shadow-card-hover transition-shadow">
-                {/* Signals first, if any */}
-                {commodities.signals.length > 0 && (
-                  <div className="mb-4 pb-4 border-b border-moria-rule/30 space-y-2">
-                    {commodities.signals.slice(0, 3).map((s, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <span
-                          className={`h-1.5 w-1.5 rounded-full mt-1.5 flex-shrink-0 ${
-                            s.severity === "warning" ? "bg-copper" : "bg-moria-light"
-                          }`}
-                        />
-                        <p className="text-[13px] text-moria-black">{s.message}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {/* Prices row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  <div>
-                    <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                      Gold (PAXG)
-                    </p>
-                    <p className="font-mono text-[16px] tabular-nums text-moria-black">
-                      {commodities.tokenized.paxg_usd.value !== null
-                        ? `$${commodities.tokenized.paxg_usd.value.toFixed(0)}`
-                        : "—"}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                      Copper (spot)
-                    </p>
-                    <p className="font-mono text-[16px] tabular-nums text-moria-black">
-                      {commodities.spot.copper_usd_lb.value !== null
-                        ? `$${commodities.spot.copper_usd_lb.value.toFixed(2)}/lb`
-                        : "—"}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                      WTI Oil
-                    </p>
-                    <p className="font-mono text-[16px] tabular-nums text-moria-black">
-                      {commodities.spot.wti_usd_bbl.value !== null
-                        ? `$${commodities.spot.wti_usd_bbl.value.toFixed(0)}`
-                        : "—"}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-mono uppercase tracking-wider text-moria-light mb-1">
-                      FCX
-                    </p>
-                    <p className="font-mono text-[16px] tabular-nums text-moria-black">
-                      {commodities.mining_equities.freeport_fcx.value !== null
-                        ? `$${commodities.mining_equities.freeport_fcx.value.toFixed(0)}`
-                        : "—"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </section>
-        )}
+        {/* Commodities merged into Markets snapshot above */}
 
         {/* ═══════════════════════════════════════
             4. GOVERNANCE — decisions that affect us
@@ -696,53 +572,7 @@ export default function Home() {
           </section>
         )}
 
-        {/* ═══════════════════════════════════════
-            5. POLYMARKET — market predictions
-            ═══════════════════════════════════════ */}
-        {topPolymarket.length > 0 && (
-          <section>
-            <div className="flex items-center gap-2.5 mb-4">
-              <h2 className="text-[15px] font-semibold text-moria-black">
-                Prediction Markets
-              </h2>
-              <span className="text-copper text-[10px] font-mono uppercase tracking-widest">
-                Polymarket
-              </span>
-            </div>
-            <div className="card p-5 space-y-4">
-              {topPolymarket.map((event) => {
-                const yes = event.outcomes?.find((o) => o.name === "Yes");
-                const yesPct = yes ? yes.probability * 100 : 50;
-                return (
-                  <div key={event.id}>
-                    <p className="text-[13px] text-moria-black leading-snug mb-1.5">
-                      {event.question}
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="flex-1 h-1.5 bg-moria-faint rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full"
-                          style={{
-                            width: `${yesPct}%`,
-                            background:
-                              yesPct >= 60
-                                ? "var(--pos)"
-                                : yesPct >= 40
-                                ? "var(--copper)"
-                                : "var(--neg)",
-                          }}
-                        />
-                      </div>
-                      <span className="font-mono text-[11px] tabular-nums text-moria-black font-medium w-10 text-right">
-                        {yesPct.toFixed(0)}%
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )}
+        {/* Polymarket merged into Markets snapshot + Storyline cards above */}
 
         {/* ═══════════════════════════════════════
             6. PORTFOLIO — where we are
